@@ -19,7 +19,11 @@ function SheetTrigger({ asChild, ...props }: SheetPrimitive.Trigger.Props & { as
   return <SheetPrimitive.Trigger data-slot="sheet-trigger" {...props} />
 }
 
-function SheetClose({ ...props }: SheetPrimitive.Close.Props) {
+function SheetClose({ asChild, ...props }: SheetPrimitive.Close.Props & { asChild?: boolean }) {
+  if (asChild) {
+    const child = React.Children.only(props.children) as React.ReactElement
+    return <SheetPrimitive.Close data-slot="sheet-close" {...props} render={child} />
+  }
   return <SheetPrimitive.Close data-slot="sheet-close" {...props} />
 }
 

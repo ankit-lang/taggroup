@@ -49,7 +49,7 @@ function Button({
   ...props
 }: any) {
   if (asChild) {
-    const child = React.Children.only(props.children) as React.ReactElement
+    const child = React.Children.only(props.children) as any
     
     // Create a new props object avoiding conflicts, combining classNames
     const mergedProps = {
