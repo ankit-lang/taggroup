@@ -1,20 +1,13 @@
 'use client'
 
-import { Card, CardContent } from '@/components/ui/card'
-import { CheckCircle2 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import MagicBento from '@/components/ui/MagicBento'
+import { leadershipData, LeadershipProfile } from '@/data/leadership'
+import { Separator } from '@/components/ui/separator'
+
+// Profile details have been moved to dedicated pages at /leadership/[id]
 
 export default function AboutPage() {
-  const leadership = [
-    { name: 'Gaurav Sharma', title: 'Partner - Direct & International Tax', desc: '15+ years experience in SE Asia and APAC, specializing in M&A tax, transfer pricing, and cross-border structuring.' },
-    { name: 'Vishal Tayal', title: 'Partner - Indirect Taxation (New Delhi/UAE)', desc: '15+ years experience handling Service Tax, GST, and VAT for SMEs and Fortune 100 companies.' },
-    { name: 'Sumit Goyal', title: 'Partner - Indirect Taxation (Gurgaon)', desc: '13+ years experience, holds a Certificate Course on Forensic Accounting & Fraud Detection.' },
-    { name: 'Kamal Sharma', title: 'Partner - Assurance', desc: '14+ years experience in audit, financial due diligence, and virtual CFO support.' },
-    { name: 'Naresh Kumar Goel', title: 'Associate Partner/Director', desc: '30+ years experience specializing in Cost Audits and Management Accounting.' },
-    { name: 'Sneha Grover', title: 'Associate Partner/Director', desc: '12+ years experience in Indirect Tax, TP, Direct Tax, and startup ecosystems.' },
-  ]
-
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } }
@@ -29,6 +22,14 @@ export default function AboutPage() {
       }
     }
   }
+
+  // Group leadership by category
+  const categories = [
+    { title: "Core Partners", data: leadershipData.filter(l => l.category === 'Core Partners') },
+    { title: "Associate Partners", data: leadershipData.filter(l => l.category === 'Associate Partners') },
+    { title: "Strategic Associates & International", data: leadershipData.filter(l => l.category === 'Strategic Associates' || l.category === 'International Network') },
+    { title: "Extended Professional Team", data: leadershipData.filter(l => l.category === 'Extended Team') }
+  ];
 
   return (
     <div className="w-full flex flex-col min-h-screen overflow-hidden">
@@ -60,7 +61,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto mb-32 space-y-8 text-xl text-muted-foreground leading-relaxed font-light text-center"
+            className="max-w-4xl mx-auto mb-24 space-y-8 text-xl text-muted-foreground leading-relaxed font-light text-center"
           >
             <p>
               TAG is a leading professional firm with a global presence in business consultancy and advisory services. We ensure client needs are served first by blending practical business advice with tax and regulatory inputs in a collaborative partnership.
@@ -70,45 +71,72 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-16 text-center">Our <span className="text-gradient">Leadership</span> Team</motion.h2>
-            <motion.div variants={fadeInUp} className="w-full flex justify-center mt-12">
-              <MagicBento 
-                textAutoHide={false}
-                enableStars={true}
-                enableSpotlight={true}
-                enableBorderGlow={true}
-                enableTilt={true}
-                enableMagnetism={true}
-                clickEffect={true}
-                spotlightRadius={400}
-                particleCount={15}
-                glowColor="255, 215, 0"
-                cardData={leadership.map(leader => ({
-                  color: 'rgba(0,0,0,0.4)',
-                  title: leader.name,
-                  description: (
-                    <div className="flex flex-col gap-3">
-                      <span className="text-sm font-semibold text-primary">{leader.title}</span>
-                      <span className="text-muted-foreground leading-relaxed">{leader.desc}</span>
-                    </div>
-                  ),
-                  label: (
-                    <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/30">
-                      <span className="text-xl font-black text-primary drop-shadow-[0_0_8px_rgba(255,215,0,0.8)]">
-                        {leader.name.charAt(0)}
-                      </span>
-                    </div>
-                  )
-                }))}
-              />
-            </motion.div>
-          </motion.div>
+          {categories.map((categoryGroup, index) => (
+            categoryGroup.data.length > 0 && (
+              <motion.div
+                key={index}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={staggerContainer}
+                className="mb-24"
+              >
+                <motion.div variants={fadeInUp} className="mb-12 text-center flex flex-col items-center">
+                  {index === 0 && (
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4">Our <span className="text-gradient">Leadership</span> Team</h2>
+                  )}
+                  <h3 className={`text-2xl font-semibold ${index === 0 ? 'text-primary mt-4' : 'text-white'}`}>
+                    {categoryGroup.title}
+                  </h3>
+                  {index !== 0 && <Separator className="w-24 mt-4 bg-primary/30" />}
+                </motion.div>
+                
+                <motion.div variants={fadeInUp} className="w-full flex justify-center">
+                  <MagicBento 
+                    textAutoHide={false}
+                    enableStars={true}
+                    enableSpotlight={true}
+                    enableBorderGlow={true}
+                    enableTilt={true}
+                    enableMagnetism={true}
+                    clickEffect={true}
+                    spotlightRadius={400}
+                    particleCount={15}
+                    glowColor="255, 215, 0"
+                    cardData={categoryGroup.data.map(leader => ({
+                      color: 'rgba(0,0,0,0.4)',
+                      title: leader.name,
+                      description: (
+                        <div className="flex flex-col gap-3 h-full">
+                          <span className="text-sm font-semibold text-primary">{leader.title}</span>
+                          <span className="text-muted-foreground leading-relaxed text-sm flex-grow">{leader.shortDesc}</span>
+                          <span className="text-xs text-primary/70 font-medium uppercase tracking-widest mt-4">
+                            Click for full profile →
+                          </span>
+                        </div>
+                      ),
+                      label: (
+                        <div className="w-12 h-12 rounded-xl bg-black/40 flex items-center justify-center border border-primary/30 relative overflow-hidden group">
+                          {leader.imageUrl ? (
+                            <img 
+                              src={leader.imageUrl} 
+                              alt={leader.name} 
+                              className="absolute inset-0 w-full h-full object-cover z-10"
+                            />
+                          ) : (
+                            <span className="text-xl font-black text-primary drop-shadow-[0_0_8px_rgba(255,215,0,0.8)] relative z-10">
+                              {leader.initials}
+                            </span>
+                          )}
+                        </div>
+                      ),
+                      href: `/leadership/${leader.id}`
+                    }))}
+                  />
+                </motion.div>
+              </motion.div>
+            )
+          ))}
         </div>
       </section>
     </div>

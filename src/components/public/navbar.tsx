@@ -182,7 +182,7 @@ export function Navbar() {
             ))}
             
             <div className="flex items-center gap-3 border-l border-white/20 pl-6 ml-2">
-              <Button className="rounded-full px-6 bg-primary hover:bg-primary/90 text-white font-medium" asChild>
+              <Button className="rounded-full px-6 bg-primary hover:bg-primary/90 text-black font-medium" asChild>
                 <Link href="/contact">Get in Touch</Link>
               </Button>
             </div>

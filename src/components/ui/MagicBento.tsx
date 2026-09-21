@@ -1,5 +1,7 @@
 import { useRef, useEffect, useCallback, useState, ReactNode } from 'react';
 import { gsap } from 'gsap';
+import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { useRouter } from 'next/navigation';
 import './MagicBento.css';
 
 const DEFAULT_PARTICLE_COUNT = 12;
@@ -62,8 +64,9 @@ const ParticleCard = ({
   glowColor = DEFAULT_GLOW_COLOR,
   enableTilt = true,
   clickEffect = false,
-  enableMagnetism = false
-}: ParticleCardProps) => {
+  enableMagnetism = false,
+  onClick
+}: ParticleCardProps & { onClick?: () => void }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const particlesRef = useRef<HTMLDivElement[]>([]);
   const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
@@ -220,6 +223,10 @@ const ParticleCard = ({
     };
 
     const handleClick = (e: MouseEvent) => {
+      if (onClick) {
+        onClick();
+      }
+      
       if (!clickEffect) return;
 
       const rect = element.getBoundingClientRect();
@@ -468,6 +475,8 @@ interface MagicBentoProps {
     title: string | ReactNode;
     description: string | ReactNode;
     label: string | ReactNode;
+    dialogContent?: ReactNode;
+    href?: string;
   }>;
 }
 
@@ -483,8 +492,9 @@ const MagicBento = ({
   glowColor = DEFAULT_GLOW_COLOR,
   clickEffect = true,
   enableMagnetism = true,
-  cardData
+  cardData,
 }: MagicBentoProps) => {
+  const router = useRouter();
   const gridRef = useRef<HTMLDivElement>(null);
   const isMobile = useMobileDetection();
   const shouldDisableAnimations = disableAnimations || isMobile;
@@ -513,7 +523,7 @@ const MagicBento = ({
           };
 
           if (enableStars) {
-            return (
+            const cardContent = (
               <ParticleCard
                 key={index}
                 {...cardProps}
@@ -523,19 +533,38 @@ const MagicBento = ({
                 enableTilt={enableTilt}
                 clickEffect={clickEffect}
                 enableMagnetism={enableMagnetism}
+                onClick={card.href ? () => router.push(card.href!) : undefined}
               >
                 <div className="magic-bento-card__header">
                   <div className="magic-bento-card__label">{card.label}</div>
                 </div>
                 <div className="magic-bento-card__content">
                   <h2 className="magic-bento-card__title">{card.title}</h2>
-                  <p className="magic-bento-card__description">{card.description}</p>
+                  <div className="magic-bento-card__description">{card.description}</div>
                 </div>
               </ParticleCard>
             );
+
+            if (card.dialogContent) {
+              return (
+                <Dialog key={index}>
+                  <DialogTrigger asChild>
+                    <div className="w-full h-full cursor-pointer text-left">
+                      {cardContent}
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto bg-card/95 border-white/10 backdrop-blur-xl">
+                    <DialogTitle className="sr-only">Detailed Profile</DialogTitle>
+                    <DialogDescription className="sr-only">Detailed Profile details</DialogDescription>
+                    {card.dialogContent}
+                  </DialogContent>
+                </Dialog>
+              )
+            }
+            return cardContent;
           }
 
-          return (
+          const fallbackContent = (
             <div
               key={index}
               {...cardProps}
@@ -647,15 +676,46 @@ const MagicBento = ({
                 el.addEventListener('click', handleClick);
               }}
             >
-              <div className="magic-bento-card__header">
-                <div className="magic-bento-card__label">{card.label}</div>
+                <div className="magic-bento-card__header">
+                  <div className="magic-bento-card__label">{card.label}</div>
+                </div>
+                <div className="magic-bento-card__content">
+                  <h2 className="magic-bento-card__title">{card.title}</h2>
+                  <div className="magic-bento-card__description">{card.description}</div>
+                </div>
               </div>
-              <div className="magic-bento-card__content">
-                <h2 className="magic-bento-card__title">{card.title}</h2>
-                <p className="magic-bento-card__description">{card.description}</p>
-              </div>
-            </div>
-          );
+            );
+
+            if (card.href) {
+              return (
+                <div 
+                  key={index} 
+                  className="w-full h-full cursor-pointer text-left block" 
+                  onClick={() => router.push(card.href!)}
+                >
+                  {fallbackContent}
+                </div>
+              );
+            }
+
+            if (card.dialogContent) {
+              return (
+                <Dialog key={index}>
+                  <DialogTrigger asChild>
+                    <div className="w-full h-full cursor-pointer text-left">
+                      {fallbackContent}
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-4xl max-w-[95vw] max-h-[85vh] overflow-hidden bg-card/95 border-white/10 backdrop-blur-xl p-0">
+                    <DialogTitle className="sr-only">Detailed Profile</DialogTitle>
+                    <DialogDescription className="sr-only">Detailed Profile details</DialogDescription>
+                    {card.dialogContent}
+                  </DialogContent>
+                </Dialog>
+              )
+            }
+
+            return fallbackContent;
         })}
       </BentoCardGrid>
     </>

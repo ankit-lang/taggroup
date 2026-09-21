@@ -43,12 +43,12 @@ export default function Home() {
       
       {/* Scroll Based Velocity Section */}
       <section className="w-full py-12 md:py-20 border-y border-white/5 bg-black/40 backdrop-blur-sm overflow-hidden flex flex-col gap-4">
-        <ScrollVelocityContainer className="text-4xl font-bold tracking-tighter md:text-7xl text-white/10 uppercase">
+        <ScrollVelocityContainer className="text-4xl font-bold tracking-tighter md:text-7xl text-white/30 uppercase">
           <ScrollVelocityRow baseVelocity={2} direction={1}>
             Strategic Advisory • Transaction Advisory • Tax Advisory • Assurance Services • Risk & Corporate • Global Desk •&nbsp;
           </ScrollVelocityRow>
         </ScrollVelocityContainer>
-        <ScrollVelocityContainer className="text-4xl font-bold tracking-tighter md:text-7xl text-white/10 uppercase">
+        <ScrollVelocityContainer className="text-4xl font-bold tracking-tighter md:text-7xl text-white/30 uppercase">
           <ScrollVelocityRow baseVelocity={2} direction={-1}>
             Excellence • Integrity • Innovation • Collaboration • Accountability •&nbsp;
           </ScrollVelocityRow>
@@ -150,9 +150,12 @@ export default function Home() {
             <h4 className="text-primary font-bold tracking-widest uppercase text-sm mb-4 flex justify-center">
               <Text3DFlip as="span" staggerDuration={0.03} rotateDirection="top">Our Services</Text3DFlip>
             </h4>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 flex justify-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 flex flex-wrap justify-center gap-x-3 gap-y-1">
               <TextHighlighter>
-                <Text3DFlip as="span" staggerDuration={0.03} rotateDirection="top">Comprehensive Expertise</Text3DFlip>
+                <Text3DFlip as="span" staggerDuration={0.03} rotateDirection="top">Comprehensive</Text3DFlip>
+              </TextHighlighter>
+              <TextHighlighter delay={0.4}>
+                <Text3DFlip as="span" staggerDuration={0.03} rotateDirection="top">Expertise</Text3DFlip>
               </TextHighlighter>
             </h2>
             <TextAnimate as="p" animation="slideLeft" by="word" className="text-xl text-muted-foreground font-light">
@@ -211,10 +214,13 @@ export default function Home() {
               <h4 className="text-primary font-bold tracking-widest uppercase text-sm mb-4">
                 <Text3DFlip as="span" staggerDuration={0.03} rotateDirection="top">Life @ TAG</Text3DFlip>
               </h4>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-                <Text3DFlip as="span" staggerDuration={0.03} rotateDirection="top" className="inline-flex mr-2">Nurturing Talent &</Text3DFlip>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight flex flex-wrap gap-x-3 gap-y-2">
+                <Text3DFlip as="span" staggerDuration={0.03} rotateDirection="top">Nurturing Talent &</Text3DFlip>
                 <TextHighlighter delay={0.4}>
-                  <Text3DFlip as="span" staggerDuration={0.03} rotateDirection="top">Driving Excellence</Text3DFlip>
+                  <Text3DFlip as="span" staggerDuration={0.03} rotateDirection="top">Driving</Text3DFlip>
+                </TextHighlighter>
+                <TextHighlighter delay={0.6}>
+                  <Text3DFlip as="span" staggerDuration={0.03} rotateDirection="top">Excellence</Text3DFlip>
                 </TextHighlighter>
               </h2>
               <TextAnimate as="p" animation="slideLeft" by="word" className="text-xl text-muted-foreground mb-8 font-light leading-relaxed">
@@ -249,9 +255,12 @@ export default function Home() {
               className="max-w-2xl"
             >
               <h4 className="text-primary font-bold tracking-widest uppercase text-sm mb-4">Publications</h4>
-              <h2 className="text-4xl font-bold mb-4 flex justify-start">
+              <h2 className="text-4xl font-bold mb-4 flex flex-wrap justify-start gap-x-3 gap-y-1">
                 <TextHighlighter>
-                  <Text3DFlip as="span" staggerDuration={0.03} rotateDirection="top">Latest Insights</Text3DFlip>
+                  <Text3DFlip as="span" staggerDuration={0.03} rotateDirection="top">Latest</Text3DFlip>
+                </TextHighlighter>
+                <TextHighlighter delay={0.4}>
+                  <Text3DFlip as="span" staggerDuration={0.03} rotateDirection="top">Insights</Text3DFlip>
                 </TextHighlighter>
               </h2>
               <TextAnimate as="p" animation="slideLeft" by="word" className="text-lg text-muted-foreground font-light">
