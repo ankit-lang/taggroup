@@ -548,7 +548,7 @@ const MagicBento = ({
             if (card.dialogContent) {
               return (
                 <Dialog key={index}>
-                  <DialogTrigger asChild>
+                  <DialogTrigger>
                     <div className="w-full h-full cursor-pointer text-left">
                       {cardContent}
                     </div>
@@ -701,7 +701,7 @@ const MagicBento = ({
             if (card.dialogContent) {
               return (
                 <Dialog key={index}>
-                  <DialogTrigger asChild>
+                  <DialogTrigger>
                     <div className="w-full h-full cursor-pointer text-left">
                       {fallbackContent}
                     </div>

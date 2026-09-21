@@ -28,26 +28,15 @@ export default async function InsightsPage({
 
   return (
     <div className="w-full flex flex-col min-h-screen">
-      {/* Page Header */}
-      <section className="bg-primary/5 py-20 text-center border-b">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">TAG Insights</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-            Expert analysis, regulatory updates, and strategic perspectives.
-          </p>
-          <NewsletterSubscribe />
-        </div>
-      </section>
-
       {/* Main Content */}
-      <section className="py-20 bg-background">
+      <section className="pt-40 pb-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           
           {/* Filters */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
             <div className="flex flex-wrap gap-2 justify-center md:justify-start w-full md:w-auto">
               {CATEGORIES.map(cat => (
-                <Link key={cat} href={`/insights?category=${cat}${search ? `&search=${search}` : ''}`}>
+                <Link key={cat} href={`/insights?category=${cat}${search ? `&search=${search}` : ''}`} scroll={false}>
                   <Badge variant={category === cat ? 'default' : 'outline'} className="text-sm py-1.5 px-4 cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
                     {cat}
                   </Badge>
@@ -109,6 +98,17 @@ export default async function InsightsPage({
               </Button>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="bg-primary/5 py-20 text-center border-t border-white/5">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">TAG Insights</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+            Expert analysis, regulatory updates, and strategic perspectives.
+          </p>
+          <NewsletterSubscribe />
         </div>
       </section>
     </div>
