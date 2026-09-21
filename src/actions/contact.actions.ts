@@ -52,3 +52,19 @@ export async function submitContactForm(formData: FormData) {
 
   return { success: true, message: 'Message sent successfully!' }
 }
+
+export async function updateContactStatus(id: string, status: 'pending' | 'resolved') {
+  const supabase = await createClient()
+  
+  const { error } = await supabase
+    .from('contacts')
+    .update({ status })
+    .eq('id', id)
+
+  if (error) {
+    console.error('Error updating contact status:', error)
+    return { success: false, error: error.message }
+  }
+
+  return { success: true }
+}

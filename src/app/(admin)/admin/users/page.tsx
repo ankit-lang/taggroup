@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ExportButton } from '@/components/admin/export-button'
+import { ContactStatusToggle } from '@/components/admin/contact-status-toggle'
 
 export const metadata = {
   title: 'User Management | TAG Admin',
@@ -52,9 +53,7 @@ export default async function UsersAdminPage() {
                 <div key={contact.id} className="border border-border/50 bg-background/50 rounded-lg p-4 space-y-2">
                   <div className="flex justify-between items-start">
                     <h3 className="font-semibold">{contact.name}</h3>
-                    <Badge variant={contact.status === 'pending' ? 'secondary' : 'default'} className="capitalize">
-                      {contact.status || 'Pending'}
-                    </Badge>
+                    <ContactStatusToggle id={contact.id} initialStatus={contact.status} />
                   </div>
                   <div className="text-sm text-muted-foreground grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
                     <div><span className="font-medium text-foreground">Email:</span> {contact.email || 'N/A'}</div>
