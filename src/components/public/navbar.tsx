@@ -129,7 +129,7 @@ export function Navbar() {
           {/* Brand */}
           <Link href="/" className="flex items-center gap-2 relative z-50">
             <Image 
-              src="/logotag.png" 
+              src="/logore1.png" 
               alt="TAG Advisors" 
               width={160} 
               height={48} 
@@ -200,7 +200,7 @@ export function Navbar() {
                 <div className="flex flex-col min-h-full">
                   <div className="p-6 border-b border-white/10 flex justify-between items-center">
                     <Image 
-                      src="/logotag.png" 
+                      src="/logore1.png" 
                       alt="TAG Advisors" 
                       width={160} 
                       height={48} 

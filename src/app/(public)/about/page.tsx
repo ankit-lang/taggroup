@@ -3,6 +3,7 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { CheckCircle2 } from 'lucide-react'
 import { motion } from 'framer-motion'
+import MagicBento from '@/components/ui/MagicBento'
 
 export default function AboutPage() {
   const leadership = [
@@ -76,22 +77,37 @@ export default function AboutPage() {
             variants={staggerContainer}
           >
             <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold mb-16 text-center">Our <span className="text-gradient">Leadership</span> Team</motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {leadership.map((leader, i) => (
-                <motion.div key={i} variants={fadeInUp}>
-                  <Card className="glass-card bg-card/40 border-white/5 h-full group hover:-translate-y-2 transition-transform duration-500">
-                    <CardContent className="p-8">
-                      <div className="w-20 h-20 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 border border-primary/30 group-hover:scale-110 transition-transform duration-500">
-                        <span className="text-3xl font-black text-primary drop-shadow-[0_0_10px_rgba(200,150,50,0.8)]">{leader.name.charAt(0)}</span>
-                      </div>
-                      <h3 className="text-2xl font-bold mb-2">{leader.name}</h3>
-                      <p className="text-md font-semibold text-primary mb-4">{leader.title}</p>
-                      <p className="text-muted-foreground leading-relaxed">{leader.desc}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+            <motion.div variants={fadeInUp} className="w-full flex justify-center mt-12">
+              <MagicBento 
+                textAutoHide={false}
+                enableStars={true}
+                enableSpotlight={true}
+                enableBorderGlow={true}
+                enableTilt={true}
+                enableMagnetism={true}
+                clickEffect={true}
+                spotlightRadius={400}
+                particleCount={15}
+                glowColor="255, 215, 0"
+                cardData={leadership.map(leader => ({
+                  color: 'rgba(0,0,0,0.4)',
+                  title: leader.name,
+                  description: (
+                    <div className="flex flex-col gap-3">
+                      <span className="text-sm font-semibold text-primary">{leader.title}</span>
+                      <span className="text-muted-foreground leading-relaxed">{leader.desc}</span>
+                    </div>
+                  ),
+                  label: (
+                    <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/30">
+                      <span className="text-xl font-black text-primary drop-shadow-[0_0_8px_rgba(255,215,0,0.8)]">
+                        {leader.name.charAt(0)}
+                      </span>
+                    </div>
+                  )
+                }))}
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>

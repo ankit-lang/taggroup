@@ -12,6 +12,7 @@ import { ScrollVelocityContainer, ScrollVelocityRow } from '@/components/ui/scro
 import { Text3DFlip } from '@/components/ui/text-3d-flip'
 import { TextAnimate } from '@/components/ui/text-animate'
 import { ScrollExpand } from '@/components/ui/ScrollExpand'
+import MagicBento from '@/components/ui/MagicBento'
 
 export default function Home() {
   const fadeInUp = {
@@ -159,33 +160,25 @@ export default function Home() {
             </TextAnimate>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="group h-full"
-              >
-                <Card className="glass-card bg-card/40 border-white/5 h-full relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <CardContent className="p-8 relative z-10 flex flex-col h-full">
-                    <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 border border-primary/30 group-hover:scale-110 transition-transform duration-500">
-                      <service.icon className="h-8 w-8 text-primary drop-shadow-[0_0_10px_rgba(0,180,200,0.8)]" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-3">
-                      <Text3DFlip as="span" staggerDuration={0.03} rotateDirection="right">{service.title}</Text3DFlip>
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-8 flex-grow">{service.desc}</p>
-                    <Link href={`/services#${service.title.toLowerCase().replace(/ /g, '-')}`} className="text-primary font-semibold hover:text-white transition-colors flex items-center group/link mt-auto">
-                      Explore services <ArrowRight className="ml-2 h-5 w-5 group-hover/link:translate-x-2 transition-transform" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+          <div className="w-full flex justify-center mt-12">
+            <MagicBento 
+              textAutoHide={false}
+              enableStars={true}
+              enableSpotlight={true}
+              enableBorderGlow={true}
+              enableTilt={true}
+              enableMagnetism={true}
+              clickEffect={true}
+              spotlightRadius={400}
+              particleCount={15}
+              glowColor="255, 215, 0"
+              cardData={services.map(s => ({
+                color: 'rgba(0,0,0,0.4)',
+                title: s.title,
+                description: s.desc,
+                label: <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/30"><s.icon className="h-6 w-6 text-primary drop-shadow-[0_0_8px_rgba(255,215,0,0.8)]" /></div>
+              }))}
+            />
           </div>
         </div>
       </section>

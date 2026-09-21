@@ -116,7 +116,7 @@ export default function ServicesPage() {
             {serviceCategories.map((category, index) => (
               <ScrollStackItem 
                 key={category.id} 
-                itemClassName="glass-card bg-card/60 border-white/5 backdrop-blur-3xl overflow-hidden p-8 md:p-12 mb-10"
+                itemClassName="glass-card bg-card/60 border-white/5 backdrop-blur-3xl overflow-hidden p-4 md:p-12 mb-10"
               >
                 <div id={category.id} className="flex flex-col md:flex-row gap-12 items-start h-full">
                   
@@ -132,7 +132,7 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Category Items */}
-                  <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8 z-10 w-full">
+                  <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 z-10 w-full">
                     {category.items.map((item, i) => (
                       <div key={i}>
                         <Card className="bg-black/20 border-white/5 h-full group hover:bg-white/5 transition-colors duration-500">

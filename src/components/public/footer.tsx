@@ -9,7 +9,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Image 
-                src="/logotag.png" 
+                src="/logore1.png" 
                 alt="TAG Advisors" 
                 width={160} 
                 height={48} 
