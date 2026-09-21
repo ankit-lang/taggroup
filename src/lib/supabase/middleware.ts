@@ -47,7 +47,7 @@ export async function updateSession(request: NextRequest) {
 
     if (!profile || profile.role !== 'admin') {
       const url = request.nextUrl.clone()
-      url.pathname = '/' // Redirect to home if not admin
+      url.pathname = '/unauthorized' // Redirect to unauthorized if not admin
       return NextResponse.redirect(url)
     }
   }
