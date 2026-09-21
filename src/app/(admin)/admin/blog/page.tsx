@@ -36,7 +36,7 @@ export default async function AdminBlogList() {
                   <TableCell>{new Date(blog.created_at).toLocaleDateString()}</TableCell>
                   <TableCell className="text-right">
                     <Button variant="ghost" size="sm" asChild>
-                      <Link href={`/blog/${blog.slug}`} target="_blank">View</Link>
+                      <Link href={`/insights/${blog.slug}`} target="_blank">View</Link>
                     </Button>
                     <Button variant="ghost" size="sm" className="text-destructive">Delete</Button>
                   </TableCell>

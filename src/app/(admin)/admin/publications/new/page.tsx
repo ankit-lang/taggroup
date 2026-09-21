@@ -1,27 +1,19 @@
 'use client'
 
-import * as React from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { createBlogPost } from '@/actions/blog.actions'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { RichTextEditor } from '@/components/admin/RichTextEditor'
-import { ArrowLeft, Loader2, Image as ImageIcon } from 'lucide-react'
-import Link from 'next/link'
+import { Textarea } from '@/components/ui/textarea'
+import { createPublication } from '@/actions/publication.actions'
+import { Image as ImageIcon, Loader2 } from 'lucide-react'
 
-const CATEGORIES = [
-  'Direct Tax', 'Indirect Tax', 'International Tax', 'M&A', 'Startup Ecosystem', 'Regulatory Updates', 'Geopolitics', 'General'
-]
-
-export default function NewBlogPost() {
+export default function NewPublicationPage() {
   const router = useRouter()
-  const [title, setTitle] = React.useState('')
-  const [content, setContent] = React.useState('')
-  const [category, setCategory] = React.useState('Direct Tax')
-  const [isSubmitting, setIsSubmitting] = React.useState(false)
-  const [error, setError] = React.useState<string | null>(null)
-  const [imageUrl, setImageUrl] = React.useState('')
-  const [uploadingImage, setUploadingImage] = React.useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [imageUrl, setImageUrl] = useState('')
+  const [uploadingImage, setUploadingImage] = useState(false)
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -32,6 +24,7 @@ export default function NewBlogPost() {
       const formData = new FormData()
       formData.append('file', file)
       
+      // Cloudinary configuration from env
       const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
       const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET
 
@@ -60,68 +53,55 @@ export default function NewBlogPost() {
     }
   }
 
-  async function handleSubmit(status: 'draft' | 'published') {
-    if (!title || !content) {
-      setError('Title and content are required.')
-      return
-    }
+  async function handleSubmit(formData: FormData) {
+    try {
+      setLoading(true)
+      setError('')
+      
+      if (imageUrl) {
+        formData.append('image_url', imageUrl)
+      }
 
-    setIsSubmitting(true)
-    setError(null)
-
-    const formData = new FormData()
-    formData.append('title', title)
-    formData.append('content', content)
-    formData.append('category', category)
-    formData.append('status', status)
-    if (imageUrl) formData.append('image_url', imageUrl)
-
-    const res = await createBlogPost(formData)
-    
-    if (res.success) {
-      router.push('/admin/blog')
-    } else {
-      setError(res.error || 'Failed to create post.')
-      setIsSubmitting(false)
+      const res = await createPublication(formData)
+      if (res.success) {
+        router.push('/admin/publications')
+      } else {
+        setError(res.error || 'Failed to create publication')
+      }
+    } catch (err) {
+      setError('An unexpected error occurred')
+    } finally {
+      setLoading(false)
     }
   }
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
-      <div className="flex items-center gap-4">
-        <Button variant="ghost" size="icon" asChild>
-          <Link href="/admin/blog"><ArrowLeft className="h-4 w-4" /></Link>
-        </Button>
-        <h1 className="text-3xl font-bold tracking-tight">Create New Insight</h1>
-      </div>
-
+    <div className="w-full max-w-3xl mx-auto p-8">
+      <h1 className="text-3xl font-bold mb-8">New Publication</h1>
+      
       {error && (
-        <div className="bg-destructive/10 text-destructive p-4 rounded-md text-sm">
+        <div className="bg-destructive/10 text-destructive p-4 rounded-md mb-6">
           {error}
         </div>
       )}
 
-      <div className="space-y-6">
+      <form action={handleSubmit} className="space-y-6">
         <div className="space-y-2">
-          <label className="text-sm font-medium">Post Title</label>
-          <Input 
-            value={title} 
-            onChange={e => setTitle(e.target.value)} 
-            placeholder="e.g. Understanding International Tax Laws" 
-            className="text-lg py-6"
-          />
+          <label className="text-sm font-medium">Title</label>
+          <Input name="title" required placeholder="Publication Title" />
         </div>
 
         <div className="space-y-2">
           <label className="text-sm font-medium">Category</label>
-          <select 
-            value={category} 
-            onChange={e => setCategory(e.target.value)}
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            {CATEGORIES.map(cat => (
-              <option key={cat} value={cat}>{cat}</option>
-            ))}
+          <select name="category" className="w-full h-10 px-3 rounded-md border bg-background text-sm">
+            <option value="Direct Tax">Direct Tax</option>
+            <option value="Indirect Tax">Indirect Tax</option>
+            <option value="International Tax">International Tax</option>
+            <option value="M&A">M&A</option>
+            <option value="Startup Ecosystem">Startup Ecosystem</option>
+            <option value="Regulatory Updates">Regulatory Updates</option>
+            <option value="Geopolitics">Geopolitics</option>
+            <option value="General">General</option>
           </select>
         </div>
 
@@ -161,22 +141,37 @@ export default function NewBlogPost() {
             )}
           </div>
         </div>
-        
+
         <div className="space-y-2">
           <label className="text-sm font-medium">Content</label>
-          <RichTextEditor content={content} onChange={setContent} />
+          <Textarea name="content" required placeholder="Write the publication content here..." className="min-h-[300px]" />
         </div>
 
-        <div className="flex gap-4 pt-6">
-          <Button onClick={() => handleSubmit('published')} disabled={isSubmitting} className="px-8">
-            {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            Publish Now
-          </Button>
-          <Button onClick={() => handleSubmit('draft')} variant="secondary" disabled={isSubmitting}>
-            Save as Draft
+        <div className="space-y-6 pt-6 border-t border-white/10">
+          <h2 className="text-xl font-bold">SEO Meta Data</h2>
+          
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Meta Title</label>
+            <Input name="meta_title" placeholder="SEO Title (defaults to publication title)" />
+          </div>
+          
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Meta Description</label>
+            <Textarea name="meta_description" placeholder="Brief description for search engines" className="h-20" />
+          </div>
+          
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Meta Keywords</label>
+            <Input name="meta_keywords" placeholder="budget, tax, finance (comma separated)" />
+          </div>
+        </div>
+
+        <div className="pt-6">
+          <Button type="submit" disabled={loading} className="w-full">
+            {loading ? 'Publishing...' : 'Publish Publication'}
           </Button>
         </div>
-      </div>
+      </form>
     </div>
   )
 }

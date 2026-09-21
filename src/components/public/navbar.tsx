@@ -94,12 +94,11 @@ const navigation = [
   },
   { 
     name: 'Publications', 
-    href: '/insights',
-    dropdown: [
-      { name: 'Budget Analysis', href: '/insights/budget' },
-      { name: 'TAG Insights', href: '/insights/articles' },
-      { name: 'Special Editions', href: '/insights/special' }
-    ]
+    href: '/publications'
+  },
+  {
+    name: 'Insights',
+    href: '/insights'
   },
   { name: 'Contact', href: '/contact' },
 ]

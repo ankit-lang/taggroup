@@ -60,6 +60,11 @@ export default async function InsightsPage({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {insights.map((insight) => (
                 <Card key={insight.id} className="glass-card flex flex-col h-full overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                  {insight.image_url && (
+                    <div className="w-full h-48 bg-black/40 relative flex items-center justify-center">
+                      <img src={insight.image_url} alt={insight.title} className="max-w-[80%] max-h-[80%] object-contain" />
+                    </div>
+                  )}
                   <CardHeader className="pb-4">
                     <div className="flex justify-between items-center mb-3">
                       <Badge variant="secondary" className="bg-primary/10 text-primary">{insight.category || 'General'}</Badge>

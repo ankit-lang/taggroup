@@ -21,11 +21,15 @@ export async function sendEmail({
   html: string
 }) {
   try {
+    // Some strict SMTP servers reject emails with 'bare CR' (\r without \n)
+    const safeHtml = html.replace(/\r\n/g, '\n').replace(/\r/g, '\n')
+    const safeSubject = subject.replace(/\r\n/g, '\n').replace(/\r/g, '\n')
+
     const info = await transporter.sendMail({
       from: `"TAG Advisors" <${process.env.EMAIL_USER}>`,
       to: Array.isArray(to) ? to.join(', ') : to,
-      subject,
-      html,
+      subject: safeSubject,
+      html: safeHtml,
     })
     return { success: true, info }
   } catch (error) {

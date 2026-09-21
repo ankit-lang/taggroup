@@ -15,6 +15,7 @@ export async function dispatchNewsletter(formData: FormData) {
 
   const subject = formData.get('subject') as string
   const content = formData.get('content') as string
+  const image_url = formData.get('image_url') as string || null
 
   if (!subject || !content) return { success: false, error: 'Subject and content are required.' }
 
@@ -42,7 +43,7 @@ export async function dispatchNewsletter(formData: FormData) {
   // 3. Save Newsletter Record
   await supabase
     .from('newsletters')
-    .insert([{ subject, body: content, sent_at: new Date().toISOString() }])
+    .insert([{ subject, body: content, image_url, sent_at: new Date().toISOString() }])
 
   return { success: true, message: `Dispatched to ${emails.length} subscribers.` }
 }

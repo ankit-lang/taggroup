@@ -25,6 +25,9 @@ export default function AdminLayout({
           <Link href="/admin/newsletter" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-primary/10 text-muted-foreground hover:text-foreground transition-colors">
             <Mail className="h-5 w-5" /> Newsletters
           </Link>
+          <Link href="/admin/publications" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-primary/10 text-muted-foreground hover:text-foreground transition-colors">
+            <FileText className="h-5 w-5" /> Publications
+          </Link>
           <Link href="/admin/users" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-primary/10 text-muted-foreground hover:text-foreground transition-colors">
             <Users className="h-5 w-5" /> Users
           </Link>
