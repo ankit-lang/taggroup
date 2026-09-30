@@ -14,7 +14,7 @@ import {
   Globe,
 } from 'lucide-react';
 
-const NAV_GROUPS = [
+export const NAV_GROUPS = [
   {
     label: 'Overview',
     items: [

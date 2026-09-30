@@ -1,6 +1,6 @@
 'use client';
 
-import { Bell, Search, ExternalLink, FileText, User, MessageSquare, ChevronRight } from 'lucide-react';
+import { Bell, Search, ExternalLink, FileText, User, MessageSquare, ChevronRight, Menu, X, LogOut, Globe } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
@@ -14,6 +14,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuGroup
 } from '@/components/ui/dropdown-menu';
+import { NAV_GROUPS } from './Sidebar';
 
 const SEGMENT_LABELS: Record<string, string> = {
   admin: 'Admin',
@@ -32,8 +33,14 @@ export function Header() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<{ publications: any[]; contacts: any[] }>({ publications: [], contacts: [] });
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const supabase = createClient();
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     async function fetchUnread() {
@@ -92,9 +99,17 @@ export function Header() {
         paddingInline: '20px',
       }}
     >
-      {/* Breadcrumb */}
-      <nav className="flex items-center gap-1" style={{ fontSize: '12.5px' }}>
-        {segments.map((seg, i) => {
+      {/* Breadcrumb & Mobile Menu Toggle */}
+      <div className="flex items-center gap-3">
+        <button
+          className="md:hidden p-1.5 -ml-1.5 rounded-md text-slate-500 hover:bg-slate-100 transition-colors"
+          onClick={() => setIsMobileMenuOpen(true)}
+          aria-label="Open mobile menu"
+        >
+          <Menu style={{ width: '20px', height: '20px' }} />
+        </button>
+        <nav className="flex items-center gap-1" style={{ fontSize: '12.5px' }}>
+          {segments.map((seg, i) => {
           const label = SEGMENT_LABELS[seg] || seg.replace(/-/g, ' ');
           const isLast = i === segments.length - 1;
           return (
@@ -255,6 +270,81 @@ export function Header() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
+
+      {/* Mobile Navigation Drawer */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 z-50 flex">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          
+          {/* Drawer */}
+          <div className="relative w-4/5 max-w-sm bg-[#1e2d3f] h-full shadow-2xl flex flex-col transform transition-transform duration-300 ease-in-out">
+            {/* Header */}
+            <div className="flex items-center justify-between px-5 border-b" style={{ height: '52px', background: '#1a2332', borderColor: 'rgba(255,255,255,0.08)' }}>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center rounded" style={{ width: '28px', height: '28px', background: 'transparent' }}>
+                  <img src="/assets/img/tag-logo.png" alt="TAG Logo" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+                </div>
+                <div>
+                  <p className="text-white font-semibold" style={{ fontSize: '13px', lineHeight: 1.2, letterSpacing: '0.2px' }}>TAG Advisors</p>
+                  <p className="font-medium" style={{ fontSize: '10px', color: '#c9a84c', letterSpacing: '0.8px', textTransform: 'uppercase' }}>Admin Console</p>
+                </div>
+              </div>
+              <button onClick={() => setIsMobileMenuOpen(false)} className="p-1 rounded-md text-white/50 hover:bg-white/10 transition-colors">
+                <X style={{ width: '20px', height: '20px' }} />
+              </button>
+            </div>
+
+            {/* Nav Links */}
+            <nav className="flex-1 overflow-y-auto py-3">
+              {NAV_GROUPS.map((group) => (
+                <div key={group.label} className="mb-1">
+                  <p className="px-5 mb-1 font-semibold uppercase tracking-widest" style={{ fontSize: '9.5px', color: 'rgba(255,255,255,0.28)', paddingTop: '12px', paddingBottom: '4px' }}>
+                    {group.label}
+                  </p>
+                  {group.items.map((item) => {
+                    const isActive = item.href === '/admin' ? pathname === '/admin' : pathname === item.href || pathname.startsWith(`${item.href}/`);
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex items-center gap-3 mx-2 px-3 rounded transition-all relative group"
+                        style={{ height: '40px', background: isActive ? 'rgba(201,168,76,0.14)' : 'transparent', color: isActive ? '#c9a84c' : 'rgba(255,255,255,0.62)', fontWeight: isActive ? 600 : 400, fontSize: '14px' }}
+                      >
+                        {isActive && <span className="absolute left-0 top-1/2 -translate-y-1/2 rounded-r" style={{ width: '3px', height: '20px', background: '#c9a84c' }} />}
+                        <Icon style={{ width: '16px', height: '16px', opacity: isActive ? 1 : 0.55, flexShrink: 0 }} />
+                        <span className="truncate">{item.label}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              ))}
+            </nav>
+
+            {/* Footer */}
+            <div className="shrink-0 border-t px-4 py-3 flex items-center gap-3" style={{ background: '#18273a', borderColor: 'rgba(255,255,255,0.07)' }}>
+              <div className="flex items-center justify-center font-bold rounded-full text-white shrink-0" style={{ width: '30px', height: '30px', fontSize: '12px', background: '#c9a84c' }}>A</div>
+              <div className="flex-1 min-w-0">
+                <p className="text-white font-semibold truncate" style={{ fontSize: '12px' }}>Admin User</p>
+                <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.38)' }}>Super Admin</p>
+              </div>
+              <div className="flex items-center gap-1">
+                <Link href="/" target="_blank" className="rounded p-1.5 transition-colors" style={{ color: 'rgba(255,255,255,0.38)' }}>
+                  <Globe style={{ width: '16px', height: '16px' }} />
+                </Link>
+                <Link href="/auth/logout" className="rounded p-1.5 transition-colors" style={{ color: 'rgba(255,255,255,0.38)' }}>
+                  <LogOut style={{ width: '16px', height: '16px' }} />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
