@@ -27,9 +27,8 @@ export async function updateSession(request: NextRequest) {
     }
   )
 
-  // Fetch session fast from JWT cookies without blocking network DB calls in middleware
-  const { data: { session } } = await supabase.auth.getSession()
-  const user = session?.user
+  // Fetch user securely from Supabase Auth API
+  const { data: { user } } = await supabase.auth.getUser()
 
   // Helper to construct redirects while preserving updated auth cookies
   const createRedirect = (path: string, paramKey?: string, paramVal?: string) => {
