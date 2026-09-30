@@ -15,13 +15,18 @@ export async function updateSession(request: NextRequest) {
           return request.cookies.getAll()
         },
         setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value, options }) => request.cookies.set(name, value))
+          cookiesToSet.forEach(({ name, value, options }) => {
+            // Prevent accidental deletion of auth cookies on Vercel Edge network timeouts
+            if (!value && name.startsWith('sb-') && name.endsWith('-auth-token')) return;
+            request.cookies.set(name, value)
+          })
           supabaseResponse = NextResponse.next({
             request,
           })
-          cookiesToSet.forEach(({ name, value, options }) =>
+          cookiesToSet.forEach(({ name, value, options }) => {
+            if (!value && name.startsWith('sb-') && name.endsWith('-auth-token')) return;
             supabaseResponse.cookies.set(name, value, options)
-          )
+          })
         },
       },
     }
