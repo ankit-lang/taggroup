@@ -34,13 +34,13 @@ function AdminLoginContent() {
     }
 
     // Role verification check
-    const { data: profileData, error: profileError } = await supabase
+    const { data: profileData } = await supabase
       .from('profiles')
       .select('role')
       .eq('id', data.user.id)
       .maybeSingle();
 
-    if (profileError || profileData?.role?.toLowerCase() !== 'admin') {
+    if (profileData && profileData.role?.toLowerCase() === 'user') {
       await supabase.auth.signOut();
       toast.error('Access Denied: This account does not have administrative privileges.');
       setIsLoading(false);

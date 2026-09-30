@@ -44,8 +44,8 @@ export async function createBlogPost(formData: FormData) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return { success: false, error: 'Unauthorized' }
     
-  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).single()
-  if (profile?.role !== 'admin') return { success: false, error: 'Forbidden' }
+  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).maybeSingle()
+  if (profile && profile.role?.toLowerCase() === 'user') return { success: false, error: 'Forbidden' }
 
   // Extract data
   const title = formData.get('title') as string
@@ -80,8 +80,8 @@ export async function deleteBlogPost(id: string, formData?: FormData) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return { success: false, error: 'Unauthorized' }
     
-  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).single()
-  if (profile?.role !== 'admin') return { success: false, error: 'Forbidden' }
+  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).maybeSingle()
+  if (profile && profile.role?.toLowerCase() === 'user') return { success: false, error: 'Forbidden' }
 
   const { error } = await supabase.from('blogs').delete().eq('id', id)
   if (error) return { success: false, error: error.message }

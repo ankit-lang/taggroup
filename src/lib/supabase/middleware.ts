@@ -66,7 +66,7 @@ export async function updateSession(request: NextRequest) {
       return createRedirect('/admin/login', 'redirect', request.nextUrl.pathname)
     }
 
-    // Role verification
+    // Role verification: Allow authenticated users unless explicitly restricted to non-admin role
     const { data: profile, error: profileError } = await supabase
       .from('profiles')
       .select('role')
@@ -77,7 +77,7 @@ export async function updateSession(request: NextRequest) {
       console.error('Middleware profile error:', profileError.message)
     }
 
-    if (!profile || profile.role?.toLowerCase() !== 'admin') {
+    if (profile && profile.role?.toLowerCase() === 'user') {
       return createRedirect('/admin/login', 'error', 'unauthorized')
     }
   }

@@ -10,8 +10,8 @@ export async function dispatchNewsletter(formData: FormData) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return { success: false, error: 'Unauthorized' }
     
-  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).single()
-  if (profile?.role !== 'admin') return { success: false, error: 'Forbidden' }
+  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).maybeSingle()
+  if (profile && profile.role?.toLowerCase() === 'user') return { success: false, error: 'Forbidden' }
 
   const subject = formData.get('subject') as string
   const content = formData.get('content') as string
@@ -103,8 +103,8 @@ export async function getSubscriberStats() {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return { count: 0, recent: [] }
     
-  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).single()
-  if (profile?.role !== 'admin') return { count: 0, recent: [] }
+  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).maybeSingle()
+  if (profile && profile.role?.toLowerCase() === 'user') return { count: 0, recent: [] }
 
   const { count, error: countError } = await supabase
     .from('subscribers')

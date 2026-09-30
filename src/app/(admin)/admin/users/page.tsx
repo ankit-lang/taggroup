@@ -61,7 +61,7 @@ export default async function UsersAdminPage() {
   const supabase = await createClient()
 
   const { data: contacts } = await supabase
-    .from('contacts')
+    .from('leads')
     .select('*')
     .order('created_at', { ascending: false })
 

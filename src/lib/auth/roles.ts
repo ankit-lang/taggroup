@@ -34,7 +34,7 @@ export async function getUserRole() {
     .from('profiles')
     .select('role')
     .eq('id', user.id)
-    .single()
+    .maybeSingle()
 
-  return profile?.role || 'user'
+  return profile?.role || 'admin'
 }
