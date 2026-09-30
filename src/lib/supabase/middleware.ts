@@ -27,38 +27,10 @@ export async function updateSession(request: NextRequest) {
     }
   )
 
-  // Fetch user securely from Supabase Auth API
-  const { data: { user } } = await supabase.auth.getUser()
-
-  // Helper to construct redirects while preserving updated auth cookies
-  const createRedirect = (path: string, paramKey?: string, paramVal?: string) => {
-    const url = request.nextUrl.clone()
-    url.pathname = path
-    if (paramKey && paramVal) {
-      url.searchParams.set(paramKey, paramVal)
-    }
-    const redirectResponse = NextResponse.redirect(url)
-    supabaseResponse.cookies.getAll().forEach((c) => {
-      redirectResponse.cookies.set(c.name, c.value, c)
-    })
-    return redirectResponse
-  }
-
-  // Protect Admin Routes
-  if (request.nextUrl.pathname.startsWith('/admin')) {
-    // Allow public access to /admin/login
-    if (request.nextUrl.pathname === '/admin/login') {
-      if (user) {
-        return createRedirect('/admin')
-      }
-      return supabaseResponse
-    }
-
-    // Require authenticated user session for all protected /admin routes
-    if (!user) {
-      return createRedirect('/admin/login', 'redirect', request.nextUrl.pathname)
-    }
-  }
+  // Simply call getUser to validate and refresh the session cookie if needed.
+  // We do NOT perform redirects here to avoid Next.js RSC caching and Edge network timeout glitches.
+  // Route protection is handled in layout.tsx using Server Components.
+  await supabase.auth.getUser()
 
   return supabaseResponse
 }

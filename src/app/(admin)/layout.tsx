@@ -1,11 +1,20 @@
 import { Sidebar } from './_components/Sidebar';
 import { Header } from './_components/Header';
+import { createClient } from '@/lib/supabase/server';
+import { redirect } from 'next/navigation';
 
-export default function AdminLayout({
+export default async function AdminLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+
+  if (!user) {
+    redirect('/admin/login');
+  }
+
   return (
     // Force light mode for the entire admin shell — override ThemeProvider dark vars
     <div

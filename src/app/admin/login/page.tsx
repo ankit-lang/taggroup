@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import { toast } from 'sonner';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -16,6 +16,14 @@ function AdminLoginContent() {
   const next = searchParams.get('next') || '/admin';
 
   const supabase = createClient();
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => {
+      if (data?.user) {
+        window.location.href = next;
+      }
+    });
+  }, [supabase, next]);
 
   const handleAdminLogin = async (e: React.FormEvent) => {
     e.preventDefault();

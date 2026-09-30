@@ -95,6 +95,7 @@ export function Sidebar() {
                 <Link
                   key={item.label}
                   href={item.href}
+                  prefetch={false}
                   className="flex items-center gap-3 mx-2 px-3 rounded transition-all relative group"
                   style={{
                     height: '36px',
