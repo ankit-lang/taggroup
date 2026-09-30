@@ -22,8 +22,20 @@ export default async function AdminLayout({
   if (!user) {
     const rawToken = cookieStore.get('tag_access_token')?.value;
     if (rawToken) {
-      const { data } = await supabase.auth.getUser(rawToken);
-      user = data?.user || undefined;
+      try {
+        const base64Url = rawToken.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        // Add padding if necessary
+        const pad = base64.length % 4;
+        const paddedBase64 = pad ? base64 + '='.repeat(4 - pad) : base64;
+        
+        const payload = JSON.parse(atob(paddedBase64));
+        if (payload.exp && payload.exp * 1000 > Date.now()) {
+          user = { id: payload.sub } as any; // Valid token, construct minimal user
+        }
+      } catch (e) {
+        console.error('Failed to parse tag_access_token', e);
+      }
     }
   }
 

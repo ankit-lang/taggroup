@@ -57,7 +57,7 @@ function AdminLoginContent() {
 
     // Set a resilient, non-chunked backup cookie to bypass Vercel SSR chunking edge cases
     if (data.session) {
-      document.cookie = `tag_access_token=${data.session.access_token}; path=/; max-age=3600; Secure; SameSite=Lax`;
+      document.cookie = `tag_access_token=${data.session.access_token}; path=/; max-age=3600; SameSite=Lax`;
     }
 
     toast.success('Admin login successful.');
