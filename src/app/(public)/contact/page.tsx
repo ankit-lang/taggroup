@@ -1,145 +1,54 @@
-'use client'
 
-import * as React from 'react'
-import { submitContactForm } from '@/actions/contact.actions'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import { Button } from '@/components/ui/button'
-import { MapPin, Phone, Mail, Loader2 } from 'lucide-react'
+"use client";
+import React from 'react';
+import { ContactForm } from '@/components/public/contact-form';
 
-export default function ContactPage() {
-  const [isSubmitting, setIsSubmitting] = React.useState(false)
-  const [result, setResult] = React.useState<{ success?: boolean; error?: string; message?: string } | null>(null)
-
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    setIsSubmitting(true)
-    setResult(null)
-
-    const formData = new FormData(event.currentTarget)
-    try {
-      const res = await submitContactForm(formData)
-      setResult(res)
-      if (res.success) {
-        (event.target as HTMLFormElement).reset()
-      }
-    } catch (err) {
-      setResult({ success: false, error: 'An unexpected error occurred.' })
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
+export default function Page() {
   return (
-    <div className="w-full flex flex-col min-h-screen">
-      {/* Header */}
-      <section className="bg-primary/5 py-20 text-center border-b">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Contact Us</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Get in touch with our expert advisory team to discuss how we can accelerate your business growth.
-          </p>
+    <>
+      <section className="page-hero has-art"><div className="ph-art" aria-hidden="true" style={{ "backgroundImage": "url('/assets/img/hero/global.svg')" }}></div>
+        <div className="container">
+          <div className="breadcrumb"><a href="/index">Home</a> / <span>Contact</span></div>
+          <span className="eyebrow">Get in touch</span>
+          <h1>Bring us your toughest problem.</h1>
+          <p>Tell us your situation and we'll map the right scope, team and approach. General enquiries reach us at <a href="mailto:info@taggroup.in" style={{ "color": "var(--emerald-300)" }}>info@taggroup.in</a> — we typically respond within one business day.</p>
         </div>
       </section>
-
-      {/* Main Content */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            
-            {/* Contact Details */}
-            <div className="space-y-12">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Our Offices</h2>
-                <div className="space-y-8">
-                  <div className="flex gap-4">
-                    <MapPin className="h-6 w-6 text-primary shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-lg">Gurgaon Office (HQ)</h3>
-                      <p className="text-muted-foreground">745-P, Sector 15<br/>Gurugram, Haryana 122001, India</p>
-                      <p className="mt-2 text-sm"><strong>Gaurav Sharma:</strong> +91-88607-16777<br/>gaurav@tagadvisors.in</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-4">
-                    <MapPin className="h-6 w-6 text-primary shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-lg">New Delhi Offices</h3>
-                      <p className="text-muted-foreground">FF-104, Pearl Omaxe Tower, NSP, Pitampura, Delhi 110034<br/>206, Mercantile House, 15 K.G. Marg, Delhi-110001</p>
-                      <p className="mt-2 text-sm"><strong>Sumit Goyal:</strong> +91-92100-648000</p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4">
-                    <MapPin className="h-6 w-6 text-primary shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-lg">UAE Office</h3>
-                      <p className="text-muted-foreground">Office No. 10, Level 1<br/>Sharjah Media City, Sharjah, UAE</p>
-                      <p className="mt-2 text-sm"><strong>Contacts:</strong> +971-585-776-396</p>
-                    </div>
-                  </div>
-                </div>
+      <section className="section">
+        <div className="container">
+          <div className="split top">
+            <div>
+              <span className="eyebrow">Enquiry</span>
+              <h2>Request a consultation</h2>
+              <p className="lead" style={{ "color": "var(--charcoal-700)", "marginBottom": "26px" }}>Share a few details and the relevant partner will get back to you. Prefer email? Write to <a href="mailto:info@taggroup.in" style={{ "color": "var(--accent)" }}>info@taggroup.in</a>.</p>
+              <React.Suspense fallback={<div>Loading form...</div>}>
+                <ContactForm />
+              </React.Suspense>
+            </div>
+            <div>
+              <span className="eyebrow">Offices</span>
+              <h2>Where to find us</h2>
+              <div style={{ "marginTop": "20px" }}><figure className="photo r169 " style={{ "backgroundImage": "url('/assets/img/plates/office.svg')" }}><img src="/assets/photos/contact-office.jpg" alt="TAG Group corporate office, Gurgaon" loading="lazy" onError={(e) => (e.currentTarget.style.display = 'none')} /><figcaption className="ph-cap"><strong>Corporate office</strong><span>Emaar Digital Greens, Gurgaon</span></figcaption></figure></div>
+              <div className="office-list">
+                <div className="office-card"><span className="oc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" /><circle cx="12" cy="10" r="2.5" /></svg></span><div><h4>Gurgaon <em>Corporate office</em></h4><p>1808, Tower B, Emaar Digital Greens, Golf Course Extn, Sector 61, Gurgaon, Haryana 122098 (C/O TAMS)</p></div></div>
+                <div className="office-card"><span className="oc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" /><circle cx="12" cy="10" r="2.5" /></svg></span><div><h4>Gurugram</h4><p>745-P, Sector 15, Gurugram, Haryana 122001</p></div></div>
+                <div className="office-card"><span className="oc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" /><circle cx="12" cy="10" r="2.5" /></svg></span><div><h4>New Delhi</h4><p>FF-104, 1st Floor, Pearl Omaxe Tower, Netaji Subhash Place, Pitampura, New Delhi 110034</p></div></div>
+                <div className="office-card"><span className="oc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" /><circle cx="12" cy="10" r="2.5" /></svg></span><div><h4>UAE — Sharjah</h4><p>Office No. 10, Level 1, Sharjah Media City, Sharjah, UAE</p></div></div>
               </div>
             </div>
-
-            {/* Contact Form */}
-            <div>
-              <Card className="glass-card shadow-2xl border-white/10">
-                <CardHeader>
-                  <CardTitle className="text-2xl">Send us a message</CardTitle>
-                  <CardDescription>Fill out the form below and we will get back to you shortly.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">Full Name <span className="text-destructive">*</span></label>
-                      <Input id="name" name="name" placeholder="John Doe" required className="bg-background/50" />
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label htmlFor="email" className="text-sm font-medium">Email Address</label>
-                        <Input id="email" name="email" type="email" placeholder="john@example.com" className="bg-background/50" />
-                      </div>
-                      <div className="space-y-2">
-                        <label htmlFor="phone" className="text-sm font-medium">Phone Number</label>
-                        <Input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" className="bg-background/50" />
-                      </div>
-                    </div>
-                    <p className="text-xs text-muted-foreground -mt-4">* Please provide either an Email address or a Phone number.</p>
-                    <div className="space-y-2">
-                      <label htmlFor="company" className="text-sm font-medium">Company (Optional)</label>
-                      <Input id="company" name="company" placeholder="Acme Corp" className="bg-background/50" />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium">Your Message <span className="text-destructive">*</span></label>
-                      <Textarea id="message" name="message" placeholder="How can we help you?" rows={5} required className="bg-background/50" />
-                    </div>
-                    
-                    {result && (
-                      <div className={`p-4 rounded-md text-sm ${result.success ? 'bg-green-500/10 text-green-600' : 'bg-red-500/10 text-destructive'}`}>
-                        {result.success ? result.message : result.error}
-                      </div>
-                    )}
-
-                    <Button type="submit" className="w-full h-12 text-lg" disabled={isSubmitting}>
-                      {isSubmitting ? (
-                        <>
-                          <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                          Sending...
-                        </>
-                      ) : (
-                        'Send Message'
-                      )}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
-
           </div>
         </div>
       </section>
-    </div>
-  )
+      <section className="section section-alt">
+        <div className="container">
+          <div className="center measure mx-auto"><span className="eyebrow" style={{ "justifyContent": "center" }}>Key contacts</span><h2>Speak to us directly</h2></div>
+          <div className="grid g-3" style={{ "marginTop": "40px" }}>
+            <div className="card"><span className="kicker" style={{ "color": "var(--accent)", "fontSize": ".72rem", "letterSpacing": ".14em", "textTransform": "uppercase", "fontWeight": "650" }}>Managing Partner</span><h3 style={{ "marginTop": "8px" }}>Gaurav Sharma</h3><p>Direct &amp; International Tax · CFO Advisory</p><p style={{ "fontSize": ".92rem" }}><a href="mailto:gaurav@taggroup.in" style={{ "color": "var(--accent)" }}>gaurav@taggroup.in</a><br />+91 88607 16777</p><a className="link-arrow" href="/people/gaurav" style={{ "fontSize": ".88rem" }}>Full profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></div>
+            <div className="card"><span className="kicker" style={{ "color": "var(--accent)", "fontSize": ".72rem", "letterSpacing": ".14em", "textTransform": "uppercase", "fontWeight": "650" }}>Partner — HR</span><h3 style={{ "marginTop": "8px" }}>Ishita Sharma</h3><p>Human Capital &amp; HR Advisory</p><p style={{ "fontSize": ".92rem" }}><a href="mailto:ishita@taggroup.in" style={{ "color": "var(--accent)" }}>ishita@taggroup.in</a></p><a className="link-arrow" href="/people/ishita" style={{ "fontSize": ".88rem" }}>Full profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></div>
+            <div className="card"><span className="kicker" style={{ "color": "var(--accent)", "fontSize": ".72rem", "letterSpacing": ".14em", "textTransform": "uppercase", "fontWeight": "650" }}>New business</span><h3 style={{ "marginTop": "8px" }}>General enquiries</h3><p>Fastest route for new engagements</p><p style={{ "fontSize": ".92rem" }}><a href="mailto:info@taggroup.in" style={{ "color": "var(--accent)" }}>info@taggroup.in</a></p><a className="link-arrow" href="/leadership" style={{ "fontSize": ".88rem" }}>See all partners <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }

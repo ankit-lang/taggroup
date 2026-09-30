@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#272219"/><stop offset="100%" stop-color="#1c1915"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="22%" r="62%">
+      <stop offset="0%" stop-color="#a8823a" stop-opacity=".30"/><stop offset="100%" stop-color="#a8823a" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r=".7" fill="#e4cd92" opacity=".07"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+<rect x="120" y="150" width="420" height="500" rx="14" fill="none" stroke="#d1ae67" stroke-width="1.6" opacity=".4"/><line x1="160" y1="200" x2="500" y2="200" stroke="#a8823a" stroke-width="5" opacity="0.45" stroke-linecap="round"/><line x1="160" y1="242" x2="500" y2="242" stroke="#a8823a" stroke-width="5" opacity="0.22" stroke-linecap="round"/><line x1="160" y1="284" x2="500" y2="284" stroke="#a8823a" stroke-width="5" opacity="0.22" stroke-linecap="round"/><line x1="160" y1="326" x2="380" y2="326" stroke="#a8823a" stroke-width="5" opacity="0.22" stroke-linecap="round"/><line x1="160" y1="368" x2="500" y2="368" stroke="#a8823a" stroke-width="5" opacity="0.22" stroke-linecap="round"/><line x1="160" y1="410" x2="500" y2="410" stroke="#a8823a" stroke-width="5" opacity="0.22" stroke-linecap="round"/><line x1="160" y1="452" x2="500" y2="452" stroke="#a8823a" stroke-width="5" opacity="0.22" stroke-linecap="round"/><line x1="160" y1="494" x2="380" y2="494" stroke="#a8823a" stroke-width="5" opacity="0.22" stroke-linecap="round"/><line x1="160" y1="536" x2="500" y2="536" stroke="#a8823a" stroke-width="5" opacity="0.22" stroke-linecap="round"/><line x1="160" y1="578" x2="500" y2="578" stroke="#a8823a" stroke-width="5" opacity="0.22" stroke-linecap="round"/><circle cx="880" cy="330" r="150" fill="none" stroke="#d1ae67" stroke-width="1.8" opacity=".45"/><circle cx="880" cy="330" r="96" fill="#a8823a" opacity=".10"/><line x1="700" y1="520" x2="978" y2="520" stroke="#d1ae67" stroke-width="3" opacity=".25" stroke-linecap="round"/><line x1="700" y1="554" x2="914" y2="554" stroke="#d1ae67" stroke-width="3" opacity=".25" stroke-linecap="round"/><line x1="700" y1="588" x2="894" y2="588" stroke="#d1ae67" stroke-width="3" opacity=".25" stroke-linecap="round"/><line x1="700" y1="622" x2="940" y2="622" stroke="#d1ae67" stroke-width="3" opacity=".25" stroke-linecap="round"/><line x1="700" y1="656" x2="940" y2="656" stroke="#d1ae67" stroke-width="3" opacity=".25" stroke-linecap="round"/>
+  <rect width="1200" height="800" fill="url(#glow)"/>
+  <rect width="1200" height="800" fill="url(#grain)"/>
+</svg>

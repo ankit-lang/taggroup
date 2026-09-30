@@ -6,7 +6,7 @@ import { motion, type Transition, type Variants } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 interface SpinningTextProps extends ComponentPropsWithoutRef<"div"> {
-  children: string | string[]
+  children: React.ReactNode
   duration?: number
   reverse?: boolean
   radius?: number
@@ -15,6 +15,16 @@ interface SpinningTextProps extends ComponentPropsWithoutRef<"div"> {
     container?: Variants
     item?: Variants
   }
+}
+
+const extractText = (node: React.ReactNode): string => {
+  if (typeof node === "string") return node;
+  if (typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(extractText).join("");
+  if (React.isValidElement(node) && (node.props as any)?.children) {
+    return extractText((node.props as any).children as React.ReactNode);
+  }
+  return "";
 }
 
 const BASE_TRANSITION: Transition = {
@@ -41,19 +51,13 @@ export function SpinningText({
   className,
   style,
 }: SpinningTextProps) {
-  if (typeof children !== "string" && !Array.isArray(children)) {
-    throw new Error("children must be a string or an array of strings")
+  const text = extractText(children)
+
+  if (!text) {
+    throw new Error("children must yield a valid string")
   }
 
-  if (Array.isArray(children)) {
-    // Validate all elements are strings
-    if (!children.every((child) => typeof child === "string")) {
-      throw new Error("all elements in children array must be strings")
-    }
-    children = children.join("")
-  }
-
-  const letters = children.split("")
+  const letters = text.split("")
   letters.push(" ")
 
   const finalTransition: Transition = {

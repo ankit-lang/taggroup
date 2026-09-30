@@ -50,7 +50,35 @@
 }
 
 :root {
-  /* Premium Aesthetic: Deep blue/black background with golden/yellowish accents */
+  /* Light Theme */
+  --background: oklch(0.98 0 0); /* White/very light gray */
+  --foreground: oklch(0.15 0.02 260); /* Dark text */
+  --card: oklch(1 0 0 / 80%);
+  --card-foreground: oklch(0.15 0.02 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.02 260);
+  
+  --primary: oklch(0.7 0.15 85); /* Darker gold/brown for contrast */
+  --primary-foreground: oklch(0.98 0 0);
+  
+  --secondary: oklch(0.95 0.02 260);
+  --secondary-foreground: oklch(0.15 0.02 260);
+  
+  --muted: oklch(0.95 0.02 260);
+  --muted-foreground: oklch(0.5 0.02 260);
+  
+  --accent: oklch(0.7 0.15 85 / 10%);
+  --accent-foreground: oklch(0.7 0.15 85);
+  
+  --destructive: oklch(0.6 0.2 20);
+  --border: oklch(0.9 0.02 260);
+  --input: oklch(0.9 0.02 260);
+  --ring: oklch(0.7 0.15 85);
+  --radius: 0.75rem;
+}
+
+.dark {
+  /* Dark Theme */
   --background: oklch(0.15 0.02 260); /* Deep midnight blue/black */
   --foreground: oklch(0.98 0 0); /* Pure white text */
   --card: oklch(0.20 0.03 260 / 60%);
@@ -58,11 +86,9 @@
   --popover: oklch(0.20 0.03 260);
   --popover-foreground: oklch(0.98 0 0);
   
-  /* Primary: Golden/Yellowish */
   --primary: oklch(0.85 0.15 85); /* Rich Gold/Yellow */
   --primary-foreground: oklch(0.12 0.02 260);
   
-  /* Secondary: Subtle Blue/Grey */
   --secondary: oklch(0.3 0.05 260); 
   --secondary-foreground: oklch(0.98 0 0);
   
@@ -74,7 +100,6 @@
   --border: oklch(0.3 0.03 260 / 30%);
   --input: oklch(0.3 0.03 260 / 30%);
   --ring: oklch(0.85 0.15 85);
-  --radius: 0.75rem;
 }
 
 @layer base {
@@ -94,10 +119,10 @@
 
 @layer utilities {
   .glass {
-    @apply bg-background/50 backdrop-blur-xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
+    @apply bg-background/50 backdrop-blur-xl border border-border/40 shadow-[0_8px_32px_rgba(0,0,0,0.1)];
   }
   .glass-card {
-    @apply bg-card backdrop-blur-2xl border border-white/10 shadow-2xl hover:shadow-[0_0_30px_rgba(50,200,200,0.1)] hover:border-primary/30 transition-all duration-500 ease-out;
+    @apply bg-card backdrop-blur-2xl border border-border/50 shadow-lg hover:shadow-[0_0_30px_rgba(50,200,200,0.1)] hover:border-primary/30 transition-all duration-500 ease-out;
   }
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-400 to-secondary;

@@ -69,7 +69,7 @@ export default function LifeAtTag() {
               className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 items-center`}
             >
               <div className="w-full lg:w-1/2">
-                <div className="relative h-[400px] w-full rounded-3xl overflow-hidden glass border-white/10 p-2">
+                <div className="relative h-[400px] w-full rounded-3xl overflow-hidden glass border-border/50 p-2">
                   <div className="w-full h-full rounded-2xl overflow-hidden relative group">
                     <div 
                       className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"

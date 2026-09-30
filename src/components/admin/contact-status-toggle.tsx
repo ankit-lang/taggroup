@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Badge } from '@/components/ui/badge'
-import { updateContactStatus } from '@/actions/contact.actions'
+import { updateInquiryStatus } from '@/actions/contact.actions'
 import { useRouter } from 'next/navigation'
 import { Loader2 } from 'lucide-react'
 
@@ -18,9 +18,9 @@ export function ContactStatusToggle({ id, initialStatus }: ContactStatusTogglePr
 
   const toggleStatus = async () => {
     setIsLoading(true)
-    const newStatus = status === 'pending' ? 'resolved' : 'pending'
+    const newStatus = status === 'pending' ? 'read' : 'pending'
     
-    const result = await updateContactStatus(id, newStatus)
+    const result = await updateInquiryStatus(id, 'contacts', newStatus)
     
     if (result.success) {
       setStatus(newStatus)

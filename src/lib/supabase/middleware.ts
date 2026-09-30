@@ -32,9 +32,15 @@ export async function updateSession(request: NextRequest) {
 
   // Protect Admin Routes
   if (request.nextUrl.pathname.startsWith('/admin')) {
+    // Allow public access to /admin/login
+    if (request.nextUrl.pathname === '/admin/login') {
+      return supabaseResponse
+    }
+
     if (!user) {
       const url = request.nextUrl.clone()
-      url.pathname = '/login'
+      url.pathname = '/admin/login'
+      url.searchParams.set('redirect', request.nextUrl.pathname)
       return NextResponse.redirect(url)
     }
 
@@ -47,7 +53,8 @@ export async function updateSession(request: NextRequest) {
 
     if (!profile || profile.role !== 'admin') {
       const url = request.nextUrl.clone()
-      url.pathname = '/unauthorized' // Redirect to unauthorized if not admin
+      url.pathname = '/admin/login'
+      url.searchParams.set('error', 'unauthorized')
       return NextResponse.redirect(url)
     }
   }

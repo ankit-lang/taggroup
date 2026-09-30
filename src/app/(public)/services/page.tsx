@@ -1,163 +1,99 @@
-'use client'
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { CheckCircle2, Landmark, ShieldCheck, Briefcase, Rocket, Globe } from 'lucide-react'
-import { motion } from 'framer-motion'
-import { ScrollStack, ScrollStackItem } from '@/components/ui/ScrollStack'
+"use client";
+import React from 'react';
 
-export default function ServicesPage() {
-  const serviceCategories = [
-    {
-      id: 'taxation',
-      title: 'Taxation Advisory & Compliance',
-      icon: Landmark,
-      description: 'Expert guidance on complex tax landscapes, ensuring compliance and optimizing tax efficiency.',
-      items: [
-        { name: 'Indirect Tax (GST)', desc: 'Diagnostic & compliance reviews, registrations, reconciliations, and ongoing support.' },
-        { name: 'International Tax', desc: 'Cross-border structuring, inbound/outbound investment advice, and tax-efficient supply chain management.' },
-        { name: 'Transfer Pricing', desc: 'Statutory documentation, policy formulation, agreement drafting, and IGS assistance.' },
-        { name: 'Litigation & Refunds', desc: 'Tax assessment support, controversies management, and refund assistance.' },
-      ]
-    },
-    {
-      id: 'assurance',
-      title: 'Support Services & Assurance',
-      icon: ShieldCheck,
-      description: 'Robust auditing, financial reporting, and compliance management to build stakeholder trust.',
-      items: [
-        { name: 'Bookkeeping & MIS', desc: 'Financial statements, bank reconciliations, payroll processing, and monthly MIS reporting.' },
-        { name: 'Assurance Services', desc: 'Financial Statement & Internal Audit, IFRS Reporting, and IFC compliance.' },
-        { name: 'Training & Development', desc: 'Finance training for non-finance personnel and advanced training for professionals.' }
-      ]
-    },
-    {
-      id: 'cfo',
-      title: 'Shared / Virtual CFO Services',
-      icon: Briefcase,
-      description: 'Strategic financial leadership for growth-stage companies without the full-time overhead.',
-      items: [
-        { name: 'Strategic Direction', desc: 'CFO advisory for business vision implementation and long-term value creation.' },
-        { name: 'Financial Management', desc: 'Budgeting, cash flow management, product costing, and tax planning.' },
-        { name: 'Funding & Structure', desc: 'Investor relations, capital loan structuring, and fundraising strategy.' },
-        { name: 'Risk & Controls', desc: 'Setting up internal controls, standard operating processes, and risk mitigation.' }
-      ]
-    },
-    {
-      id: 'startup',
-      title: 'Plug-in Services for Start-ups / SMEs',
-      icon: Rocket,
-      description: 'An integrated support model covering the entire lifecycle of your growing business.',
-      items: [
-        { name: 'Entity Setup & Structuring', desc: 'Optimal business structures for taxation and investment.' },
-        { name: 'Fundraising & Valuation', desc: 'Preparing pitch decks, valuation models, and due diligence support.' },
-        { name: 'Scale & Expansion', desc: 'Fractional CFO and strategic advisory for scaling operations.' }
-      ]
-    },
-    {
-      id: 'cross-border',
-      title: 'Cross-Border & Strategic Advisory',
-      icon: Globe,
-      description: 'Navigating international markets with scalable and defensible business structures.',
-      items: [
-        { name: 'Out-Bound Expansion', desc: 'India-to-Global setup with maximum tax efficiency.' },
-        { name: 'UAE & Singapore Advisory', desc: 'Middle East Gateway operations, Freezone expertise, and APAC HQ setups.' },
-        { name: 'Transaction Advisory', desc: 'Independent financial and tax deal support for Mergers & Acquisitions.' },
-        { name: 'BEPS-Compliant Structures', desc: 'Aligning with international tax and transfer pricing regulations.' }
-      ]
-    }
-  ]
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } }
-  }
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  }
-
+export default function Page() {
   return (
-    <div className="w-full flex flex-col min-h-screen overflow-x-clip">
-      {/* Page Header */}
-      <section className="relative bg-background py-32 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent"></div>
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[100px]"></div>
-
-        <motion.div 
-          className="container relative z-10 mx-auto px-4"
-          initial="hidden"
-          animate="show"
-          variants={staggerContainer}
-        >
-          <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-            Our <span className="text-gradient">Services</span>
-          </motion.h1>
-          <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
-            We provide a single-window solution catering to all client needs, blending practical business advice with regulatory expertise.
-          </motion.p>
-        </motion.div>
-      </section>
-
-      {/* Services List with ScrollStack */}
-      <section className="bg-background relative border-t border-white/5 pb-32">
-        <div className="container mx-auto px-4 md:px-6 relative z-10 pt-16">
-          <ScrollStack 
-            useWindowScroll={true} 
-            itemDistance={40} 
-            itemStackDistance={35}
-            stackPosition="20%"
-          >
-            {serviceCategories.map((category, index) => (
-              <ScrollStackItem 
-                key={category.id} 
-                itemClassName="glass-card bg-card/60 border-white/5 backdrop-blur-3xl overflow-hidden p-4 md:p-12 mb-10"
-              >
-                <div id={category.id} className="flex flex-col md:flex-row gap-12 items-start h-full">
-                  
-                  {/* Category Info */}
-                  <div className="md:w-1/3">
-                    <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 border border-primary/20">
-                      <category.icon className="h-10 w-10 text-primary drop-shadow-[0_0_10px_rgba(200,150,50,0.8)]" />
-                    </div>
-                    <h2 className="text-4xl font-bold mb-6">{category.title}</h2>
-                    <p className="text-xl text-muted-foreground leading-relaxed font-light">
-                      {category.description}
-                    </p>
-                  </div>
-
-                  {/* Category Items */}
-                  <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 z-10 w-full">
-                    {category.items.map((item, i) => (
-                      <div key={i}>
-                        <Card className="bg-black/20 border-white/5 h-full group hover:bg-white/5 transition-colors duration-500">
-                          <CardHeader className="pb-4">
-                            <CardTitle className="flex items-start text-xl gap-4 text-white">
-                              <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-1" />
-                              {item.name}
-                            </CardTitle>
-                          </CardHeader>
-                          <CardContent>
-                            <p className="text-md text-white/70 leading-relaxed pl-10 font-light">
-                              {item.desc}
-                            </p>
-                          </CardContent>
-                        </Card>
-                      </div>
-                    ))}
-                  </div>
-
-                </div>
-              </ScrollStackItem>
-            ))}
-          </ScrollStack>
+    <>
+      <section className="page-hero has-art"><div className="ph-art" aria-hidden="true" style={{ "backgroundImage": "url('/assets/img/hero/tp.svg')" }}></div>
+        <div className="container">
+          <div className="breadcrumb"><a href="/index">Home</a> / <span>Services</span></div>
+          <span className="eyebrow">Services overview</span>
+          <h1>Ten service portfolios, built around real business situations.</h1>
+          <p>TAG Group is presented through four principal capabilities — tax and cross-border advisory; CFO, finance transformation and controllership; risk, controls and management consulting; and India entry and international business — supported by a global capability centre, transaction advisory, valuation, legal and regulatory, HR, technology and workforce solutions.</p>
         </div>
       </section>
-    </div>
-  )
+      <section className="section">
+        <div className="container">
+          <div className="grid g-3">
+            <a className="card svc-card reveal" href="/services/tax-cross-border">
+              <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-2.5 6a3 3 0 006 0L10 7M19 7l-2.5 6a3 3 0 006 0L20 7M8 5l4-1 4 1" /></svg></div>
+              <span className="kicker">Corporate, international and indirect tax</span>
+              <h3>Tax & Cross-Border Advisory</h3>
+              <span className="link-arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+            </a>
+            <a className="card svc-card flagship reveal" href="/services/global-transfer-pricing">
+              <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18" /></svg></div>
+              <span className="kicker">Documentation delivered from India</span>
+              <h3>Global Transfer Pricing</h3>
+              <span className="link-arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+            </a>
+            <a className="card svc-card reveal" href="/services/global-capability-centre">
+              <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17l9 5 9-5" /></svg></div>
+              <span className="kicker">TP & Finance/Accounting delivery hub</span>
+              <h3>Global Capability Centre</h3>
+              <span className="link-arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+            </a>
+            <a className="card svc-card reveal" href="/services/cfo-finance-transformation">
+              <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></svg></div>
+              <span className="kicker">Virtual CFO, controllership, reporting</span>
+              <h3>CFO & Finance Transformation</h3>
+              <span className="link-arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+            </a>
+            <a className="card svc-card reveal" href="/services/risk-internal-audit">
+              <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z" /><path d="M9 12l2 2 4-4" /></svg></div>
+              <span className="kicker">Internal audit, ICFR, SOX, forensics</span>
+              <h3>Risk, Internal Audit & Controls</h3>
+              <span className="link-arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+            </a>
+            <a className="card svc-card reveal" href="/services/deals-valuation">
+              <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M8 11l3 3 5-6M4 7h16v12H4zM9 3h6v4H9z" /></svg></div>
+              <span className="kicker">M&A, due diligence, valuation</span>
+              <h3>Deals, Valuation & Transaction Support</h3>
+              <span className="link-arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+            </a>
+            <a className="card svc-card reveal" href="/services/corporate-legal-fema">
+              <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 4l6 6-3 3-6-6zM11 7L4 14l3 3 7-7M3 21h9" /></svg></div>
+              <span className="kicker">Entity, secretarial, FEMA, disputes</span>
+              <h3>Corporate, Legal, FEMA & Regulatory</h3>
+              <span className="link-arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+            </a>
+            <a className="card svc-card reveal" href="/services/india-entry">
+              <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 21V4M4 4h13l-2 4 2 4H4" /></svg></div>
+              <span className="kicker">Setup, finance, HR, IT, premises</span>
+              <h3>India Entry: One-Stop Business Establishment</h3>
+              <span className="link-arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+            </a>
+            <a className="card svc-card reveal" href="/services/human-capital-hr">
+              <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="8" r="3.2" /><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17 6.2A3 3 0 0118 12M20 20a5 5 0 00-3.5-4.8" /></svg></div>
+              <span className="kicker">Recruitment, L&D, HR operations</span>
+              <h3>Human Capital & HR Advisory</h3>
+              <span className="link-arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+            </a>
+            <a className="card svc-card reveal" href="/services/international-business">
+              <div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M15.5 8.5l-2 5-5 2 2-5z" /></svg></div>
+              <span className="kicker">Outbound expansion & cross-border</span>
+              <h3>International Business</h3>
+              <span className="link-arrow">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+            </a></div>
+        </div>
+      </section>
+      <section className="section section-alt">
+        <div className="container">
+          <div className="center measure mx-auto"><span className="eyebrow" style={{ "justifyContent": "center" }}>How our pages work</span><h2>Depth, not generic claims</h2>
+            <p className="lead">Each service page is structured the same way — so you can quickly see whether we fit your situation, and reach the concerned partner directly.</p></div>
+          <div className="grid g-3" style={{ "marginTop": "44px" }}>
+            <div className="feature"><div className="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1.4" /></svg></div><div><h4>Proposition &amp; triggers</h4><p>What the service does and the situations that create the need.</p></div></div>
+            <div className="feature"><div className="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17l9 5 9-5" /></svg></div><div><h4>Scope &amp; approach</h4><p>Detailed scope of assistance and our engagement phases.</p></div></div>
+            <div className="feature"><div className="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="8" r="3.2" /><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17 6.2A3 3 0 0118 12M20 20a5 5 0 00-3.5-4.8" /></svg></div><div><h4>The partner to call</h4><p>Every page names the concerned partner, with a direct line to them.</p></div></div>
+          </div>
+        </div>
+      </section>
+      <section className="section"><div className="container"><div className="cta-band">
+        <h2>Not sure which portfolio fits?</h2>
+        <p>Describe your situation and we'll point you to the right capability and team.</p>
+        <div className="hero-actions"><a className="btn btn-white" href="mailto:info@taggroup.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg> info@taggroup.in</a></div>
+      </div></div></section>
+    </>
+  );
 }

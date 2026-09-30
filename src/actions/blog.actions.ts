@@ -74,7 +74,7 @@ export async function createBlogPost(formData: FormData) {
   return { success: true, data }
 }
 
-export async function deleteBlogPost(id: string) {
+export async function deleteBlogPost(id: string, formData?: FormData) {
   const supabase = await createClient()
   
   const { data: { user } } = await supabase.auth.getUser()

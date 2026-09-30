@@ -21,7 +21,7 @@ type PredefinedGridKey = keyof typeof DEFAULT_GRIDS
 
 interface PixelImageProps {
   src: string
-  grid?: PredefinedGridKey
+  grid?: string
   customGrid?: Grid
   grayscaleAnimation?: boolean
   pixelFadeInDuration?: number // in ms
@@ -62,7 +62,15 @@ export const PixelImage = ({
       )
     }
 
-    return isValidGrid(customGrid) ? customGrid! : DEFAULT_GRIDS[grid]
+    if (isValidGrid(customGrid)) return customGrid!
+
+    if (grid && typeof grid === 'string' && grid.includes('x')) {
+      const parts = grid.split('x')
+      const parsedGrid = { rows: parseInt(parts[0] || '1', 10), cols: parseInt(parts[1] || '1', 10) }
+      if (isValidGrid(parsedGrid)) return parsedGrid
+    }
+
+    return DEFAULT_GRIDS[grid] || { rows: 4, cols: 6 }
   }, [customGrid, grid])
 
   const containerRef = useRef<HTMLDivElement>(null)

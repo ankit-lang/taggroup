@@ -1,6 +1,6 @@
 "use client"
 
-import { memo } from "react"
+import React, { memo } from "react"
 import {
   AnimatePresence,
   motion,
@@ -44,11 +44,21 @@ type MotionElementType = Extract<
   keyof typeof motionElements
 >
 
+const extractText = (node: React.ReactNode): string => {
+  if (typeof node === "string") return node;
+  if (typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(extractText).join("");
+  if (React.isValidElement(node) && (node.props as any)?.children) {
+    return extractText((node.props as any).children as React.ReactNode);
+  }
+  return "";
+}
+
 interface TextAnimateProps extends Omit<MotionProps, "children"> {
   /**
    * The text content to animate
    */
-  children: string
+  children: React.ReactNode
   /**
    * The class name to be applied to the component
    */
@@ -345,20 +355,21 @@ const TextAnimateBase = ({
 }: TextAnimateProps) => {
   const MotionComponent = motionElements[Component]
 
+  const text = extractText(children)
   let segments: string[] = []
   switch (by) {
     case "word":
-      segments = children.split(/(\s+)/)
+      segments = text.split(/(\s+)/)
       break
     case "character":
-      segments = children.split("")
+      segments = text.split("")
       break
     case "line":
-      segments = children.split("\n")
+      segments = text.split("\n")
       break
     case "text":
     default:
-      segments = [children]
+      segments = [text]
       break
   }
 
@@ -417,7 +428,7 @@ const TextAnimateBase = ({
         exit="exit"
         className={cn("whitespace-pre-wrap", className)}
         viewport={{ once }}
-        aria-label={accessible ? children : undefined}
+        aria-label={accessible ? text : undefined}
         {...props}
       >
         {accessible && <span className="sr-only">{children}</span>}

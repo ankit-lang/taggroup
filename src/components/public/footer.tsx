@@ -1,71 +1,54 @@
-import Link from 'next/link'
-import Image from 'next/image'
+
+"use client";
+import React from 'react';
+import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="bg-card border-t py-12 md:py-16">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <Image 
-                src="/logore1.png" 
-                alt="TAG Advisors" 
-                width={160} 
-                height={48} 
-                className="h-10 w-auto"
-              />
-            </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Empowering Businesses with Comprehensive Tax & Management Advisory, High-End Virtual / Fractional CFO Services and Robust Assurance Solutions tailored for sustainable success.
-            </p>
+    <>
+      <footer className="site-footer">
+        <div className="container container-wide">
+          <div className="footer-top">
+            <div className="footer-about">
+              <Link className="logo" href="/">
+                <img className="logo-img" src="/assets/img/tag-logo-gold.png" alt="TAG Group logo" />
+              </Link>
+              <p>Comprehensive tax, cross-border, CFO and assurance-support advisory for businesses in India and across borders.</p>
+              <div className="pill-row">
+                <span className="chip">India</span><span className="chip">UAE</span><span className="chip">Singapore</span><span className="chip">Mauritius</span>
+              </div>
+            </div>
+            <div>
+              <h5>Services</h5>
+              <ul className="footer-links"><li><Link href="/services/tax-cross-border">Tax & Cross-Border Advisory</Link></li><li><Link href="/services/global-transfer-pricing">Global Transfer Pricing</Link></li><li><Link href="/services/global-capability-centre">Global Capability Centre</Link></li><li><Link href="/services/cfo-finance-transformation">CFO & Finance Transformation</Link></li><li><Link href="/services/risk-internal-audit">Risk, Internal Audit & Controls</Link></li><li><Link href="/services/deals-valuation">Deals, Valuation & Transaction Support</Link></li><li><Link href="/services">View all services</Link></li></ul>
+            </div>
+            <div>
+              <h5>Firm</h5>
+              <ul className="footer-links">
+                <li><Link href="/about">About TAG</Link></li>
+                <li><Link href="/leadership">Leadership</Link></li>
+                <li><Link href="/international">Global</Link></li>
+                <li><Link href="/insights">Insights &amp; Media</Link></li>
+                <li><Link href="/careers">Careers</Link></li>
+                <li><Link href="/contact">Contact</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h5>Offices</h5>
+              <div className="footer-office"><strong>Gurgaon (Corporate)</strong>1808, Tower B, Emaar Digital Greens, Golf Course Extn, Sector 61, Gurgaon, Haryana 122098 (C/O TAMS)</div>
+              <div className="footer-office"><strong>Gurugram</strong>745-P, Sector 15, Gurugram, Haryana 122001, India</div>
+              <div className="footer-office"><strong>New Delhi</strong>FF-104, Pearl Omaxe Tower, Netaji Subhash Place, Pitampura, New Delhi 110034</div>
+              <div className="footer-office"><strong>UAE (Sharjah)</strong>Office 10, Level 1, Sharjah Media City, Sharjah, UAE</div>
+              <div className="footer-office"><a href="mailto:info@taggroup.in">info@taggroup.in</a></div>
+            </div>
           </div>
-          
-          <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/services#taxation" className="hover:text-primary transition-colors">Taxation Advisory</Link></li>
-              <li><Link href="/services#assurance" className="hover:text-primary transition-colors">Assurance Services</Link></li>
-              <li><Link href="/services#cfo" className="hover:text-primary transition-colors">Virtual CFO</Link></li>
-              <li><Link href="/services#startup" className="hover:text-primary transition-colors">Start-up Support</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/insights" className="hover:text-primary transition-colors">TAG Insights</Link></li>
-              <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Locations</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>New Delhi, India</li>
-              <li>Gurgaon, India</li>
-              <li>Sharjah, UAE</li>
-              <li>Singapore</li>
-            </ul>
+          <p className="footer-disclaimer"><strong>Disclaimer &amp; non-solicitation:</strong> This website is not intended to be, and shall not be construed as, any form of advertisement, solicitation, invitation or inducement of any sort. The information provided here is for general informational purposes only and does not constitute professional, legal, tax or financial advice, nor does it create any professional or client relationship. By accessing this website, the user acknowledges that they are seeking information about TAG Group of their own accord and that there has been no solicitation, invitation or inducement of any kind. TAG Group accepts no liability for any action taken by any person relying on information on this website; users should obtain appropriate professional advice before acting on any content herein.</p>
+          <div className="footer-bottom">
+            <span>&copy; <span data-year>2026</span> TAG Group. All rights reserved.</span>
+            <span>Tax &middot; Cross-Border &middot; CFO &middot; Assurance Support</span>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>© {new Date().getFullYear()} TAG Advisors LLP. All rights reserved.</p>
-          <div className="flex items-center gap-4 text-muted-foreground">
-            <Link href="https://linkedin.com" target="_blank" className="hover:text-primary transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-            </Link>
-            <Link href="https://wa.me/1234567890" target="_blank" className="hover:text-primary transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
-            </Link>
-          </div>
-          <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
-          </div>
-        </div>
-      </div>
-    </footer>
-  )
+      </footer>
+    </>
+  );
 }

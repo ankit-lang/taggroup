@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
-import { SpinningText } from '@/components/ui/spinning-text'
+
 
 const slides = [
   {
@@ -13,7 +13,7 @@ const slides = [
     title: "Empowering Vision with",
     highlight: "Strategic Advisory",
     description: "Comprehensive Tax & Management Advisory, High-End Virtual CFO Services, and Robust Assurance Solutions.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+    image: "/assets/img/hero/global.svg",
     link: "/services",
     linkText: "Explore Services"
   },
@@ -22,7 +22,7 @@ const slides = [
     title: "Navigating Complex",
     highlight: "Tax Regulations",
     description: "Expert guidance in Direct, Indirect, and International Taxation. We help you stay compliant and optimize your tax strategy globally.",
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop",
+    image: "/assets/img/hero/intltax.svg",
     link: "/services#taxation-advisory",
     linkText: "Discover Tax Services"
   },
@@ -31,7 +31,7 @@ const slides = [
     title: "Unlocking Growth with",
     highlight: "M&A Advisory",
     description: "From due diligence to post-merger integration, our team provides end-to-end support for your corporate restructuring needs.",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=2070&auto=format&fit=crop",
+    image: "/assets/img/hero/tp.svg",
     link: "/services#corporate-advisory",
     linkText: "View M&A Solutions"
   }
@@ -60,93 +60,82 @@ export function HeroCarousel() {
 
   return (
     <section 
-      className="relative w-full h-screen min-h-[600px] overflow-hidden bg-background"
+      className="relative w-full h-[720px] overflow-hidden bg-background border-b border-border/40 dark"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <AnimatePresence>
         <motion.div
           key={current}
-          className="absolute inset-0 z-0"
-          initial={{ scale: 1.1, opacity: 0 }}
+          className="absolute inset-0 z-0 flex items-center justify-center"
+          initial={{ scale: 1.05, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
         >
-          {/* Background Image with Parallax & Blur effect */}
+          {/* Full Width Background Image with improved visibility */}
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.15] dark:opacity-20"
             style={{ backgroundImage: `url('${slides[current].image}')` }}
           />
-          {/* Gradients to blend with background and text */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
-          <div className="absolute inset-0 bg-black/40 z-10" />
+          {/* Subtle Radial Gradient to give depth instead of flat white */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background/90 to-background dark:from-primary/10 dark:via-background/90 dark:to-background z-10" />
         </motion.div>
       </AnimatePresence>
 
-      <div className="absolute top-32 right-12 lg:right-24 z-30 hidden md:flex items-center justify-center">
-        <div className="w-16 h-16 absolute rounded-full bg-primary/20 blur-xl animate-pulse"></div>
-        <SpinningText 
-          className="text-white/80 font-bold tracking-widest uppercase text-xs"
-          radius={5.5} 
-          duration={20}
-        >
-          TAG ADVISORS • GLOBAL EXPERTISE • 
-        </SpinningText>
-      </div>
 
-      <div className="relative z-20 container mx-auto h-full flex flex-col justify-center px-4 md:px-6 pt-20">
-        <div className="max-w-4xl">
+
+      <div className="relative z-20 container mx-auto h-full flex flex-col items-center justify-center text-center px-4 md:px-6 pt-16">
+        <div className="max-w-4xl flex flex-col items-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
-              initial={{ y: 50, opacity: 0 }}
+              initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -50, opacity: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" as const, staggerChildren: 0.1 }}
+              exit={{ y: -30, opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" as const, staggerChildren: 0.1 }}
+              className="flex flex-col items-center w-full"
             >
               <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6 backdrop-blur-md shadow-[0_0_20px_rgba(200,150,50,0.2)]"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 dark:bg-primary/10 px-5 py-1.5 text-xs md:text-sm font-semibold text-primary mb-6 shadow-sm uppercase tracking-widest"
               >
-                <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-ping"></span>
                 Global Presence: India, UAE, Singapore, Malaysia
               </motion.div>
 
               <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6 leading-[1.1] text-white"
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1] text-foreground"
               >
                 {slides[current].title} <br />
-                <span className="text-gradient drop-shadow-lg">{slides[current].highlight}</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c5a059] to-[#d4b46a] pr-2">{slides[current].highlight}</span>
               </motion.h1>
 
               <motion.p 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="text-lg md:text-2xl text-white/80 mb-10 max-w-2xl font-light"
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="text-base md:text-xl text-muted-foreground mb-10 max-w-2xl font-normal leading-relaxed"
               >
                 {slides[current].description}
               </motion.p>
 
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-6"
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full"
               >
-                <Button size="lg" className="rounded-full text-lg h-14 px-8 glow transition-transform hover:scale-105 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+                <Button size="lg" className="rounded-full text-base md:text-lg h-12 md:h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 font-semibold w-full sm:w-auto" asChild>
                   <Link href={slides[current].link}>
-                    {slides[current].linkText} <ArrowRight className="ml-2 h-5 w-5" />
+                    {slides[current].linkText} <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-full text-lg h-14 px-8 glass border-white/20 text-white hover:bg-white/10 transition-transform hover:scale-105" asChild>
+                <Button size="lg" variant="outline" className="rounded-full text-base md:text-lg h-12 md:h-14 px-8 border-border/50 text-foreground hover:bg-accent hover:text-accent-foreground transition-all hover:-translate-y-0.5 font-medium w-full sm:w-auto shadow-sm hover:shadow-md" asChild>
                   <Link href="/contact">Book a Consultation</Link>
                 </Button>
               </motion.div>
@@ -156,14 +145,14 @@ export function HeroCarousel() {
       </div>
 
       {/* Carousel Controls */}
-      <div className="absolute bottom-10 right-10 z-30 flex items-center gap-4">
+      <div className="absolute bottom-6 md:bottom-10 right-6 md:right-10 z-30 flex items-center gap-3 md:gap-4">
         <div className="flex gap-2 mr-6">
           {slides.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrent(idx)}
               className={`h-2 rounded-full transition-all duration-500 ${
-                idx === current ? "w-12 bg-primary" : "w-3 bg-white/30 hover:bg-white/60"
+                idx === current ? "w-12 bg-primary" : "w-3 bg-primary/20 hover:bg-primary/50"
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
@@ -171,13 +160,13 @@ export function HeroCarousel() {
         </div>
         <button 
           onClick={handlePrev}
-          className="h-12 w-12 rounded-full glass flex items-center justify-center text-white hover:bg-white/10 hover:text-primary transition-colors border-white/20"
+          className="h-12 w-12 rounded-full glass flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground transition-colors border-border/50"
         >
           <ChevronLeft className="h-6 w-6" />
         </button>
         <button 
           onClick={handleNext}
-          className="h-12 w-12 rounded-full glass flex items-center justify-center text-white hover:bg-white/10 hover:text-primary transition-colors border-white/20"
+          className="h-12 w-12 rounded-full glass flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground transition-colors border-border/50"
         >
           <ChevronRight className="h-6 w-6" />
         </button>

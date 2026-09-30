@@ -1,5 +1,7 @@
 import { Navbar } from '@/components/public/navbar'
 import { Footer } from '@/components/public/footer'
+import { NewsletterModal } from '@/components/public/newsletter-modal'
+import { MobileActionBar } from '@/components/public/mobile-action-bar'
 
 export default function PublicLayout({
   children,
@@ -7,12 +9,14 @@ export default function PublicLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="min-h-screen flex flex-col pt-[72px]">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
         {children}
       </main>
       <Footer />
+      <MobileActionBar />
+      <NewsletterModal />
     </div>
   )
 }

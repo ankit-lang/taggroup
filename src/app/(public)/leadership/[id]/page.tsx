@@ -23,15 +23,15 @@ export default function LeadershipProfilePage({ params }: { params: Promise<{ id
   }
 
   return (
-    <div className="w-full flex flex-col min-h-screen bg-background">
+    <div className="w-full flex flex-col bg-background">
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 overflow-hidden border-b border-white/5">
+      <section className="relative pt-40 pb-20 overflow-hidden border-b border-border/50">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent"></div>
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-white/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-secondary/20 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div className="container relative z-10 mx-auto px-4 md:px-6">
-          <Link href="/about" className="inline-flex items-center text-sm font-medium text-white/60 hover:text-primary transition-colors mb-12 group">
+          <Link href="/about" className="inline-flex items-center text-sm font-medium text-muted-foreground/80 hover:text-primary transition-colors mb-12 group">
             <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
             Back to Leadership
           </Link>
@@ -63,10 +63,10 @@ export default function LeadershipProfilePage({ params }: { params: Promise<{ id
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex-grow"
             >
-              <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white tracking-tight">{profile.name}</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-4 text-foreground tracking-tight">{profile.name}</h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-primary/90 mb-6">{profile.title}</h2>
               
-              <div className="flex flex-wrap items-center gap-6 text-white/70">
+              <div className="flex flex-wrap items-center gap-6 text-muted-foreground">
                 {profile.location && (
                   <div className="flex items-center gap-2">
                     <MapPin className="w-5 h-5 text-primary/70" />
@@ -99,7 +99,7 @@ export default function LeadershipProfilePage({ params }: { params: Promise<{ id
                   <span className="w-8 h-1 bg-primary rounded-full"></span>
                   Executive Profile
                 </h3>
-                <p className="text-lg text-white/80 leading-relaxed font-light whitespace-pre-wrap">
+                <p className="text-lg text-muted-foreground leading-relaxed font-light whitespace-pre-wrap">
                   {profile.about || profile.shortDesc}
                 </p>
               </motion.div>
@@ -113,13 +113,13 @@ export default function LeadershipProfilePage({ params }: { params: Promise<{ id
                   </h3>
                   <div className="space-y-8 pl-2">
                     {profile.timeline.map((item, idx) => (
-                      <div key={idx} className="relative pl-8 md:pl-10 border-l border-white/10 group">
+                      <div key={idx} className="relative pl-8 md:pl-10 border-l border-border/50 group">
                         <div className="absolute w-4 h-4 bg-black border-2 border-primary rounded-full -left-[8.5px] top-1.5 group-hover:bg-primary group-hover:shadow-[0_0_15px_rgba(255,215,0,0.6)] transition-all duration-300"></div>
                         <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-3">
                           <span className="text-sm font-bold tracking-widest text-primary uppercase shrink-0 w-40">{item.date}</span>
-                          <span className="text-xl font-semibold text-white">{item.role}</span>
+                          <span className="text-xl font-semibold text-foreground">{item.role}</span>
                         </div>
-                        <p className="text-base text-white/60 leading-relaxed md:pl-[184px]">{item.description}</p>
+                        <p className="text-base text-muted-foreground/80 leading-relaxed md:pl-[184px]">{item.description}</p>
                       </div>
                     ))}
                   </div>
@@ -134,8 +134,8 @@ export default function LeadershipProfilePage({ params }: { params: Promise<{ id
               {/* Key Metrics */}
               {profile.metrics && profile.metrics.length > 0 && (
                 <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeInUp}>
-                  <div className="glass bg-black/40 border border-white/10 rounded-3xl p-8 backdrop-blur-xl">
-                    <h3 className="text-xl font-bold mb-8 text-white">Impact & Metrics</h3>
+                  <div className="glass bg-black/40 border border-border/50 rounded-3xl p-8 backdrop-blur-xl">
+                    <h3 className="text-xl font-bold mb-8 text-foreground">Impact & Metrics</h3>
                     <div className="grid grid-cols-2 gap-6">
                       {profile.metrics.map((metric, idx) => {
                         const match = metric.value.match(/^([^0-9.-]*)([0-9.,]+)([^0-9]*)$/);
@@ -159,7 +159,7 @@ export default function LeadershipProfilePage({ params }: { params: Promise<{ id
                                 metric.value
                               )}
                             </span>
-                            <span className="text-xs font-semibold tracking-widest uppercase text-white/50">{metric.label}</span>
+                            <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground/70">{metric.label}</span>
                           </div>
                         );
                       })}
@@ -171,12 +171,12 @@ export default function LeadershipProfilePage({ params }: { params: Promise<{ id
               {/* Core Advisory Areas */}
               {profile.coreAreas && profile.coreAreas.length > 0 && (
                 <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeInUp}>
-                  <h3 className="text-xl font-bold mb-6 text-white border-b border-white/10 pb-4">Core Focus</h3>
+                  <h3 className="text-xl font-bold mb-6 text-foreground border-b border-border/50 pb-4">Core Focus</h3>
                   <ul className="space-y-4">
                     {profile.coreAreas.map((area, idx) => (
                       <li key={idx} className="flex items-start gap-3 group">
                         <ArrowRight className="w-5 h-5 text-primary shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />
-                        <span className="text-white/80 leading-relaxed">{area}</span>
+                        <span className="text-muted-foreground leading-relaxed">{area}</span>
                       </li>
                     ))}
                   </ul>
@@ -186,12 +186,12 @@ export default function LeadershipProfilePage({ params }: { params: Promise<{ id
               {/* Credentials */}
               {profile.credentials && profile.credentials.length > 0 && (
                 <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeInUp}>
-                  <h3 className="text-xl font-bold mb-6 text-white border-b border-white/10 pb-4">Credentials</h3>
+                  <h3 className="text-xl font-bold mb-6 text-foreground border-b border-border/50 pb-4">Credentials</h3>
                   <ul className="space-y-4">
                     {profile.credentials.map((cred, idx) => (
                       <li key={idx} className="flex items-start gap-3 group">
                         <Award className="w-5 h-5 text-primary/70 shrink-0 mt-0.5 group-hover:text-primary transition-colors" />
-                        <span className="text-white/80 leading-relaxed">{cred}</span>
+                        <span className="text-muted-foreground leading-relaxed">{cred}</span>
                       </li>
                     ))}
                   </ul>
@@ -201,7 +201,7 @@ export default function LeadershipProfilePage({ params }: { params: Promise<{ id
               {/* Industries */}
               {profile.industries && (
                 <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeInUp}>
-                  <h3 className="text-xl font-bold mb-4 text-white border-b border-white/10 pb-4">Sectors</h3>
+                  <h3 className="text-xl font-bold mb-4 text-foreground border-b border-border/50 pb-4">Sectors</h3>
                   <p className="text-primary/90 font-medium leading-relaxed bg-primary/5 p-4 rounded-xl border border-primary/10">
                     {profile.industries}
                   </p>

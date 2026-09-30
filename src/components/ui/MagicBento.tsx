@@ -471,10 +471,11 @@ interface MagicBentoProps {
   clickEffect?: boolean;
   enableMagnetism?: boolean;
   cardData: Array<{
-    color: string;
-    title: string | ReactNode;
-    description: string | ReactNode;
-    label: string | ReactNode;
+    color?: string;
+    title?: string | ReactNode;
+    description?: string | ReactNode;
+    label?: string | ReactNode;
+    children?: ReactNode;
     dialogContent?: ReactNode;
     href?: string;
   }>;
@@ -535,13 +536,17 @@ const MagicBento = ({
                 enableMagnetism={enableMagnetism}
                 onClick={card.href ? () => router.push(card.href!) : undefined}
               >
-                <div className="magic-bento-card__header">
-                  <div className="magic-bento-card__label">{card.label}</div>
-                </div>
-                <div className="magic-bento-card__content">
-                  <h2 className="magic-bento-card__title">{card.title}</h2>
-                  <div className="magic-bento-card__description">{card.description}</div>
-                </div>
+                {card.children ? card.children : (
+                  <>
+                    <div className="magic-bento-card__header">
+                      <div className="magic-bento-card__label">{card.label}</div>
+                    </div>
+                    <div className="magic-bento-card__content">
+                      <h2 className="magic-bento-card__title">{card.title}</h2>
+                      <div className="magic-bento-card__description">{card.description}</div>
+                    </div>
+                  </>
+                )}
               </ParticleCard>
             );
 
@@ -676,13 +681,17 @@ const MagicBento = ({
                 el.addEventListener('click', handleClick);
               }}
             >
-                <div className="magic-bento-card__header">
-                  <div className="magic-bento-card__label">{card.label}</div>
-                </div>
-                <div className="magic-bento-card__content">
-                  <h2 className="magic-bento-card__title">{card.title}</h2>
-                  <div className="magic-bento-card__description">{card.description}</div>
-                </div>
+                {card.children ? card.children : (
+                  <>
+                    <div className="magic-bento-card__header">
+                      <div className="magic-bento-card__label">{card.label}</div>
+                    </div>
+                    <div className="magic-bento-card__content">
+                      <h2 className="magic-bento-card__title">{card.title}</h2>
+                      <div className="magic-bento-card__description">{card.description}</div>
+                    </div>
+                  </>
+                )}
               </div>
             );
 

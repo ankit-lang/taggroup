@@ -28,12 +28,20 @@ export async function dispatchNewsletter(formData: FormData) {
   if (subError) return { success: false, error: subError.message }
   if (!subscribers || subscribers.length === 0) return { success: false, error: 'No active subscribers found.' }
 
-  // 2. Dispatch Emails
+  // 2. Format HTML payload
+  const htmlPayload = image_url 
+    ? `<div style="max-width: 600px; margin: 0 auto; font-family: sans-serif;">
+         <img src="${image_url}" alt="Newsletter Header" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px;" />
+         ${content}
+       </div>`
+    : `<div style="max-width: 600px; margin: 0 auto; font-family: sans-serif;">${content}</div>`
+
+  // 3. Dispatch Emails
   const emails = subscribers.map(sub => sub.email)
   const emailResult = await sendEmail({
     to: emails,
     subject,
-    html: content
+    html: htmlPayload
   })
 
   if (!emailResult.success) {
@@ -87,4 +95,32 @@ export async function subscribeNewsletter(formData: FormData) {
   }
 
   return { success: true, message: 'Successfully subscribed to TAG Insights!' }
+}
+
+export async function getSubscriberStats() {
+  const supabase = await createClient()
+  
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return { count: 0, recent: [] }
+    
+  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).single()
+  if (profile?.role !== 'admin') return { count: 0, recent: [] }
+
+  const { count, error: countError } = await supabase
+    .from('subscribers')
+    .select('*', { count: 'exact', head: true })
+    .eq('status', 'active')
+
+  const { data: recent, error: recentError } = await supabase
+    .from('subscribers')
+    .select('email, created_at')
+    .eq('status', 'active')
+    .order('created_at', { ascending: false })
+    .limit(5)
+
+  if (countError || recentError) {
+    return { count: 0, recent: [] }
+  }
+
+  return { count: count || 0, recent: recent || [] }
 }

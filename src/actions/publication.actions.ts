@@ -53,6 +53,7 @@ export async function createPublication(formData: FormData) {
   const category = formData.get('category') as string || 'General'
   const status = formData.get('status') as string || 'published'
   const image_url = formData.get('image_url') as string || null
+  const pdf_url = formData.get('pdf_url') as string || null
   const meta_title = formData.get('meta_title') as string || title
   const meta_description = formData.get('meta_description') as string || ''
   const meta_keywords = formData.get('meta_keywords') as string || ''
@@ -69,6 +70,7 @@ export async function createPublication(formData: FormData) {
       content, 
       category, 
       image_url, 
+      pdf_url,
       meta_title, 
       meta_description, 
       meta_keywords, 

@@ -53,16 +53,33 @@ export async function submitContactForm(formData: FormData) {
   return { success: true, message: 'Message sent successfully!' }
 }
 
-export async function updateContactStatus(id: string, status: 'pending' | 'resolved') {
+export async function updateInquiryStatus(id: string, table: string, status: string) {
   const supabase = await createClient()
   
+  // Try updating assuming there is a status column
   const { error } = await supabase
-    .from('contacts')
+    .from(table)
     .update({ status })
     .eq('id', id)
 
   if (error) {
-    console.error('Error updating contact status:', error)
+    console.error(`Error updating ${table} status:`, error)
+    return { success: false, error: error.message }
+  }
+
+  return { success: true }
+}
+
+export async function deleteInquiry(id: string, table: string) {
+  const supabase = await createClient()
+  
+  const { error } = await supabase
+    .from(table)
+    .delete()
+    .eq('id', id)
+
+  if (error) {
+    console.error(`Error deleting from ${table}:`, error)
     return { success: false, error: error.message }
   }
 
