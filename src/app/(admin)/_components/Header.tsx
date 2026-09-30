@@ -38,9 +38,9 @@ export function Header() {
   useEffect(() => {
     async function fetchUnread() {
       const { data } = await supabase
-        .from('contacts')
+        .from('leads')
         .select('*')
-        .eq('status', 'pending')
+        .or('status.eq.new,status.eq.pending,status.is.null')
         .order('created_at', { ascending: false })
         .limit(5);
       if (data) setUnreadContacts(data);
@@ -73,7 +73,7 @@ export function Header() {
       setIsSearchOpen(true);
       const [pubsRes, contactsRes] = await Promise.all([
         supabase.from('publications').select('id, title, slug').ilike('title', `%${searchQuery}%`).limit(3),
-        supabase.from('contacts').select('id, name, email').ilike('name', `%${searchQuery}%`).limit(3),
+        supabase.from('leads').select('id, name, email').ilike('name', `%${searchQuery}%`).limit(3),
       ]);
       setSearchResults({ publications: pubsRes.data || [], contacts: contactsRes.data || [] });
     }, 300);

@@ -127,9 +127,7 @@ export default function InquiriesClient({ initialData }: { initialData: any[] })
           <p className="text-slate-500 mt-2">Manage and view all incoming leads, newsletters, and contact submissions.</p>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline" className="bg-white" onClick={exportCSV}>
-            <Download className="mr-2 h-4 w-4" /> Export CSV
-          </Button>
+          {/* Export CSV button removed */}
         </div>
       </div>
 

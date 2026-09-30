@@ -79,13 +79,7 @@ export default async function AdminDashboard() {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <button
-            className="flex items-center gap-1.5 rounded font-medium transition-colors hover:bg-slate-50"
-            style={{ padding: '6px 14px', border: '1px solid #e4e8ee', background: '#fff', fontSize: '12.5px', color: '#5a6778' }}
-          >
-            <Download style={{ width: '13px', height: '13px' }} />
-            Export CSV
-          </button>
+
           <Link
             href="/admin/blog/new"
             className="flex items-center gap-1.5 rounded font-medium transition-colors hover:opacity-90"
