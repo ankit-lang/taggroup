@@ -88,29 +88,127 @@ export async function POST(req: NextRequest) {
     const emailUser = process.env.EMAIL_USER || process.env.SMTP_USER;
     
     if (emailUser && process.env.ADMIN_EMAIL) {
-      const htmlContent = `
-        <h2>New ${validatedData.type.toUpperCase()} Submission</h2>
-        <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
-          <tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Name:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${validatedData.name}</td></tr>
-          <tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Email:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${validatedData.email}</td></tr>
-          ${validatedData.phone ? `<tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Phone:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${validatedData.phone}</td></tr>` : ''}
-          ${validatedData.company ? `<tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Company:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${validatedData.company}</td></tr>` : ''}
-          ${validatedData.designation ? `<tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Designation:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${validatedData.designation}</td></tr>` : ''}
-          ${validatedData.service ? `<tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Service:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${validatedData.service}</td></tr>` : ''}
-          ${validatedData.sourceUrl ? `<tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Source URL:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${validatedData.sourceUrl}</td></tr>` : ''}
-        </table>
-        ${validatedData.message ? `<div style="margin-top: 16px;"><strong>Message:</strong><p style="white-space: pre-wrap; background: #f9f9f9; padding: 12px; border-radius: 4px;">${validatedData.message}</p></div>` : ''}
-        ${validatedData.newsletters && validatedData.newsletters.length > 0 ? `<div style="margin-top: 16px;"><strong>Newsletters requested:</strong><ul>${validatedData.newsletters.map(n => `<li>${n}</li>`).join('')}</ul></div>` : ''}
+      // ---------------------------------------------------------
+      // A. Professional HTML Template for Admin Notification
+      // ---------------------------------------------------------
+      const adminHtmlContent = `
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e4e8ee; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+        <div style="background-color: #1a2332; padding: 24px; text-align: center;">
+          <h2 style="color: #ffffff; margin: 0; font-size: 20px; font-weight: 600; letter-spacing: 0.5px;">New ${validatedData.type.toUpperCase()} Submission</h2>
+        </div>
+        <div style="padding: 32px; background-color: #ffffff;">
+          <p style="color: #5a6778; font-size: 15px; margin-bottom: 24px;">A new inquiry has been submitted via the TAG Group website.</p>
+          
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f2f5; width: 140px; color: #7a8898; font-size: 14px; font-weight: 500;">Name</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f2f5; color: #1a2332; font-size: 15px; font-weight: 600;">${validatedData.name}</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f2f5; color: #7a8898; font-size: 14px; font-weight: 500;">Email</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f2f5; color: #1a2332; font-size: 15px;">
+                <a href="mailto:${validatedData.email}" style="color: #c9a84c; text-decoration: none;">${validatedData.email}</a>
+              </td>
+            </tr>
+            ${validatedData.phone ? `
+            <tr>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f2f5; color: #7a8898; font-size: 14px; font-weight: 500;">Phone</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f2f5; color: #1a2332; font-size: 15px;">${validatedData.phone}</td>
+            </tr>` : ''}
+            ${validatedData.company ? `
+            <tr>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f2f5; color: #7a8898; font-size: 14px; font-weight: 500;">Company</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f2f5; color: #1a2332; font-size: 15px;">${validatedData.company}</td>
+            </tr>` : ''}
+            ${validatedData.service ? `
+            <tr>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f2f5; color: #7a8898; font-size: 14px; font-weight: 500;">Service</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f2f5; color: #1a2332; font-size: 15px;">${validatedData.service}</td>
+            </tr>` : ''}
+            ${validatedData.sourceUrl ? `
+            <tr>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f2f5; color: #7a8898; font-size: 14px; font-weight: 500;">Source URL</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f2f5; color: #1a2332; font-size: 14px;">
+                <a href="${validatedData.sourceUrl}" style="color: #c9a84c; text-decoration: none;">View Page</a>
+              </td>
+            </tr>` : ''}
+          </table>
+
+          ${validatedData.message ? `
+          <div style="margin-top: 32px;">
+            <h3 style="color: #1a2332; font-size: 16px; margin-bottom: 12px; font-weight: 600;">Message / Details</h3>
+            <div style="background-color: #f8fafc; border-left: 4px solid #c9a84c; padding: 16px; border-radius: 0 8px 8px 0; color: #334155; font-size: 15px; line-height: 1.6; white-space: pre-wrap;">
+              ${validatedData.message}
+            </div>
+          </div>` : ''}
+          ${validatedData.newsletters && validatedData.newsletters.length > 0 ? `
+          <div style="margin-top: 32px;">
+            <h3 style="color: #1a2332; font-size: 16px; margin-bottom: 12px; font-weight: 600;">Newsletters requested:</h3>
+            <ul style="color: #334155; font-size: 15px;">${validatedData.newsletters.map(n => `<li>${n}</li>`).join('')}</ul>
+          </div>` : ''}
+        </div>
+        <div style="background-color: #f0f2f5; padding: 16px; text-align: center; color: #7a8898; font-size: 12px;">
+          This is an automated message from the TAG Group Contact System.
+        </div>
+      </div>
+      `;
+
+      // ---------------------------------------------------------
+      // B. Professional HTML Template for User Auto-Reply
+      // ---------------------------------------------------------
+      const userHtmlContent = `
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e4e8ee; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+        <div style="background-color: #1a2332; padding: 32px 24px; text-align: center;">
+          <h1 style="color: #c9a84c; margin: 0 0 12px 0; font-size: 28px; font-weight: 700; letter-spacing: 1px;">TAG Advisors</h1>
+          <h2 style="color: #ffffff; margin: 0; font-size: 18px; font-weight: 400; opacity: 0.9;">Thank you for getting in touch</h2>
+        </div>
+        <div style="padding: 40px 32px; background-color: #ffffff;">
+          <p style="color: #1a2332; font-size: 16px; font-weight: 600; margin-top: 0;">Dear ${validatedData.name},</p>
+          
+          <p style="color: #475569; font-size: 16px; line-height: 1.6; margin-bottom: 24px;">
+            We have successfully received your inquiry ${validatedData.service ? `regarding <strong>${validatedData.service}</strong>` : ''}. 
+          </p>
+
+          <p style="color: #475569; font-size: 16px; line-height: 1.6; margin-bottom: 24px;">
+            Our team is currently reviewing the details you provided. A relevant partner or specialist from TAG Advisors will personally reach out to you within one business day to discuss your requirements.
+          </p>
+
+          <p style="color: #475569; font-size: 16px; line-height: 1.6; margin-bottom: 32px;">
+            If you have any immediate questions, feel free to reply directly to this email or reach us at <a href="mailto:info@taggroup.in" style="color: #c9a84c; text-decoration: none; font-weight: 500;">info@taggroup.in</a>.
+          </p>
+          
+          <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 32px 0;" />
+          
+          <p style="color: #1a2332; font-size: 16px; font-weight: 600; margin-bottom: 4px;">Best regards,</p>
+          <p style="color: #64748b; font-size: 15px; margin-top: 0;">The Team at TAG Advisors</p>
+        </div>
+        <div style="background-color: #f8fafc; padding: 24px; text-align: center; border-top: 1px solid #e2e8f0;">
+          <p style="color: #94a3b8; font-size: 13px; margin: 0;">
+            TAG Advisors | Corporate Office: Emaar Digital Greens, Gurgaon
+          </p>
+        </div>
+      </div>
       `;
 
       try {
+        // Send email to Admin
         await transporter.sendMail({
           from: process.env.FROM_EMAIL || emailUser,
           to: process.env.ADMIN_EMAIL,
           subject: `New Lead [${validatedData.type}]: ${validatedData.name}`,
-          html: htmlContent,
+          html: adminHtmlContent,
           replyTo: validatedData.email,
         });
+        
+        // Send auto-reply to User
+        await transporter.sendMail({
+          from: \`"TAG Advisors" <\${process.env.FROM_EMAIL || emailUser}>\`,
+          to: validatedData.email,
+          subject: "We received your inquiry - TAG Advisors",
+          html: userHtmlContent,
+          replyTo: process.env.ADMIN_EMAIL,
+        });
+
         emailSuccess = true;
       } catch (err) {
         console.error('Email send error:', err);

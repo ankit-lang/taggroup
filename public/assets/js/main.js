@@ -130,16 +130,39 @@
     start();
   }
 
-  /* ---- Scroll reveal ---- */
-  const reveals = document.querySelectorAll(".reveal");
-  if (reveals.length && "IntersectionObserver" in window) {
+  /* ---- Scroll reveal (with MutationObserver for Next.js support) ---- */
+  if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }),
+      (entries) => entries.forEach((e) => { 
+        if (e.isIntersecting) { 
+          e.target.classList.add("in"); 
+          io.unobserve(e.target); 
+        } 
+      }),
       { threshold: 0.12 }
     );
-    reveals.forEach((r) => io.observe(r));
+    
+    const observeReveals = (root) => {
+      root.querySelectorAll(".reveal:not(.in)").forEach(r => io.observe(r));
+      if (root.classList && root.classList.contains("reveal") && !root.classList.contains("in")) {
+        io.observe(root);
+      }
+    };
+    
+    // Initial observation
+    observeReveals(document);
+    
+    // Watch for Next.js page navigations/dynamic content
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach(m => {
+        m.addedNodes.forEach(n => {
+          if (n.nodeType === 1) observeReveals(n);
+        });
+      });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
   } else {
-    reveals.forEach((r) => r.classList.add("in"));
+    document.querySelectorAll(".reveal").forEach((r) => r.classList.add("in"));
   }
 
   /* ---- Service/profile pages: active section in side nav + phone/tablet jump chips ---- */
@@ -169,7 +192,6 @@
   const modal = document.getElementById("newsletter-modal");
   if (modal) {
     let lastFocus = null;
-    const openers = document.querySelectorAll("[data-newsletter]");
     function openModal() {
       lastFocus = document.activeElement;
       if (typeof setMenu === "function") setMenu(false);
@@ -178,13 +200,28 @@
       const first = modal.querySelector("input, button");
       if (first) first.focus();
     }
+    
     function closeModal() {
       modal.hidden = true;
       document.body.classList.remove("modal-open");
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
-    openers.forEach((b) => b.addEventListener("click", (e) => { e.preventDefault(); openModal(); }));
-    modal.querySelectorAll("[data-close]").forEach((b) => b.addEventListener("click", closeModal));
+    
+    // Event delegation for opening and closing modal (Next.js support)
+    document.addEventListener("click", (e) => {
+      const openBtn = e.target.closest("[data-newsletter]");
+      if (openBtn) {
+        e.preventDefault();
+        openModal();
+        return;
+      }
+      
+      const closeBtn = e.target.closest("[data-close]");
+      if (closeBtn && closeBtn.closest("#newsletter-modal")) {
+        closeModal();
+      }
+    });
+    
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) closeModal(); });
     // keep focus inside the dialog while open
     modal.addEventListener("keydown", (e) => {
@@ -197,23 +234,37 @@
     });
   }
 
-  /* ---- Tabs (Insights & Media) ---- */
-  const tabbar = document.querySelector("[data-tabs]");
-  if (tabbar) {
+  /* ---- Tabs (Insights & Media) - Event Delegation for Next.js ---- */
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-tab]");
+    if (!btn) return;
+    
+    const tabbar = btn.closest("[data-tabs]");
+    if (!tabbar) return;
+
     const btns = Array.from(tabbar.querySelectorAll("button[data-tab]"));
     const panels = btns.map((b) => document.getElementById(b.dataset.tab));
-    function activate(id) {
-      btns.forEach((b) => b.classList.toggle("active", b.dataset.tab === id));
-      panels.forEach((p) => { if (p) p.classList.toggle("active", p.id === id); });
-    }
-    btns.forEach((b) => b.addEventListener("click", () => {
-      activate(b.dataset.tab);
-      history.replaceState(null, "", "#" + b.dataset.tab.replace("tab-", ""));
-    }));
+
+    btns.forEach((b) => b.classList.toggle("active", b === btn));
+    panels.forEach((p) => { if (p) p.classList.toggle("active", p.id === btn.dataset.tab); });
+
+    history.replaceState(null, "", "#" + btn.dataset.tab.replace("tab-", ""));
+  });
+
+  // Re-check hash when it changes or on DOM mutations (for Next.js navigations)
+  function checkHashTabs() {
     const h = (location.hash || "").replace("#", "");
-    if (h === "media") activate("tab-media");
-    else if (h === "insights") activate("tab-insights");
+    if (h === "media" || h === "insights") {
+      const btn = document.querySelector(`button[data-tab="tab-${h}"]`);
+      if (btn && !btn.classList.contains("active")) btn.click();
+    }
   }
+  window.addEventListener("hashchange", checkHashTabs);
+  
+  // We can hook into our existing MutationObserver to check tabs on navigation
+  const tabObserver = new MutationObserver(() => checkHashTabs());
+  tabObserver.observe(document.body, { childList: true, subtree: true });
+  checkHashTabs();
 
   /* ---- Footer year ---- */
   const yr = document.querySelector("[data-year]");
