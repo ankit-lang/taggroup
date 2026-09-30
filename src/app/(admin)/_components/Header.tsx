@@ -128,6 +128,7 @@ export function Header() {
           );
         })}
       </nav>
+      </div>
 
       {/* Right Controls */}
       <div className="flex items-center gap-3">
