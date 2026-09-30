@@ -18,7 +18,7 @@ function AdminLoginContent() {
   const supabase = createClient();
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => {
+    supabase.auth.getUser().then(({ data }: { data: any }) => {
       if (data?.user) {
         window.location.href = next;
       }
