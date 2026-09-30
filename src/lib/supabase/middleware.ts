@@ -27,35 +27,58 @@ export async function updateSession(request: NextRequest) {
     }
   )
 
-  // Fetch the current user session
+  // Fetch the current user
   const { data: { user } } = await supabase.auth.getUser()
+
+  // Helper to construct redirects while preserving updated auth cookies
+  const createRedirect = (path: string, paramKey?: string, paramVal?: string) => {
+    const url = request.nextUrl.clone()
+    url.pathname = path
+    if (paramKey && paramVal) {
+      url.searchParams.set(paramKey, paramVal)
+    }
+    const redirectResponse = NextResponse.redirect(url)
+    supabaseResponse.cookies.getAll().forEach((c) => {
+      redirectResponse.cookies.set(c.name, c.value, c)
+    })
+    return redirectResponse
+  }
 
   // Protect Admin Routes
   if (request.nextUrl.pathname.startsWith('/admin')) {
     // Allow public access to /admin/login
     if (request.nextUrl.pathname === '/admin/login') {
+      if (user) {
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('role')
+          .eq('id', user.id)
+          .maybeSingle()
+
+        if (profile && profile.role?.toLowerCase() === 'admin') {
+          return createRedirect('/admin')
+        }
+      }
       return supabaseResponse
     }
 
     if (!user) {
-      const url = request.nextUrl.clone()
-      url.pathname = '/admin/login'
-      url.searchParams.set('redirect', request.nextUrl.pathname)
-      return NextResponse.redirect(url)
+      return createRedirect('/admin/login', 'redirect', request.nextUrl.pathname)
     }
 
     // Role verification
-    const { data: profile } = await supabase
+    const { data: profile, error: profileError } = await supabase
       .from('profiles')
       .select('role')
       .eq('id', user.id)
-      .single()
+      .maybeSingle()
 
-    if (!profile || profile.role !== 'admin') {
-      const url = request.nextUrl.clone()
-      url.pathname = '/admin/login'
-      url.searchParams.set('error', 'unauthorized')
-      return NextResponse.redirect(url)
+    if (profileError) {
+      console.error('Middleware profile error:', profileError.message)
+    }
+
+    if (!profile || profile.role?.toLowerCase() !== 'admin') {
+      return createRedirect('/admin/login', 'error', 'unauthorized')
     }
   }
 

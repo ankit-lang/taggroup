@@ -11,14 +11,7 @@ export default async function InquiriesPage() {
     .select('*')
     .order('created_at', { ascending: false });
 
-  // Fetch from the contacts table
-  const { data: contacts, error: contactsError } = await supabase
-    .from('contacts')
-    .select('*')
-    .order('created_at', { ascending: false });
-
   if (leadsError) console.error('Error fetching leads:', leadsError);
-  if (contactsError) console.error('Error fetching contacts:', contactsError);
 
   // Normalize and merge data
   const normalizedLeads = (leads || []).map((lead: any) => ({
@@ -26,13 +19,7 @@ export default async function InquiriesPage() {
     source_table: 'leads'
   }));
 
-  const normalizedContacts = (contacts || []).map((contact: any) => ({
-    ...contact,
-    type: 'contact', // Force type to contact for badge
-    source_table: 'contacts'
-  }));
-
-  const inquiries = [...normalizedLeads, ...normalizedContacts].sort((a, b) => 
+  const inquiries = [...normalizedLeads].sort((a, b) => 
     new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
   );
 

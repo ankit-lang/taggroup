@@ -33,14 +33,14 @@ function AdminLoginContent() {
       return;
     }
 
-    // Role verification will happen in middleware/server, but we can do a quick check here too
-    const { data: profileData } = await supabase
+    // Role verification check
+    const { data: profileData, error: profileError } = await supabase
       .from('profiles')
       .select('role')
       .eq('id', data.user.id)
-      .single();
+      .maybeSingle();
 
-    if (profileData?.role !== 'admin') {
+    if (profileError || profileData?.role?.toLowerCase() !== 'admin') {
       await supabase.auth.signOut();
       toast.error('Access Denied: This account does not have administrative privileges.');
       setIsLoading(false);
@@ -48,7 +48,7 @@ function AdminLoginContent() {
     }
 
     toast.success('Admin login successful.');
-    router.push(next);
+    window.location.href = next;
   };
 
   return (
