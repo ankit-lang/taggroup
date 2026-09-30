@@ -55,6 +55,11 @@ function AdminLoginContent() {
       return;
     }
 
+    // Set a resilient, non-chunked backup cookie to bypass Vercel SSR chunking edge cases
+    if (data.session) {
+      document.cookie = `tag_access_token=${data.session.access_token}; path=/; max-age=3600; Secure; SameSite=Lax`;
+    }
+
     toast.success('Admin login successful.');
     window.location.href = next;
   };

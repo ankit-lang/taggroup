@@ -2,6 +2,7 @@ import { Sidebar } from './_components/Sidebar';
 import { Header } from './_components/Header';
 import { createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
+import { cookies } from 'next/headers';
 
 export const dynamic = 'force-dynamic';
 
@@ -11,10 +12,20 @@ export default async function AdminLayout({
   children: React.ReactNode
 }) {
   const supabase = await createClient();
-  // Using getSession instead of getUser to avoid network failures between Vercel and Supabase API
-  // getSession decodes the JWT locally from the cookie which is 100x faster and immune to timeouts
-  const { data: { session }, error } = await supabase.auth.getSession();
-  const user = session?.user;
+  const cookieStore = await cookies();
+  
+  // Try default SSR cookie decoding
+  let { data: { session } } = await supabase.auth.getSession();
+  let user = session?.user;
+
+  // Fallback: If SSR chunking failed, use our resilient raw token
+  if (!user) {
+    const rawToken = cookieStore.get('tag_access_token')?.value;
+    if (rawToken) {
+      const { data } = await supabase.auth.getUser(rawToken);
+      user = data?.user;
+    }
+  }
 
   if (!user) {
     redirect('/admin/login');
