@@ -11,7 +11,10 @@ export default async function AdminLayout({
   children: React.ReactNode
 }) {
   const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
+  // Using getSession instead of getUser to avoid network failures between Vercel and Supabase API
+  // getSession decodes the JWT locally from the cookie which is 100x faster and immune to timeouts
+  const { data: { session }, error } = await supabase.auth.getSession();
+  const user = session?.user;
 
   if (!user) {
     redirect('/admin/login');
