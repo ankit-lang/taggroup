@@ -76,8 +76,8 @@ export default async function AdminLayout({
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         <Header />
         <main
-          className="flex-1 overflow-y-auto scroll-smooth"
-          style={{ padding: '20px 24px', background: '#f0f2f5' }}
+          className="flex-1 overflow-y-auto scroll-smooth p-4 sm:p-6 lg:p-8"
+          style={{ background: '#f0f2f5' }}
           data-lenis-prevent="true"
         >
           {children}

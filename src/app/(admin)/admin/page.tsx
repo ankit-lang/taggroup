@@ -69,9 +69,9 @@ export default async function AdminDashboard() {
   const leads = recentLeads || [];
 
   return (
-    <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+    <div className="w-full max-w-[1280px] mx-auto">
       {/* Page title strip */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3" style={{ marginBottom: '16px' }}>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
           <h1 style={{ fontSize: '18px', fontWeight: 700, color: '#1a2332', lineHeight: 1.3 }}>Overview Dashboard</h1>
           <p style={{ fontSize: '12px', color: '#7a8898', marginTop: '2px' }}>
@@ -92,7 +92,7 @@ export default async function AdminDashboard() {
       </div>
 
       {/* KPI row */}
-      <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(4, 1fr)', marginBottom: '20px' }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <MetricCard title="Total Inquiries" value={leadCount ?? 0} icon={Inbox} trend="View all →" trendUp link="/admin/inquiries" />
         <MetricCard title="Newsletter Subs" value={subCount ?? 0} icon={Mail} trend="+5 new this week" trendUp />
         <MetricCard title="Published Content" value={blogCount ?? 0} icon={FileText} trend="2 drafts pending" />
@@ -100,7 +100,7 @@ export default async function AdminDashboard() {
       </div>
 
       {/* Main content */}
-      <div className="grid gap-5" style={{ gridTemplateColumns: '1fr 340px', alignItems: 'start' }}>
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6 items-start">
         {/* Inquiries Table */}
         <div
           className="rounded-md overflow-hidden"
@@ -116,8 +116,9 @@ export default async function AdminDashboard() {
               View all →
             </Link>
           </div>
-          {leads.length > 0 ? (
-            <table className="w-full border-collapse" style={{ fontSize: '12.5px' }}>
+          <div className="overflow-x-auto">
+            {leads.length > 0 ? (
+              <table className="w-full border-collapse min-w-[600px]" style={{ fontSize: '12.5px' }}>
               <thead>
                 <tr style={{ background: '#f8fafc', borderBottom: '1px solid #e4e8ee' }}>
                   {['Contact', 'Service', 'Date', 'Status', ''].map((h) => (
@@ -178,6 +179,7 @@ export default async function AdminDashboard() {
               </p>
             </div>
           )}
+          </div>
         </div>
 
         {/* Right column */}
