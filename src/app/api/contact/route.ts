@@ -202,7 +202,7 @@ export async function POST(req: NextRequest) {
         
         // Send auto-reply to User
         await transporter.sendMail({
-          from: \`"TAG Advisors" <\${process.env.FROM_EMAIL || emailUser}>\`,
+          from: `"TAG Advisors" <${process.env.FROM_EMAIL || emailUser}>`,
           to: validatedData.email,
           subject: "We received your inquiry - TAG Advisors",
           html: userHtmlContent,
