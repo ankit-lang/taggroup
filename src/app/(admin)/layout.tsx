@@ -23,7 +23,7 @@ export default async function AdminLayout({
     const rawToken = cookieStore.get('tag_access_token')?.value;
     if (rawToken) {
       const { data } = await supabase.auth.getUser(rawToken);
-      user = data?.user;
+      user = data?.user || undefined;
     }
   }
 
