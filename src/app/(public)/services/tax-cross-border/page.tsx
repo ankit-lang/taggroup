@@ -34,9 +34,9 @@ export default function Page() {
                   <span className="pmini-info"><strong>Sumit Goyal</strong><span>Partner</span></span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
                 </a>
-                <a className="pmini" href="/people/manorath">
-                  <span className="pmini-av"><img src="/assets/photos/people/manorath.jpg" alt="" loading="lazy" onError={(e) => (e.currentTarget.style.display = 'none')} />MR</span>
-                  <span className="pmini-info"><strong>Manorath Rathi</strong><span>Associate Partner</span></span>
+                <a className="pmini" href="/people/mr-pradip">
+                  <span className="pmini-av"><img src="/assets/photos/people/mr-pradip.jpg" alt="" loading="lazy" onError={(e) => (e.currentTarget.style.display = 'none')} />MR</span>
+                  <span className="pmini-info"><strong>MR Pradip</strong><span>Associate Partner</span></span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
                 </a>
                 <a className="btn btn-primary" href="/contact?service=Tax%20&%20Cross-Border%20Advisory" style={{ "width": "100%", "justifyContent": "center", "marginTop": "12px" }}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg> Enquire</a>

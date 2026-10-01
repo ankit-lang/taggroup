@@ -183,13 +183,13 @@ export const leadershipData: LeadershipProfile[] = [
     industries: 'Real Estate & Infrastructure · Consultancy, Engineering & Project Management · Hospitality · Transport (Passenger & Goods)'
   },
   {
-    id: 'manorath-rathi',
-    name: 'Manorath Rathi',
+    id: 'mr-pradip',
+    name: 'MR Pradip',
     initials: 'MR',
     title: 'Partner - Legal, Regulatory & FEMA',
     shortDesc: 'Commercial, Corporate, Insolvency & Tax Laws, White Collar (FEMA & Anti-money laundering)',
     category: 'Associate Partners',
-    about: 'Manorath is a law graduate of the prestigious Campus Law Centre, University of Delhi and is additionally a qualified Chartered Accountant from the Institute of Chartered Accountants of India and a commerce graduate of the Calcutta University. He has worked under a renowned Senior Advocate of the Supreme Court of India and groomed himself into a litigation lawyer.\n\nHe specializes in Corporate and Commercial Litigation, Tax litigation, Structuring and Transaction advisory, Insolvency laws, Anti Money Laundering laws and regularly appears before various tribunals, High Courts and the Supreme Court of India.\n\nHe presently advises a US telecom Major, two leading ECommerce giants, and a British Multinational. He also writes articles on contemporary legal issues.',
+    about: 'MR Pradip is a law graduate of the prestigious Campus Law Centre, University of Delhi and is additionally a qualified Chartered Accountant from the Institute of Chartered Accountants of India and a commerce graduate of the Calcutta University. He has worked under a renowned Senior Advocate of the Supreme Court of India and groomed himself into a litigation lawyer.\n\nHe specializes in Corporate and Commercial Litigation, Tax litigation, Structuring and Transaction advisory, Insolvency laws, Anti Money Laundering laws and regularly appears before various tribunals, High Courts and the Supreme Court of India.\n\nHe presently advises a US telecom Major, two leading ECommerce giants, and a British Multinational. He also writes articles on contemporary legal issues.',
     credentials: [
       'LL.B. — Campus Law Centre, University of Delhi',
       'Chartered Accountant — ICAI',
@@ -210,7 +210,7 @@ export const leadershipData: LeadershipProfile[] = [
     title: 'Associate Partner - Legal & Regulatory',
     shortDesc: 'Legal, Regulatory & Foreign Exchange Regulations',
     category: 'Associate Partners',
-    about: 'Karuna is a Partner within TAG\'s specialist legal, regulatory and foreign exchange regulations network, working alongside Manorath Rathi on regulatory advisory, FEMA-related matters and cross-border compliance.',
+    about: 'Karuna is a Partner within TAG\'s specialist legal, regulatory and foreign exchange regulations network, working alongside MR Pradip on regulatory advisory, FEMA-related matters and cross-border compliance.',
     coreAreas: [
       'Regulatory advisory across sectoral laws and licensing regimes',
       'Foreign Exchange Management Act (FEMA) — inbound and outbound structures',

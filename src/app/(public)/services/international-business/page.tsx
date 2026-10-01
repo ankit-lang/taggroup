@@ -34,9 +34,9 @@ export default function Page() {
                   <span className="pmini-info"><strong>Sumit Goyal</strong><span>Partner</span></span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
                 </a>
-                <a className="pmini" href="/people/manorath">
-                  <span className="pmini-av"><img src="/assets/photos/people/manorath.jpg" alt="" loading="lazy" onError={(e) => (e.currentTarget.style.display = 'none')} />MR</span>
-                  <span className="pmini-info"><strong>Manorath Rathi</strong><span>Associate Partner</span></span>
+                <a className="pmini" href="/people/mr-pradip">
+                  <span className="pmini-av"><img src="/assets/photos/people/mr-pradip.jpg" alt="" loading="lazy" onError={(e) => (e.currentTarget.style.display = 'none')} />MR</span>
+                  <span className="pmini-info"><strong>MR Pradip</strong><span>Associate Partner</span></span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
                 </a><span className="pmini-sep">Specialists</span>
                 <a className="pmini" href="/people/awen">

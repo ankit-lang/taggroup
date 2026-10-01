@@ -49,11 +49,11 @@ export default function Page() {
                 <span className="link-arrow">View profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
               </div>
             </a>
-            <a className="person reveal" href="/people/manorath">
-              <div className="avatar"><img src="/assets/photos/people/manorath.jpg" alt="" loading="lazy" onError={(e) => (e.currentTarget.style.display = 'none')} /><span className="initials">MR</span></div>
+            <a className="person reveal" href="/people/mr-pradip">
+              <div className="avatar"><img src="/assets/photos/people/mr-pradip.jpg" alt="" loading="lazy" onError={(e) => (e.currentTarget.style.display = 'none')} /><span className="initials">MR</span></div>
               <div className="p-body">
                 <span className="p-role">Associate Partner</span>
-                <h3>Manorath Rathi</h3>
+                <h3>MR Pradip</h3>
                 <p className="p-title">Legal, Regulatory & Dispute Resolution</p>
                 <span className="link-arrow">View profile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
               </div>
