@@ -1,0 +1,801 @@
+{
+  "vishal": {
+    "breadcrumb": {
+      "home": "Home",
+      "leadership": "Leadership"
+    },
+    "title": "Partner — UAE Desk",
+    "name": "Vishal Tayal",
+    "subtitle": "UAE Desk · India–UAE Tax, VAT &amp; Structuring &middot; UAE",
+    "chips": {
+      "c1": "India GST",
+      "c2": "UAE VAT",
+      "c3": "Structuring",
+      "c4": "Litigation",
+      "c5": "ICAI faculty"
+    },
+    "nav": {
+      "profile": "Profile",
+      "overview": "Overview",
+      "expertise": "Areas of expertise",
+      "experience": "Experience",
+      "credentials": "Credentials",
+      "get_in_touch": "Get in touch",
+      "email": "Email Vishal",
+      "download": "Download profile (PDF)"
+    },
+    "overview": {
+      "title": "Overview",
+      "desc": "Vishal is a Partner at TAG Group advising on indirect tax across India and the UAE — GST, legacy service tax and UAE VAT — combining advisory and implementation experience with regular professional training. As Director of Taxepolis International FZCO, he supports the group's UAE presence, with work spanning transaction structuring, litigation, tax-impact reviews and the design of tax processes, controls and compliance frameworks."
+    },
+    "expertise": {
+      "title": "Areas of expertise",
+      "h1": "India indirect tax",
+      "h1_l1": "India GST and legacy service tax",
+      "h1_l2": "Tax-efficient transaction structuring",
+      "h1_l3": "Diagnostic reviews, litigation and compliance controls",
+      "h2": "UAE VAT",
+      "h2_l1": "UAE VAT advisory and implementation",
+      "h2_l2": "Cross-border India–UAE structuring",
+      "h2_l3": "Tax process, controls and compliance design",
+      "h3": "Training & sector",
+      "h3_l1": "Regular faculty for ICAI members and students",
+      "h3_l2": "Clients from SMEs to Fortune 100 global organisations",
+      "h3_l3": "Sector exposure across infrastructure, engineering, hospitality and transport"
+    },
+    "experience": {
+      "title": "Experience",
+      "p1": "Current",
+      "r1": "Partner, TAG Group (UAE) & Director, Taxepolis International FZCO",
+      "d1": "Leads India–UAE indirect-tax mandates and the group's UAE presence.",
+      "p2": "Practice",
+      "r2": "Indirect-tax advisory & implementation",
+      "d2": "Advised multinational and Indian groups; regular professional trainer."
+    },
+    "cred": {
+      "title": "Credentials & qualifications",
+      "sector": "Sector experience",
+      "c1": "Chartered Accountant (ICAI)",
+      "c2": "ICAI faculty on GST",
+      "c3": "Director, Taxepolis International FZCO (UAE)",
+      "c4": "India & UAE exposure",
+      "s1": "Infrastructure",
+      "s2": "Engineering",
+      "s3": "Hospitality",
+      "s4": "Transport & logistics"
+    },
+    "cta": {
+      "title": "Work with Vishal.",
+      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
+      "btn": "Contact TAG Group"
+    }
+  },
+  "ishita": {
+    "breadcrumb": {
+      "home": "Home",
+      "leadership": "Leadership"
+    },
+    "title": "Partner",
+    "name": "Ishita Sharma",
+    "subtitle": "Human Resources & Organisation Capability &middot; Gurugram, India",
+    "chips": {
+      "c1": "Talent acquisition",
+      "c2": "L&D / LMS",
+      "c3": "HR operations",
+      "c4": "SAP HR",
+      "c5": "HR analytics"
+    },
+    "nav": {
+      "profile": "Profile",
+      "overview": "Overview",
+      "expertise": "Areas of expertise",
+      "experience": "Experience",
+      "credentials": "Credentials",
+      "get_in_touch": "Get in touch",
+      "email": "Email Ishita",
+      "download": "Download profile (PDF)"
+    },
+    "overview": {
+      "title": "Overview",
+      "desc": "Ishita leads TAG Group's Human Capital & HR practice. Across 15+ years building and running the people function for a listed manufacturing enterprise, she has shaped how a large, dispersed organisation hires, learns and performs — owning learning strategy, talent acquisition, HR operations and analytics at PAN-India scale. She brings that operator's perspective to clients: HR systems that are measurable, compliant and built to scale, rather than policies on paper."
+    },
+    "expertise": {
+      "title": "Areas of expertise",
+      "h1": "Learning & development",
+      "h1_l1": "Learning strategy, TNI and capability programmes",
+      "h1_l2": "Learning-management-system implementation and adoption",
+      "h1_l3": "Effectiveness tracking via scorecards, surveys and dashboards",
+      "h2": "Talent acquisition",
+      "h2_l1": "Full-cycle recruitment and workforce planning",
+      "h2_l2": "Leadership and critical-role hiring",
+      "h2_l3": "Recruitment vendor governance and diversity pipelines",
+      "h3": "HR operations & compliance",
+      "h3_l1": "Payroll, PF and ESI compliance via SAP HR / SuccessFactors",
+      "h3_l2": "HR policies, handbooks and process documentation",
+      "h3_l3": "Statutory HR compliance and audit readiness",
+      "h4": "Performance & analytics",
+      "h4_l1": "Performance-management systems and competency frameworks",
+      "h4_l2": "HR analytics and management dashboards (Power BI)",
+      "h4_l3": "Employee engagement, rewards and recognition"
+    },
+    "experience": {
+      "title": "Experience",
+      "p1": "Recent",
+      "r1": "Learning & Development Lead — listed manufacturing enterprise",
+      "d1": "Owned the enterprise learning agenda across India — strategy, capability programmes, compliance and the LMS rollout — lifting mandatory-training compliance to 95% and L&D plan adherence to 85%.",
+      "p2": "Prior",
+      "r2": "Talent Acquisition Lead",
+      "d2": "Ran workforce planning and hiring across four regional zones, closing ~75% of open roles and building proactive pipelines for critical positions.",
+      "p3": "Prior",
+      "r3": "HR Operations",
+      "d3": "Built the operating backbone — payroll, statutory compliance, MIS and process governance — on SAP HR / SuccessFactors."
+    },
+    "cred": {
+      "title": "Credentials & qualifications",
+      "sector": "Sector experience",
+      "c1": "MBA, HR & Operations",
+      "c2": "B.Sc. (Hons.) Biotechnology",
+      "c3": "ISO Internal Auditor",
+      "c4": "15+ years' experience",
+      "s1": "Manufacturing",
+      "s2": "Logistics",
+      "s3": "Corporate & shared services"
+    },
+    "cta": {
+      "title": "Work with Ishita.",
+      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
+      "btn": "Contact TAG Group"
+    }
+  },
+  "sumit": {
+    "breadcrumb": {
+      "home": "Home",
+      "leadership": "Leadership"
+    },
+    "title": "Partner",
+    "name": "Sumit Goyal",
+    "subtitle": "Indirect Tax &middot; Gurugram, India",
+    "chips": {
+      "c1": "GST",
+      "c2": "Departmental audits",
+      "c3": "Impact analysis",
+      "c4": "Forensic perspective"
+    },
+    "nav": {
+      "profile": "Profile",
+      "overview": "Overview",
+      "expertise": "Areas of expertise",
+      "experience": "Experience",
+      "credentials": "Credentials",
+      "get_in_touch": "Get in touch",
+      "email": "Email Sumit",
+      "download": "Download profile (PDF)"
+    },
+    "overview": {
+      "title": "Overview",
+      "desc": "Sumit is a Partner at TAG Group specialising in indirect tax compliance and advisory. He has practical experience handling departmental audits, transaction-level tax impact analysis and client guidance on complex GST matters, with a strong grounding in diagnostic review, compliance execution and issue resolution."
+    },
+    "expertise": {
+      "title": "Areas of expertise",
+      "h1": "GST advisory & compliance",
+      "h1_l1": "GST compliance reviews and advisory",
+      "h1_l2": "Registrations, reconciliations and refunds",
+      "h1_l3": "Transaction and business-model impact analysis",
+      "h2": "Audits & controversy",
+      "h2_l1": "Departmental audits and tax-authority matters",
+      "h2_l2": "Litigation support and representation",
+      "h2_l3": "Compliance advisory for complex positions",
+      "h3": "Controls & forensics",
+      "h3_l1": "Forensic-accounting perspective on tax controls",
+      "h3_l2": "Fraud detection and diagnostic review",
+      "h3_l3": "Process and compliance strengthening"
+    },
+    "experience": {
+      "title": "Experience",
+      "p1": "Current",
+      "r1": "Partner, TAG Group — Indirect Tax",
+      "d1": "Advises clients across indirect tax compliance, advisory and departmental audits.",
+      "p2": "Prior",
+      "r2": "Specialist indirect-tax advisory practice",
+      "d2": "Developed deep experience in GST diagnostics, compliance and issue resolution."
+    },
+    "cred": {
+      "title": "Credentials & qualifications",
+      "sector": "Sector experience",
+      "c1": "Chartered Accountant (ICAI)",
+      "c2": "ICAI Certificate — Forensic Accounting & Fraud Detection",
+      "c3": "13+ years in indirect tax",
+      "c4": "Pursuing DISA & Concurrent Audit",
+      "s1": "Manufacturing",
+      "s2": "Services",
+      "s3": "Infrastructure",
+      "s4": "Retail & FMCG"
+    },
+    "cta": {
+      "title": "Work with Sumit.",
+      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
+      "btn": "Contact TAG Group"
+    }
+  },
+  "awen": {
+    "breadcrumb": {
+      "home": "Home",
+      "leadership": "Leadership"
+    },
+    "title": "International Desk — Singapore",
+    "name": "Awen Lee",
+    "subtitle": "Corporate Services · Accounting & Compliance &middot; Singapore",
+    "chips": {
+      "c1": "Singapore accounting",
+      "c2": "Corporate services",
+      "c3": "Payroll",
+      "c4": "Regulatory coordination"
+    },
+    "nav": {
+      "profile": "Profile",
+      "overview": "Overview",
+      "expertise": "Areas of expertise",
+      "experience": "Experience",
+      "credentials": "Credentials",
+      "get_in_touch": "Get in touch",
+      "email": "Email Awen",
+      "download": "Download profile (PDF)"
+    },
+    "overview": {
+      "title": "Overview",
+      "desc": "Awen is TAG Group's Singapore network partner and the coordinating contact for Malaysia. As Executive Director of S&A Consulting Singapore Pte. Ltd. and Grand Merge Capital Pte. Ltd., he supports accounting, company secretarial, payroll and corporate services, including practical engagement with Singapore authorities (IRAS, MOM, ACRA and CPF Board)."
+    },
+    "expertise": {
+      "title": "Areas of expertise",
+      "h1": "Corporate services",
+      "h1_l1": "Company incorporation and secretarial",
+      "h1_l2": "Ongoing corporate compliance",
+      "h1_l3": "Regulatory coordination with Singapore authorities",
+      "h2": "Finance & payroll",
+      "h2_l1": "Accounting setup and compliance",
+      "h2_l2": "Payroll and employment administration",
+      "h2_l3": "Support for investment managers and SMEs",
+      "h3": "Coordination",
+      "h3_l1": "Singapore market-entry support",
+      "h3_l2": "Coordinating contact for Malaysia",
+      "h3_l3": "Cross-border coordination with India"
+    },
+    "experience": {
+      "title": "Experience",
+      "p1": "Current",
+      "r1": "Executive Director, S&A Consulting Singapore",
+      "d1": "10+ years across professional services and commerce; supports accounting and compliance for cross-border businesses."
+    },
+    "cred": {
+      "title": "Credentials & qualifications",
+      "sector": "Sector experience",
+      "c1": "CPA Australia member",
+      "c2": "ISCA member",
+      "c3": "Singapore Chartered Tax Professional",
+      "c4": "BSc Commerce (Accounting)",
+      "s1": "Corporate services",
+      "s2": "Investment management",
+      "s3": "SMEs"
+    },
+    "cta": {
+      "title": "Work with Awen.",
+      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
+      "btn": "Contact TAG Group"
+    }
+  },
+  "hasina": {
+    "breadcrumb": {
+      "home": "Home",
+      "leadership": "Leadership"
+    },
+    "title": "International Desk — Mauritius",
+    "name": "Hasina Bahemia",
+    "subtitle": "Corporate Administration & Governance &middot; Mauritius",
+    "chips": {
+      "c1": "Corporate administration",
+      "c2": "Governance",
+      "c3": "AML/CFT (CAMS)",
+      "c4": "Client onboarding"
+    },
+    "nav": {
+      "profile": "Profile",
+      "overview": "Overview",
+      "expertise": "Areas of expertise",
+      "experience": "Experience",
+      "credentials": "Credentials",
+      "get_in_touch": "Get in touch",
+      "email": "Email Hasina",
+      "download": "Download profile (PDF)"
+    },
+    "overview": {
+      "title": "Overview",
+      "desc": "Hasina is TAG Group's Mauritius network partner. As Chief Operating Officer of Fideco Global Business Services Ltd (CAMS-certified), she leads operations, client relationships and service delivery — covering corporate administration, governance, AML/CFT compliance, client onboarding and international structuring coordination."
+    },
+    "expertise": {
+      "title": "Areas of expertise",
+      "h1": "Corporate administration",
+      "h1_l1": "Company establishment and administration",
+      "h1_l2": "Substance and governance support",
+      "h1_l3": "Accounting and tax coordination",
+      "h2": "Compliance",
+      "h2_l1": "AML/CFT compliance and client onboarding",
+      "h2_l2": "Regulatory coordination",
+      "h2_l3": "International structuring coordination",
+      "h3": "Delivery",
+      "h3_l1": "Operations and service delivery leadership",
+      "h3_l2": "Client-relationship management",
+      "h3_l3": "Business-related relocation assistance"
+    },
+    "experience": {
+      "title": "Experience",
+      "p1": "Current",
+      "r1": "Chief Operating Officer, Fideco Global Business Services (Mauritius)",
+      "d1": "Leads operations, client relationships and delivery for international structuring and administration."
+    },
+    "cred": {
+      "title": "Credentials & qualifications",
+      "sector": "Sector experience",
+      "c1": "CAMS (Certified Anti-Money-Laundering Specialist)",
+      "c2": "Chief Operating Officer, Fideco Global Business Services",
+      "c3": "Corporate governance & administration",
+      "s1": "Corporate & fiduciary services",
+      "s2": "International structuring"
+    },
+    "cta": {
+      "title": "Work with Hasina.",
+      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
+      "btn": "Contact TAG Group"
+    }
+  },
+  "sushil": {
+    "breadcrumb": {
+      "home": "Home",
+      "leadership": "Leadership"
+    },
+    "title": "Associate Partner",
+    "name": "Sushil Sharma",
+    "subtitle": "IT Infrastructure, Systems & Security &middot; Delhi NCR, India",
+    "chips": {
+      "c1": "Infrastructure",
+      "c2": "Networks & servers",
+      "c3": "Info-security",
+      "c4": "Cloud / virtualisation"
+    },
+    "nav": {
+      "profile": "Profile",
+      "overview": "Overview",
+      "expertise": "Areas of expertise",
+      "experience": "Experience",
+      "credentials": "Credentials",
+      "get_in_touch": "Get in touch",
+      "email": "Email Sushil",
+      "download": "Download profile (PDF)"
+    },
+    "overview": {
+      "title": "Overview",
+      "desc": "Sushil is an Associate Partner at TAG Group leading technology infrastructure. With 20+ years managing enterprise IT infrastructure, security, networks, servers and implementation programmes, he connects business requirements with practical technology delivery — planning, procurement, deployment, vendor management, end-user support and operating controls."
+    },
+    "expertise": {
+      "title": "Areas of expertise",
+      "h1": "Infrastructure & networks",
+      "h1_l1": "Data-centre, server and network operations",
+      "h1_l2": "Cloud, virtualisation and enterprise collaboration",
+      "h1_l3": "Disaster recovery, backups and capacity planning",
+      "h2": "Security & controls",
+      "h2_l1": "Infrastructure and information-security policies",
+      "h2_l2": "Firewall and endpoint-security environments",
+      "h2_l3": "IT general controls and operating governance",
+      "h3": "Delivery & vendors",
+      "h3_l1": "Technology procurement and implementation",
+      "h3_l2": "Vendor governance and SLAs",
+      "h3_l3": "Business-systems and process improvement"
+    },
+    "experience": {
+      "title": "Experience",
+      "p1": "Current",
+      "r1": "Associate Partner, TAG Group — Technology Infrastructure",
+      "d1": "Leads IT infrastructure planning and delivery for client setups and transformations.",
+      "p2": "Prior",
+      "r2": "IT Infrastructure leadership — large engineering group",
+      "d2": "Managed infrastructure, teams, DR, security and enterprise implementations."
+    },
+    "cred": {
+      "title": "Credentials & qualifications",
+      "sector": "Sector experience",
+      "c1": "M.Sc. Computer Science",
+      "c2": "Certified Internal Auditor",
+      "c3": "ITIL V3 Foundation",
+      "c4": "VMware & Microsoft certified",
+      "c5": "20+ years' experience",
+      "s1": "Engineering",
+      "s2": "Manufacturing",
+      "s3": "Corporate & shared services"
+    },
+    "cta": {
+      "title": "Work with Sushil.",
+      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
+      "btn": "Contact TAG Group"
+    }
+  },
+  "manuj": {
+    "breadcrumb": {
+      "home": "Home",
+      "leadership": "Leadership"
+    },
+    "title": "Associate Partner",
+    "name": "Manuj Singhal",
+    "subtitle": "Valuation &middot; India & global engagements",
+    "chips": {
+      "c1": "Business valuation",
+      "c2": "Complex securities",
+      "c3": "Intangibles / PPA",
+      "c4": "ESOP valuation"
+    },
+    "nav": {
+      "profile": "Profile",
+      "overview": "Overview",
+      "expertise": "Areas of expertise",
+      "experience": "Experience",
+      "credentials": "Credentials",
+      "get_in_touch": "Get in touch",
+      "email": "Email Manuj",
+      "download": "Download profile (PDF)"
+    },
+    "overview": {
+      "title": "Overview",
+      "desc": "Manuj is an Associate Partner at TAG Group leading valuation. He has 15+ years of experience across business valuation, complex securities, intangible assets and specialised financial analysis, serving large corporates, Big Four firms, US consulting firms and global companies, and has led sizeable analytics teams."
+    },
+    "expertise": {
+      "title": "Areas of expertise",
+      "h1": "Business & equity valuation",
+      "h1_l1": "Enterprise and equity valuation across industries",
+      "h1_l2": "Portfolio, transaction and financial-reporting valuations",
+      "h1_l3": "Strategic models supported by industry analysis",
+      "h2": "Complex instruments",
+      "h2_l1": "Debt, convertibles and complex derivatives",
+      "h2_l2": "Purchase price allocation (PPA) and intangibles",
+      "h2_l3": "ESOP structuring and valuation",
+      "h3": "Specialised analysis",
+      "h3_l1": "Real-estate valuation, IBR and CECL analysis",
+      "h3_l2": "Scenario and sensitivity modelling",
+      "h3_l3": "Global client and adviser support"
+    },
+    "experience": {
+      "title": "Experience",
+      "p1": "Current",
+      "r1": "Associate Partner, TAG Group — Valuation",
+      "d1": "Leads valuation mandates across transactions, financial reporting and ESOPs.",
+      "p2": "Prior",
+      "r2": "Global consulting & analytics",
+      "d2": "Delivered complex valuation for global clients; led teams of 50+ in an analytics-led environment."
+    },
+    "cred": {
+      "title": "Credentials & qualifications",
+      "sector": "Sector experience",
+      "c1": "Chartered Financial Analyst (CFA)",
+      "c2": "Financial Risk Manager (FRM)",
+      "c3": "Registered Valuer (IBBI)",
+      "c4": "MBA Finance & B.Tech",
+      "c5": "15+ years' experience",
+      "s1": "Financial services",
+      "s2": "Technology",
+      "s3": "Manufacturing",
+      "s4": "Real estate"
+    },
+    "cta": {
+      "title": "Work with Manuj.",
+      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
+      "btn": "Contact TAG Group"
+    }
+  },
+  "k_vishnu": {
+    "breadcrumb": {
+      "home": "Home",
+      "leadership": "Leadership"
+    },
+    "title": "Partner",
+    "name": "K. Vishnu Sharma",
+    "subtitle": "Audit, Assurance & Finance Transformation &middot; Gurugram, India",
+    "chips": {
+      "c1": "Controllership",
+      "c2": "Close & consolidation",
+      "c3": "ICFR / SOX",
+      "c4": "Ind AS / IFRS",
+      "c5": "ERP (SAP S/4HANA)"
+    },
+    "nav": {
+      "profile": "Profile",
+      "overview": "Overview",
+      "expertise": "Areas of expertise",
+      "experience": "Experience",
+      "credentials": "Credentials",
+      "get_in_touch": "Get in touch",
+      "email": "Email K",
+      "download": "Download profile (PDF)"
+    },
+    "overview": {
+      "title": "Overview",
+      "desc": "K. Vishnu Sharma is a Partner at TAG Group leading assurance support and finance transformation. He brings senior controllership experience from large listed and multinational organisations — including leading British companies and Fortune 100 global technology groups — spanning financial reporting, close governance, audit coordination, ICFR/SOX programmes, ERP implementation and accounting operations. His advisory relevance is strongest where clients need CFO-level oversight, disciplined reporting, audit readiness and practical process improvement."
+    },
+    "expertise": {
+      "title": "Areas of expertise",
+      "h1": "Close, consolidation & reporting",
+      "h1_l1": "Monthly, quarterly and annual close ownership",
+      "h1_l2": "Consolidation and management reporting across 100+ subsidiaries",
+      "h1_l3": "Ind AS, IFRS, US GAAP and UK GAAP reporting",
+      "h2": "Controls & audit",
+      "h2_l1": "SOX, ICFR and finance control frameworks",
+      "h2_l2": "Statutory and external audit management to clean outcomes",
+      "h2_l3": "Governed 290 controls under SOX and the Companies Act",
+      "h3": "Transformation & automation",
+      "h3_l1": "SAP S/4HANA implementation and finance-close automation",
+      "h3_l2": "68 automation and digital-transformation projects delivered",
+      "h3_l3": "Shared-service (FSSC/BPO) governance",
+      "h4": "Finance operations",
+      "h4_l1": "AP, AR, payroll, general ledger, fixed assets and treasury",
+      "h4_l2": "Budgeting, forecasting and KPI monitoring",
+      "h4_l3": "Finance-team structuring and capability building"
+    },
+    "experience": {
+      "title": "Experience",
+      "p1": "Recent",
+      "r1": "Financial Planning & Reporting — a British multinational",
+      "d1": "Owned month-end close and corporate reporting; led controls testing and audit readiness; cut SG&A close by 2 days and manual journals by 50%.",
+      "p2": "Prior",
+      "r2": "Chief Manager — a Fortune 100 global electronics group",
+      "d2": "Led financial and risk reporting, statutory audit coordination (100% clean), Ind AS financials and SOX/ICFR (290 controls); drove SAP HANA implementation.",
+      "p3": "Prior",
+      "r3": "Manager, Finance — listed Indian manufacturer",
+      "d3": "Finalised financial statements, implemented Ind AS 115 & 116, led statutory and tax audits and ERP rollout.",
+      "p4": "Prior",
+      "r4": "Section Manager — listed Indian manufacturing group",
+      "d4": "Group consolidation of 100+ subsidiaries and 50+ plants; supported QIP, bond issuance and acquisition due diligence."
+    },
+    "cred": {
+      "title": "Credentials & qualifications",
+      "sector": "Sector experience",
+      "c1": "Chartered Accountant (ICAI), 2011",
+      "c2": "B.Com. (Hons.), Delhi University",
+      "c3": "14+ years' experience",
+      "c4": "SAP S/4HANA, Oracle & Hyperion",
+      "c5": "VBA-certified (automation & reporting)",
+      "s1": "Telecom",
+      "s2": "Electronics & technology",
+      "s3": "Consumer durables",
+      "s4": "Automotive & manufacturing"
+    },
+    "cta": {
+      "title": "Work with K.",
+      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
+      "btn": "Contact TAG Group"
+    }
+  },
+  "karuna": {
+    "breadcrumb": {
+      "home": "Home",
+      "leadership": "Leadership"
+    },
+    "title": "Partner",
+    "name": "Karuna Sharma",
+    "subtitle": "Legal, Regulatory & Foreign Exchange Regulations &middot; India",
+    "chips": {
+      "c1": "Legal & regulatory",
+      "c2": "FEMA",
+      "c3": "Corporate law"
+    },
+    "nav": {
+      "profile": "Profile",
+      "overview": "Overview",
+      "expertise": "Areas of expertise",
+      "experience": "Experience",
+      "credentials": "Credentials",
+      "get_in_touch": "Get in touch",
+      "email": "Email Karuna",
+      "download": "Download profile (PDF)"
+    },
+    "overview": {
+      "title": "Overview",
+      "desc": "Karuna is a Partner within TAG Group's specialist legal and regulatory network, advising on corporate, regulatory and foreign-exchange (FEMA) matters. (Detailed credentials to be added.)"
+    },
+    "expertise": {
+      "title": "Areas of expertise",
+      "h1": "Legal & regulatory",
+      "h1_l1": "Corporate and regulatory advisory",
+      "h1_l2": "FEMA and foreign-exchange matters",
+      "h1_l3": "Documentation and compliance support"
+    },
+    "experience": {
+      "title": "Experience",
+      "p1": "Current",
+      "r1": "Partner, TAG Group — Legal & Regulatory",
+      "d1": "Advises on corporate, regulatory and FEMA matters."
+    },
+    "cred": {
+      "title": "Credentials & qualifications",
+      "sector": "Sector experience",
+      "c1": "Legal & regulatory practice",
+      "c2": "FEMA and corporate law",
+      "s1": "Corporate",
+      "s2": "Cross-border"
+    },
+    "cta": {
+      "title": "Work with Karuna.",
+      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
+      "btn": "Contact TAG Group"
+    }
+  },
+  "amit": {
+    "breadcrumb": {
+      "home": "Home",
+      "leadership": "Leadership"
+    },
+    "title": "Strategic Associate",
+    "name": "Amit Sood",
+    "subtitle": "Real Estate & Workforce Solutions &middot; Delhi NCR, India",
+    "chips": {
+      "c1": "Property search",
+      "c2": "Site coordination",
+      "c3": "Facility workforce"
+    },
+    "nav": {
+      "profile": "Profile",
+      "overview": "Overview",
+      "expertise": "Areas of expertise",
+      "experience": "Experience",
+      "credentials": "Credentials",
+      "get_in_touch": "Get in touch",
+      "email": "Email Amit",
+      "download": "Download profile (PDF)"
+    },
+    "overview": {
+      "title": "Overview",
+      "desc": "Amit is a Strategic Associate at TAG Group supporting corporate real-estate requirements and blue-collar workforce deployment. His role centres on local market access, property identification, site coordination and transaction follow-through, giving clients a structured professional interface alongside on-ground execution support."
+    },
+    "expertise": {
+      "title": "Areas of expertise",
+      "h1": "Property",
+      "h1_l1": "Land, office, factory and warehouse searches",
+      "h1_l2": "Lease and property-transaction coordination",
+      "h1_l3": "Property management and tenant coordination",
+      "h2": "Workforce & facility",
+      "h2_l1": "Security personnel and support staff",
+      "h2_l2": "Deployment and replacement coordination",
+      "h2_l3": "Site-level workforce liaison and continuity",
+      "h3": "Execution",
+      "h3_l1": "Requirement definition and market sourcing",
+      "h3_l2": "Site visits and local counterpart coordination",
+      "h3_l3": "Documentation flow and follow-through"
+    },
+    "experience": {
+      "title": "Experience",
+      "p1": "Current",
+      "r1": "Strategic Associate, TAG Group — Real Estate & Workforce",
+      "d1": "Coordinates property and workforce requirements for new-market entry and expansion."
+    },
+    "cred": {
+      "title": "Credentials & qualifications",
+      "sector": "Sector experience",
+      "c1": "18+ years' sector experience",
+      "c2": "Delhi NCR market focus",
+      "c3": "Corporate property support",
+      "c4": "Workforce deployment coordination",
+      "s1": "Manufacturing",
+      "s2": "Warehousing & logistics",
+      "s3": "Corporate offices"
+    },
+    "cta": {
+      "title": "Work with Amit.",
+      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
+      "btn": "Contact TAG Group"
+    }
+  },
+  "naresh": {
+    "breadcrumb": {
+      "home": "Home",
+      "leadership": "Leadership"
+    },
+    "title": "Partner",
+    "name": "Naresh Kumar Goel",
+    "subtitle": "Audit & Assurance &middot; India",
+    "chips": {
+      "c1": "Audit & Assurance",
+      "c2": "Internal controls",
+      "c3": "Reporting reviews"
+    },
+    "nav": {
+      "profile": "Profile",
+      "overview": "Overview",
+      "expertise": "Areas of expertise",
+      "experience": "Experience",
+      "credentials": "Credentials",
+      "get_in_touch": "Get in touch",
+      "email": "Email Naresh",
+      "download": "Download profile (PDF)"
+    },
+    "overview": {
+      "title": "Overview",
+      "desc": "Naresh is a Partner in TAG Group's Audit & Assurance practice, supporting internal audit, internal financial controls and reporting-review engagements. His work strengthens governance and reporting discipline for growing and established businesses. (Detailed credentials to be added.)"
+    },
+    "expertise": {
+      "title": "Areas of expertise",
+      "h1": "Assurance support",
+      "h1_l1": "Internal audit and process reviews",
+      "h1_l2": "Internal financial controls (IFC)",
+      "h1_l3": "Reporting and compliance reviews"
+    },
+    "experience": {
+      "title": "Experience",
+      "p1": "Current",
+      "r1": "Partner, TAG Group — Audit & Assurance",
+      "d1": "Supports internal audit, controls and reporting-review mandates."
+    },
+    "cred": {
+      "title": "Credentials & qualifications",
+      "sector": "Sector experience",
+      "c1": "Audit & Assurance leadership",
+      "c2": "Internal controls & reporting reviews",
+      "s1": "Manufacturing",
+      "s2": "Services"
+    },
+    "cta": {
+      "title": "Work with Naresh.",
+      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
+      "btn": "Contact TAG Group"
+    }
+  },
+  "jai": {
+    "breadcrumb": {
+      "home": "Home",
+      "leadership": "Leadership"
+    },
+    "title": "Partner",
+    "name": "Jai Prakash",
+    "subtitle": "Indirect Tax &middot; India",
+    "chips": {
+      "c1": "Indirect tax",
+      "c2": "GST",
+      "c3": "Compliance"
+    },
+    "nav": {
+      "profile": "Profile",
+      "overview": "Overview",
+      "expertise": "Areas of expertise",
+      "experience": "Experience",
+      "credentials": "Credentials",
+      "get_in_touch": "Get in touch",
+      "email": "Email Jai",
+      "download": "Download profile (PDF)"
+    },
+    "overview": {
+      "title": "Overview",
+      "desc": "Jai is a Partner in TAG Group's Indirect Tax practice, supporting GST advisory, compliance and litigation for businesses across sectors. (Detailed credentials to be added.)"
+    },
+    "expertise": {
+      "title": "Areas of expertise",
+      "h1": "Indirect tax",
+      "h1_l1": "GST advisory and compliance",
+      "h1_l2": "Litigation and representation support",
+      "h1_l3": "Transaction impact analysis"
+    },
+    "experience": {
+      "title": "Experience",
+      "p1": "Current",
+      "r1": "Partner, TAG Group — Indirect Tax",
+      "d1": "Supports GST advisory, compliance and litigation mandates."
+    },
+    "cred": {
+      "title": "Credentials & qualifications",
+      "sector": "Sector experience",
+      "c1": "Indirect tax practice",
+      "c2": "GST advisory & compliance",
+      "s1": "Manufacturing",
+      "s2": "Services",
+      "s3": "Retail"
+    },
+    "cta": {
+      "title": "Work with Jai.",
+      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
+      "btn": "Contact TAG Group"
+    }
+  }
+}

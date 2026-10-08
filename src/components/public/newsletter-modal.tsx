@@ -3,7 +3,10 @@
 import React, { useState } from 'react'
 import { toast } from 'sonner'
 
+import { useI18n } from '@/lib/i18n'
+
 export function NewsletterModal() {
+  const { t } = useI18n()
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -58,33 +61,33 @@ export function NewsletterModal() {
       <div className="modal-backdrop" data-close></div>
       <div className="modal-card" role="dialog" aria-modal="true" aria-labelledby="nl-title" data-lenis-prevent>
         <button className="modal-x" data-close type="button" aria-label="Close" disabled={isSubmitting}>&times;</button>
-        <span className="eyebrow">Newsletters</span>
-        <h3 id="nl-title">Subscribe to TAG Group Insights</h3>
-        <p className="modal-lead">Sharp, regular reading for decision-makers — across tax, transfer pricing, startups, key rulings, geopolitics and regulatory change. Choose what you'd like to receive.</p>
+        <span className="eyebrow">{t('newsletter.title')}</span>
+        <h3 id="nl-title">{t('newsletter.heading')}</h3>
+        <p className="modal-lead">{t('newsletter.desc')}</p>
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="grid g-2" style={{ gap: '14px' }}>
-            <div><label>Full name <span className="req">*</span><input type="text" name="name" required disabled={isSubmitting} /></label></div>
-            <div><label>Email <span className="req">*</span><input type="email" name="email" required disabled={isSubmitting} /></label></div>
-            <div><label>Company<input type="text" name="company" disabled={isSubmitting} /></label></div>
-            <div><label>Designation<input type="text" name="designation" disabled={isSubmitting} /></label></div>
+            <div><label>{t('newsletter.fields.name')} <span className="req">*</span><input type="text" name="name" required disabled={isSubmitting} /></label></div>
+            <div><label>{t('newsletter.fields.email')} <span className="req">*</span><input type="email" name="email" required disabled={isSubmitting} /></label></div>
+            <div><label>{t('newsletter.fields.company')}<input type="text" name="company" disabled={isSubmitting} /></label></div>
+            <div><label>{t('newsletter.fields.designation')}<input type="text" name="designation" disabled={isSubmitting} /></label></div>
           </div>
           <fieldset className="nl-choices" disabled={isSubmitting}>
-            <legend>Which newsletters?</legend>
-            <label className="nl-c"><input type="checkbox" name="newsletter" value="Tax &amp; TP Fortnightly" /><span><strong>Tax &amp; TP Fortnightly</strong><em>Fortnightly</em></span></label>
-            <label className="nl-c"><input type="checkbox" name="newsletter" value="Startup Fortnightly" /><span><strong>Startup Fortnightly</strong><em>Fortnightly</em></span></label>
-            <label className="nl-c"><input type="checkbox" name="newsletter" value="Case Law Weekly" /><span><strong>Case Law Weekly</strong><em>Weekly</em></span></label>
-            <label className="nl-c"><input type="checkbox" name="newsletter" value="The Weekly Brief" /><span><strong>The Weekly Brief</strong><em>Weekly</em></span></label>
+            <legend>{t('newsletter.which')}</legend>
+            <label className="nl-c"><input type="checkbox" name="newsletter" value="Tax &amp; TP Fortnightly" /><span><strong>{t('newsletter.choices.tax')}</strong><em>{t('newsletter.choices.tax_f')}</em></span></label>
+            <label className="nl-c"><input type="checkbox" name="newsletter" value="Startup Fortnightly" /><span><strong>{t('newsletter.choices.startup')}</strong><em>{t('newsletter.choices.startup_f')}</em></span></label>
+            <label className="nl-c"><input type="checkbox" name="newsletter" value="Case Law Weekly" /><span><strong>{t('newsletter.choices.case')}</strong><em>{t('newsletter.choices.case_f')}</em></span></label>
+            <label className="nl-c"><input type="checkbox" name="newsletter" value="The Weekly Brief" /><span><strong>{t('newsletter.choices.brief')}</strong><em>{t('newsletter.choices.brief_f')}</em></span></label>
           </fieldset>
-          <label className="nl-consent"><input type="checkbox" name="consent" value="yes" required disabled={isSubmitting} /> <span>I'd like to receive these newsletters from TAG Group and consent to my details being used for that purpose. I can unsubscribe at any time.</span></label>
+          <label className="nl-consent"><input type="checkbox" name="consent" value="yes" required disabled={isSubmitting} /> <span>{t('newsletter.consent')}</span></label>
           <button className="btn btn-primary" type="submit" disabled={isSubmitting} style={{ marginTop: '18px', width: '100%', justifyContent: 'center' }}>
-            {isSubmitting ? 'Subscribing...' : (
+            {isSubmitting ? t('newsletter.subscribing') : (
               <>
-                Subscribe 
+                {t('newsletter.subscribe')} 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </>
             )}
           </button>
-          <p className="nl-note">No spam. Unsubscribe any time.</p>
+          <p className="nl-note">{t('newsletter.note')}</p>
         </form>
       </div>
     </div>

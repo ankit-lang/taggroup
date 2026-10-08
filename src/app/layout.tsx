@@ -16,7 +16,10 @@ export const metadata: Metadata = {
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Toaster } from "sonner";
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+import { I18nProvider } from "@/lib/i18n";
+import { getLocale } from "@/lib/get-locale";
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const locale = await getLocale();
   return (
     <html
       lang="en"
@@ -34,11 +37,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}} />
       </head>
       <body className="min-h-full flex flex-col">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
-          <SmoothScroll>{children}</SmoothScroll>
-        </ThemeProvider>
-        <Script src="/assets/js/main.js" strategy="lazyOnload" />
-        <Toaster position="bottom-right" />
+        <I18nProvider initialLocale={locale}>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
+            <SmoothScroll>{children}</SmoothScroll>
+          </ThemeProvider>
+          <Script src="/assets/js/main.js" strategy="lazyOnload" />
+          <Toaster position="bottom-right" />
+        </I18nProvider>
       </body>
     </html>
 

@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useI18n } from '@/lib/i18n'
 
-
-const slides = [
+const slidesConfig = [
   {
     id: 1,
     title: "Empowering Vision with",
@@ -38,8 +38,18 @@ const slides = [
 ]
 
 export function HeroCarousel() {
+  const { t } = useI18n()
   const [current, setCurrent] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
+
+  // Hydrate slides with translations
+  const slides = slidesConfig.map((slide, idx) => ({
+    ...slide,
+    title: t(`hero.slides.${idx}.title`),
+    highlight: t(`hero.slides.${idx}.highlight`),
+    description: t(`hero.slides.${idx}.description`),
+    linkText: t(`hero.slides.${idx}.linkText`)
+  }))
 
   // Auto-play
   useEffect(() => {
@@ -64,7 +74,7 @@ export function HeroCarousel() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         <motion.div
           key={current}
           className="absolute inset-0 z-0 flex items-center justify-center"
@@ -87,7 +97,7 @@ export function HeroCarousel() {
 
       <div className="relative z-20 container mx-auto h-full flex flex-col items-center justify-center text-center px-4 md:px-6 pt-16">
         <div className="max-w-4xl flex flex-col items-center">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={current}
               initial={{ y: 30, opacity: 0 }}
@@ -102,7 +112,7 @@ export function HeroCarousel() {
                 transition={{ delay: 0.2, duration: 0.5 }}
                 className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 dark:bg-primary/10 px-5 py-1.5 text-xs md:text-sm font-semibold text-primary mb-6 shadow-sm uppercase tracking-widest"
               >
-                Global Presence: India, UAE, Singapore, Malaysia
+                {t('hero.global_presence')}
               </motion.div>
 
               <motion.h1 
@@ -136,7 +146,7 @@ export function HeroCarousel() {
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="rounded-full text-base md:text-lg h-12 md:h-14 px-8 border-border/50 text-foreground hover:bg-accent hover:text-accent-foreground transition-all hover:-translate-y-0.5 font-medium w-full sm:w-auto shadow-sm hover:shadow-md" asChild>
-                  <Link href="/contact">Book a Consultation</Link>
+                  <Link href="/contact">{t('hero.book_consultation')}</Link>
                 </Button>
               </motion.div>
             </motion.div>

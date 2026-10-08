@@ -3,8 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'sonner';
 import { useSearchParams } from 'next/navigation';
+import { useI18n } from '@/lib/i18n';
 
 export function ContactForm() {
+  const { t } = useI18n();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const searchParams = useSearchParams();
   const [defaultService, setDefaultService] = useState('');
@@ -43,10 +45,10 @@ export function ContactForm() {
       const result = await res.json();
       
       if (res.ok) {
-        toast.success(result.message || 'Your inquiry has been received.');
+        toast.success(result.message || t('contact.form.success'));
         (e.target as HTMLFormElement).reset();
       } else {
-        toast.error(result.error || 'Failed to submit inquiry.');
+        toast.error(result.error || t('contact.form.error'));
       }
     } catch (error) {
       console.error(error);
@@ -59,14 +61,14 @@ export function ContactForm() {
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
       <div className="grid g-2" style={{ gap: '16px' }}>
-        <div><label>Full name <span className="req">*</span><input type="text" name="name" required disabled={isSubmitting} /></label></div>
-        <div><label>Company<input type="text" name="company" disabled={isSubmitting} /></label></div>
-        <div><label>Email <span className="req">*</span><input type="email" name="email" required disabled={isSubmitting} /></label></div>
-        <div><label>Phone<input type="tel" name="phone" disabled={isSubmitting} /></label></div>
+        <div><label>{t('contact.form.fullname')} <span className="req">*</span><input type="text" name="name" required disabled={isSubmitting} /></label></div>
+        <div><label>{t('contact.form.company')}<input type="text" name="company" disabled={isSubmitting} /></label></div>
+        <div><label>{t('contact.form.email')} <span className="req">*</span><input type="email" name="email" required disabled={isSubmitting} /></label></div>
+        <div><label>{t('contact.form.phone')}<input type="tel" name="phone" disabled={isSubmitting} /></label></div>
       </div>
-      <label style={{ marginTop: '16px', display: 'block' }}>Area of interest
+      <label style={{ marginTop: '16px', display: 'block' }}>{t('contact.form.area_of_interest')}
         <select name="service" disabled={isSubmitting} value={defaultService} onChange={(e) => setDefaultService(e.target.value)}>
-          <option value="">Select a service…</option>
+          <option value="">{t('contact.form.select_service')}</option>
           <option value="Tax & Cross-Border Advisory">Tax & Cross-Border Advisory</option>
           <option value="Global Transfer Pricing">Global Transfer Pricing</option>
           <option value="Global Capability Centre">Global Capability Centre</option>
@@ -81,22 +83,22 @@ export function ContactForm() {
           <option value="Other">Other</option>
         </select>
       </label>
-      <label style={{ marginTop: '16px', display: 'block' }}>How can we help?
+      <label style={{ marginTop: '16px', display: 'block' }}>{t('contact.form.how_can_we_help')}
         <textarea name="message" rows={5} disabled={isSubmitting}></textarea>
       </label>
       <button className="btn btn-primary" type="submit" style={{ marginTop: '20px', minWidth: '160px', justifyContent: 'center' }} disabled={isSubmitting}>
         {isSubmitting ? (
           <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-             Sending...
+             {t('contact.form.sending')}
           </span>
         ) : (
           <>
-            Send enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            {t('contact.form.send_enquiry')} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </>
         )}
       </button>
       
-      <p style={{ fontSize: '.84rem', color: 'var(--text-muted)', marginTop: '14px' }}>We treat every enquiry in confidence and usually respond within one business day.</p>
+      <p style={{ fontSize: '.84rem', color: 'var(--text-muted)', marginTop: '14px' }}>{t('contact.form.confidence')}</p>
     </form>
   );
 }
