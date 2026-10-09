@@ -57,7 +57,7 @@ export default function Page() {
     <div className="center measure mx-auto"><span className="eyebrow">{t("about.why_eyebrow")}</span><h2>{t("about.why_title")}</h2>
     <p className="lead">{t("about.why_desc")}</p></div>
     <div className="grid g-4" style={{"marginTop":"44px"}}>
-      <div className="feature"><div className="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17 6.2A3 3 0 0118 12M20 20a5 5 0 00-3.5-4.8"/></svg></div><div><h4>Leadership-grade team</h4><p>Leaders drawn from Big Four accounting firms, listed companies, and European &amp; APAC heads of multinationals — motivated professionals driven by integrity and excellence.</p></div></div>
+      <div className="feature"><div className="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17 6.2A3 3 0 0118 12M20 20a5 5 0 00-3.5-4.8"/></svg></div><div><h4>{t("about.diff_lead_title")}</h4><p>{t("about.diff_lead_desc")}</p></div></div>
       <div className="feature"><div className="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17l9 5 9-5"/></svg></div><div><h4>{t("about.diff_syn_title")}</h4><p>{t("about.diff_syn_desc")}</p></div></div>
       <div className="feature"><div className="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></svg></div><div><h4>{t("about.diff_del_title")}</h4><p>{t("about.diff_del_desc")}</p></div></div>
       <div className="feature"><div className="fx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17l9 5 9-5"/></svg></div><div><h4>{t("about.diff_win_title")}</h4><p>{t("about.diff_win_desc")}</p></div></div>
@@ -71,7 +71,9 @@ export default function Page() {
     <div className="center measure mx-auto"><span className="eyebrow">{t("about.ind_eyebrow")}</span><h2>{t("about.ind_title")}</h2>
     <p className="lead">{t("about.ind_desc")}</p></div>
     <div className="chips center" style={{"justifyContent":"center","marginTop":"36px"}}>
-      <span className="chip">Aviation</span><span className="chip">Automation</span><span className="chip">Automotive</span><span className="chip">Education</span><span className="chip">Retail</span><span className="chip">Logistics</span><span className="chip">FMCG</span><span className="chip">Construction & EPC</span><span className="chip">Telecom</span><span className="chip">Hospitality</span><span className="chip">Real estate</span><span className="chip">Pharmaceuticals</span><span className="chip">Healthcare</span><span className="chip">Oil & gas</span><span className="chip">Technology</span><span className="chip">Infrastructure</span><span className="chip">Renewables</span>
+      {["aviation", "automation", "automotive", "education", "retail", "logistics", "fmcg", "construction", "telecom", "hospitality", "real_estate", "pharma", "healthcare", "oil_gas", "tech", "infra", "renewables"].map(k => (
+        <span key={k} className="chip">{t(`about.industries.${k}`)}</span>
+      ))}
     </div>
   </div>
 </section>
@@ -104,9 +106,9 @@ export default function Page() {
       </div>
       <div>
         <div className="chips">
-          <span className="chip accent">S&amp;A Consulting — Singapore, Malaysia, China, Hong Kong</span>
-          <span className="chip accent">Taxepolis International FZCO — UAE</span>
-          <span className="chip accent">Fideco Global Business Services — Mauritius</span>
+          <span className="chip accent">{t("about.networks.sa")}</span>
+          <span className="chip accent">{t("about.networks.taxepolis")}</span>
+          <span className="chip accent">{t("about.networks.fideco")}</span>
         </div>
       </div>
     </div>

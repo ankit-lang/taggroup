@@ -1,6 +1,8 @@
 import React from 'react';
 import { getBlogs } from '@/actions/blog.actions';
 import Link from 'next/link';
+import { getLocale } from '@/lib/get-locale';
+import { locales } from '@/data/locales';
 
 export const metadata = {
   title: 'Blog | TAG Group',
@@ -9,6 +11,17 @@ export const metadata = {
 
 export default async function BlogPage() {
   const blogs = await getBlogs({ search: '', category: 'All' });
+  const locale = await getLocale();
+  const t = (path: string) => {
+    const keys = path.split('.');
+    let curr: any = (locales as any)[locale] || locales.en;
+    for (const key of keys) {
+      if (curr === undefined) break;
+      curr = curr[key];
+    }
+    return curr || path;
+  };
+
 
   return (
     <>
@@ -16,11 +29,11 @@ export default async function BlogPage() {
         <div className="ph-art" aria-hidden="true" style={{ backgroundImage: "url('/assets/img/hero/insights.svg')" }}></div>
         <div className="container">
           <div className="breadcrumb">
-            <Link href="/">Home</Link> / <span>Blog</span>
+            <Link href="/">{t("breadcrumb.home")}</Link> / <span>{t("blog.breadcrumb")}</span>
           </div>
-          <span className="eyebrow">Blog</span>
-          <h1>Latest Updates & News.</h1>
-          <p>Read our latest announcements, team updates, and thoughts on industry trends.</p>
+          <span className="eyebrow">{t("blog.title")}</span>
+          <h1>{t("blog.hero_title")}</h1>
+          <p>{t("blog.hero_desc")}</p>
         </div>
       </section>
 
@@ -41,7 +54,7 @@ export default async function BlogPage() {
                   <p>{blog.content?.substring(0, 120)}...</p>
                   <div className="ic-actions">
                     <Link className="link-arrow" href={`/blog/${blog.slug}`}>
-                      Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                      {t("blog.read")} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
                     </Link>
                   </div>
                 </div>
@@ -49,7 +62,7 @@ export default async function BlogPage() {
             </div>
           ) : (
             <div style={{ padding: '60px 0', textAlign: 'center', color: 'var(--text-muted)' }}>
-              <p>No blog posts published yet. Check back soon!</p>
+              <p>{t("blog.empty")}</p>
             </div>
           )}
         </div>

@@ -2043,18 +2043,100 @@ contact_page: {
 
       people: {
         gaurav: {
-          breadcrumb: { home: "홈", leadership: "리더십" },
-          title: "대표 파트너",
-          name: "가우라브 샤르마",
-          subtitle: "직접세 및 국제 조세 · 구조화 및 CFO 자문 · 인도 구루그람",
-          chips: { c1: "국제 조세", c2: "이전 가격", c3: "국경 간", c4: "가상 CFO", c5: "M&A", c6: "이사회 자문" },
-          nav: { profile: "프로필", overview: "개요", expertise: "전문 분야", experience: "경험", credentials: "자격 요건", get_in_touch: "연락하기", email: "가우라브에게 이메일 보내기", download: "프로필 다운로드 (PDF)" },
-          overview: { title: "개요", desc: "가우라브는 TAG Group의 대표 파트너이자 세무, 국경 간 및 CFO 업무의 원동력입니다. 14년 이상의 기간 동안 그는 Big Four 자문 회사에서 고위 사내 리더십으로 이동하여 유럽 인프라 및 에너지 다국적 기업에서 APAC 지역 세무 및 동남아시아 재무를 이끌었으며 이후 TAG Group의 통합 자문 플랫폼을 설립했습니다. 그는 국경 간 투자, M&A, 재무 혁신 및 세금 논쟁에 대해 창업자, CFO 및 이사회의 신뢰할 수 있는 고문이며 독립 이사로 활동하고 있습니다. 그는 약 1억 200만 달러의 국부펀드 자본을 지원했고, 약 1,070만 달러의 세금 환급액을 회수했으며, 20명 이상의 팀을 이끌면서 30개 기업 포트폴리오를 관리했습니다.", s1: "지원되는 국부펀드 자본", s2: "회수된 세금 환급액", s3: "관리되는 기업 포트폴리오", s4: "교육받은 공인회계사" },
-          expertise: { title: "전문 분야", h1: "국제 조세 및 이전 가격", h1_l1: "국제 조세, 이전 가격 및 조약 해석", h1_l2: "국경 간 투자, 자금 조달 및 자금 송환 구조", h1_l3: "고정 사업장 및 POEM 자문", h1_l4: "원천 징수 및 해외 송금 지원", h2: "재무 리더십 및 CFO", h2_l1: "가상 CFO, 컨트롤러십 및 재무 혁신", h2_l2: "재무 감독, MIS, 예산 책정 및 현금 흐름 관리", h2_l3: "다중 엔티티 그룹 전체의 거버넌스 프레임워크", h3: "거래 및 구조화", h3_l1: "M&A 세무, 실사 및 거래 후 통합", h3_l2: "거래 구조화, 구조 조정 및 자금 송환", h3_l3: "아시아 전역의 고가 입찰을 위한 전략적 가격 책정 및 재무 모델", h4: "세금 논쟁 및 회수", h4_l1: "세무 소송 및 분쟁 관리", h4_l2: "환급 거버넌스 및 회수", h4_l3: "기소, 복리 및 탈세 방지 문제" },
-          experience: { title: "경험", p1: "2025 – 현재", r1: "대표 파트너, TAG Group", d1: "TAG Group의 세무, 국경 간 및 CFO 실무를 설립하고 이끌며 인도 및 다국적 고객을 위한 통합 파트너 주도 플랫폼을 구축하고 이사회에 구조화, 거래 및 거버넌스에 대해 조언합니다.", p2: "지역 리더십", r2: "재무 컨트롤러, 동남아시아 — 유럽 인프라 & 에너지 다국적 기업", d2: "해당 지역에 대한 완전한 재무 소유권을 보유하고 인도 및 남아시아 전역의 보고, 감사, MIS 및 상업적 결정을 주도하고 전략에 대해 지역 리더십과 파트너 관계를 맺습니다.", p3: "지역 리더십", r3: "세무 부서 책임자, APAC — 유럽 다국적 기업", d3: "인도, 싱가포르, 베트남, 인도네시아, 필리핀, 한국 등 6개국의 세무 전략과 리스크를 소유하여 그룹의 국경 간 및 조약 포지션을 형성했습니다.", p4: "인도 & 남아시아", r4: "세무 책임자 — 인프라 & 에너지 그룹", d4: "20개 이상의 기업 포트폴리오에 대한 세무 거버넌스를 지시하여 약 1,070만 달러의 환급액을 회수하고 조세 심판원에서 약 7,500만 달러의 분쟁을 방어했습니다.", p5: "초기 경력", r5: "Big Four 회사", d5: "선도적인 글로벌 고객을 위한 이전 가격 및 국제 조세에 대한 기술적 기반(문서화, 경제 분석 및 논쟁)을 구축했습니다." },
-          cred: { title: "자격 요건 및 자격", c1: "공인회계사 (ICAI)", c2: "IIM Indore (졸업생)", c3: "독립 이사", c4: "IFRS 디플로마", c5: "CPA (호주)", c6: "MBA (NMIMS)", c7: "14년 이상의 경험", sector: "산업 경험", s1: "인프라", s2: "재생 에너지", s3: "엔지니어링 & EPC", s4: "기술 & 서비스", s5: "국방", s6: "스타트업 & 전자상거래" },
-          cta: { title: "가우라브와 함께 일하기", desc: "직접 연락하거나 일반 문의 사항을 보내주시면 적합한 팀을 연결해 드립니다.", btn: "TAG Group 연락하기" }
-        }
+            "breadcrumb": {
+                "home": "홈",
+                "leadership": "리더십"
+                    },
+            "title": "대표 파트너 (Managing Partner)",
+            "name": "가우라브 샤르마 (Gaurav Sharma)",
+            "subtitle": "직접세 및 국제 세무 · 구조화 및 CFO 자문 · 인도 구르가온",
+            "chips": {
+                "c1": "국제 세무",
+                "c2": "이전 가격",
+                "c3": "국경 간",
+                "c4": "시간제 CFO",
+                "c5": "M&A",
+                "c6": "이사회 자문"
+                    },
+            "nav": {
+                "profile": "프로필",
+                "overview": "개요",
+                "expertise": "전문 분야",
+                "experience": "경력",
+                "credentials": "자격",
+                "get_in_touch": "연락하기",
+                "email": "Gaurav에게 이메일 보내기",
+                "download": "프로필 다운로드 (PDF)"
+                    },
+            "overview": {
+                "title": "개요",
+                "desc": "Gaurav는 TAG Group의 대표 파트너이자 세무, 국경 간 및 CFO 관행의 원동력입니다. 14년 이상 Big Four 자문에서 고위 사내 리더십으로 이동하며 유럽 인프라 및 에너지 다국적 기업에서 APAC 지역 세무와 동남아시아 재무를 총괄한 후 TAG Group의 통합 자문 플랫폼을 설립했습니다. 그는 국경 간 투자, M&A, 재무 혁신 및 중대한 세금 분쟁에 대해 창업자, CFO 및 이사회의 신뢰받는 조언자이며 사외 이사로 활동하고 있습니다. 1억 200만 달러 규모의 국부 펀드 지분을 지원하고, 1,070만 달러의 세금 환급을 회수했으며, 20명 이상의 팀을 이끌면서 30개 이상의 기업에 대한 거버넌스 프레임워크를 구축했습니다.",
+                "s1": "국부 펀드 지분 지원",
+                "s2": "세금 환급 회수",
+                "s3": "기업 포트폴리오 관리",
+                "s4": "공인 회계사 교육"
+                    },
+            "expertise": {
+                "title": "전문 분야",
+                "h1": "국제 세무 및 이전 가격",
+                "h1_l1": "국제 세무, 이전 가격 및 조약 해석",
+                "h1_l2": "국경 간 투자, 자금 조달 및 본국 송환 구조",
+                "h1_l3": "고정 사업장 및 POEM 자문",
+                "h1_l4": "원천징수세 및 해외 송금 지원",
+                "h2": "재무 리더십 및 CFO",
+                "h2_l1": "시간제 CFO, 컨트롤러십 및 재무 혁신",
+                "h2_l2": "재무 감독, MIS, 예산 편성 및 현금 흐름 관리",
+                "h2_l3": "다중 법인 그룹 전반의 거버넌스 프레임워크",
+                "h3": "거래 및 구조화",
+                "h3_l1": "M&A 세무, 실사 및 거래 후 통합",
+                "h3_l2": "거래 구조화, 구조 조정 및 본국 송환",
+                "h3_l3": "아시아 전역의 고가 입찰을 위한 전략적 가격 책정 및 재무 모델",
+                "h4": "세금 분쟁 및 회수",
+                "h4_l1": "조세 소송 및 분쟁 관리",
+                "h4_l2": "환급 거버넌스 및 회수",
+                "h4_l3": "기소, 타협 및 탈세 방지 문제"
+                    },
+            "experience": {
+                "title": "경력",
+                "p1": "2025 – 현재",
+                "r1": "TAG Group 대표 파트너",
+                "d1": "TAG Group의 세무, 국경 간 및 CFO 관행을 설립하고 이끌며 인도 및 다국적 고객을 위한 통합된 파트너 주도 플랫폼을 구축하고 이사회에 구조화, 거래 및 거버넌스에 대해 자문합니다.",
+                "p2": "지역 리더십",
+                "r2": "재무 컨트롤러, 동남아시아 — 유럽 인프라 및 에너지 다국적 기업",
+                "d2": "인도 및 남아시아 전역의 보고, 감사, MIS 및 상업적 결정을 주도하고 전략에 대해 지역 리더십과 협력하여 지역에 대한 전체 재무 소유권을 가졌습니다.",
+                "p3": "지역 리더십",
+                "r3": "세무 총괄, APAC — 유럽 다국적 기업",
+                "d3": "6개국(인도, 싱가포르, 베트남, 인도네시아, 필리핀, 한국) 전반에 걸친 세무 전략 및 위험을 소유하고 그룹의 국경 간 및 조약 입장을 형성했습니다.",
+                "p4": "인도 및 남아시아",
+                "r4": "세무 총괄 — 인프라 및 에너지 그룹",
+                "d4": "20개 이상의 기업 포트폴리오에 대한 세무 거버넌스를 지휘하여 약 1,070만 달러의 환급금을 회수하고 조세 심판원에서 약 7,500만 달러의 분쟁을 방어했습니다.",
+                "p5": "초기 경력",
+                "r5": "Big Four 회계법인",
+                "d5": "유명 글로벌 고객을 위한 이전 가격 및 국제 세무, 문서화, 경제 분석 및 분쟁에 대한 기술적 기반을 구축했습니다."
+                    },
+            "cred": {
+                "title": "자격 요건",
+                "c1": "공인 회계사 (ICAI)",
+                "c2": "IIM 인도르 (동문)",
+                "c3": "사외 이사",
+                "c4": "IFRS 디플로마",
+                "c5": "호주 공인회계사 (CPA)",
+                "c6": "MBA (NMIMS)",
+                "c7": "14년 이상의 경력",
+                "sector": "산업 경험",
+                "s1": "인프라",
+                "s2": "재생 에너지",
+                "s3": "엔지니어링 및 EPC",
+                "s4": "기술 및 서비스",
+                "s5": "방위 산업",
+                "s6": "스타트업 및 전자 상거래"
+                    },
+            "cta": {
+                "title": "Gaurav와(과) 일하기",
+                "desc": "직접 연락하거나 일반 문의를 보내주시면 적합한 팀을 연결해 드립니다.",
+                "btn": "TAG Group에 문의하기"
+                    }
+                }
       },
 
     services: {
@@ -2700,49 +2782,117 @@ contact_page: {
     },
 
     mr_pradip: {
-      breadcrumb: { home: "홈", leadership: "리더십", name: "MR 프라딥" },
-      hero: { role: "어소시에이트 파트너", name: "MR 프라딥", desc: "법률, 규제 및 분쟁 해결 · 인도" },
-      tags: ["상업 소송", "세금 분쟁", "파산", "FEMA / AML"],
-      nav: {
-        profile: "프로필", overview: "개요", expertise: "전문 분야", experience: "경험", credentials: "자격 증명",
-        get_in_touch: "연락하기", email: "MR 프라딥에게 이메일 보내기", download: "프로필 다운로드 (PDF)"
-      },
-      overview: {
-        title: "개요",
-        desc: "MR Pradip은 TAG Group의 부파트너(Associate Partner)이며 법률 및 회계 분야의 이중 자격을 갖추고 있습니다. 그는 기업 및 상사 분쟁, 조세 소송, 파산 사건, 거래 구조화 및 화이트 칼라 규제 절차에서 조언하고 출석합니다. 대법원의 수석 변호사 산하에서의 교육과 재무 배경을 통해 법률 전략과 상업 및 세금 복잡성을 결합한 문제를 해결할 수 있습니다.",
-        stats: [
-          { val: "CA + LL.B.", lbl: "이중 전문 자격" },
-          { val: "SC / HC", lbl: "법원 노출" },
-          { val: "세금 + 법률", lbl: "통합 자문" }
-        ]
-      },
-      expertise: {
-        title: "전문 분야",
-        areas: [
-          { title: "분쟁 및 소송", items: ["기업 및 상업 소송", "세금 분쟁, 구조화 및 거래 자문", "법원, 고등 법원 및 인도 대법원에 출석"] },
-          { title: "파산 및 구조 조정", items: ["파산 및 구조 조정법", "채권자 및 채무자 측 전략", "거래 및 집행 지원"] },
-          { title: "규제 및 화이트 칼라", items: ["FEMA, 자금 세탁 방지 및 화이트 칼라 문제", "규제 대리 및 자문", "회계 및 세무 분석이 결합된 법적 변론"] }
-        ]
-      },
-      experience: {
-        title: "경험",
-        timeline: [
-          { period: "현재", role: "어소시에이트 파트너, TAG Group — 법률 및 규제", desc: "다국적 및 기술 주도 기업의 법률, 규제 및 분쟁 해결을 주도합니다." },
-          { period: "실습", role: "소송 변호사", desc: "대법원 선임 변호사 밑에서 교육을 받았으며 상업, 세무 및 파산 사건 전반에 걸쳐 자문하고 출석합니다." }
-        ]
-      },
-      credentials: {
-        title: "자격 증명 및 자격",
-        list: ["델리 대학교 캠퍼스 법률 센터 LL.B.", "공인 회계사 (ICAI)", "상업 학사 (우등)", "소송 변호사"],
-        sector_title: "분야 경험",
-        sectors: ["기술", "제조업", "금융 서비스", "다국적 그룹"]
-      },
-      cta: {
-        title: "MR Pradip과 함께 일하기",
-        desc: "직접 연락하거나 일반 문의 사항을 보내주시면 올바른 팀과 연결해 드립니다.",
-        btn1: "pradip@taggroup.in", btn2: "TAG Group에 문의하기"
-      }
-    },
+        "breadcrumb": {
+            "home": "홈",
+            "leadership": "리더십",
+            "name": "MR 프라딥"
+            },
+        "hero": {
+            "role": "어소시에이트 파트너",
+            "name": "MR 프라딥 (MR Pradip)",
+            "desc": "법률, 규제 및 분쟁 해결 · 인도"
+            },
+        "tags": [
+            "상사 소송",
+            "조세 분쟁",
+            "파산",
+            "FEMA / AML"
+        ],
+        "nav": {
+            "profile": "프로필",
+            "overview": "개요",
+            "expertise": "전문 분야",
+            "experience": "경력",
+            "credentials": "자격",
+            "get_in_touch": "연락하기",
+            "email": "MR Pradip에게 이메일 보내기",
+            "download": "프로필 다운로드 (PDF)"
+            },
+        "overview": {
+            "title": "개요",
+            "desc": "MR Pradip은 법률 및 회계 분야에서 이중 자격을 갖춘 TAG Group의 어소시에이트 파트너입니다. 그는 기업 및 상업 분쟁, 조세 소송, 파산 문제, 거래 구조화 및 화이트칼라 규제 절차에 자문을 제공하고 출석합니다. 대법원의 수석 변호사 산하에서 훈련받은 것과 재정적 배경이 결합되어 법률 전략과 상업 및 세무의 복잡성을 통합하는 문제를 다룰 수 있습니다.",
+            "stats": [
+                {
+                    "val": "CA + LL.B.",
+                    "lbl": "이중 전문 자격"
+                    },
+                {
+                    "val": "대법원 / 고등법원",
+                    "lbl": "법정 노출"
+                    },
+                {
+                    "val": "세무 + 법률",
+                    "lbl": "통합 자문"
+                    }
+            ]
+            },
+        "expertise": {
+            "title": "전문 분야",
+            "areas": [
+                {
+                    "title": "분쟁 및 소송",
+                    "items": [
+                        "기업 및 상업 소송",
+                        "조세 분쟁, 구조화 및 거래 자문",
+                        "인도 대법원, 고등법원 및 재판소 출석"
+                    ]
+                    },
+                {
+                    "title": "파산 및 구조조정",
+                    "items": [
+                        "파산 및 구조조정법",
+                        "채권자 및 채무자 측 전략",
+                        "거래 및 집행 지원"
+                    ]
+                    },
+                {
+                    "title": "규제 및 화이트칼라",
+                    "items": [
+                        "FEMA, 자금세탁 방지 및 화이트칼라 문제",
+                        "규제 대리 및 자문",
+                        "회계 및 세무 분석이 결합된 법적 변론"
+                    ]
+                    }
+            ]
+            },
+        "experience": {
+            "title": "경력",
+            "timeline": [
+                {
+                    "period": "현재",
+                    "role": "TAG Group 어소시에이트 파트너 — 법률 및 규제",
+                    "desc": "다국적 및 기술 주도 기업을 위한 법률, 규제 및 분쟁 해결 위임을 이끌고 있습니다."
+                    },
+                {
+                    "period": "이전",
+                    "role": "소송 변호사",
+                    "desc": "대법원의 수석 변호사 산하에서 훈련받았으며, 상업, 세무 및 파산 문제 전반에 걸쳐 자문하고 출석합니다."
+                    }
+            ]
+            },
+        "credentials": {
+            "title": "자격 요건",
+            "list": [
+                "델리 대학교 캠퍼스 로스쿨 법학 학사(LL.B.)",
+                "공인 회계사 (ICAI)",
+                "상학 학사 (우등)",
+                "소송 변호사"
+            ],
+            "sector_title": "산업 경험",
+            "sectors": [
+                "기술",
+                "제조업",
+                "금융 서비스",
+                "다국적 그룹"
+            ]
+            },
+        "cta": {
+            "title": "MR Pradip과(와) 일하기",
+            "desc": "직접 연락하거나 일반 문의를 보내주시면 적합한 팀을 연결해 드립니다.",
+            "btn1": "pradip@taggroup.in",
+            "btn2": "TAG Group에 문의하기"
+            }
+        },
 contact_page: {
       home: "홈",
       hero_desc: "상황을 알려주시면 적절한 범위, 팀 및 접근 방식을 매핑해 드립니다. 일반 문의는 ",
@@ -2770,807 +2920,807 @@ contact_page: {
       content: "이 문서는 pdfmake를 통해 동적으로 생성되었습니다.",
     }
   ,
-    people_pages: {
-  "vishal": {
-    "breadcrumb": {
-      "home": "홈",
-      "leadership": "리더십"
-    },
-    "title": "Partner — UAE Desk",
-    "name": "Vishal Tayal",
-    "subtitle": "UAE Desk · India–UAE Tax, VAT &amp; Structuring &middot; UAE",
-    "chips": {
-      "c1": "India GST",
-      "c2": "UAE VAT",
-      "c3": "Structuring",
-      "c4": "Litigation",
-      "c5": "ICAI faculty"
-    },
-    "nav": {
-      "profile": "프로필",
-      "overview": "개요",
-      "expertise": "전문 분야",
-      "experience": "경력",
-      "credentials": "자격 증명",
-      "get_in_touch": "연락하기",
-      "email": "이메일 보내기",
-      "download": "프로필 다운로드(PDF)"
-    },
-    "overview": {
-      "title": "개요",
-      "desc": "Vishal is a Partner at TAG Group advising on indirect tax across India and the UAE — GST, legacy service tax and UAE VAT — combining advisory and implementation experience with regular professional training. As Director of Taxepolis International FZCO, he supports the group's UAE presence, with work spanning transaction structuring, litigation, tax-impact reviews and the design of tax processes, controls and compliance frameworks."
-    },
-    "expertise": {
-      "title": "전문 분야",
-      "h1": "India indirect tax",
-      "h1_l1": "India GST and legacy service tax",
-      "h1_l2": "Tax-efficient transaction structuring",
-      "h1_l3": "Diagnostic reviews, litigation and compliance controls",
-      "h2": "UAE VAT",
-      "h2_l1": "UAE VAT advisory and implementation",
-      "h2_l2": "Cross-border India–UAE structuring",
-      "h2_l3": "Tax process, controls and compliance design",
-      "h3": "Training & sector",
-      "h3_l1": "Regular faculty for ICAI members and students",
-      "h3_l2": "Clients from SMEs to Fortune 100 global organisations",
-      "h3_l3": "Sector exposure across infrastructure, engineering, hospitality and transport"
-    },
-    "experience": {
-      "title": "경력",
-      "p1": "Current",
-      "r1": "Partner, TAG Group (UAE) & Director, Taxepolis International FZCO",
-      "d1": "Leads India–UAE indirect-tax mandates and the group's UAE presence.",
-      "p2": "Practice",
-      "r2": "Indirect-tax advisory & implementation",
-      "d2": "Advised multinational and Indian groups; regular professional trainer."
-    },
-    "cred": {
-      "title": "자격 및 인증",
-      "sector": "산업 경험",
-      "c1": "Chartered Accountant (ICAI)",
-      "c2": "ICAI faculty on GST",
-      "c3": "Director, Taxepolis International FZCO (UAE)",
-      "c4": "India & UAE exposure",
-      "s1": "Infrastructure",
-      "s2": "Engineering",
-      "s3": "Hospitality",
-      "s4": "Transport & logistics"
-    },
-    "cta": {
-      "title": "Work with Vishal.",
-      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
-      "btn": "TAG 그룹에 문의하기"
-    }
-  },
-  "ishita": {
-    "breadcrumb": {
-      "home": "홈",
-      "leadership": "리더십"
-    },
-    "title": "파트너",
-    "name": "Ishita Sharma",
-    "subtitle": "Human Resources & Organisation Capability &middot; Gurugram, India",
-    "chips": {
-      "c1": "Talent acquisition",
-      "c2": "L&D / LMS",
-      "c3": "HR operations",
-      "c4": "SAP HR",
-      "c5": "HR analytics"
-    },
-    "nav": {
-      "profile": "프로필",
-      "overview": "개요",
-      "expertise": "전문 분야",
-      "experience": "경력",
-      "credentials": "자격 증명",
-      "get_in_touch": "연락하기",
-      "email": "이메일 보내기",
-      "download": "프로필 다운로드(PDF)"
-    },
-    "overview": {
-      "title": "개요",
-      "desc": "Ishita leads TAG Group's Human Capital & HR practice. Across 15+ years building and running the people function for a listed manufacturing enterprise, she has shaped how a large, dispersed organisation hires, learns and performs — owning learning strategy, talent acquisition, HR operations and analytics at PAN-India scale. She brings that operator's perspective to clients: HR systems that are measurable, compliant and built to scale, rather than policies on paper."
-    },
-    "expertise": {
-      "title": "전문 분야",
-      "h1": "Learning & development",
-      "h1_l1": "Learning strategy, TNI and capability programmes",
-      "h1_l2": "Learning-management-system implementation and adoption",
-      "h1_l3": "Effectiveness tracking via scorecards, surveys and dashboards",
-      "h2": "Talent acquisition",
-      "h2_l1": "Full-cycle recruitment and workforce planning",
-      "h2_l2": "Leadership and critical-role hiring",
-      "h2_l3": "Recruitment vendor governance and diversity pipelines",
-      "h3": "HR operations & compliance",
-      "h3_l1": "Payroll, PF and ESI compliance via SAP HR / SuccessFactors",
-      "h3_l2": "HR policies, handbooks and process documentation",
-      "h3_l3": "Statutory HR compliance and audit readiness",
-      "h4": "Performance & analytics",
-      "h4_l1": "Performance-management systems and competency frameworks",
-      "h4_l2": "HR analytics and management dashboards (Power BI)",
-      "h4_l3": "Employee engagement, rewards and recognition"
-    },
-    "experience": {
-      "title": "경력",
-      "p1": "Recent",
-      "r1": "Learning & Development Lead — listed manufacturing enterprise",
-      "d1": "Owned the enterprise learning agenda across India — strategy, capability programmes, compliance and the LMS rollout — lifting mandatory-training compliance to 95% and L&D plan adherence to 85%.",
-      "p2": "Prior",
-      "r2": "Talent Acquisition Lead",
-      "d2": "Ran workforce planning and hiring across four regional zones, closing ~75% of open roles and building proactive pipelines for critical positions.",
-      "p3": "Prior",
-      "r3": "HR Operations",
-      "d3": "Built the operating backbone — payroll, statutory compliance, MIS and process governance — on SAP HR / SuccessFactors."
-    },
-    "cred": {
-      "title": "자격 및 인증",
-      "sector": "산업 경험",
-      "c1": "MBA, HR & Operations",
-      "c2": "B.Sc. (Hons.) Biotechnology",
-      "c3": "ISO Internal Auditor",
-      "c4": "15+ years' experience",
-      "s1": "Manufacturing",
-      "s2": "Logistics",
-      "s3": "Corporate & shared services"
-    },
-    "cta": {
-      "title": "Work with Ishita.",
-      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
-      "btn": "TAG 그룹에 문의하기"
-    }
-  },
-  "sumit": {
-    "breadcrumb": {
-      "home": "홈",
-      "leadership": "리더십"
-    },
-    "title": "파트너",
-    "name": "Sumit Goyal",
-    "subtitle": "Indirect Tax &middot; Gurugram, India",
-    "chips": {
-      "c1": "GST",
-      "c2": "Departmental audits",
-      "c3": "Impact analysis",
-      "c4": "Forensic perspective"
-    },
-    "nav": {
-      "profile": "프로필",
-      "overview": "개요",
-      "expertise": "전문 분야",
-      "experience": "경력",
-      "credentials": "자격 증명",
-      "get_in_touch": "연락하기",
-      "email": "이메일 보내기",
-      "download": "프로필 다운로드(PDF)"
-    },
-    "overview": {
-      "title": "개요",
-      "desc": "Sumit is a Partner at TAG Group specialising in indirect tax compliance and advisory. He has practical experience handling departmental audits, transaction-level tax impact analysis and client guidance on complex GST matters, with a strong grounding in diagnostic review, compliance execution and issue resolution."
-    },
-    "expertise": {
-      "title": "전문 분야",
-      "h1": "GST advisory & compliance",
-      "h1_l1": "GST compliance reviews and advisory",
-      "h1_l2": "Registrations, reconciliations and refunds",
-      "h1_l3": "Transaction and business-model impact analysis",
-      "h2": "Audits & controversy",
-      "h2_l1": "Departmental audits and tax-authority matters",
-      "h2_l2": "Litigation support and representation",
-      "h2_l3": "Compliance advisory for complex positions",
-      "h3": "Controls & forensics",
-      "h3_l1": "Forensic-accounting perspective on tax controls",
-      "h3_l2": "Fraud detection and diagnostic review",
-      "h3_l3": "Process and compliance strengthening"
-    },
-    "experience": {
-      "title": "경력",
-      "p1": "Current",
-      "r1": "Partner, TAG Group — Indirect Tax",
-      "d1": "Advises clients across indirect tax compliance, advisory and departmental audits.",
-      "p2": "Prior",
-      "r2": "Specialist indirect-tax advisory practice",
-      "d2": "Developed deep experience in GST diagnostics, compliance and issue resolution."
-    },
-    "cred": {
-      "title": "자격 및 인증",
-      "sector": "산업 경험",
-      "c1": "Chartered Accountant (ICAI)",
-      "c2": "ICAI Certificate — Forensic Accounting & Fraud Detection",
-      "c3": "13+ years in indirect tax",
-      "c4": "Pursuing DISA & Concurrent Audit",
-      "s1": "Manufacturing",
-      "s2": "Services",
-      "s3": "Infrastructure",
-      "s4": "Retail & FMCG"
-    },
-    "cta": {
-      "title": "Work with Sumit.",
-      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
-      "btn": "TAG 그룹에 문의하기"
-    }
-  },
-  "awen": {
-    "breadcrumb": {
-      "home": "홈",
-      "leadership": "리더십"
-    },
-    "title": "International Desk — Singapore",
-    "name": "Awen Lee",
-    "subtitle": "Corporate Services · Accounting & Compliance &middot; Singapore",
-    "chips": {
-      "c1": "Singapore accounting",
-      "c2": "Corporate services",
-      "c3": "Payroll",
-      "c4": "Regulatory coordination"
-    },
-    "nav": {
-      "profile": "프로필",
-      "overview": "개요",
-      "expertise": "전문 분야",
-      "experience": "경력",
-      "credentials": "자격 증명",
-      "get_in_touch": "연락하기",
-      "email": "이메일 보내기",
-      "download": "프로필 다운로드(PDF)"
-    },
-    "overview": {
-      "title": "개요",
-      "desc": "Awen is TAG Group's Singapore network partner and the coordinating contact for Malaysia. As Executive Director of S&A Consulting Singapore Pte. Ltd. and Grand Merge Capital Pte. Ltd., he supports accounting, company secretarial, payroll and corporate services, including practical engagement with Singapore authorities (IRAS, MOM, ACRA and CPF Board)."
-    },
-    "expertise": {
-      "title": "전문 분야",
-      "h1": "Corporate services",
-      "h1_l1": "Company incorporation and secretarial",
-      "h1_l2": "Ongoing corporate compliance",
-      "h1_l3": "Regulatory coordination with Singapore authorities",
-      "h2": "Finance & payroll",
-      "h2_l1": "Accounting setup and compliance",
-      "h2_l2": "Payroll and employment administration",
-      "h2_l3": "Support for investment managers and SMEs",
-      "h3": "Coordination",
-      "h3_l1": "Singapore market-entry support",
-      "h3_l2": "Coordinating contact for Malaysia",
-      "h3_l3": "Cross-border coordination with India"
-    },
-    "experience": {
-      "title": "경력",
-      "p1": "Current",
-      "r1": "Executive Director, S&A Consulting Singapore",
-      "d1": "10+ years across professional services and commerce; supports accounting and compliance for cross-border businesses."
-    },
-    "cred": {
-      "title": "자격 및 인증",
-      "sector": "산업 경험",
-      "c1": "CPA Australia member",
-      "c2": "ISCA member",
-      "c3": "Singapore Chartered Tax Professional",
-      "c4": "BSc Commerce (Accounting)",
-      "s1": "Corporate services",
-      "s2": "Investment management",
-      "s3": "SMEs"
-    },
-    "cta": {
-      "title": "Work with Awen.",
-      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
-      "btn": "TAG 그룹에 문의하기"
-    }
-  },
-  "hasina": {
-    "breadcrumb": {
-      "home": "홈",
-      "leadership": "리더십"
-    },
-    "title": "International Desk — Mauritius",
-    "name": "Hasina Bahemia",
-    "subtitle": "Corporate Administration & Governance &middot; Mauritius",
-    "chips": {
-      "c1": "Corporate administration",
-      "c2": "Governance",
-      "c3": "AML/CFT (CAMS)",
-      "c4": "Client onboarding"
-    },
-    "nav": {
-      "profile": "프로필",
-      "overview": "개요",
-      "expertise": "전문 분야",
-      "experience": "경력",
-      "credentials": "자격 증명",
-      "get_in_touch": "연락하기",
-      "email": "이메일 보내기",
-      "download": "프로필 다운로드(PDF)"
-    },
-    "overview": {
-      "title": "개요",
-      "desc": "Hasina is TAG Group's Mauritius network partner. As Chief Operating Officer of Fideco Global Business Services Ltd (CAMS-certified), she leads operations, client relationships and service delivery — covering corporate administration, governance, AML/CFT compliance, client onboarding and international structuring coordination."
-    },
-    "expertise": {
-      "title": "전문 분야",
-      "h1": "Corporate administration",
-      "h1_l1": "Company establishment and administration",
-      "h1_l2": "Substance and governance support",
-      "h1_l3": "Accounting and tax coordination",
-      "h2": "Compliance",
-      "h2_l1": "AML/CFT compliance and client onboarding",
-      "h2_l2": "Regulatory coordination",
-      "h2_l3": "International structuring coordination",
-      "h3": "Delivery",
-      "h3_l1": "Operations and service delivery leadership",
-      "h3_l2": "Client-relationship management",
-      "h3_l3": "Business-related relocation assistance"
-    },
-    "experience": {
-      "title": "경력",
-      "p1": "Current",
-      "r1": "Chief Operating Officer, Fideco Global Business Services (Mauritius)",
-      "d1": "Leads operations, client relationships and delivery for international structuring and administration."
-    },
-    "cred": {
-      "title": "자격 및 인증",
-      "sector": "산업 경험",
-      "c1": "CAMS (Certified Anti-Money-Laundering Specialist)",
-      "c2": "Chief Operating Officer, Fideco Global Business Services",
-      "c3": "Corporate governance & administration",
-      "s1": "Corporate & fiduciary services",
-      "s2": "International structuring"
-    },
-    "cta": {
-      "title": "Work with Hasina.",
-      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
-      "btn": "TAG 그룹에 문의하기"
-    }
-  },
-  "sushil": {
-    "breadcrumb": {
-      "home": "홈",
-      "leadership": "리더십"
-    },
-    "title": "어소시에이트 파트너",
-    "name": "Sushil Sharma",
-    "subtitle": "IT Infrastructure, Systems & Security &middot; Delhi NCR, India",
-    "chips": {
-      "c1": "Infrastructure",
-      "c2": "Networks & servers",
-      "c3": "Info-security",
-      "c4": "Cloud / virtualisation"
-    },
-    "nav": {
-      "profile": "프로필",
-      "overview": "개요",
-      "expertise": "전문 분야",
-      "experience": "경력",
-      "credentials": "자격 증명",
-      "get_in_touch": "연락하기",
-      "email": "이메일 보내기",
-      "download": "프로필 다운로드(PDF)"
-    },
-    "overview": {
-      "title": "개요",
-      "desc": "Sushil is an Associate Partner at TAG Group leading technology infrastructure. With 20+ years managing enterprise IT infrastructure, security, networks, servers and implementation programmes, he connects business requirements with practical technology delivery — planning, procurement, deployment, vendor management, end-user support and operating controls."
-    },
-    "expertise": {
-      "title": "전문 분야",
-      "h1": "Infrastructure & networks",
-      "h1_l1": "Data-centre, server and network operations",
-      "h1_l2": "Cloud, virtualisation and enterprise collaboration",
-      "h1_l3": "Disaster recovery, backups and capacity planning",
-      "h2": "Security & controls",
-      "h2_l1": "Infrastructure and information-security policies",
-      "h2_l2": "Firewall and endpoint-security environments",
-      "h2_l3": "IT general controls and operating governance",
-      "h3": "Delivery & vendors",
-      "h3_l1": "Technology procurement and implementation",
-      "h3_l2": "Vendor governance and SLAs",
-      "h3_l3": "Business-systems and process improvement"
-    },
-    "experience": {
-      "title": "경력",
-      "p1": "Current",
-      "r1": "Associate Partner, TAG Group — Technology Infrastructure",
-      "d1": "Leads IT infrastructure planning and delivery for client setups and transformations.",
-      "p2": "Prior",
-      "r2": "IT Infrastructure leadership — large engineering group",
-      "d2": "Managed infrastructure, teams, DR, security and enterprise implementations."
-    },
-    "cred": {
-      "title": "자격 및 인증",
-      "sector": "산업 경험",
-      "c1": "M.Sc. Computer Science",
-      "c2": "Certified Internal Auditor",
-      "c3": "ITIL V3 Foundation",
-      "c4": "VMware & Microsoft certified",
-      "c5": "20+ years' experience",
-      "s1": "Engineering",
-      "s2": "Manufacturing",
-      "s3": "Corporate & shared services"
-    },
-    "cta": {
-      "title": "Work with Sushil.",
-      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
-      "btn": "TAG 그룹에 문의하기"
-    }
-  },
-  "manuj": {
-    "breadcrumb": {
-      "home": "홈",
-      "leadership": "리더십"
-    },
-    "title": "어소시에이트 파트너",
-    "name": "Manuj Singhal",
-    "subtitle": "Valuation &middot; India & global engagements",
-    "chips": {
-      "c1": "Business valuation",
-      "c2": "Complex securities",
-      "c3": "Intangibles / PPA",
-      "c4": "ESOP valuation"
-    },
-    "nav": {
-      "profile": "프로필",
-      "overview": "개요",
-      "expertise": "전문 분야",
-      "experience": "경력",
-      "credentials": "자격 증명",
-      "get_in_touch": "연락하기",
-      "email": "이메일 보내기",
-      "download": "프로필 다운로드(PDF)"
-    },
-    "overview": {
-      "title": "개요",
-      "desc": "Manuj is an Associate Partner at TAG Group leading valuation. He has 15+ years of experience across business valuation, complex securities, intangible assets and specialised financial analysis, serving large corporates, Big Four firms, US consulting firms and global companies, and has led sizeable analytics teams."
-    },
-    "expertise": {
-      "title": "전문 분야",
-      "h1": "Business & equity valuation",
-      "h1_l1": "Enterprise and equity valuation across industries",
-      "h1_l2": "Portfolio, transaction and financial-reporting valuations",
-      "h1_l3": "Strategic models supported by industry analysis",
-      "h2": "Complex instruments",
-      "h2_l1": "Debt, convertibles and complex derivatives",
-      "h2_l2": "Purchase price allocation (PPA) and intangibles",
-      "h2_l3": "ESOP structuring and valuation",
-      "h3": "Specialised analysis",
-      "h3_l1": "Real-estate valuation, IBR and CECL analysis",
-      "h3_l2": "Scenario and sensitivity modelling",
-      "h3_l3": "Global client and adviser support"
-    },
-    "experience": {
-      "title": "경력",
-      "p1": "Current",
-      "r1": "Associate Partner, TAG Group — Valuation",
-      "d1": "Leads valuation mandates across transactions, financial reporting and ESOPs.",
-      "p2": "Prior",
-      "r2": "Global consulting & analytics",
-      "d2": "Delivered complex valuation for global clients; led teams of 50+ in an analytics-led environment."
-    },
-    "cred": {
-      "title": "자격 및 인증",
-      "sector": "산업 경험",
-      "c1": "Chartered Financial Analyst (CFA)",
-      "c2": "Financial Risk Manager (FRM)",
-      "c3": "Registered Valuer (IBBI)",
-      "c4": "MBA Finance & B.Tech",
-      "c5": "15+ years' experience",
-      "s1": "Financial services",
-      "s2": "Technology",
-      "s3": "Manufacturing",
-      "s4": "Real estate"
-    },
-    "cta": {
-      "title": "Work with Manuj.",
-      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
-      "btn": "TAG 그룹에 문의하기"
-    }
-  },
-  "k_vishnu": {
-    "breadcrumb": {
-      "home": "홈",
-      "leadership": "리더십"
-    },
-    "title": "파트너",
-    "name": "K. Vishnu Sharma",
-    "subtitle": "Audit, Assurance & Finance Transformation &middot; Gurugram, India",
-    "chips": {
-      "c1": "Controllership",
-      "c2": "Close & consolidation",
-      "c3": "ICFR / SOX",
-      "c4": "Ind AS / IFRS",
-      "c5": "ERP (SAP S/4HANA)"
-    },
-    "nav": {
-      "profile": "프로필",
-      "overview": "개요",
-      "expertise": "전문 분야",
-      "experience": "경력",
-      "credentials": "자격 증명",
-      "get_in_touch": "연락하기",
-      "email": "이메일 보내기",
-      "download": "프로필 다운로드(PDF)"
-    },
-    "overview": {
-      "title": "개요",
-      "desc": "K. Vishnu Sharma is a Partner at TAG Group leading assurance support and finance transformation. He brings senior controllership experience from large listed and multinational organisations — including leading British companies and Fortune 100 global technology groups — spanning financial reporting, close governance, audit coordination, ICFR/SOX programmes, ERP implementation and accounting operations. His advisory relevance is strongest where clients need CFO-level oversight, disciplined reporting, audit readiness and practical process improvement."
-    },
-    "expertise": {
-      "title": "전문 분야",
-      "h1": "Close, consolidation & reporting",
-      "h1_l1": "Monthly, quarterly and annual close ownership",
-      "h1_l2": "Consolidation and management reporting across 100+ subsidiaries",
-      "h1_l3": "Ind AS, IFRS, US GAAP and UK GAAP reporting",
-      "h2": "Controls & audit",
-      "h2_l1": "SOX, ICFR and finance control frameworks",
-      "h2_l2": "Statutory and external audit management to clean outcomes",
-      "h2_l3": "Governed 290 controls under SOX and the Companies Act",
-      "h3": "Transformation & automation",
-      "h3_l1": "SAP S/4HANA implementation and finance-close automation",
-      "h3_l2": "68 automation and digital-transformation projects delivered",
-      "h3_l3": "Shared-service (FSSC/BPO) governance",
-      "h4": "Finance operations",
-      "h4_l1": "AP, AR, payroll, general ledger, fixed assets and treasury",
-      "h4_l2": "Budgeting, forecasting and KPI monitoring",
-      "h4_l3": "Finance-team structuring and capability building"
-    },
-    "experience": {
-      "title": "경력",
-      "p1": "Recent",
-      "r1": "Financial Planning & Reporting — a British multinational",
-      "d1": "Owned month-end close and corporate reporting; led controls testing and audit readiness; cut SG&A close by 2 days and manual journals by 50%.",
-      "p2": "Prior",
-      "r2": "Chief Manager — a Fortune 100 global electronics group",
-      "d2": "Led financial and risk reporting, statutory audit coordination (100% clean), Ind AS financials and SOX/ICFR (290 controls); drove SAP HANA implementation.",
-      "p3": "Prior",
-      "r3": "Manager, Finance — listed Indian manufacturer",
-      "d3": "Finalised financial statements, implemented Ind AS 115 & 116, led statutory and tax audits and ERP rollout.",
-      "p4": "Prior",
-      "r4": "Section Manager — listed Indian manufacturing group",
-      "d4": "Group consolidation of 100+ subsidiaries and 50+ plants; supported QIP, bond issuance and acquisition due diligence."
-    },
-    "cred": {
-      "title": "자격 및 인증",
-      "sector": "산업 경험",
-      "c1": "Chartered Accountant (ICAI), 2011",
-      "c2": "B.Com. (Hons.), Delhi University",
-      "c3": "14+ years' experience",
-      "c4": "SAP S/4HANA, Oracle & Hyperion",
-      "c5": "VBA-certified (automation & reporting)",
-      "s1": "Telecom",
-      "s2": "Electronics & technology",
-      "s3": "Consumer durables",
-      "s4": "Automotive & manufacturing"
-    },
-    "cta": {
-      "title": "Work with K.",
-      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
-      "btn": "TAG 그룹에 문의하기"
-    }
-  },
-  "karuna": {
-    "breadcrumb": {
-      "home": "홈",
-      "leadership": "리더십"
-    },
-    "title": "파트너",
-    "name": "Karuna Sharma",
-    "subtitle": "Legal, Regulatory & Foreign Exchange Regulations &middot; India",
-    "chips": {
-      "c1": "Legal & regulatory",
-      "c2": "FEMA",
-      "c3": "Corporate law"
-    },
-    "nav": {
-      "profile": "프로필",
-      "overview": "개요",
-      "expertise": "전문 분야",
-      "experience": "경력",
-      "credentials": "자격 증명",
-      "get_in_touch": "연락하기",
-      "email": "이메일 보내기",
-      "download": "프로필 다운로드(PDF)"
-    },
-    "overview": {
-      "title": "개요",
-      "desc": "Karuna is a Partner within TAG Group's specialist legal and regulatory network, advising on corporate, regulatory and foreign-exchange (FEMA) matters. (Detailed credentials to be added.)"
-    },
-    "expertise": {
-      "title": "전문 분야",
-      "h1": "Legal & regulatory",
-      "h1_l1": "Corporate and regulatory advisory",
-      "h1_l2": "FEMA and foreign-exchange matters",
-      "h1_l3": "Documentation and compliance support"
-    },
-    "experience": {
-      "title": "경력",
-      "p1": "Current",
-      "r1": "Partner, TAG Group — Legal & Regulatory",
-      "d1": "Advises on corporate, regulatory and FEMA matters."
-    },
-    "cred": {
-      "title": "자격 및 인증",
-      "sector": "산업 경험",
-      "c1": "Legal & regulatory practice",
-      "c2": "FEMA and corporate law",
-      "s1": "Corporate",
-      "s2": "Cross-border"
-    },
-    "cta": {
-      "title": "Work with Karuna.",
-      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
-      "btn": "TAG 그룹에 문의하기"
-    }
-  },
-  "amit": {
-    "breadcrumb": {
-      "home": "홈",
-      "leadership": "리더십"
-    },
-    "title": "Strategic Associate",
-    "name": "Amit Sood",
-    "subtitle": "Real Estate & Workforce Solutions &middot; Delhi NCR, India",
-    "chips": {
-      "c1": "Property search",
-      "c2": "Site coordination",
-      "c3": "Facility workforce"
-    },
-    "nav": {
-      "profile": "프로필",
-      "overview": "개요",
-      "expertise": "전문 분야",
-      "experience": "경력",
-      "credentials": "자격 증명",
-      "get_in_touch": "연락하기",
-      "email": "이메일 보내기",
-      "download": "프로필 다운로드(PDF)"
-    },
-    "overview": {
-      "title": "개요",
-      "desc": "Amit is a Strategic Associate at TAG Group supporting corporate real-estate requirements and blue-collar workforce deployment. His role centres on local market access, property identification, site coordination and transaction follow-through, giving clients a structured professional interface alongside on-ground execution support."
-    },
-    "expertise": {
-      "title": "전문 분야",
-      "h1": "Property",
-      "h1_l1": "Land, office, factory and warehouse searches",
-      "h1_l2": "Lease and property-transaction coordination",
-      "h1_l3": "Property management and tenant coordination",
-      "h2": "Workforce & facility",
-      "h2_l1": "Security personnel and support staff",
-      "h2_l2": "Deployment and replacement coordination",
-      "h2_l3": "Site-level workforce liaison and continuity",
-      "h3": "Execution",
-      "h3_l1": "Requirement definition and market sourcing",
-      "h3_l2": "Site visits and local counterpart coordination",
-      "h3_l3": "Documentation flow and follow-through"
-    },
-    "experience": {
-      "title": "경력",
-      "p1": "Current",
-      "r1": "Strategic Associate, TAG Group — Real Estate & Workforce",
-      "d1": "Coordinates property and workforce requirements for new-market entry and expansion."
-    },
-    "cred": {
-      "title": "자격 및 인증",
-      "sector": "산업 경험",
-      "c1": "18+ years' sector experience",
-      "c2": "Delhi NCR market focus",
-      "c3": "Corporate property support",
-      "c4": "Workforce deployment coordination",
-      "s1": "Manufacturing",
-      "s2": "Warehousing & logistics",
-      "s3": "Corporate offices"
-    },
-    "cta": {
-      "title": "Work with Amit.",
-      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
-      "btn": "TAG 그룹에 문의하기"
-    }
-  },
-  "naresh": {
-    "breadcrumb": {
-      "home": "홈",
-      "leadership": "리더십"
-    },
-    "title": "파트너",
-    "name": "Naresh Kumar Goel",
-    "subtitle": "Audit & Assurance &middot; India",
-    "chips": {
-      "c1": "Audit & Assurance",
-      "c2": "Internal controls",
-      "c3": "Reporting reviews"
-    },
-    "nav": {
-      "profile": "프로필",
-      "overview": "개요",
-      "expertise": "전문 분야",
-      "experience": "경력",
-      "credentials": "자격 증명",
-      "get_in_touch": "연락하기",
-      "email": "이메일 보내기",
-      "download": "프로필 다운로드(PDF)"
-    },
-    "overview": {
-      "title": "개요",
-      "desc": "Naresh is a Partner in TAG Group's Audit & Assurance practice, supporting internal audit, internal financial controls and reporting-review engagements. His work strengthens governance and reporting discipline for growing and established businesses. (Detailed credentials to be added.)"
-    },
-    "expertise": {
-      "title": "전문 분야",
-      "h1": "Assurance support",
-      "h1_l1": "Internal audit and process reviews",
-      "h1_l2": "Internal financial controls (IFC)",
-      "h1_l3": "Reporting and compliance reviews"
-    },
-    "experience": {
-      "title": "경력",
-      "p1": "Current",
-      "r1": "Partner, TAG Group — Audit & Assurance",
-      "d1": "Supports internal audit, controls and reporting-review mandates."
-    },
-    "cred": {
-      "title": "자격 및 인증",
-      "sector": "산업 경험",
-      "c1": "Audit & Assurance leadership",
-      "c2": "Internal controls & reporting reviews",
-      "s1": "Manufacturing",
-      "s2": "Services"
-    },
-    "cta": {
-      "title": "Work with Naresh.",
-      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
-      "btn": "TAG 그룹에 문의하기"
-    }
-  },
-  "jai": {
-    "breadcrumb": {
-      "home": "홈",
-      "leadership": "리더십"
-    },
-    "title": "파트너",
-    "name": "Jai Prakash",
-    "subtitle": "Indirect Tax &middot; India",
-    "chips": {
-      "c1": "Indirect tax",
-      "c2": "GST",
-      "c3": "Compliance"
-    },
-    "nav": {
-      "profile": "프로필",
-      "overview": "개요",
-      "expertise": "전문 분야",
-      "experience": "경력",
-      "credentials": "자격 증명",
-      "get_in_touch": "연락하기",
-      "email": "이메일 보내기",
-      "download": "프로필 다운로드(PDF)"
-    },
-    "overview": {
-      "title": "개요",
-      "desc": "Jai is a Partner in TAG Group's Indirect Tax practice, supporting GST advisory, compliance and litigation for businesses across sectors. (Detailed credentials to be added.)"
-    },
-    "expertise": {
-      "title": "전문 분야",
-      "h1": "Indirect tax",
-      "h1_l1": "GST advisory and compliance",
-      "h1_l2": "Litigation and representation support",
-      "h1_l3": "Transaction impact analysis"
-    },
-    "experience": {
-      "title": "경력",
-      "p1": "Current",
-      "r1": "Partner, TAG Group — Indirect Tax",
-      "d1": "Supports GST advisory, compliance and litigation mandates."
-    },
-    "cred": {
-      "title": "자격 및 인증",
-      "sector": "산업 경험",
-      "c1": "Indirect tax practice",
-      "c2": "GST advisory & compliance",
-      "s1": "Manufacturing",
-      "s2": "Services",
-      "s3": "Retail"
-    },
-    "cta": {
-      "title": "Work with Jai.",
-      "desc": "Reach out directly, or send a general enquiry and we'll connect you with the right team.",
-      "btn": "TAG 그룹에 문의하기"
-    }
-  }
-}
+people_pages: {
+        "vishal": {
+            "breadcrumb": {
+                "home": "홈",
+                "leadership": "리더십"
+                },
+            "title": "파트너 — UAE 데스크",
+            "name": "비샬 타얄 (Vishal Tayal)",
+            "subtitle": "UAE 데스크 · 인도-UAE 세금, VAT 및 구조화 · UAE",
+            "chips": {
+                "c1": "인도 GST",
+                "c2": "UAE VAT",
+                "c3": "구조화",
+                "c4": "소송",
+                "c5": "ICAI 강사"
+                },
+            "nav": {
+                "profile": "프로필",
+                "overview": "개요",
+                "expertise": "전문 분야",
+                "experience": "경력",
+                "credentials": "자격",
+                "get_in_touch": "연락하기",
+                "email": "Vishal에게 이메일 보내기",
+                "download": "프로필 다운로드 (PDF)"
+                },
+            "overview": {
+                "title": "개요",
+                "desc": "Vishal은 인도와 UAE 전역의 간접세(GST, 기존 서비스세, UAE VAT)를 자문하는 TAG Group의 파트너로 자문 및 이행 경험과 정기적인 전문 교육을 결합합니다. Taxepolis International FZCO의 이사로서 그룹의 UAE 입지를 지원하며 거래 구조화, 소송, 세금 영향 검토, 세무 프로세스/통제/규정 준수 프레임워크 설계를 포괄하는 업무를 담당합니다."
+                },
+            "expertise": {
+                "title": "전문 분야",
+                "h1": "인도 간접세",
+                "h1_l1": "인도 GST 및 기존 서비스세",
+                "h1_l2": "세금 효율적인 거래 구조화",
+                "h1_l3": "진단 검토, 소송 및 규정 준수 통제",
+                "h2": "UAE VAT",
+                "h2_l1": "UAE VAT 자문 및 이행",
+                "h2_l2": "국경 간 인도-UAE 구조화",
+                "h2_l3": "세무 프로세스, 통제 및 규정 준수 설계",
+                "h3": "교육 및 산업",
+                "h3_l1": "ICAI 회원 및 학생을 위한 정기 강사",
+                "h3_l2": "중소기업부터 Fortune 100 글로벌 조직에 이르는 고객",
+                "h3_l3": "인프라, 엔지니어링, 접객업, 운송 분야 전반에 걸친 산업 노출"
+                },
+            "experience": {
+                "title": "경력",
+                "p1": "현재",
+                "r1": "TAG Group(UAE) 파트너 및 Taxepolis International FZCO 이사",
+                "d1": "인도-UAE 간접세 위임 및 그룹의 UAE 입지를 주도합니다.",
+                "p2": "이전",
+                "r2": "간접세 자문 및 이행",
+                "d2": "다국적 및 인도 그룹 자문; 정기 전문 교육 강사."
+                },
+            "cred": {
+                "title": "자격 요건",
+                "sector": "산업 경험",
+                "c1": "공인 회계사 (ICAI)",
+                "c2": "ICAI GST 강사",
+                "c3": "Taxepolis International FZCO (UAE) 이사",
+                "c4": "인도 및 UAE 노출",
+                "s1": "인프라",
+                "s2": "엔지니어링",
+                "s3": "접객업",
+                "s4": "운송 및 물류"
+                },
+            "cta": {
+                "title": "Vishal과(와) 일하기.",
+                "desc": "직접 연락하거나 일반 문의를 보내주시면 적합한 팀을 연결해 드립니다.",
+                "btn": "TAG Group에 문의하기"
+                }
+            },
+        "ishita": {
+            "breadcrumb": {
+                "home": "홈",
+                "leadership": "리더십"
+                },
+            "title": "파트너",
+            "name": "이시타 샤르마 (Ishita Sharma)",
+            "subtitle": "인적 자원 및 조직 역량 · 인도 구르가온",
+            "chips": {
+                "c1": "인재 확보",
+                "c2": "L&D / LMS",
+                "c3": "HR 운영",
+                "c4": "SAP HR",
+                "c5": "HR 분석"
+                },
+            "nav": {
+                "profile": "프로필",
+                "overview": "개요",
+                "expertise": "전문 분야",
+                "experience": "경력",
+                "credentials": "자격",
+                "get_in_touch": "연락하기",
+                "email": "Ishita에게 이메일 보내기",
+                "download": "프로필 다운로드 (PDF)"
+                },
+            "overview": {
+                "title": "개요",
+                "desc": "Ishita는 TAG Group의 인적 자본 및 HR 업무를 이끌고 있습니다. 15년 이상 상장 제조업체의 인사 기능을 구축하고 운영하며, 대규모의 분산된 조직이 어떻게 채용하고 학습하며 성과를 내는지 형성해 왔습니다. 그녀는 학습 전략, 인재 확보, HR 운영 및 분석을 범인도 규모로 소유하고 있으며, 종이 위의 정책이 아닌 측정 가능하고 규정을 준수하며 확장에 맞게 구축된 HR 시스템이라는 운영자의 관점을 고객에게 제공합니다."
+                },
+            "expertise": {
+                "title": "전문 분야",
+                "h1": "학습 및 개발",
+                "h1_l1": "학습 전략, TNI 및 역량 프로그램",
+                "h1_l2": "학습 관리 시스템 도입 및 활용",
+                "h1_l3": "성과표, 설문조사 및 대시보드를 통한 효과 추적",
+                "h2": "인재 확보",
+                "h2_l1": "전체 주기 채용 및 인력 계획",
+                "h2_l2": "리더십 및 핵심 역할 채용",
+                "h2_l3": "채용 공급업체 거버넌스 및 다양성 파이프라인",
+                "h3": "HR 운영 및 규정 준수",
+                "h3_l1": "SAP HR / SuccessFactors를 통한 급여, PF 및 ESI 규정 준수",
+                "h3_l2": "HR 정책, 핸드북 및 프로세스 문서화",
+                "h3_l3": "법적 HR 규정 준수 및 감사 준비",
+                "h4": "성과 및 분석",
+                "h4_l1": "성과 관리 시스템 및 역량 프레임워크",
+                "h4_l2": "HR 분석 및 관리 대시보드(Power BI)",
+                "h4_l3": "직원 참여, 보상 및 표창"
+                },
+            "experience": {
+                "title": "경력",
+                "p1": "최근",
+                "r1": "학습 및 개발 리더 — 상장 제조업체",
+                "d1": "인도 전역의 엔터프라이즈 학습 어젠다(전략, 역량 프로그램, 규정 준수, LMS 롤아웃)를 소유하여 의무 교육 준수율 95%, L&D 계획 준수율 85% 달성.",
+                "p2": "이전",
+                "r2": "인재 확보 리더",
+                "d2": "4개 지역에 걸친 인력 계획 및 채용을 실행하여 열린 역할의 약 75%를 마감하고 핵심 직책에 대한 선제적 파이프라인 구축.",
+                "p3": "이전",
+                "r3": "HR 운영",
+                "d3": "SAP HR / SuccessFactors를 기반으로 급여, 법적 규정 준수, MIS, 프로세스 거버넌스 등 운영 백본 구축."
+                },
+            "cred": {
+                "title": "자격 요건",
+                "sector": "산업 경험",
+                "c1": "MBA, HR 및 운영",
+                "c2": "이학 학사(우등) 생명공학",
+                "c3": "ISO 내부 감사원",
+                "c4": "15년 이상의 경력",
+                "s1": "제조업",
+                "s2": "물류",
+                "s3": "기업 및 공유 서비스"
+                },
+            "cta": {
+                "title": "Ishita와(과) 일하기.",
+                "desc": "직접 연락하거나 일반 문의를 보내주시면 적합한 팀을 연결해 드립니다.",
+                "btn": "TAG Group에 문의하기"
+                }
+            },
+        "sumit": {
+            "breadcrumb": {
+                "home": "홈",
+                "leadership": "리더십"
+                },
+            "title": "파트너",
+            "name": "수밋 고얄 (Sumit Goyal)",
+            "subtitle": "간접세 · 인도 구르가온",
+            "chips": {
+                "c1": "GST",
+                "c2": "부서 감사",
+                "c3": "영향 분석",
+                "c4": "포렌식 관점"
+                },
+            "nav": {
+                "profile": "프로필",
+                "overview": "개요",
+                "expertise": "전문 분야",
+                "experience": "경력",
+                "credentials": "자격",
+                "get_in_touch": "연락하기",
+                "email": "Sumit에게 이메일 보내기",
+                "download": "프로필 다운로드 (PDF)"
+                },
+            "overview": {
+                "title": "개요",
+                "desc": "Sumit은 TAG Group의 간접세 규정 준수 및 자문을 전문으로 하는 파트너입니다. 진단 검토, 규정 준수 실행 및 문제 해결에 대한 강력한 기반을 바탕으로 부서 감사, 거래 수준 세금 영향 분석, 복잡한 GST 문제에 대한 고객 안내를 처리한 실무 경험이 있습니다."
+                },
+            "expertise": {
+                "title": "전문 분야",
+                "h1": "GST 자문 및 규정 준수",
+                "h1_l1": "GST 규정 준수 검토 및 자문",
+                "h1_l2": "등록, 대사 및 환급",
+                "h1_l3": "거래 및 비즈니스 모델 영향 분석",
+                "h2": "감사 및 분쟁",
+                "h2_l1": "부서 감사 및 세무 당국 문제",
+                "h2_l2": "소송 지원 및 대리",
+                "h2_l3": "복잡한 입장에 대한 규정 준수 자문",
+                "h3": "통제 및 포렌식",
+                "h3_l1": "세금 통제에 대한 포렌식 회계 관점",
+                "h3_l2": "사기 탐지 및 진단 검토",
+                "h3_l3": "프로세스 및 규정 준수 강화"
+                },
+            "experience": {
+                "title": "경력",
+                "p1": "현재",
+                "r1": "TAG Group 파트너 — 간접세",
+                "d1": "간접세 규정 준수, 자문 및 부서 감사 전반에 걸쳐 고객에게 자문 제공.",
+                "p2": "이전",
+                "r2": "간접세 자문 실무",
+                "d2": "GST 진단, 규정 준수 및 문제 해결 분야에서 깊은 경험을 쌓음."
+                },
+            "cred": {
+                "title": "자격 요건",
+                "sector": "산업 경험",
+                "c1": "공인 회계사 (ICAI)",
+                "c2": "ICAI 수료 — 포렌식 회계 및 사기 탐지",
+                "c3": "간접세 13년 이상 경력",
+                "c4": "DISA 및 동시 감사 과정 중",
+                "s1": "제조업",
+                "s2": "서비스",
+                "s3": "인프라",
+                "s4": "소매 및 FMCG"
+                },
+            "cta": {
+                "title": "Sumit과(와) 일하기.",
+                "desc": "직접 연락하거나 일반 문의를 보내주시면 적합한 팀을 연결해 드립니다.",
+                "btn": "TAG Group에 문의하기"
+                }
+            },
+        "awen": {
+            "breadcrumb": {
+                "home": "홈",
+                "leadership": "리더십"
+                },
+            "title": "국제 데스크 — 싱가포르",
+            "name": "아웬 리 (Awen Lee)",
+            "subtitle": "기업 서비스 · 회계 및 규정 준수 · 싱가포르",
+            "chips": {
+                "c1": "싱가포르 회계",
+                "c2": "기업 서비스",
+                "c3": "급여",
+                "c4": "규제 조정"
+                },
+            "nav": {
+                "profile": "프로필",
+                "overview": "개요",
+                "expertise": "전문 분야",
+                "experience": "경력",
+                "credentials": "자격",
+                "get_in_touch": "연락하기",
+                "email": "Awen에게 이메일 보내기",
+                "download": "프로필 다운로드 (PDF)"
+                },
+            "overview": {
+                "title": "개요",
+                "desc": "Awen은 TAG Group의 싱가포르 네트워크 파트너이자 말레이시아 조정 담당자입니다. S&A Consulting Singapore Pte. Ltd. 및 Grand Merge Capital Pte. Ltd.의 전무이사로서 싱가포르 당국(IRAS, MOM, ACRA, CPF Board)과의 실무적인 참여를 포함하여 회계, 기업 비서, 급여 및 기업 서비스를 지원합니다."
+                },
+            "expertise": {
+                "title": "전문 분야",
+                "h1": "기업 서비스",
+                "h1_l1": "회사 설립 및 비서 서비스",
+                "h1_l2": "지속적인 기업 규정 준수",
+                "h1_l3": "싱가포르 당국과의 규제 조정",
+                "h2": "재무 및 급여",
+                "h2_l1": "회계 설정 및 규정 준수",
+                "h2_l2": "급여 및 고용 관리",
+                "h2_l3": "투자 관리자 및 중소기업 지원",
+                "h3": "조정",
+                "h3_l1": "싱가포르 시장 진출 지원",
+                "h3_l2": "말레이시아를 위한 조정 담당자",
+                "h3_l3": "인도와의 국경 간 조정"
+                },
+            "experience": {
+                "title": "경력",
+                "p1": "현재",
+                "r1": "전무이사, S&A Consulting Singapore",
+                "d1": "전문 서비스 및 상거래 전반에 걸쳐 10년 이상; 국경 간 비즈니스를 위한 회계 및 규정 준수 지원."
+                },
+            "cred": {
+                "title": "자격 요건",
+                "sector": "산업 경험",
+                "c1": "CPA 호주 회원",
+                "c2": "ISCA 회원",
+                "c3": "싱가포르 공인 세무 전문가",
+                "c4": "상학 학사 (회계)",
+                "s1": "기업 서비스",
+                "s2": "투자 관리",
+                "s3": "중소기업"
+                },
+            "cta": {
+                "title": "Awen과(와) 일하기.",
+                "desc": "직접 연락하거나 일반 문의를 보내주시면 적합한 팀을 연결해 드립니다.",
+                "btn": "TAG Group에 문의하기"
+                }
+            },
+        "hasina": {
+            "breadcrumb": {
+                "home": "홈",
+                "leadership": "리더십"
+                },
+            "title": "국제 데스크 — 모리셔스",
+            "name": "하시나 바헤미아 (Hasina Bahemia)",
+            "subtitle": "기업 관리 및 거버넌스 · 모리셔스",
+            "chips": {
+                "c1": "기업 관리",
+                "c2": "거버넌스",
+                "c3": "AML/CFT (CAMS)",
+                "c4": "고객 온보딩"
+                },
+            "nav": {
+                "profile": "프로필",
+                "overview": "개요",
+                "expertise": "전문 분야",
+                "experience": "경력",
+                "credentials": "자격",
+                "get_in_touch": "연락하기",
+                "email": "Hasina에게 이메일 보내기",
+                "download": "프로필 다운로드 (PDF)"
+                },
+            "overview": {
+                "title": "개요",
+                "desc": "Hasina는 TAG Group의 모리셔스 네트워크 파트너입니다. Fideco Global Business Services Ltd(CAMS 인증)의 최고운영책임자(COO)로서 기업 관리, 거버넌스, AML/CFT 규정 준수, 고객 온보딩 및 국제 구조화 조정을 포괄하는 운영, 고객 관계 및 서비스 제공을 이끌고 있습니다."
+                },
+            "expertise": {
+                "title": "전문 분야",
+                "h1": "기업 관리",
+                "h1_l1": "회사 설립 및 관리",
+                "h1_l2": "실질 및 거버넌스 지원",
+                "h1_l3": "회계 및 세무 조정",
+                "h2": "규정 준수",
+                "h2_l1": "AML/CFT 규정 준수 및 고객 온보딩",
+                "h2_l2": "규제 조정",
+                "h2_l3": "국제 구조화 조정",
+                "h3": "서비스 제공",
+                "h3_l1": "운영 및 서비스 제공 리더십",
+                "h3_l2": "고객 관계 관리",
+                "h3_l3": "비즈니스 관련 재배치 지원"
+                },
+            "experience": {
+                "title": "경력",
+                "p1": "현재",
+                "r1": "최고운영책임자, Fideco Global Business Services (모리셔스)",
+                "d1": "국제 구조화 및 관리를 위한 운영, 고객 관계 및 제공을 이끌고 있습니다."
+                },
+            "cred": {
+                "title": "자격 요건",
+                "sector": "산업 경험",
+                "c1": "CAMS (공인 자금세탁방지 전문가)",
+                "c2": "Fideco Global Business Services 최고운영책임자",
+                "c3": "기업 거버넌스 및 관리",
+                "s1": "기업 및 수탁 서비스",
+                "s2": "국제 구조화"
+                },
+            "cta": {
+                "title": "Hasina와(과) 일하기.",
+                "desc": "직접 연락하거나 일반 문의를 보내주시면 적합한 팀을 연결해 드립니다.",
+                "btn": "TAG Group에 문의하기"
+                }
+            },
+        "sushil": {
+            "breadcrumb": {
+                "home": "홈",
+                "leadership": "리더십"
+                },
+            "title": "어소시에이트 파트너",
+            "name": "수실 샤르마 (Sushil Sharma)",
+            "subtitle": "IT 인프라, 시스템 및 보안 · 인도 델리 NCR",
+            "chips": {
+                "c1": "인프라",
+                "c2": "네트워크 및 서버",
+                "c3": "정보 보안",
+                "c4": "클라우드 / 가상화"
+                },
+            "nav": {
+                "profile": "프로필",
+                "overview": "개요",
+                "expertise": "전문 분야",
+                "experience": "경력",
+                "credentials": "자격",
+                "get_in_touch": "연락하기",
+                "email": "Sushil에게 이메일 보내기",
+                "download": "프로필 다운로드 (PDF)"
+                },
+            "overview": {
+                "title": "개요",
+                "desc": "Sushil은 TAG Group의 기술 인프라를 이끄는 어소시에이트 파트너입니다. 20년 이상 엔터프라이즈 IT 인프라, 보안, 네트워크, 서버 및 구현 프로그램을 관리해 왔으며, 계획, 조달, 배포, 공급업체 관리, 최종 사용자 지원 및 운영 통제를 통해 비즈니스 요구 사항과 실제 기술 제공을 연결합니다."
+                },
+            "expertise": {
+                "title": "전문 분야",
+                "h1": "인프라 및 네트워크",
+                "h1_l1": "데이터 센터, 서버 및 네트워크 운영",
+                "h1_l2": "클라우드, 가상화 및 엔터프라이즈 협업",
+                "h1_l3": "재해 복구, 백업 및 용량 계획",
+                "h2": "보안 및 통제",
+                "h2_l1": "인프라 및 정보 보안 정책",
+                "h2_l2": "방화벽 및 엔드포인트 보안 환경",
+                "h2_l3": "IT 일반 통제 및 운영 거버넌스",
+                "h3": "제공 및 공급업체",
+                "h3_l1": "기술 조달 및 구현",
+                "h3_l2": "공급업체 거버넌스 및 SLA",
+                "h3_l3": "비즈니스 시스템 및 프로세스 개선"
+                },
+            "experience": {
+                "title": "경력",
+                "p1": "현재",
+                "r1": "TAG Group 어소시에이트 파트너 — 기술 인프라",
+                "d1": "고객 설정 및 전환을 위한 IT 인프라 계획 및 제공을 주도합니다.",
+                "p2": "이전",
+                "r2": "IT 인프라 리더십 — 대규모 엔지니어링 그룹",
+                "d2": "인프라, 팀, DR, 보안 및 엔터프라이즈 구현을 관리했습니다."
+                },
+            "cred": {
+                "title": "자격 요건",
+                "sector": "산업 경험",
+                "c1": "컴퓨터 과학 이학 석사",
+                "c2": "공인 내부 감사원",
+                "c3": "ITIL V3 파운데이션",
+                "c4": "VMware 및 Microsoft 인증",
+                "c5": "20년 이상의 경력",
+                "s1": "엔지니어링",
+                "s2": "제조업",
+                "s3": "기업 및 공유 서비스"
+                },
+            "cta": {
+                "title": "Sushil과(와) 일하기.",
+                "desc": "직접 연락하거나 일반 문의를 보내주시면 적합한 팀을 연결해 드립니다.",
+                "btn": "TAG Group에 문의하기"
+                }
+            },
+        "manuj": {
+            "breadcrumb": {
+                "home": "홈",
+                "leadership": "리더십"
+                },
+            "title": "어소시에이트 파트너",
+            "name": "마누즈 싱할 (Manuj Singhal)",
+            "subtitle": "가치 평가 · 인도 및 글로벌 참여",
+            "chips": {
+                "c1": "비즈니스 가치 평가",
+                "c2": "복합 유가증권",
+                "c3": "무형 자산 / PPA",
+                "c4": "ESOP 가치 평가"
+                },
+            "nav": {
+                "profile": "프로필",
+                "overview": "개요",
+                "expertise": "전문 분야",
+                "experience": "경력",
+                "credentials": "자격",
+                "get_in_touch": "연락하기",
+                "email": "Manuj에게 이메일 보내기",
+                "download": "프로필 다운로드 (PDF)"
+                },
+            "overview": {
+                "title": "개요",
+                "desc": "Manuj는 가치 평가를 이끄는 TAG Group의 어소시에이트 파트너입니다. 대기업, Big Four 기업, 미국 컨설팅 회사 및 글로벌 회사를 대상으로 비즈니스 가치 평가, 복합 유가증권, 무형 자산 및 특수 재무 분석 전반에 걸쳐 15년 이상의 경험을 쌓았으며, 대규모 분석 팀을 이끌어 왔습니다."
+                },
+            "expertise": {
+                "title": "전문 분야",
+                "h1": "비즈니스 및 지분 가치 평가",
+                "h1_l1": "산업 전반에 걸친 기업 및 지분 가치 평가",
+                "h1_l2": "포트폴리오, 거래 및 재무 보고 가치 평가",
+                "h1_l3": "산업 분석이 뒷받침하는 전략적 모델",
+                "h2": "복합 금융 상품",
+                "h2_l1": "부채, 전환 사채 및 복합 파생 상품",
+                "h2_l2": "구매 가격 배분(PPA) 및 무형 자산",
+                "h2_l3": "ESOP 구조화 및 가치 평가",
+                "h3": "특수 분석",
+                "h3_l1": "부동산 가치 평가, IBR 및 CECL 분석",
+                "h3_l2": "시나리오 및 민감도 모델링",
+                "h3_l3": "글로벌 고객 및 조언자 지원"
+                },
+            "experience": {
+                "title": "경력",
+                "p1": "현재",
+                "r1": "TAG Group 어소시에이트 파트너 — 가치 평가",
+                "d1": "거래, 재무 보고 및 ESOP 전반에 걸친 가치 평가 위임을 이끕니다.",
+                "p2": "이전",
+                "r2": "글로벌 컨설팅 및 분석",
+                "d2": "글로벌 고객을 위한 복잡한 가치 평가 제공; 분석 주도 환경에서 50명 이상의 팀을 이끌었습니다."
+                },
+            "cred": {
+                "title": "자격 요건",
+                "sector": "산업 경험",
+                "c1": "공인 재무 분석가 (CFA)",
+                "c2": "재무 위험 관리사 (FRM)",
+                "c3": "공인 평가사 (IBBI)",
+                "c4": "재무 MBA 및 B.Tech",
+                "c5": "15년 이상의 경력",
+                "s1": "금융 서비스",
+                "s2": "기술",
+                "s3": "제조업",
+                "s4": "부동산"
+                },
+            "cta": {
+                "title": "Manuj와(과) 일하기.",
+                "desc": "직접 연락하거나 일반 문의를 보내주시면 적합한 팀을 연결해 드립니다.",
+                "btn": "TAG Group에 문의하기"
+                }
+            },
+        "k_vishnu": {
+            "breadcrumb": {
+                "home": "홈",
+                "leadership": "리더십"
+                },
+            "title": "파트너",
+            "name": "K. 비슈누 샤르마 (K. Vishnu Sharma)",
+            "subtitle": "감사, 보증 및 재무 혁신 · 인도 구르가온",
+            "chips": {
+                "c1": "컨트롤러십",
+                "c2": "마감 및 연결",
+                "c3": "ICFR / SOX",
+                "c4": "Ind AS / IFRS",
+                "c5": "ERP (SAP S/4HANA)"
+                },
+            "nav": {
+                "profile": "프로필",
+                "overview": "개요",
+                "expertise": "전문 분야",
+                "experience": "경력",
+                "credentials": "자격",
+                "get_in_touch": "연락하기",
+                "email": "K. Vishnu에게 이메일 보내기",
+                "download": "프로필 다운로드 (PDF)"
+                },
+            "overview": {
+                "title": "개요",
+                "desc": "K. Vishnu Sharma는 TAG Group의 파트너로서 보증 지원 및 재무 혁신을 이끌고 있습니다. 그는 유수의 영국 회사 및 Fortune 100대 글로벌 기술 그룹을 포함한 대규모 상장 및 다국적 조직에서 재무 보고, 마감 거버넌스, 감사 조정, ICFR/SOX 프로그램, ERP 구현 및 회계 운영을 포괄하는 고위 컨트롤러십 경험을 가지고 있습니다. 그의 자문 관련성은 고객이 CFO 수준의 감독, 엄격한 보고, 감사 준비 및 실질적인 프로세스 개선을 필요로 하는 곳에서 가장 빛을 발합니다."
+                },
+            "expertise": {
+                "title": "전문 분야",
+                "h1": "마감, 연결 및 보고",
+                "h1_l1": "월별, 분기별 및 연간 마감 소유권",
+                "h1_l2": "100개 이상의 자회사 전반에 걸친 연결 및 관리 보고",
+                "h1_l3": "Ind AS, IFRS, US GAAP 및 UK GAAP 보고",
+                "h2": "통제 및 감사",
+                "h2_l1": "SOX, ICFR 및 재무 통제 프레임워크",
+                "h2_l2": "깨끗한 결과를 위한 법정 및 외부 감사 관리",
+                "h2_l3": "SOX 및 회사법에 따른 290개 통제 관리",
+                "h3": "혁신 및 자동화",
+                "h3_l1": "SAP S/4HANA 구현 및 재무 마감 자동화",
+                "h3_l2": "68개의 자동화 및 디지털 혁신 프로젝트 제공",
+                "h3_l3": "공유 서비스(FSSC/BPO) 거버넌스",
+                "h4": "재무 운영",
+                "h4_l1": "AP, AR, 급여, 총계정 원장, 고정 자산 및 자금 관리",
+                "h4_l2": "예산, 예측 및 KPI 모니터링",
+                "h4_l3": "재무팀 구조화 및 역량 구축"
+                },
+            "experience": {
+                "title": "경력",
+                "p1": "최근",
+                "r1": "재무 계획 및 보고 — 영국 다국적 기업",
+                "d1": "월말 마감 및 기업 보고 소유; 통제 테스트 및 감사 준비 주도; SG&A 마감일을 2일 단축하고 수동 분개를 50% 줄였습니다.",
+                "p2": "이전",
+                "r2": "수석 관리자 — Fortune 100 글로벌 전자 그룹",
+                "d2": "재무 및 위험 보고, 법정 감사 조정(100% 무결점), Ind AS 재무제표 및 SOX/ICFR(290개 통제) 주도; SAP HANA 구현을 주도했습니다.",
+                "p3": "이전",
+                "r3": "재무 관리자 — 상장된 인도 제조업체",
+                "d3": "재무제표를 확정하고, Ind AS 115 및 116을 구현했으며, 법정 및 세무 감사와 ERP 롤아웃을 이끌었습니다.",
+                "p4": "이전",
+                "r4": "섹션 매니저 — 상장된 인도 제조 그룹",
+                "d4": "100개 이상의 자회사와 50개 이상의 공장의 그룹 연결; QIP, 채권 발행 및 인수 실사를 지원했습니다."
+                },
+            "cred": {
+                "title": "자격 요건",
+                "sector": "산업 경험",
+                "c1": "공인 회계사 (ICAI), 2011",
+                "c2": "델리 대학교 B.Com. (우등)",
+                "c3": "14년 이상의 경력",
+                "c4": "SAP S/4HANA, Oracle 및 Hyperion",
+                "c5": "VBA 인증 (자동화 및 보고)",
+                "s1": "통신",
+                "s2": "전자 및 기술",
+                "s3": "소비재",
+                "s4": "자동차 및 제조업"
+                },
+            "cta": {
+                "title": "K. Vishnu와(과) 일하기.",
+                "desc": "직접 연락하거나 일반 문의를 보내주시면 적합한 팀을 연결해 드립니다.",
+                "btn": "TAG Group에 문의하기"
+                }
+            },
+        "karuna": {
+            "breadcrumb": {
+                "home": "홈",
+                "leadership": "리더십"
+                },
+            "title": "파트너",
+            "name": "카루나 샤르마 (Karuna Sharma)",
+            "subtitle": "법률, 규제 및 외환 규제 · 인도",
+            "chips": {
+                "c1": "법률 및 규제",
+                "c2": "FEMA",
+                "c3": "기업법"
+                },
+            "nav": {
+                "profile": "프로필",
+                "overview": "개요",
+                "expertise": "전문 분야",
+                "experience": "경력",
+                "credentials": "자격",
+                "get_in_touch": "연락하기",
+                "email": "Karuna에게 이메일 보내기",
+                "download": "프로필 다운로드 (PDF)"
+                },
+            "overview": {
+                "title": "개요",
+                "desc": "Karuna는 TAG Group의 전문 법률 및 규제 네트워크의 파트너로서 기업, 규제 및 외환(FEMA) 문제에 대해 자문합니다. (자세한 자격 요건은 추가 예정입니다.)"
+                },
+            "expertise": {
+                "title": "전문 분야",
+                "h1": "법률 및 규제",
+                "h1_l1": "기업 및 규제 자문",
+                "h1_l2": "FEMA 및 외환 문제",
+                "h1_l3": "문서화 및 규정 준수 지원"
+                },
+            "experience": {
+                "title": "경력",
+                "p1": "현재",
+                "r1": "TAG Group 파트너 — 법률 및 규제",
+                "d1": "기업, 규제 및 FEMA 문제에 대해 자문합니다."
+                },
+            "cred": {
+                "title": "자격 요건",
+                "sector": "산업 경험",
+                "c1": "법률 및 규제 업무",
+                "c2": "FEMA 및 기업법",
+                "s1": "기업",
+                "s2": "국경 간 업무"
+                },
+            "cta": {
+                "title": "Karuna와(과) 일하기.",
+                "desc": "직접 연락하거나 일반 문의를 보내주시면 적합한 팀을 연결해 드립니다.",
+                "btn": "TAG Group에 문의하기"
+                }
+            },
+        "amit": {
+            "breadcrumb": {
+                "home": "홈",
+                "leadership": "리더십"
+                },
+            "title": "전략적 어소시에이트",
+            "name": "아밋 수드 (Amit Sood)",
+            "subtitle": "부동산 및 인력 솔루션 · 인도 델리 NCR",
+            "chips": {
+                "c1": "부동산 검색",
+                "c2": "현장 조정",
+                "c3": "시설 인력"
+                },
+            "nav": {
+                "profile": "프로필",
+                "overview": "개요",
+                "expertise": "전문 분야",
+                "experience": "경력",
+                "credentials": "자격",
+                "get_in_touch": "연락하기",
+                "email": "Amit에게 이메일 보내기",
+                "download": "프로필 다운로드 (PDF)"
+                },
+            "overview": {
+                "title": "개요",
+                "desc": "Amit은 TAG Group의 전략적 어소시에이트로서 기업 부동산 요구 사항 및 블루칼라 인력 배치를 지원합니다. 그의 역할은 현지 시장 접근, 부동산 식별, 현장 조정 및 거래의 후속 조치에 중점을 두어 고객에게 현장 실행 지원과 함께 체계적인 전문 인터페이스를 제공합니다."
+                },
+            "expertise": {
+                "title": "전문 분야",
+                "h1": "부동산",
+                "h1_l1": "토지, 사무실, 공장 및 창고 검색",
+                "h1_l2": "임대 및 부동산 거래 조정",
+                "h1_l3": "부동산 관리 및 입주자 조정",
+                "h2": "인력 및 시설",
+                "h2_l1": "보안 요원 및 지원 직원",
+                "h2_l2": "배치 및 교체 조정",
+                "h2_l3": "현장 수준의 인력 연락 및 연속성",
+                "h3": "실행",
+                "h3_l1": "요구 사항 정의 및 시장 소싱",
+                "h3_l2": "현장 방문 및 현지 파트너 조정",
+                "h3_l3": "문서 흐름 및 후속 조치"
+                },
+            "experience": {
+                "title": "경력",
+                "p1": "현재",
+                "r1": "TAG Group 전략적 어소시에이트 — 부동산 및 인력",
+                "d1": "신규 시장 진출 및 확장을 위한 부동산 및 인력 요구 사항을 조정합니다."
+                },
+            "cred": {
+                "title": "자격 요건",
+                "sector": "산업 경험",
+                "c1": "업계 18년 이상의 경험",
+                "c2": "델리 NCR 시장 집중",
+                "c3": "기업 부동산 지원",
+                "c4": "인력 배치 조정",
+                "s1": "제조업",
+                "s2": "창고 및 물류",
+                "s3": "기업 사무실"
+                },
+            "cta": {
+                "title": "Amit과(와) 일하기.",
+                "desc": "직접 연락하거나 일반 문의를 보내주시면 적합한 팀을 연결해 드립니다.",
+                "btn": "TAG Group에 문의하기"
+                }
+            },
+        "naresh": {
+            "breadcrumb": {
+                "home": "홈",
+                "leadership": "리더십"
+                },
+            "title": "파트너",
+            "name": "나레쉬 쿠마르 고엘 (Naresh Kumar Goel)",
+            "subtitle": "감사 및 보증 · 인도",
+            "chips": {
+                "c1": "감사 및 보증",
+                "c2": "내부 통제",
+                "c3": "보고서 검토"
+                },
+            "nav": {
+                "profile": "프로필",
+                "overview": "개요",
+                "expertise": "전문 분야",
+                "experience": "경력",
+                "credentials": "자격",
+                "get_in_touch": "연락하기",
+                "email": "Naresh에게 이메일 보내기",
+                "download": "프로필 다운로드 (PDF)"
+                },
+            "overview": {
+                "title": "개요",
+                "desc": "Naresh는 TAG Group의 감사 및 보증 부문 파트너로서 내부 감사, 내부 재무 통제 및 보고 검토 업무를 지원합니다. 그의 작업은 성장 및 설립된 비즈니스를 위한 거버넌스 및 보고 규율을 강화합니다. (자세한 자격 요건은 추가 예정입니다.)"
+                },
+            "expertise": {
+                "title": "전문 분야",
+                "h1": "보증 지원",
+                "h1_l1": "내부 감사 및 프로세스 검토",
+                "h1_l2": "내부 재무 통제 (IFC)",
+                "h1_l3": "보고서 및 규정 준수 검토"
+                },
+            "experience": {
+                "title": "경력",
+                "p1": "현재",
+                "r1": "TAG Group 파트너 — 감사 및 보증",
+                "d1": "내부 감사, 통제 및 보고 검토 위임을 지원합니다."
+                },
+            "cred": {
+                "title": "자격 요건",
+                "sector": "산업 경험",
+                "c1": "감사 및 보증 리더십",
+                "c2": "내부 통제 및 보고 검토",
+                "s1": "제조업",
+                "s2": "서비스"
+                },
+            "cta": {
+                "title": "Naresh와(과) 일하기.",
+                "desc": "직접 연락하거나 일반 문의를 보내주시면 적합한 팀을 연결해 드립니다.",
+                "btn": "TAG Group에 문의하기"
+                }
+            },
+        "jai": {
+            "breadcrumb": {
+                "home": "홈",
+                "leadership": "리더십"
+                },
+            "title": "파트너",
+            "name": "자이 프라카쉬 (Jai Prakash)",
+            "subtitle": "간접세 · 인도",
+            "chips": {
+                "c1": "간접세",
+                "c2": "GST",
+                "c3": "규정 준수"
+                },
+            "nav": {
+                "profile": "프로필",
+                "overview": "개요",
+                "expertise": "전문 분야",
+                "experience": "경력",
+                "credentials": "자격",
+                "get_in_touch": "연락하기",
+                "email": "Jai에게 이메일 보내기",
+                "download": "프로필 다운로드 (PDF)"
+                },
+            "overview": {
+                "title": "개요",
+                "desc": "Jai는 TAG Group의 간접세 부문 파트너로서 다양한 부문의 비즈니스에 대한 GST 자문, 규정 준수 및 소송을 지원합니다. (자세한 자격 요건은 추가 예정입니다.)"
+                },
+            "expertise": {
+                "title": "전문 분야",
+                "h1": "간접세",
+                "h1_l1": "GST 자문 및 규정 준수",
+                "h1_l2": "소송 및 대리 지원",
+                "h1_l3": "거래 영향 분석"
+                },
+            "experience": {
+                "title": "경력",
+                "p1": "현재",
+                "r1": "TAG Group 파트너 — 간접세",
+                "d1": "GST 자문, 규정 준수 및 소송 위임을 지원합니다."
+                },
+            "cred": {
+                "title": "자격 요건",
+                "sector": "산업 경험",
+                "c1": "간접세 실무",
+                "c2": "GST 자문 및 규정 준수",
+                "s1": "제조업",
+                "s2": "서비스",
+                "s3": "소매"
+                },
+            "cta": {
+                "title": "Jai와(과) 일하기.",
+                "desc": "직접 연락하거나 일반 문의를 보내주시면 적합한 팀을 연결해 드립니다.",
+                "btn": "TAG Group에 문의하기"
+                }
+            }
+        }
 }
 };
 
