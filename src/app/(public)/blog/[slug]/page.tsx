@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!blog) return { title: 'Not Found' };
 
   return {
-    title: `${blog.title} | TAG Advisors LLP`,
+    title: `${blog.title} | TAG Group`,
     description: blog.content?.replace(/<[^>]+>/g, '').substring(0, 160),
   };
 }

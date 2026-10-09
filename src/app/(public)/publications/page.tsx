@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { NewsletterSubscribe } from '@/components/public/newsletter-subscribe'
 
 export const metadata = {
-  title: 'Publications & Reports | TAG Advisors',
-  description: 'In-depth analysis, comprehensive budget reports, and strategic insights from TAG Advisors.',
+  title: 'Publications & Reports | TAG Group',
+  description: 'In-depth analysis, comprehensive budget reports, and strategic insights from TAG Group.',
 }
 
 export default async function PublicationsPage({

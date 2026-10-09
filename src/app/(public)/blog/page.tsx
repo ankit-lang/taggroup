@@ -3,7 +3,7 @@ import { getBlogs } from '@/actions/blog.actions';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Blog | TAG Advisors LLP',
+  title: 'Blog | TAG Group',
   description: 'Latest news, updates, and thoughts from the TAG team.',
 };
 
