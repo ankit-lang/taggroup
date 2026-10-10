@@ -3,6 +3,7 @@
 import React from 'react';
 import { ContactForm } from '@/components/public/contact-form';
 import { useI18n } from '@/lib/i18n';
+import { GurgaonOfficeGallery } from '@/components/public/gurgaon-office-gallery';
 
 export default function Page() {
   const { t } = useI18n();
@@ -41,6 +42,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <GurgaonOfficeGallery />
       <section className="section section-alt">
         <div className="container">
           <div className="center measure mx-auto"><span className="eyebrow" style={{ "justifyContent": "center" }}>{t('contact_page.key_contacts')}</span><h2>{t('contact_page.speak')}</h2></div>

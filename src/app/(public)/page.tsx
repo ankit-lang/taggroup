@@ -2,6 +2,7 @@
 "use client";
 import React from 'react';
 import { useI18n } from '@/lib/i18n';
+import { GurgaonOfficeGallery } from '@/components/public/gurgaon-office-gallery';
 
 export default function Page() {
   const { t } = useI18n();
@@ -343,6 +344,7 @@ export default function Page() {
   </div>
 </section>
 
+<GurgaonOfficeGallery />
 
 <section className="section">
   <div className="container"><div className="cta-band reveal">
