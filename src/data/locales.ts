@@ -3,6 +3,14 @@ export const locales = {
     breadcrumb: {
       home: "Home",
     },
+    blog: {
+      breadcrumb: "Blog",
+      title: "Blog",
+      hero_title: "News, views and updates from TAG Group.",
+      hero_desc: "Perspectives from our team on tax, finance, cross-border advisory and life at TAG — written for decision-makers and practitioners.",
+      read: "Read",
+      empty: "No posts yet — check back soon.",
+    },
     insights_articles: {
       sidebar: {
         download: { title: "Download", note: "Read this article offline or share it.", btn: "Download PDF" },
@@ -153,6 +161,16 @@ export const locales = {
         addr_delhi: "FF-104, Pearl Omaxe Tower, Netaji Subhash Place, Pitampura, New Delhi 110034",
         addr_uae: "Office 10, Level 1, Sharjah Media City, Sharjah, UAE"
       },
+      people: {
+        gaurav: {
+          name: "Gaurav Sharma",
+          title: "Managing Partner, TAG Group",
+        },
+        ishita: {
+          name: "Ishita Sharma",
+          title: "Partner — Human Capital & HR",
+        },
+      },
       disclaimer: {
         title: "Disclaimer & non-solicitation:",
         text: "This website is not intended to be, and shall not be construed as, any form of advertisement, solicitation, invitation or inducement of any sort. The information provided here is for general informational purposes only and does not constitute professional, legal, tax or financial advice, nor does it create any professional or client relationship. By accessing this website, the user acknowledges that they are seeking information about TAG Group of their own accord and that there has been no solicitation, invitation or inducement of any kind. TAG Group accepts no liability for any action taken by any person relying on information on this website; users should obtain appropriate professional advice before acting on any content herein."
@@ -199,8 +217,17 @@ export const locales = {
         send_enquiry: "Send enquiry",
         confidence: "We treat every enquiry in confidence and usually respond within one business day.",
         success: "Your inquiry has been received.",
-        error: "Failed to submit inquiry."
+        error: "Failed to submit inquiry.",
+        services_india_entry: "India entry / setup",
+        services_other: "Other",
+        unexpected_error: "An unexpected error occurred."
       }
+    },
+    workspace_gallery: {
+      eyebrow: "Our Workspace",
+      title: "Inside TAG Gurgaon",
+      desc: "Experience our dynamic work environment designed for collaboration, innovation, and growth.",
+      alt: "Gurgaon Office"
     },
     about: {
       "hero_eyebrow": "About the firm",
@@ -807,7 +834,53 @@ services: {
       "excl_note": "This section is being populated with live coverage. To feature TAG Group or request an interview, contact",
       "cta_title": "Get our best thinking in your inbox",
       "cta_desc": "Subscribe to TAG Group Insights, or reach out for media & speaking enquiries.",
-      "cta_media": "Media enquiries"
+      "cta_media": "Media enquiries",
+      cards: {
+        tp_tag: "Insight · Transfer Pricing",
+        tp_meta: "May 2025 · TAG Group",
+        tp_title: "Building a defensible multi-country transfer-pricing file",
+        tp_desc: "How to align FAR, benchmarking and documentation across jurisdictions so your file stands up to more than one tax administration.",
+        uae_tag: "Insight · International Tax",
+        uae_meta: "Apr 2025 · TAG Group",
+        uae_title: "UAE Corporate Tax: what Indian groups must plan for",
+        uae_desc: "The essentials of the UAE's Corporate Tax and VAT regime, and how India–UAE groups should structure ahead of it.",
+        india_tag: "Insight · India Entry",
+        india_meta: "Mar 2025 · TAG Group",
+        india_title: "India entry in 2026: choosing the right structure",
+        india_desc: "A practical guide to entity forms, FEMA compliance, tax registration and operational setup for foreign groups entering India.",
+        gcc_tag: "Insight · GCC",
+        gcc_meta: "Feb 2025 · TAG Group",
+        gcc_title: "Setting up a Global Capability Centre from India",
+        gcc_desc: "Key decisions on entity structure, workforce, transfer pricing and governance for groups building a GCC in India.",
+      },
+      newsletters: {
+        n1_title: "The TAG Transfer Pricing Brief",
+        n1_desc: "Fortnightly commentary on global TP developments, OECD updates, country-by-country regulation and documentation best practice.",
+        n2_title: "The India Business Dispatch",
+        n2_desc: "A fortnightly look at the regulatory, tax and business landscape for companies entering or operating in India.",
+        n3_title: "The Weekly Tax Pulse",
+        n3_desc: "A weekly digest of Indian and cross-border tax developments — direct tax, GST, FEMA, treaties and tribunal orders.",
+        n4_title: "The Global Desk Weekly",
+        n4_desc: "Weekly intelligence across UAE, Singapore, Mauritius and emerging-market jurisdictions relevant to Indian outbound groups.",
+      },
+      media_cards: {
+        press_desc: "TAG Group partners and specialists are regularly quoted in leading financial and business media.",
+        press_l1: "Print & digital press features",
+        press_l2: "Expert commentary & quotes",
+        press_l3: "Interview coordination",
+        speak_desc: "Our team speaks at industry conferences, webinars, and professional forums on tax, finance and cross-border advisory.",
+        speak_l1: "Conference keynotes & panels",
+        speak_l2: "Webinars & virtual events",
+        speak_l3: "CPD & professional sessions",
+        pub_desc: "From technical papers to accessible guides, TAG Group publishes original research and thought leadership across its practice areas.",
+        pub_l1: "Technical & policy papers",
+        pub_l2: "Client-facing guides & primers",
+        pub_l3: "Co-authored industry research",
+        rec_desc: "Peer, industry and client recognition for the quality of advice, team culture and professional standards at TAG Group.",
+        rec_l1: "Industry awards & rankings",
+        rec_l2: "Client testimonials",
+        rec_l3: "Peer & professional recognition",
+      },
 },
     home: {
 
@@ -1112,6 +1185,7 @@ contact_page: {
       hr_partner: "Partner — HR",
       new_biz: "New business",
       new_biz_desc: "Fastest route for new engagements",
+      general_enquiries: "General Enquiries",
       full_profile: "Full profile",
       see_all: "See all partners"
     },
@@ -1926,6 +2000,14 @@ contact_page: {
     breadcrumb: {
       home: "홈",
     },
+    blog: {
+      breadcrumb: "블로그",
+      title: "블로그",
+      hero_title: "TAG Group의 뉴스, 견해 및 업데이트.",
+      hero_desc: "세금, 재무, 국경 간 자문 및 TAG 생활에 대한 당사 팀의 관점 — 의사 결정자와 실무자를 위해 작성되었습니다.",
+      read: "읽기",
+      empty: "아직 게시물이 없습니다 — 곧 다시 확인해 주세요.",
+    },
     insights_articles: {
       sidebar: {
         download: { title: "다운로드", note: "이 기사를 오프라인에서 읽거나 공유하십시오.", btn: "PDF 다운로드" },
@@ -2075,6 +2157,16 @@ contact_page: {
         addr_delhi: "뉴델리 110034 피탐푸라, 네타지 수바시 플레이스, 펄 오맥스 타워, FF-104호",
         addr_uae: "UAE 샤르자, 샤르자 미디어 시티, 레벨 1, 오피스 10"
       },
+      people: {
+        gaurav: {
+          name: "가우라브 샤르마 (Gaurav Sharma)",
+          title: "대표 파트너, TAG 그룹",
+        },
+        ishita: {
+          name: "이시타 샤르마 (Ishita Sharma)",
+          title: "파트너 — 휴먼 캐피탈 및 HR",
+        },
+      },
       disclaimer: {
         title: "면책 조항 및 권유 금지:",
         text: "본 웹사이트는 어떠한 형태의 광고, 권유, 초대 또는 유인으로도 해석되어서는 안 됩니다. 여기에 제공된 정보는 일반적인 정보 제공 목적으로만 제공되며, 전문적, 법률적, 세무적 또는 재정적 조언을 구성하지 않으며, 어떠한 전문가 또는 고객 관계도 형성하지 않습니다. 본 웹사이트에 접속함으로써 사용자는 자발적으로 TAG 그룹에 대한 정보를 찾고 있음을 인정하며, 어떠한 종류의 권유, 초대 또는 유인도 없었음을 확인합니다. TAG 그룹은 본 웹사이트의 정보에 의존하여 취해진 어떠한 조치에 대해서도 책임을 지지 않습니다. 사용자는 본 웹사이트의 내용에 따라 행동하기 전에 적절한 전문가의 조언을 구해야 합니다."
@@ -2121,8 +2213,17 @@ contact_page: {
         send_enquiry: "문의 보내기",
         confidence: "모든 문의는 기밀로 처리되며 일반적으로 영업일 기준 1일 이내에 답변해 드립니다.",
         success: "문의가 접수되었습니다.",
-        error: "문의 접수에 실패했습니다."
+        error: "문의 접수에 실패했습니다.",
+        services_india_entry: "인도 진출 / 설립",
+        services_other: "기타",
+        unexpected_error: "예기치 않은 오류가 발생했습니다."
       }
+    },
+    workspace_gallery: {
+      eyebrow: "업무 공간",
+      title: "TAG 구르가온 오피스 둘러보기",
+      desc: "협업, 혁신 및 성장을 위해 설계된 역동적인 업무 환경을 경험해 보세요.",
+      alt: "구르가온 오피스"
     },
     about: {
       "hero_eyebrow": "회사 소개",
@@ -2154,7 +2255,7 @@ contact_page: {
       "why_title": "핵심 차별화 요소",
       "why_desc": "문제가 복잡하고 기한이 촉박할 때 고객이 차이를 느끼는 부분입니다.",
       "diff_lead_title": "리더십급 팀",
-      "diff_lead_desc": "Big Four 회계법인, 상장 기업, 다국적 기업의 유럽 및 APAC 책임자 출신 리더들.",
+      "diff_lead_desc": "4대 회계법인(Big 4), 상장 기업, 다국적 기업의 유럽 및 APAC 책임자 출신 리더들.",
       "diff_syn_title": "부서 간 시너지",
       "diff_syn_desc": "세무, 재무, 보증, 법무, 인사 및 기술 부서 간의 협업을 통해 문제의 전체를 해결합니다.",
       "diff_del_title": "목표 달성 배송",
@@ -2208,7 +2309,7 @@ contact_page: {
                     },
             "overview": {
                 "title": "개요",
-                "desc": "Gaurav는 TAG Group의 대표 파트너이자 세무, 국경 간 및 CFO 관행의 원동력입니다. 14년 이상 Big Four 자문에서 고위 사내 리더십으로 이동하며 유럽 인프라 및 에너지 다국적 기업에서 APAC 지역 세무와 동남아시아 재무를 총괄한 후 TAG Group의 통합 자문 플랫폼을 설립했습니다. 그는 국경 간 투자, M&A, 재무 혁신 및 중대한 세금 분쟁에 대해 창업자, CFO 및 이사회의 신뢰받는 조언자이며 사외 이사로 활동하고 있습니다. 1억 200만 달러 규모의 국부 펀드 지분을 지원하고, 1,070만 달러의 세금 환급을 회수했으며, 20명 이상의 팀을 이끌면서 30개 이상의 기업에 대한 거버넌스 프레임워크를 구축했습니다.",
+                "desc": "Gaurav는 TAG Group의 대표 파트너이자 세무, 국경 간 및 CFO 관행의 원동력입니다. 14년 이상 4대 회계법인(Big 4) 자문에서 고위 사내 리더십으로 이동하며 유럽 인프라 및 에너지 다국적 기업에서 APAC 지역 세무와 동남아시아 재무를 총괄한 후 TAG Group의 통합 자문 플랫폼을 설립했습니다. 그는 국경 간 투자, M&A, 재무 혁신 및 중대한 세금 분쟁에 대해 창업자, CFO 및 이사회의 신뢰받는 조언자이며 사외 이사로 활동하고 있습니다. 1억 200만 달러 규모의 국부 펀드 지분을 지원하고, 1,070만 달러의 세금 환급을 회수했으며, 20명 이상의 팀을 이끌면서 30개 이상의 기업에 대한 거버넌스 프레임워크를 구축했습니다.",
                 "s1": "국부 펀드 지분 지원",
                 "s2": "세금 환급 회수",
                 "s3": "기업 포트폴리오 관리",
@@ -2249,7 +2350,7 @@ contact_page: {
                 "r4": "세무 총괄 — 인프라 및 에너지 그룹",
                 "d4": "20개 이상의 기업 포트폴리오에 대한 세무 거버넌스를 지휘하여 약 1,070만 달러의 환급금을 회수하고 조세 심판원에서 약 7,500만 달러의 분쟁을 방어했습니다.",
                 "p5": "초기 경력",
-                "r5": "Big Four 회계법인",
+                "r5": "4대 회계법인(Big 4)",
                 "d5": "유명 글로벌 고객을 위한 이전 가격 및 국제 세무, 문서화, 경제 분석 및 분쟁에 대한 기술적 기반을 구축했습니다."
                     },
             "cred": {
@@ -2362,7 +2463,7 @@ contact_page: {
           h3: "전략적 지침 및 정책 (TP)", h3_l1: "글로벌 TP 정책 설계 및 국경 간 구조화", h3_l2: "특수 관계자 거래 지침 및 가격 책정", h3_l3: "관할 구역 TP 연구 및 위험 노출 평가", h3_l4: "문서 주도 분쟁 및 감사 지원",
           h4: "재무 및 회계 (백오피스)", h4_l1: "장부 작성 및 회계 장부 유지 관리", h4_l2: "월말 및 연말 마감 및 대사", h4_l3: "미지급금, 매출채권 및 급여 조정", h4_l4: "MIS, 경영 보고 및 대시보드", h4_l5: "감사 지원 및 연말 팩",
           h5: "지리적 적용 범위", h5_l1: "이전 가격 — 전 세계 고객에게 제공", h5_l2: "재무 및 회계 — 현재 미국 및 아랍에미리트", h5_l3: "수요에 따라 추가 지역으로 확장",
-          h6: "제공 프레임워크", h6_l1: "Big-Four 수준의 기술적 깊이를 갖춘 파트너 주도 제공", h6_l2: "공통 요청 템플릿을 사용하여 인도에서 중앙 조정", h6_l3: "정의된 SLA, 검토 마일스톤 및 품질 관리", h6_l4: "기밀 유지, 안전, 화이트 라벨 정보 처리"
+          h6: "제공 프레임워크", h6_l1: "4대 회계법인(Big 4) 수준의 기술적 깊이를 갖춘 파트너 주도 제공", h6_l2: "공통 요청 템플릿을 사용하여 인도에서 중앙 조정", h6_l3: "정의된 SLA, 검토 마일스톤 및 품질 관리", h6_l4: "기밀 유지, 안전, 화이트 라벨 정보 처리"
         },
         approach: { title: "참여 접근 방식 및 단계", a1_t: "범위 지정 및 온보딩", a1_d: "적용 범위, 엔터티, 표준, 도구 및 정보 흐름을 정의합니다.", a2_t: "제공 모델 구축", a2_d: "템플릿, SLA, 검토 마일스톤 및 안전한 화이트 라벨 처리를 설정합니다.", a3_t: "실행 및 보고", a3_d: "반복적인 TP 및 재무 작업을 공통적인 감사 준비 표준으로 제공합니다.", a4_t: "확장", a4_d: "성장함에 따라 새로운 엔터티, 서비스 및 지역으로 확장합니다." },
         engage: { title: "참여 옵션", e1: "팀의 캡티브 스타일 확장", e2: "공동 소싱 제공", e3: "해외 기업을 위한 기밀 화이트 라벨 지원" },
@@ -2370,7 +2471,7 @@ contact_page: {
         industries: { title: "관련 산업", i1: "인프라", i2: "재생 에너지", i3: "엔지니어링 및 EPC", i4: "자동차", i5: "제조", i6: "기술 및 IT/ITeS", i7: "물류", i8: "부동산", i9: "환대", i10: "의료 및 제약", i11: "FMCG 및 소매", i12: "석유 및 가스", i13: "항공", i14: "스타트업 및 전자상거래" },
         client: { title: "우리가 지원하는 대상", desc: "글로벌 전자상거래 및 기술 플랫폼에서 ESG, 의료 및 산업 그룹에 이르기까지 인도에서 설립하고 확장하는 데 도움이 되는 부문:", c1: "기술 및 IT/ITeS", c2: "제조 및 엔지니어링", c3: "전자상거래, 물류 및 유통", c4: "금융 서비스 및 핀테크", c5: "미디어, 디지털 플랫폼 및 엔터테인먼트", c6: "인프라, EPC 및 부동산", c7: "의료 및 제약", c8: "자동차" },
         cred: { title: "선택된 경험 및 자격 증명", desc: "TAG Group은 네덜란드, 룩셈부르크, 싱가포르, UAE, 호주, 인도 등 여러 국가에 걸친 TP 경험을 바탕으로 전 세계 이전 가격 책정을 위한 글로벌 역량 센터 역할을 합니다. 현재 당사의 관리형 재무 및 회계는 파트너 주도의 검토, 정의된 SLA 및 안전하고 기밀 유지되는 처리를 통해 인도에서 미국 및 UAE의 비즈니스에 서비스를 제공하고 있습니다.", clients: "선택된 클라이언트" },
-        gain: { title: "회사가 당사의 GCC와 파트너 관계를 맺는 이유", desc: "파트너 주도의 인도 기반 역량 센터에서 얻을 수 있는 이점:", l1: "깊은 Big-Four 수준의 기술적 전문성을 갖춘 파트너 주도 제공", l2: "감사 준비 문서화 및 이전 가격 책정 방어 지원", l3: "복잡한 지역 및 국경 간 위임장에서도 빠른 처리", l4: "워크플로와 통합되는 기밀 화이트 라벨 지원", l5: "인도 기반 역량 센터의 비용 효율적인 실행", l6: "비즈니스 목표를 TP 방어 가능성과 일치시키는 전략적 통찰력" },
+        gain: { title: "회사가 당사의 GCC와 파트너 관계를 맺는 이유", desc: "파트너 주도의 인도 기반 역량 센터에서 얻을 수 있는 이점:", l1: "4대 회계법인(Big 4) 수준의 깊은 기술적 전문성을 갖춘 파트너 주도 제공", l2: "감사 준비 문서화 및 이전 가격 책정 방어 지원", l3: "복잡한 지역 및 국경 간 위임장에서도 빠른 처리", l4: "워크플로와 통합되는 기밀 화이트 라벨 지원", l5: "인도 기반 역량 센터의 비용 효율적인 실행", l6: "비즈니스 목표를 TP 방어 가능성과 일치시키는 전략적 통찰력" },
         tools: { title: "데이터베이스 및 도구", desc: "당사는 다음을 포함하여 주요 이전 가격 책정 및 재무 데이터베이스와 제공 도구를 사용합니다:", t1: "TP Catalyst", t2: "Orbis (TNMM 모듈)", t3: "S&P Capital IQ", t4: "RoyaltyStat / Royalty Range", t5: "Loan Connector", t6: "Refinitiv Eikon", t7: "Prowess & Capitaline" },
         connected: { title: "연결된 서비스", c1_t: "글로벌 이전 가격", c1_d: "관련 역량", c2_t: "CFO 및 재무 혁신", c2_d: "관련 역량", c3_t: "국제 비즈니스", c3_d: "관련 역량", c4_t: "세금 및 국경 간 자문", c4_d: "관련 역량" },
         cta: { title: "저희 팀과 글로벌 역량 센터에 대해 논의하십시오.", desc: "귀하의 상황을 알려주시면 귀하의 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의 — info@taggroup.in", btn2: "연락처 페이지" }
@@ -2470,7 +2571,7 @@ contact_page: {
         models: { title: "참여 모델", m1_t: "직접 참여", m1_d: "여러 국가의 이전 가격을 관리하는 기업 그룹과의 직접 참여.", m2_t: "공동 소싱 제공", m2_d: "파견을 포함하여 사내 세무팀과 함께 공동 소싱 제공.", m3_t: "화이트 라벨 지원", m3_d: "해외 세금, 법률 및 컨설팅 회사를 위한 기밀 화이트 라벨 지원.", m4_t: "연간 TP 리테이너", m4_d: "정책, 문서, 파일링 및 일년 내내 문의 사항을 다루는 연간 리테이너." },
         tools: { title: "데이터베이스 및 도구", desc: "경제 분석을 위해 1단계 글로벌 금융, 벤치마킹 및 거래 데이터베이스를 활용합니다:", t1: "TP 촉매", t2: "오르비스", t3: "S&P 캐피탈 IQ", t4: "로열티통계 / 로열티범위", t5: "대출 커넥터", t6: "리피니티브 아이콘", t7: "뛰어난 기술 및 자본주의" },
         deliv: { title: "일반적인 결과물", d1: "TP 상태 점검 보고서 및 로드맵", d2: "그룹 TP 정책, 가격 모델 및 SOP", d3: "회사 간 합의", d4: "벤치마킹 연구 및 경제 분석", d5: "마스터 파일, 로컬 파일 및 다국가 파일", d6: "법정 TP 양식, 공개 및 CbCR", d7: "감사 응답 및 APA 제출", d8: "관리 교육 및 연말 실제 확인 메모" },
-        cred: { title: "선택된 경험 및 자격 증명", desc: "TAG 그룹은 네덜란드, 룩셈부르크, 싱가포르, UAE, 호주, 인도 등 여러 국가에서 이전 가격 경험을 보유하고 있습니다. 우리 파트너들은 Big Four 기업에서 이전 가격 및 국제 조세를 이끌었으며 인도 및 아시아 태평양 지역의 다국적 그룹 세무를 총괄했습니다. 다국적 그룹에 직접 서비스를 제공하고 해외 자문 회사를 위한 백엔드 제공 파트너 역할을 수행했습니다.", clients: "선택된 클라이언트" },
+        cred: { title: "선택된 경험 및 자격 증명", desc: "TAG 그룹은 네덜란드, 룩셈부르크, 싱가포르, UAE, 호주, 인도 등 여러 국가에서 이전 가격 경험을 보유하고 있습니다. 우리 파트너들은 4대 회계법인(Big 4)에서 이전 가격 및 국제 조세를 이끌었으며 인도 및 아시아 태평양 지역의 다국적 그룹 세무를 총괄했습니다. 다국적 그룹에 직접 서비스를 제공하고 해외 자문 회사를 위한 백엔드 제공 파트너 역할을 수행했습니다.", clients: "선택된 클라이언트" },
         faq: { title: "자주 묻는 질문" },
         faqs: [
           { q: "회사 간 거래가 적은 경우 이전 가격 지원이 필요합니까?", a: "대부분의 관할권은 모든 특수관계자 거래에 정상가격 원칙을 적용하는 반면, 문서화 및 신고 의무는 현지 임계값에 따라 다릅니다. 상태 점검은 귀하에게 적용되는 사항을 확인하고 노력을 비례적으로 유지합니다." },
@@ -2517,7 +2618,7 @@ contact_page: {
         },
         prop: {
           title: "서비스 제안",
-          desc: "세금은 전략이 규제와 만나는 지점입니다. TAG는 기업 세무, 국제 세무, 조약 포지셔닝 및 간접세를 하나의 팀으로 통합하여 구조화 결정, 거래 결과 및 일상적인 규정 준수가 모두 같은 방향으로 나아가도록 합니다. 우리 파트너들은 Big Four 교육 및 인도와 APAC 전역의 사내 세무 리더십을 제공합니다."
+          desc: "세금은 전략이 규제와 만나는 지점입니다. TAG는 기업 세무, 국제 세무, 조약 포지셔닝 및 간접세를 하나의 팀으로 통합하여 구조화 결정, 거래 결과 및 일상적인 규정 준수가 모두 같은 방향으로 나아가도록 합니다. 우리 파트너들은 4대 회계법인 출신의 전문성과 인도와 APAC 전역의 사내 세무 리더십을 제공합니다."
         },
         sit: {
           title: "필요성을 유발하는 비즈니스 상황",
@@ -2809,7 +2910,53 @@ contact_page: {
       "excl_note": "이 섹션은 실시간 보도로 채워지고 있습니다. TAG Group을 소개하거나 인터뷰를 요청하려면 다음으로 연락하세요.",
       "cta_title": "최고의 통찰력을 받은 편지함으로 받으세요",
       "cta_desc": "TAG Group 인사이트를 구독하거나 미디어 및 강연 문의를 위해 연락하세요.",
-      "cta_media": "미디어 문의"
+      "cta_media": "미디어 문의",
+      cards: {
+        tp_tag: "인사이트 · 이전가격",
+        tp_meta: "2025년 5월 · TAG Group",
+        tp_title: "방어 가능한 다국가 이전가격 파일 구축하기",
+        tp_desc: "FAR, 벤치마킹 및 문서화를 관할권 전반에 걸쳐 정렬하여 파일이 여러 세무 당국에서 통과될 수 있도록 하는 방법.",
+        uae_tag: "인사이트 · 국제 조세",
+        uae_meta: "2025년 4월 · TAG Group",
+        uae_title: "UAE 법인세: 인도 그룹이 준비해야 할 사항",
+        uae_desc: "UAE 법인세 및 VAT 제도의 핵심 사항과 인도-UAE 그룹이 사전에 구조화해야 하는 방법.",
+        india_tag: "인사이트 · 인도 진출",
+        india_meta: "2025년 3월 · TAG Group",
+        india_title: "2026년 인도 진출: 올바른 구조 선택하기",
+        india_desc: "인도에 진출하는 외국 그룹을 위한 법인 형태, FEMA 준수, 세금 등록 및 운영 설정에 대한 실용적인 가이드.",
+        gcc_tag: "인사이트 · GCC",
+        gcc_meta: "2025년 2월 · TAG Group",
+        gcc_title: "인도에서 글로벌 역량 센터 설립하기",
+        gcc_desc: "인도에 GCC를 구축하는 그룹을 위한 법인 구조, 인력, 이전가격 및 거버넌스에 관한 주요 결정 사항.",
+      },
+      newsletters: {
+        n1_title: "TAG 이전가격 브리프",
+        n1_desc: "글로벌 TP 동향, OECD 업데이트, 국별 보고 규정 및 문서화 모범 사례에 대한 격주 해설.",
+        n2_title: "인도 비즈니스 디스패치",
+        n2_desc: "인도에 진출하거나 운영 중인 기업을 위한 규제, 세금 및 비즈니스 환경에 대한 격주 분석.",
+        n3_title: "위클리 택스 펄스",
+        n3_desc: "직접세, GST, FEMA, 조약 및 심판원 명령 등 인도 및 국경 간 세금 동향의 주간 요약.",
+        n4_title: "글로벌 데스크 위클리",
+        n4_desc: "인도 아웃바운드 그룹과 관련된 UAE, 싱가포르, 모리셔스 및 신흥 시장 관할권에 대한 주간 정보.",
+      },
+      media_cards: {
+        press_desc: "TAG Group의 파트너와 전문가들은 주요 금융 및 비즈니스 미디어에 정기적으로 인용됩니다.",
+        press_l1: "인쇄 및 디지털 언론 특집",
+        press_l2: "전문가 해설 및 인용",
+        press_l3: "인터뷰 조율",
+        speak_desc: "당사 팀은 세금, 재무 및 국경 간 자문에 관한 업계 컨퍼런스, 웨비나 및 전문 포럼에서 강연합니다.",
+        speak_l1: "컨퍼런스 기조 연설 및 패널",
+        speak_l2: "웨비나 및 가상 이벤트",
+        speak_l3: "CPD 및 전문 세션",
+        pub_desc: "기술 논문부터 접근 가능한 가이드까지, TAG Group은 실무 영역 전반에 걸쳐 독창적인 연구와 사고 리더십을 발행합니다.",
+        pub_l1: "기술 및 정책 논문",
+        pub_l2: "고객 가이드 및 입문서",
+        pub_l3: "공동 저술 업계 연구",
+        rec_desc: "TAG Group의 자문 품질, 팀 문화 및 전문 기준에 대한 동료, 업계 및 고객의 인정.",
+        rec_l1: "업계 수상 및 순위",
+        rec_l2: "고객 추천사",
+        rec_l3: "동료 및 전문 인정",
+      },
 },
     home: {
 
@@ -2845,7 +2992,7 @@ contact_page: {
     slide3_tag: "TAG 라이프",
     slide3_title_1: "조언 뒤에 있는",
     slide3_title_2: "사람들.",
-    slide3_sub: "Big Four 및 다국적 기업 리더십에 뿌리를 둔 다분야 팀 — 진실성, 협업 및 성장을 바탕으로 구축되었습니다.",
+    slide3_sub: "4대 회계법인 및 다국적 기업 리더십에 뿌리를 둔 다분야 팀 — 진실성, 협업 및 성장을 바탕으로 구축되었습니다.",
     slide4_tag: "국경 간",
     slide4_title_1: "국제 조세 및",
     slide4_title_2: "국경 간 자문.",
@@ -2970,14 +3117,14 @@ contact_page: {
 
     careers_page: {
       breadcrumb: { home: "홈", careers: "채용" },
-      hero: { title: "비즈니스 성장의 방향을 결정하는 일을 하세요.", desc: "부티크 오너십과 함께 Big-Four 수준의 업무를 제공하는 다학제 팀에 합류하세요 — 실제 고객 노출, 국경 간 권한 및 멘토링을 제공하는 파트너. 문의: " },
+      hero: { title: "비즈니스 성장의 방향을 결정하는 일을 하세요.", desc: "부티크 오너십과 함께 4대 회계법인(Big 4) 수준의 업무를 제공하는 다학제 팀에 합류하세요 — 실제 고객 노출, 국경 간 권한 및 멘토링을 제공하는 파트너. 문의: " },
       tabs: { why: "왜 TAG인가", open: "채용 포지션", life: "TAG의 삶" },
       why: { 
         eyebrow: "왜 TAG인가", title: "최고의 작업을 수행할 수 있는 곳", desc: "우리는 대형 회사의 기술적 깊이와 부티크의 오너십, 속도 및 가시성을 결합합니다.",
         cards: [
-          { title: "Big-Four 수준의 작업", desc: "복잡한 국제 세금, 이전 가격 책정 및 거래 — 일반적으로 가장 큰 회사에 예약된 종류의 명령입니다." },
+          { title: "4대 회계법인 수준의 업무", desc: "복잡한 국제 조세, 이전 가격 책정 및 거래 — 일반적으로 대형 회계법인에 국한되었던 수준 높은 프로젝트를 수행합니다." },
           { title: "국경 간 노출", desc: "인도, UAE, 싱가포르, 말레이시아 및 모리셔스 전역에서 일하고 해외 자문 회사를 제공 파트너로 협력합니다." },
-          { title: "중요한 멘토링", desc: "Big Four 및 MNC 리더십 배경을 가진 파트너로부터 멀리서가 아니라 직접 배웁니다." },
+          { title: "중요한 멘토링", desc: "4대 회계법인 및 다국적 기업(MNC) 리더십 배경을 가진 파트너로부터 멀리서가 아니라 직접 배웁니다." },
           { title: "디자인에 의한 다학제", desc: "세무, 재무, 보증, 법률, HR 및 기술 전반에 걸쳐 이동하십시오 — 깊이뿐만 아니라 범위를 구축하십시오." },
           { title: "진정한 성장", desc: "명확한 경로, 조기 오너십 및 당사와 함께 관행을 구축할 여지." },
           { title: "계층 구조보다 아이디어 우선", desc: "최고의 아이디어가 이기고 주도권이 보상받는 문제 해결 문화." }
@@ -3020,7 +3167,7 @@ contact_page: {
           role: "대표 파트너",
           name: "가우라브 샤르마",
           title: "직접 및 국제 세금 · 구조화 및 CFO 자문",
-          desc: "Gaurav는 TAG Group의 관리 파트너이자 세금, 국경 간 및 CFO 관행의 원동력입니다. 14년 이상 동안 그는 Big Four 자문에서 고위 사내 리더십으로 이동하여 TAG Group의 통합 자문 플랫폼을 설립하기 전에 유럽 인프라 및 에너지 다국적 기업에서 APAC 지역 세금 및 동남아시아 재무를 이끌었습니다.",
+          desc: "Gaurav는 TAG Group의 관리 파트너이자 세금, 국경 간 및 CFO 관행의 원동력입니다. 14년 이상 동안 그는 4대 회계법인(Big 4) 자문에서 고위 사내 리더십으로 이동하여 TAG Group의 통합 자문 플랫폼을 설립하기 전에 유럽 인프라 및 에너지 다국적 기업에서 APAC 지역 세금 및 동남아시아 재무를 이끌었습니다.",
           tags: ["국제 세금", "이전 가격", "국경 간", "분할 CFO", "M&A", "이사회 자문"]
         },
         vishnu: { role: "파트너", name: "K. 비슈누 샤르마", title: "감사, 보증 및 재무 혁신" },
@@ -3182,6 +3329,7 @@ contact_page: {
       hr_partner: "파트너 — HR",
       new_biz: "신규 비즈니스",
       new_biz_desc: "새로운 계약을 위한 가장 빠른 경로",
+      general_enquiries: "일반 문의",
       full_profile: "전체 프로필",
       see_all: "모든 파트너 보기"
     },
@@ -3635,7 +3783,7 @@ people_pages: {
                 },
             "overview": {
                 "title": "개요",
-                "desc": "Manuj는 가치 평가를 이끄는 TAG Group의 어소시에이트 파트너입니다. 대기업, Big Four 기업, 미국 컨설팅 회사 및 글로벌 회사를 대상으로 비즈니스 가치 평가, 복합 유가증권, 무형 자산 및 특수 재무 분석 전반에 걸쳐 15년 이상의 경험을 쌓았으며, 대규모 분석 팀을 이끌어 왔습니다."
+                "desc": "Manuj는 가치 평가를 이끄는 TAG Group의 어소시에이트 파트너입니다. 대기업, 4대 회계법인, 미국 컨설팅 회사 및 글로벌 회사를 대상으로 비즈니스 가치 평가, 복합 유가증권, 무형 자산 및 특수 재무 분석 전반에 걸쳐 15년 이상의 경험을 쌓았으며, 대규모 분석 팀을 이끌어 왔습니다."
                 },
             "expertise": {
                 "title": "전문 분야",

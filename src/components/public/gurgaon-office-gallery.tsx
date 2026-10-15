@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import { useI18n } from '@/lib/i18n';
 
 const mediaList = [
   { type: 'video', src: '/assets/gurgaonoff/gur6.mp4', span: 'col-span-2 row-span-2' },
@@ -13,16 +14,17 @@ const mediaList = [
 ];
 
 export function GurgaonOfficeGallery() {
+  const { t } = useI18n();
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
   return (
     <section className="section overflow-hidden relative">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center reveal">
-          <span className="eyebrow" style={{ justifyContent: 'center' }}>Our Workspace</span>
-          <h2>Inside TAG Gurgaon</h2>
+          <span className="eyebrow" style={{ justifyContent: 'center' }}>{t('workspace_gallery.eyebrow')}</span>
+          <h2>{t('workspace_gallery.title')}</h2>
           <p className="lead">
-            Experience our dynamic work environment designed for collaboration, innovation, and growth.
+            {t('workspace_gallery.desc')}
           </p>
         </div>
 

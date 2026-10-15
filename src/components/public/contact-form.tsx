@@ -52,7 +52,7 @@ export function ContactForm() {
       }
     } catch (error) {
       console.error(error);
-      toast.error('An unexpected error occurred.');
+      toast.error(t('contact.form.unexpected_error'));
     } finally {
       setIsSubmitting(false);
     }
@@ -69,18 +69,18 @@ export function ContactForm() {
       <label style={{ marginTop: '16px', display: 'block' }}>{t('contact.form.area_of_interest')}
         <select name="service" disabled={isSubmitting} value={defaultService} onChange={(e) => setDefaultService(e.target.value)}>
           <option value="">{t('contact.form.select_service')}</option>
-          <option value="Tax & Cross-Border Advisory">Tax & Cross-Border Advisory</option>
-          <option value="Global Transfer Pricing">Global Transfer Pricing</option>
-          <option value="Global Capability Centre">Global Capability Centre</option>
-          <option value="CFO & Finance Transformation">CFO & Finance Transformation</option>
-          <option value="Risk, Internal Audit & Controls">Risk, Internal Audit & Controls</option>
-          <option value="Deals, Valuation & Transaction Support">Deals, Valuation & Transaction Support</option>
-          <option value="Corporate, Legal, FEMA & Regulatory">Corporate, Legal, FEMA & Regulatory</option>
-          <option value="India Entry: One-Stop Business Establishment">India Entry: One-Stop Business Establishment</option>
-          <option value="Human Capital & HR Advisory">Human Capital & HR Advisory</option>
-          <option value="International Business">International Business</option>
-          <option value="India entry / setup">India entry / setup</option>
-          <option value="Other">Other</option>
+          <option value="Tax & Cross-Border Advisory">{t('header.services_dropdown.tax.title')}</option>
+          <option value="Global Transfer Pricing">{t('header.services_dropdown.tp.title')}</option>
+          <option value="Global Capability Centre">{t('header.services_dropdown.gcc.title')}</option>
+          <option value="CFO & Finance Transformation">{t('header.services_dropdown.cfo.title')}</option>
+          <option value="Risk, Internal Audit & Controls">{t('header.services_dropdown.risk.title')}</option>
+          <option value="Deals, Valuation & Transaction Support">{t('header.services_dropdown.deals.title')}</option>
+          <option value="Corporate, Legal, FEMA & Regulatory">{t('header.services_dropdown.corp.title')}</option>
+          <option value="India Entry: One-Stop Business Establishment">{t('header.services_dropdown.india.title')}</option>
+          <option value="Human Capital & HR Advisory">{t('header.services_dropdown.hr.title')}</option>
+          <option value="International Business">{t('header.services_dropdown.intl.title')}</option>
+          <option value="India entry / setup">{t('contact.form.services_india_entry')}</option>
+          <option value="Other">{t('contact.form.services_other')}</option>
         </select>
       </label>
       <label style={{ marginTop: '16px', display: 'block' }}>{t('contact.form.how_can_we_help')}

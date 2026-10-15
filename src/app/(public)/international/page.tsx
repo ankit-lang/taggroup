@@ -9,7 +9,7 @@ export default function Page() {
     <>
       <section className="page-hero has-art"><div className="ph-art" aria-hidden="true" style={{ "backgroundImage": "url('/assets/img/hero/global.svg')" }}></div>
         <div className="container">
-          <div className="breadcrumb"><a href="/index">Home</a> / <span>{t("intl.breadcrumb")}</span></div>
+          <div className="breadcrumb"><a href="/index">{t("breadcrumb.home")}</a> / <span>{t("intl.breadcrumb")}</span></div>
           <span className="eyebrow">{t("intl.hero_eyebrow")}</span>
           <h1>{t("intl.hero_title")}</h1>
           <p>{t("intl.hero_desc")}</p>
@@ -45,7 +45,7 @@ export default function Page() {
               <div className="flagbox">🇺🇸</div>
               <span className="badge badge-network">{t("intl.badge_soon")}</span>
               <h3>{t("header.global_dropdown.us.title")}</h3>
-              <p className="t-person">Coming soon</p>
+              <p className="t-person">{t("intl.badge_soon")}</p>
               <span className="link-arrow">{t("intl.explore_desk")} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
             </a></div>
         </div>
