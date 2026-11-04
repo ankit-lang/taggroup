@@ -2,9 +2,9 @@
 
 import { revalidatePath } from 'next/cache'
 import { createClient } from '@/lib/supabase/server'
-import { generateBriefing } from '@/lib/briefing/generate'
-import { BriefingRow, BriefingSchema } from '@/lib/briefing/schema'
-import { briefingPath, nextRef, saveBriefing, sendBriefing, todayIST } from '@/lib/briefing/service'
+import { BriefingRow } from '@/lib/briefing/schema'
+import { parseLlmBriefing } from '@/lib/briefing/llm-format'
+import { briefingPath, nextRef, saveBriefing, sendBriefing } from '@/lib/briefing/service'
 import { renderBriefingEmail, siteUrl } from '@/lib/briefing/email-template'
 import { sendEmail } from '@/lib/email'
 import { BUNDLED_BRIEFINGS } from '@/data/briefings'
@@ -72,39 +72,21 @@ export async function getSuggestedRef(date: string) {
   return nextRef(supabase, date)
 }
 
-/** Runs the AI pipeline for a date and saves the result as a draft. */
-export async function generateBriefingDraft(date?: string): Promise<Result<BriefingRow>> {
+/**
+ * Saves a briefing from pasted LLM output (or the edited JSON in the admin
+ * editor). Accepts raw JSON or a reply containing a ```json block.
+ */
+export async function saveBriefingJson(raw: string, status: 'draft' | 'published' = 'draft'): Promise<Result<BriefingRow>> {
   const { supabase, error } = await requireStaff()
   if (error) return { success: false, error }
+  const parsed = parseLlmBriefing(raw)
+  if (!parsed.ok) return { success: false, error: parsed.error }
   try {
-    const d = date || todayIST()
-    const { data: existing } = await supabase.from('briefings').select('ref, sent_at').eq('slug', d).maybeSingle()
-    if (existing?.sent_at) return { success: false, error: `The briefing for ${d} has already been sent.` }
-    const ref = existing?.ref || (await nextRef(supabase, d))
-    const briefing = await generateBriefing({ date: d, ref })
-    const row = await saveBriefing(supabase, briefing, { status: 'draft', source: 'ai' })
-    revalidate(row.slug)
-    return { success: true, message: `Draft generated for ${d}. Review it before publishing.`, data: row }
-  } catch (e) {
-    return { success: false, error: errMsg(e) }
-  }
-}
-
-/** Saves a briefing from JSON (manual import or edits to an AI draft). Keeps the current status. */
-export async function saveBriefingJson(json: string, status: 'draft' | 'published' = 'draft'): Promise<Result<BriefingRow>> {
-  const { supabase, error } = await requireStaff()
-  if (error) return { success: false, error }
-  let parsed
-  try {
-    parsed = BriefingSchema.safeParse(JSON.parse(json))
-  } catch (e) {
-    return { success: false, error: `Invalid JSON: ${errMsg(e)}` }
-  }
-  if (!parsed.success) {
-    return { success: false, error: parsed.error.issues.map(i => `${i.path.join('.')}: ${i.message}`).join('\n') }
-  }
-  try {
-    const row = await saveBriefing(supabase, parsed.data, { status, source: 'manual' })
+    const { data: existing } = await supabase.from('briefings').select('sent_at').eq('slug', parsed.briefing.date).maybeSingle()
+    if (existing?.sent_at) {
+      return { success: false, error: `The briefing for ${parsed.briefing.date} has already been e-mailed, so it can no longer be replaced.` }
+    }
+    const row = await saveBriefing(supabase, parsed.briefing, { status, source: 'manual' })
     revalidate(row.slug)
     return { success: true, message: 'Saved.', data: row }
   } catch (e) {
@@ -172,10 +154,7 @@ export async function deleteBriefing(id: string): Promise<Result> {
 export async function previewBriefingHtml(json: string): Promise<Result<string>> {
   const { error } = await requireStaff()
   if (error) return { success: false, error }
-  try {
-    const parsed = BriefingSchema.parse(JSON.parse(json))
-    return { success: true, data: renderBriefingEmail(parsed, { webUrl: '#', unsubscribeUrl: '#' }) }
-  } catch (e) {
-    return { success: false, error: errMsg(e) }
-  }
+  const parsed = parseLlmBriefing(json)
+  if (!parsed.ok) return { success: false, error: parsed.error }
+  return { success: true, data: renderBriefingEmail(parsed.briefing, { webUrl: '#', unsubscribeUrl: '#' }) }
 }
