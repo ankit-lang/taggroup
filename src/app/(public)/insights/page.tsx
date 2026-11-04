@@ -1,5 +1,7 @@
 import React from 'react';
 import { getPublications } from '@/actions/publication.actions';
+import { getPublishedBriefings } from '@/actions/briefing.actions';
+import { formatBriefingDate } from '@/lib/briefing/schema';
 import { getLocale } from '@/lib/get-locale';
 import { locales } from '@/data/locales';
 
@@ -7,6 +9,7 @@ export const revalidate = 60; // Revalidate every 60 seconds
 
 export default async function Page() {
   const publications = await getPublications({ search: '', category: 'All' }) || [];
+  const [latestBriefing] = await getPublishedBriefings(1);
   const locale = await getLocale();
   const t = (path: string) => path.split('.').reduce((obj: any, key: string) => obj?.[key], locales[locale as keyof typeof locales]) || path;
 
@@ -28,6 +31,19 @@ export default async function Page() {
           </div>
 
           <div className="tabpanel active" id="tab-insights">
+            {latestBriefing && (
+              <div className="callout" style={{ "margin": "34px 0 0" }}>
+                <span className="eyebrow">TAG Daily Briefing · {latestBriefing.ref}</span>
+                <h2 style={{ "fontSize": "1.5rem", "margin": "8px 0" }}>{formatBriefingDate(latestBriefing.briefing_date)}</h2>
+                <ul style={{ "margin": "0 0 14px", "paddingLeft": "18px" }}>
+                  {latestBriefing.content.executive_summary.slice(0, 4).map((s: string, i: number) => <li key={i} style={{ "marginBottom": "6px" }}>{s}</li>)}
+                </ul>
+                <div className="hero-actions">
+                  <a className="btn btn-primary" href={`/insights/briefings/${latestBriefing.slug}`}>Read today’s briefing</a>
+                  <a className="btn btn-ghost" href="/insights/briefings">All briefings</a>
+                </div>
+              </div>
+            )}
             <div style={{ "margin": "34px 0 8px" }}><h2 style={{ "fontSize": "1.5rem" }}>{t("insights.latest_title")}</h2>
               <p className="lead" style={{ "marginTop": "6px" }}>{t("insights.latest_desc")}</p></div>
             <div className="grid g-3" style={{ "marginTop": "20px" }}>

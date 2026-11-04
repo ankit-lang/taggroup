@@ -38,8 +38,10 @@ export async function dispatchNewsletter(formData: FormData) {
 
   // 3. Dispatch Emails
   const emails = subscribers.map(sub => sub.email)
+  // Recipients go in BCC so subscribers never see each other's addresses.
   const emailResult = await sendEmail({
-    to: emails,
+    to: process.env.EMAIL_USER || 'info@taggroup.in',
+    bcc: emails,
     subject,
     html: htmlPayload
   })

@@ -12,6 +12,7 @@ import {
   ChevronRight,
   LogOut,
   Globe,
+  Newspaper,
 } from 'lucide-react';
 
 export const NAV_GROUPS = [
@@ -26,6 +27,7 @@ export const NAV_GROUPS = [
     items: [
       { label: 'Blogs / Content', href: '/admin/blog', icon: FileText },
       { label: 'Publications', href: '/admin/publications', icon: BookOpen },
+      { label: 'Daily Briefing', href: '/admin/briefings', icon: Newspaper },
       { label: 'Newsletters', href: '/admin/newsletter', icon: Mail },
     ],
   },

@@ -15,10 +15,14 @@ export async function sendEmail({
   to,
   subject,
   html,
+  bcc,
+  headers,
 }: {
   to: string | string[]
   subject: string
   html: string
+  bcc?: string[]
+  headers?: Record<string, string>
 }) {
   try {
     // Some strict SMTP servers reject emails with 'bare CR' (\r without \n)
@@ -30,6 +34,8 @@ export async function sendEmail({
       to: Array.isArray(to) ? to.join(', ') : to,
       subject: safeSubject,
       html: safeHtml,
+      ...(bcc?.length ? { bcc: bcc.join(', ') } : {}),
+      ...(headers ? { headers } : {}),
     })
     return { success: true, info }
   } catch (error) {

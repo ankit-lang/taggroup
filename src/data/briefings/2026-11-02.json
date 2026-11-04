@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-02",
+  "ref": "TAG/DB/2026/061",
+  "topics": ["Income Tax", "GST", "Securities Regulation", "Growth Capital", "Global Markets"],
+  "executive_summary": [
+    "Gujarat High Court confirms that export commission for offshore services is outside Indian withholding where the recipient has no Indian business connection.",
+    "Reopening beyond three years fails once the accepted escaped income falls below the ₹50 lakh threshold in Section 149(1)(b).",
+    "CBIC’s 30 October instruction immediately restrains Central GST arrests, random transit checks and sub-₹10,000 demand notices pending legislation.",
+    "GSTAT Hyderabad preserves a ₹61.47 lakh inverted-duty refund relating to credit accumulated before 18 July 2022, despite a later filing date."
+  ],
+  "items": [
+    {
+      "section": "Tax & Regulatory",
+      "subsection": "INCOME TAX",
+      "category": "International Tax",
+      "title": "Offshore export commission escapes Indian withholding where no income is chargeable here",
+      "body": "In PCIT v. DML Exim Pvt. Ltd., Tax Appeals 115 and 116 of 2021, the Gujarat High Court on 21 October 2026 upheld deletion of Section 40(a)(ia) disallowances of ₹21.61 crore and ₹9.73 crore. The non-resident agents solicited export orders and rendered services outside India; the receipts were business income, not fees for technical services, and the recipients had no Indian business connection. Section 195 therefore did not require withholding because the sums were not chargeable to tax in India.",
+      "why_it_matters": "The ruling reinforces the chargeability test for cross-border commission, but the protection remains fact-dependent and does not extend to functions performed in India or services with a technical character.",
+      "action_point": "Exporters should preserve agent agreements, territorial scope, correspondence, invoices, residency evidence and a PE/business-connection analysis before remitting commission without tax.",
+      "source_label": "Gujarat High Court order",
+      "source_url": null
+    },
+    {
+      "section": "Tax & Regulatory",
+      "subsection": "INCOME TAX",
+      "category": "Reassessment",
+      "title": "Section 149 threshold must be tested against the income ultimately accepted by the Assessing Officer",
+      "body": "The Gujarat High Court quashed a 23 March 2023 notice and order reopening AY 2016–17 beyond three years. Although the initial information treated the full ₹6.27 crore property consideration as the taxpayer’s, the Assessing Officer later accepted her 6.25% share and computed alleged escaped long-term capital gain at ₹37.55 lakh. The Court held that the officer had to drop proceedings once the accepted escapement fell below the ₹50 lakh threshold in Section 149(1)(b); initial non-response did not cure the limitation defect.",
+      "why_it_matters": "A gross transaction value or third-party data point cannot sustain an extended reopening period if the taxpayer-specific income potentially escaping assessment is below the statutory floor.",
+      "action_point": "For notices issued after three years, reconcile ownership shares, TDS statements and the exact income alleged to have escaped, and raise limitation at the first available stage.",
+      "source_label": "Full judgment and case analysis",
+      "source_url": null
+    },
+    {
+      "section": "Tax & Regulatory",
+      "subsection": "GST & INDIRECT TAX",
+      "category": "GST Enforcement",
+      "title": "CBIC imposes immediate interim limits on arrests, transit checks and low-value notices",
+      "body": "CBIC Instruction No. 02/2026-GST dated 30 October 2026 directs Central GST field formations, pending legislative amendments, not to make further arrests under GST; to intercept conveyances only on specific intelligence authorised in writing by an officer not below Joint Commissioner; and not to issue show-cause notices under Sections 73, 74 or 74A where the aggregate tax involved across GST laws and compensation cess is below ₹10,000. The Council has recommended the statutory amendments from 1 April 2027.",
+      "why_it_matters": "These are operative administrative directions for CBIC formations, not yet amendments to the CGST Act; parallel protection from State GST officers depends on matching State-level instructions.",
+      "action_point": "Tax and logistics teams should add the instruction to enforcement protocols, require written interception authorisation where applicable, and separately verify whether the relevant State has issued corresponding directions.",
+      "source_label": "CBIC Instruction No. 02/2026-GST text",
+      "source_url": null
+    },
+    {
+      "section": "Tax & Regulatory",
+      "subsection": "GST & INDIRECT TAX",
+      "category": "GST Refunds",
+      "title": "Later filing cannot retrospectively erase pre-18 July 2022 inverted-duty refund entitlement",
+      "body": "In Kedia Agro v. Principal Commissioner, Hyderabad GST Commissionerate, APL/194/HYD/2026, GSTAT Hyderabad on 27 October 2026 remanded a ₹61.47 lakh refund claim for May 2020–March 2021. It held that Notification No. 09/2022-Central Tax (Rate), effective 18 July 2022, could not deny refund of ITC accumulated before that date merely because the fresh application was filed on 25 March 2023; an executive circular could not retrospectively curtail the accrued statutory right. Interest is also to be examined on remand.",
+      "why_it_matters": "The order separates the tax period generating accumulated credit from the later procedural filing date, materially affecting legacy refund disputes for goods added to the restricted list.",
+      "action_point": "Manufacturers with rejected legacy claims should map the accumulation period, limitation computation and any withdrawn/refiled applications before seeking restoration and interest.",
+      "source_label": "GSTAT order report and case details",
+      "source_url": null
+    },
+    {
+      "section": "Capital Markets Regulation",
+      "subsection": null,
+      "category": "Digital Accessibility",
+      "title": "SEBI moves the accessibility-audit and remediation deadline to 31 January 2027",
+      "body": "SEBI Circular HO/53/12/13(2)2026-ITD5-M2IPC/I/24856/2026 dated 30 October 2026 extends to 31 January 2027 the deadline for regulated entities to appoint an IAAP auditor, conduct accessibility audits of digital platforms and remediate findings. The extension applies across recognised exchanges, clearing corporations, depositories and registered intermediaries; all other provisions and timelines under the earlier accessibility circulars remain unchanged.",
+      "why_it_matters": "The relief is targeted, not a blanket postponement. Boards and compliance officers remain accountable for the unaffected obligations under the Rights of Persons with Disabilities framework.",
+      "action_point": "Fix an internal pre-deadline for auditor appointment, platform inventory, audit closure and evidence retention, while maintaining a separate tracker for requirements that were not extended.",
+      "source_label": "SEBI circular",
+      "source_url": null
+    },
+    {
+      "section": "Startups & Growth Capital",
+      "subsection": null,
+      "category": "Climate Finance",
+      "title": "Two Point O Capital raises $10 million to scale clean-infrastructure financing",
+      "body": "Two Point O Capital has raised $10 million in a round led by Transition Venture Capital, with Omnivore and angel investors Chiranjeev Singh Saluja and Sudhir M. Reddy participating. The Bengaluru platform combines financing, project execution and monitoring for commercial and industrial clean-energy assets. It plans to enter battery energy storage and deepen solar, energy-efficiency and wastewater-treatment offerings for sectors including data centres, automotive, pharma, manufacturing and healthcare.",
+      "why_it_matters": "The round highlights investor appetite for models that turn corporate decarbonisation from an upfront-capex decision into a financed operating solution with measurable performance.",
+      "action_point": "Industrial CFOs evaluating financed energy assets should diligence ownership, tax depreciation, GST credit, performance guarantees, termination economics and treatment of savings-linked payments.",
+      "source_label": "Funding announcement report",
+      "source_url": null
+    },
+    {
+      "section": "Geopolitics & Global Trade",
+      "subsection": null,
+      "category": "Currency & Energy Risk",
+      "title": "Elevated oil keeps the rupee exposed as markets watch US elections and Iran risk",
+      "body": "Reuters reported on 2 November that elevated crude prices are likely to keep the rupee under pressure this week, although central-bank intervention may limit abrupt moves. The currency closed Friday at ₹94.95 per US dollar after its strongest monthly gain since February. Traders are monitoring US midterm elections and the Iran conflict because renewed escalation could raise energy, freight and dollar costs for Indian importers.",
+      "why_it_matters": "India’s oil dependence creates a direct transmission channel from geopolitical escalation to working capital, landed cost, inflation and treasury exposure.",
+      "action_point": "Importers should stress-test cash flows for combined oil, freight and USD/INR shocks, and align hedges with confirmed procurement and customer pass-through clauses.",
+      "source_label": "Reuters market outlook",
+      "source_url": null
+    }
+  ],
+  "key_considerations": "Treat the CBIC instruction and SEBI extension as targeted operational relief rather than a dilution of underlying compliance. For cross-border payments and legacy disputes, contemporaneous documentation remains the decisive control: the new rulings reward businesses that can evidence the exact place of service, income quantum and credit-accumulation period."
+}

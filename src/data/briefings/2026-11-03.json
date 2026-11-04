@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-03",
+  "ref": "TAG/DB/2026/062",
+  "topics": ["Income Tax", "GST", "Transactions", "Growth Capital", "Global Trade"],
+  "executive_summary": [
+    "The Supreme Court leaves intact reopening based on a single bogus-purchase pattern whose value crossed ₹50 lakh only after aggregation across two years.",
+    "Bombay High Court quashes a transfer-pricing assessment where the faceless officer skipped the mandatory Section 144C draft order.",
+    "GSTAT Delhi treats Expedia India’s own-account support services as exports and orders refund of ₹55.99 crore with statutory interest.",
+    "GSTN activates Rule 14B registration for qualifying e-commerce sellers without a physical place of business in the destination State."
+  ],
+  "items": [
+    {
+      "section": "Tax & Regulatory",
+      "subsection": "INCOME TAX",
+      "category": "Reassessment",
+      "title": "Supreme Court leaves multi-year Section 149(1A) aggregation undisturbed",
+      "body": "In Khyati Vishal Popat v. Income Tax Officer, Civil Appeal No. 6690/2026, the Supreme Court on 29 October 2026 found no ground to interfere with the Gujarat High Court and dismissed the appeal. The High Court had upheld reopening for AY 2018–19 although the alleged bogus purchases for that year were ₹31.80 lakh, because the same proprietary concern’s linked transactions across FY 2017–18 and FY 2018–19 aggregated to ₹88.03 lakh and were treated as expenditure relating to the same pattern for Section 149(1A).",
+      "why_it_matters": "This is the material counterpoint to yesterday’s below-₹50 lakh limitation ruling: an isolated year may fall below the threshold, yet a demonstrably linked asset, expenditure, event or occasion spanning years can sustain the extended reopening window.",
+      "action_point": "In every extended-period notice, test both the year-specific escapement and the Revenue’s evidence that amounts across years arise from one qualifying asset, expenditure, event or occasion.",
+      "source_label": "Supreme Court order",
+      "source_url": null
+    },
+    {
+      "section": "Tax & Regulatory",
+      "subsection": "INCOME TAX",
+      "category": "International Tax & Transfer Pricing",
+      "title": "Skipping a Section 144C draft order is an incurable jurisdictional error",
+      "body": "In Orpak Systems India Pvt. Ltd. v. Assessment Unit (NFAC), W.P. No. 424 of 2026, the Bombay High Court on 30 October 2026 quashed the final assessment for AY 2022–23. The TPO had proposed a ₹2.42 crore upward adjustment, but the faceless officer directly passed the final order without first serving the eligible assessee a draft under Section 144C(1). The Court rejected the Revenue’s request to treat the omission as a curable procedural lapse and declined an automatic remand.",
+      "why_it_matters": "The draft order is the gateway to the DRP and a substantive statutory right. A final order that bypasses it is vulnerable even where the underlying transfer-pricing adjustment may otherwise be arguable.",
+      "action_point": "Eligible assessees should verify the assessment sequence immediately on receipt of a final order and preserve a dated record of every draft, portal communication and TPO order.",
+      "source_label": "Bombay High Court order",
+      "source_url": null
+    },
+    {
+      "section": "Tax & Regulatory",
+      "subsection": "GST & INDIRECT TAX",
+      "category": "Export of Services",
+      "title": "GSTAT allows Expedia India’s ₹55.99 crore export refund",
+      "body": "The GSTAT Principal Bench, New Delhi, allowed seven appeals by Expedia Online Travel Services India Pvt. Ltd. covering FY 2019–20 to FY 2022–23 and directed refund of ₹55,99,74,202 with interest under Section 56. It held that support services to overseas group entities were supplied on a principal-to-principal basis, with no authority to bind the foreign recipient and no three-party agency arrangement; they therefore fell outside “intermediary services” under Section 2(13) of the IGST Act and qualified as exports under Section 2(6).",
+      "why_it_matters": "The order reinforces substance over facilitation labels: own-account services do not become intermediary services merely because they advance the overseas customer’s commercial objective.",
+      "action_point": "Exporters of group support services should align contracts, invoices and operating evidence around own-account delivery, absence of authority to bind, and direct foreign-currency consideration.",
+      "source_label": "GSTAT final order",
+      "source_url": null
+    },
+    {
+      "section": "Tax & Regulatory",
+      "subsection": "GST & INDIRECT TAX",
+      "category": "GST Registration",
+      "title": "Rule 14B opens destination-State registration without a physical presence",
+      "body": "GSTN Advisory No. 682 dated 1 November 2026 activates the simplified registration route inserted by Notification No. 05/2026–Central Tax. Eligible sellers supplying goods exclusively through e-commerce operators that collect TCS may register in a State or Union Territory where they lack a physical place of business, using an approved operator warehouse address. The applicant must have an active regular GSTIN under the same PAN in another State; one Rule 14B registration is permitted per PAN per State, and output tax on B2B supplies cannot exceed ₹2.5 lakh per month.",
+      "why_it_matters": "The route lowers the fixed-cost barrier to multi-State fulfilment, but it is a tightly conditioned operating model rather than a general exemption from place-of-business requirements.",
+      "action_point": "Marketplace sellers should map State-wise B2B liability, warehouse approvals, home-State GSTIN status and exclusivity to e-commerce supplies before opting in.",
+      "source_label": "GSTN Advisory No. 682",
+      "source_url": null
+    },
+    {
+      "section": "M&A, Transactions & Investment",
+      "subsection": null,
+      "category": "Corporate Reorganisation",
+      "title": "ITC moves to absorb Yoga Bar owner Sproutlife Foods",
+      "body": "ITC’s board on 2 November 2026 approved a scheme under Sections 230–232 of the Companies Act to amalgamate wholly owned Sproutlife Foods Pvt. Ltd., owner of the Yoga Bar brand, into ITC. The appointed date is 1 April 2026, subject to statutory approvals. Because Sproutlife is wholly owned, its shares will be cancelled on effectiveness; no new ITC shares are proposed and the parent’s shareholding pattern will not change.",
+      "why_it_matters": "The internal merger converts ITC’s completed acquisition into direct operating integration, enabling a simpler structure, consolidated resources and potential procurement and distribution synergies without equity dilution.",
+      "action_point": "Boards planning post-acquisition simplification should prepare an appointed-date tax, accounting, contract, licence and employee migration workstream before seeking scheme approvals.",
+      "source_label": "ITC stock-exchange announcement",
+      "source_url": null
+    },
+    {
+      "section": "Startups & Growth Capital",
+      "subsection": null,
+      "category": "Healthtech Funding",
+      "title": "Clinics On Cloud raises ₹120 crore to take its microclinic model overseas",
+      "body": "Pune-based Clinics On Cloud announced a ₹120 crore (US$12.5 million) Series A from Dubai-based Model42 at a ₹600 crore valuation. The company, which reports more than 3,500 installations and 12 million health screenings across eight countries, will use the capital for AI-led diagnostics, R&D, manufacturing scale-up and international regulatory compliance. The UAE will serve as its hub for planned expansion into Africa, the United States and Southeast Asia.",
+      "why_it_matters": "The round combines Indian health-device manufacturing with cross-border preventive-care infrastructure, placing regulatory approvals, data governance and clinical validation at the centre of value creation.",
+      "action_point": "Healthtech founders pursuing international expansion should build a jurisdiction-by-jurisdiction plan for device registration, patient-data transfers, AI validation, product liability and local distribution.",
+      "source_label": "Company funding announcement",
+      "source_url": null
+    },
+    {
+      "section": "Geopolitics & Global Trade",
+      "subsection": null,
+      "category": "India–UK Trade",
+      "title": "India signals resolution of the bulk-Scotch tariff dispute",
+      "body": "Reuters reported on 2 November that Indian commerce officials assured liquor-industry executives the government would honour the India–UK trade pact and address the disputed treatment of bulk Scotch. The pact, implemented in July, reduced the Scotch tariff from 150% to 75%, but tax authorities had questioned whether the concession covered bulk imports used in Indian-made foreign liquor and had initiated investigations involving major distillers.",
+      "why_it_matters": "A formal resolution would affect landed cost, inventory valuation and pricing for Diageo, Pernod Ricard, Radico Khaitan, Allied Blenders and other businesses reliant on bulk Scotch inputs; the reported assurance is not yet a published customs clarification.",
+      "action_point": "Importers should preserve classification and origin records, quantify exposure under both tariff interpretations and avoid changing provisioning until an authoritative customs direction is issued.",
+      "source_label": "Reuters",
+      "source_url": null
+    }
+  ],
+  "key_considerations": "Today’s decisions reward precise operating evidence. For reassessment, the decisive question is whether multiple-year amounts truly relate to one qualifying event; for export refunds, it is who supplies what, to whom and on whose account. Businesses entering simplified GST registration or overseas healthtech markets should treat eligibility and local compliance as continuing controls, not one-time onboarding checks."
+}
