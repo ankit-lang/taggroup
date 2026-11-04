@@ -4,7 +4,7 @@ import { Bell, Search, ExternalLink, FileText, User, MessageSquare, ChevronRight
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
-import { createClient } from '@/lib/supabase/client';
+import { createClient, syncAuthCookie } from '@/lib/supabase/client';
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -36,6 +36,14 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const supabase = createClient();
+
+  // Keep the server auth cookie fresh while the admin is open (tokens renew hourly).
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }: { data: any }) => syncAuthCookie(data?.session ?? null));
+    try { sessionStorage.removeItem('tag_login_hops'); } catch {}
+    const { data: sub } = supabase.auth.onAuthStateChange((_event: string, session: any) => syncAuthCookie(session));
+    return () => sub?.subscription?.unsubscribe();
+  }, []);
 
   // Close mobile menu on route change
   useEffect(() => {

@@ -8,6 +8,9 @@ export async function GET(request: Request) {
   // Sign out the current user
   await supabase.auth.signOut()
 
-  // Redirect to login page
-  return NextResponse.redirect(`${origin}/admin/login`)
+  // Clear the server auth cookie; `logged_out=1` tells the login page to also
+  // clear the browser (localStorage) session instead of redirecting back in.
+  const res = NextResponse.redirect(`${origin}/admin/login?logged_out=1`)
+  res.cookies.set('tag_access_token', '', { path: '/', maxAge: 0 })
+  return res
 }

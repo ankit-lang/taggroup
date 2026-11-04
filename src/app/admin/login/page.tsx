@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { createClient } from '@/lib/supabase/client';
+import { createClient, syncAuthCookie } from '@/lib/supabase/client';
 import { toast } from 'sonner';
 import { useRouter, useSearchParams } from 'next/navigation';
 
@@ -18,12 +18,37 @@ function AdminLoginContent() {
   const supabase = createClient();
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }: { data: any }) => {
-      if (data?.user) {
-        window.location.href = next;
+    // Already signed in in this browser? Refresh the server cookie from the
+    // (auto-refreshed) session, then continue. Guard against redirect loops:
+    // if the server keeps bouncing us back here, sign out and show the form.
+    (async () => {
+      if (searchParams.get('logged_out')) {
+        await supabase.auth.signOut();
+        syncAuthCookie(null);
+        try { sessionStorage.removeItem('tag_login_hops'); } catch {}
+        return;
       }
-    });
-  }, [supabase, next]);
+
+      const { data } = await supabase.auth.getSession();
+      const session = data?.session;
+      if (!session) return;
+
+      let hops: number[] = [];
+      try { hops = JSON.parse(sessionStorage.getItem('tag_login_hops') || '[]'); } catch {}
+      hops = hops.filter((t: number) => Date.now() - t < 15000);
+      if (hops.length >= 2) {
+        sessionStorage.removeItem('tag_login_hops');
+        await supabase.auth.signOut();
+        syncAuthCookie(null);
+        toast.error('Your session expired. Please sign in again.');
+        return;
+      }
+      try { sessionStorage.setItem('tag_login_hops', JSON.stringify([...hops, Date.now()])); } catch {}
+
+      syncAuthCookie(session);
+      window.location.href = next;
+    })();
+  }, [supabase, next, searchParams]);
 
   const handleAdminLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,9 +81,8 @@ function AdminLoginContent() {
     }
 
     // Set a resilient, non-chunked backup cookie to bypass Vercel SSR chunking edge cases
-    if (data.session) {
-      document.cookie = `tag_access_token=${data.session.access_token}; path=/; max-age=3600; SameSite=Lax`;
-    }
+    syncAuthCookie(data.session);
+    try { sessionStorage.removeItem('tag_login_hops'); } catch {}
 
     toast.success('Admin login successful.');
     window.location.href = next;
