@@ -159,3 +159,38 @@
 .brf-key h3 { color: var(--gold); font-size: 1.15rem; margin: 0 0 10px; }
 .brf-key p { color: #e5e7eb; line-height: 1.7; margin: 0; }
 .brf-disclaimer { margin-top: 26px; font-size: .8rem; color: var(--text-muted); line-height: 1.6; }
+
+/* ── Life @ TAG photo gallery (careers page) ─────────────────────────────── */
+.lg-gallery { margin-top: 44px; }
+.lg-folders { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 28px; }
+.lg-folder { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border: 1px solid var(--border); border-radius: 999px; background: transparent; color: var(--charcoal-700); font-size: .92rem; font-weight: 600; cursor: pointer; transition: var(--transition); }
+.lg-folder svg { width: 17px; height: 17px; }
+.lg-folder:hover { border-color: var(--gold); }
+.lg-folder.active { background: var(--heading); border-color: var(--heading); color: #fff; }
+.lg-count { font-size: .75rem; font-weight: 600; padding: 1px 8px; border-radius: 999px; background: rgba(127,127,127,.18); }
+.lg-album + .lg-album { margin-top: 40px; }
+.lg-album-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; padding-bottom: 10px; margin-bottom: 18px; border-bottom: 1px solid var(--border); }
+.lg-album-head h3 { margin: 0; font-size: 1.35rem; }
+.lg-album-head span { font-size: .88rem; color: var(--text-muted); }
+.lg-grid { columns: 3 260px; column-gap: 14px; }
+.lg-item { display: block; width: 100%; margin: 0 0 14px; padding: 0; border: 0; border-radius: var(--radius-sm); overflow: hidden; cursor: zoom-in; break-inside: avoid; background: var(--mist-50); }
+.lg-item img { display: block; width: 100%; height: auto; transition: transform .5s ease; }
+.lg-item:hover img { transform: scale(1.04); }
+.lg-item:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.lg-viewer { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 56px 16px; background: rgba(10, 14, 22, .93); }
+.lg-viewer figure { margin: 0; max-width: min(1200px, 100%); max-height: 100%; display: flex; flex-direction: column; align-items: center; }
+.lg-viewer img { max-width: 100%; max-height: calc(100vh - 140px); object-fit: contain; border-radius: 6px; }
+.lg-viewer figcaption { margin-top: 12px; color: #d1d5db; font-size: .9rem; }
+.lg-close, .lg-nav { position: absolute; border: 0; background: rgba(255,255,255,.1); color: #fff; cursor: pointer; border-radius: 999px; display: flex; align-items: center; justify-content: center; line-height: 1; }
+.lg-close:hover, .lg-nav:hover { background: rgba(255,255,255,.22); }
+.lg-close { top: 16px; right: 16px; width: 42px; height: 42px; font-size: 28px; }
+.lg-nav { top: 50%; transform: translateY(-50%); width: 48px; height: 48px; font-size: 34px; }
+.lg-prev { left: 16px; }
+.lg-next { right: 16px; }
+@media (max-width: 640px) {
+  .lg-grid { columns: 2; column-gap: 10px; }
+  .lg-item { margin-bottom: 10px; }
+  .lg-nav { top: auto; bottom: 14px; transform: none; }
+  .lg-prev { left: calc(50% - 60px); }
+  .lg-next { right: calc(50% - 60px); }
+}

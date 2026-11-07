@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { useI18n } from '@/lib/i18n';
+import { LifeGallery } from '@/components/public/life-gallery';
 
 export default function Page() {
   const { t } = useI18n();
@@ -91,13 +92,7 @@ export default function Page() {
             <h2>{t('careers_page.life.title')}</h2>
             <p className="lead">{t('careers_page.life.desc')}</p>
           </div>
-          <div className="photogrid" style={{marginTop:"44px"}}>
-            <figure className="photo r43 " style={{backgroundImage:"url('/assets/img/plates/culture.svg')"}}><img src="/assets/photos/careers/life-01.jpg" alt="The team at work" loading="lazy" onError={(e) => (e.currentTarget.style.display = 'none')} /><figcaption className="ph-cap"><strong>{t('careers_page.life.eyebrow')} Group</strong></figcaption></figure>
-            <figure className="photo r11 " style={{backgroundImage:"url('/assets/img/plates/team.svg')"}}><img src="/assets/photos/careers/life-02.jpg" alt="Colleagues collaborating" loading="lazy" onError={(e) => (e.currentTarget.style.display = 'none')} /></figure>
-            <figure className="photo r11 " style={{backgroundImage:"url('/assets/img/plates/office.svg')"}}><img src="/assets/photos/careers/life-03.jpg" alt="Our workspace" loading="lazy" onError={(e) => (e.currentTarget.style.display = 'none')} /></figure>
-            <figure className="photo r11 " style={{backgroundImage:"url('/assets/img/plates/meeting.svg')"}}><img src="/assets/photos/careers/life-04.jpg" alt="A team session" loading="lazy" onError={(e) => (e.currentTarget.style.display = 'none')} /></figure>
-            <figure className="photo r11 " style={{backgroundImage:"url('/assets/img/plates/advisory.svg')"}}><img src="/assets/photos/careers/life-05.jpg" alt="Learning and development" loading="lazy" onError={(e) => (e.currentTarget.style.display = 'none')} /></figure>
-          </div>
+          <LifeGallery />
           <div className="grid g-3" style={{marginTop:"44px"}}>
             {Array.from({length: 6}).map((_, i) => (
               <div key={i} className="card reveal">
