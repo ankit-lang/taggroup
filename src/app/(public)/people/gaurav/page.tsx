@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { useI18n } from '@/lib/i18n';
+import { NIRC_AI_GCC_ARTICLE as nirc } from '@/data/featured-publications';
 
 export default function Page() {
   const { t } = useI18n();
@@ -59,6 +60,18 @@ export default function Page() {
           <ul className="check-list two"><li>{t('people.gaurav.cred.c1')}</li><li>{t('people.gaurav.cred.c2')}</li><li>{t('people.gaurav.cred.c3')}</li><li>{t('people.gaurav.cred.c4')}</li><li>{t('people.gaurav.cred.c5')}</li><li>{t('people.gaurav.cred.c6')}</li><li>{t('people.gaurav.cred.c7')}</li></ul>
           <h4 style={{"margin":"26px 0 12px","color":"var(--accent)"}}>{t('people.gaurav.cred.sector')}</h4>
           <div className="chips"><span className="chip">{t('people.gaurav.cred.s1')}</span><span className="chip">{t('people.gaurav.cred.s2')}</span><span className="chip">{t('people.gaurav.cred.s3')}</span><span className="chip">{t('people.gaurav.cred.s4')}</span><span className="chip">{t('people.gaurav.cred.s5')}</span><span className="chip">{t('people.gaurav.cred.s6')}</span></div>
+        </section>
+        <section className="svc-block" id="publications">
+          <h2>Recent publication</h2>
+          <div className="callout">
+            <span className="eyebrow">{nirc.publication} · {nirc.issue}</span>
+            <h3 style={{ margin: '8px 0', fontSize: '1.2rem' }}>{nirc.title}</h3>
+            <p style={{ margin: '0 0 14px' }}>{nirc.teaser}</p>
+            <div className="hero-actions">
+              <a className="btn btn-primary" href={`/insights/${nirc.slug}`}>Read synopsis</a>
+              <a className="btn btn-ghost" href={nirc.url} target="_blank" rel="noopener noreferrer">Full article ↗</a>
+            </div>
+          </div>
         </section>
         <section className="svc-block">
           <div className="cta-band">

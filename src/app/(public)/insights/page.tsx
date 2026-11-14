@@ -2,6 +2,7 @@ import React from 'react';
 import { getPublications } from '@/actions/publication.actions';
 import { getPublishedBriefings } from '@/actions/briefing.actions';
 import { formatBriefingDate } from '@/lib/briefing/schema';
+import { NIRC_AI_GCC_ARTICLE as nirc } from '@/data/featured-publications';
 import { getLocale } from '@/lib/get-locale';
 import { locales } from '@/data/locales';
 
@@ -47,6 +48,17 @@ export default async function Page() {
             <div style={{ "margin": "34px 0 8px" }}><h2 style={{ "fontSize": "1.5rem" }}>{t("insights.latest_title")}</h2>
               <p className="lead" style={{ "marginTop": "6px" }}>{t("insights.latest_desc")}</p></div>
             <div className="grid g-3" style={{ "marginTop": "20px" }}>
+              <div className="insight-card reveal">
+                <figure className="photo r169 ic-thumb" style={{ "backgroundImage": "url('/assets/img/plates/advisory.svg')" }}></figure>
+                <span className="ic-tag">In the press · {nirc.tag}</span>
+                <div className="ic-meta">{nirc.issue} &middot; {nirc.publication}</div>
+                <h3>{nirc.title}</h3>
+                <p>{nirc.teaser}</p>
+                <div className="ic-actions">
+                  <a className="link-arrow" href={`/insights/${nirc.slug}`}>Read synopsis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+                  <a className="link-arrow" href={nirc.url} target="_blank" rel="noopener noreferrer">Full article ↗</a>
+                </div>
+              </div>
               {publications.map((pub: any) => (
                 <div className="insight-card reveal" key={pub.id}>
                   <figure className="photo r169 ic-thumb" style={{ "backgroundImage": pub.image_url ? `url('${pub.image_url}')` : "url('/assets/img/plates/office.svg')" }}>
@@ -149,6 +161,15 @@ export default async function Page() {
             <div style={{ "margin": "34px 0 20px" }}><h2 style={{ "fontSize": "1.5rem" }}>{t("insights.media_title")}</h2>
               <p className="lead" style={{ "marginTop": "6px" }}>{t("insights.media_desc")} <a href="mailto:info@taggroup.in" style={{ "color": "var(--accent)" }}>info@taggroup.in</a>.</p></div>
 
+            <div className="callout" style={{ "marginBottom": "24px" }}>
+              <span className="eyebrow">Featured publication · {nirc.publication}, {nirc.issue}</span>
+              <h3 style={{ "margin": "8px 0 8px", "fontSize": "1.25rem" }}>{nirc.title}</h3>
+              <p style={{ "margin": "0 0 14px" }}>{nirc.teaser} <em>By {nirc.author}.</em></p>
+              <div className="hero-actions">
+                <a className="btn btn-primary" href={`/insights/${nirc.slug}`}>Read synopsis</a>
+                <a className="btn btn-ghost" href={nirc.url} target="_blank" rel="noopener noreferrer">Full article on NIRC ↗</a>
+              </div>
+            </div>
             <div className="grid g-2">
               <div className="card reveal"><div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 5h13v14H5a2 2 0 01-2-2V7M17 9h3v8a2 2 0 01-2 2M7 8h7M7 12h7M7 16h5" /></svg></div><h3>{t("insights.press_title")}</h3><p>{t("insights.media_cards.press_desc")}</p><div className="deliverables" style={{ "marginTop": "8px" }}><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.press_l1")}</span></div><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.press_l2")}</span></div><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.press_l3")}</span></div></div></div>
               <div className="card reveal"><div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5 11a7 7 0 0014 0M12 18v3" /></svg></div><h3>{t("insights.speak_title")}</h3><p>{t("insights.media_cards.speak_desc")}</p><div className="deliverables" style={{ "marginTop": "8px" }}><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.speak_l1")}</span></div><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.speak_l2")}</span></div><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.speak_l3")}</span></div></div></div>
