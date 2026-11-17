@@ -3,6 +3,7 @@ import { getBlogBySlug } from '@/actions/blog.actions';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { htmlToExcerpt } from '@/lib/utils';
+import { CoverImage } from '@/components/public/cover-image';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
@@ -76,12 +77,7 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
       {blog.image_url && (
         <div style={{ maxWidth: '900px', margin: '-1px auto 0', padding: '0 20px' }}>
           <div style={{ borderRadius: '0 0 14px 14px', overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,.12)' }}>
-            <img
-              src={blog.image_url}
-              alt={blog.title}
-              style={{ width: '100%', height: 'auto', display: 'block', maxHeight: '480px', objectFit: 'cover' }}
-              onError={(e) => (e.currentTarget.style.display = 'none')}
-            />
+            <CoverImage src={blog.image_url} alt={blog.title} />
           </div>
         </div>
       )}
