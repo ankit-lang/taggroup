@@ -280,6 +280,7 @@ export const locales = {
       "net_eyebrow": "Network & associations",
       "net_title": "International associations",
       "net_desc": "TAG works with a network of specialist firms and international associates to deliver end-to-end support, while keeping each entity independently responsible for its own services.",
+      "networks": { "sa": "S&A Consulting — Singapore, Malaysia, China, Hong Kong", "taxepolis": "Taxepolis International FZCO — UAE", "fideco": "Fideco Global Business Services — Mauritius" },
       "cta_title": "Work with a team that treats your problem as its own.",
       "cta_desc": "Meet the partners behind the practice, or tell us what you're working on.",
       "cta_btn1": "Meet the leadership",
@@ -308,7 +309,7 @@ services: {
         breadcrumb: { home: "Home", services: "Services" },
         hero: { eyebrow: "Cross-border & outbound", title: "International Business", desc: "Support for Indian businesses investing abroad and multinational groups operating across jurisdictions, through TAG's international network." },
         nav: { on_this_page: "On this page", proposition: "Service proposition", situations: "When it's needed", who: "Who it's for", scope: "Scope of assistance", approach: "Our approach", deliverables: "Typical deliverables", industries: "Industries", experience: "Experience", connected: "Connected services", enquire: "Enquire", lead_partners: "Lead partners", lead_note: "Speak directly with the partners who lead this practice.", enquire_btn: "Enquire", portfolio: "Service portfolio", download_note: "Download a one-page summary of this portfolio.", download_btn: "Download portfolio (PDF)" },
-        partners: { gaurav: { name: "Gaurav Sharma", title: "Managing Partner" }, sumit: { name: "Sumit Goyal", title: "Partner" }, pradip: { name: "MR Pradip", title: "Associate Partner" }, awen: { name: "Awen Lee", title: "International Desk — Singapore" } },
+        partners: { gaurav: { name: "Gaurav Sharma", title: "Managing Partner" }, sumit: { name: "Sumit Goyal", title: "Partner" }, pradip: { name: "MR Pradip", title: "Strategic Partner" }, awen: { name: "Awen Lee", title: "International Desk — Singapore" } },
         prop: { title: "Service proposition", desc: "Operating across borders multiplies tax, regulatory and operational complexity. TAG helps Indian businesses expand outbound and helps multinational groups coordinate across jurisdictions — combining India-side capability with an international network of local partners and associates." },
         sit: { title: "Business situations that trigger the need", l1: "An Indian business is investing or expanding abroad", l2: "A multinational group needs coordinated multi-country compliance", l3: "Overseas entity and operating structures need evaluation", l4: "Cross-border transactions need tax and regulatory coordination", l5: "You need local professional introductions in a new market", l6: "Intercompany arrangements span several countries" },
         who: { title: "Who this service is for", l1: "Indian businesses expanding internationally", l2: "Multinational groups operating across jurisdictions", l3: "Overseas advisory firms seeking an India-side partner", l4: "Groups needing ongoing multi-country compliance coordination" },
@@ -406,7 +407,7 @@ services: {
         breadcrumb: { home: "Home", services: "Services" },
         hero: { eyebrow: "Legal & regulatory", title: "Corporate, Legal, FEMA & Regulatory", short_title: "Corporate, Legal, FEMA & Regulatory", desc: "Corporate structuring, secretarial coordination, FEMA and cross-border regulatory advice, supported by a specialist legal network." },
         nav: { on_this_page: "On this page", proposition: "Service proposition", situations: "When it's needed", who: "Who it's for", scope: "Scope of assistance", approach: "Our approach", deliverables: "Typical deliverables", industries: "Industries", experience: "Experience", connected: "Connected services", enquire: "Enquire", lead_partners: "Lead partners", lead_partners_note: "Speak directly with the partners who lead this practice.", portfolio_pdf: "Service portfolio", portfolio_pdf_note: "Download a one-page summary of this portfolio.", download_pdf: "Download portfolio (PDF)" },
-        partners: { gaurav: { name: "Gaurav Sharma", title: "Managing Partner" }, pradip: { name: "MR Pradip", title: "Associate Partner" } },
+        partners: { gaurav: { name: "Gaurav Sharma", title: "Managing Partner" }, pradip: { name: "MR Pradip", title: "Strategic Partner" } },
         prop: { title: "Service proposition", desc: "Corporate and cross-border activity generates a steady stream of legal and regulatory obligations. TAG coordinates entity structuring, governance, FEMA and RBI matters and commercial documentation — combining accounting, tax and legal analysis, with dispute and insolvency support through dual-qualified professionals.", note: "Legal services identify the relevant advocate or legal associate where professional rules require it." },
         sit: { title: "Business situations that trigger the need", l1: "You are incorporating, restructuring or reorganising entities", l2: "Foreign investment (FDI/ODI) or ECB needs structuring and filings", l3: "A FEMA position, health check or compounding matter needs resolution", l4: "Board and shareholder governance needs strengthening", l5: "Commercial agreements need drafting or review", l6: "A commercial, tax or insolvency dispute needs support" },
         who: { title: "Who this service is for", l1: "Groups managing multi-entity structures", l2: "Foreign investors and Indian outbound investors", l3: "Businesses with FEMA/RBI obligations", l4: "Boards and promoters needing governance and documentation" },
@@ -442,7 +443,7 @@ services: {
           p8_t: "Operate & hand over", p8_d: "Ongoing compliance and operations, then transition to your internal team.", p8_w: "Led by Gaurav Sharma"
         },
         nav: { on_this_page: "On this page", proposition: "Service proposition", situations: "When it's needed", who: "Who it's for", scope: "Scope of assistance", approach: "Our approach", deliverables: "Typical deliverables", industries: "Industries", clients: "Who we support", experience: "Experience", connected: "Connected services", enquire: "Enquire", lead_partners: "Lead partners", lead_partners_note: "Speak directly with the partners who lead this practice.", specialists: "Specialists", portfolio_pdf: "Service portfolio", portfolio_pdf_note: "Download a one-page summary of this portfolio.", download_pdf: "Download portfolio (PDF)" },
-        partners: { gaurav: { name: "Gaurav Sharma", title: "Managing Partner" }, sumit: { name: "Sumit Goyal", title: "Partner" }, vishnu: { name: "K. Vishnu Sharma", title: "Partner" }, sushil: { name: "Sushil Sharma", title: "Associate Partner" } },
+        partners: { gaurav: { name: "Gaurav Sharma", title: "Managing Partner" }, sumit: { name: "Sumit Goyal", title: "Partner" }, vishnu: { name: "K. Vishnu Sharma", title: "Partner" }, sushil: { name: "Sushil Sharma", title: "Strategic Partner" } },
         prop: { title: "Service proposition", desc: "Entering India means navigating strategy, incorporation, tax, finance, hiring, technology and premises at once — usually across many vendors. TAG Group replaces that with one accountable interface that takes you from feasibility to a fully running operation, and then to a smooth hand-over to your own team. Each workstream is led by a dedicated partner, so you get specialist depth with single-point coordination.", note: "TAG is the single coordinating interface; legal, immigration, cybersecurity, recruitment and real estate are coordinated through TAG's specialist network, with each specialist responsible for its own work." },
         sit: { title: "Business situations that trigger the need", l1: "An overseas group is setting up operations in India", l2: "You need one accountable partner across setup, finance, HR and IT", l3: "Entry-mode and entity structure need evaluation", l4: "Incorporation, registrations and banking need coordinating", l5: "A new India operation needs finance, payroll and compliance from day one", l6: "You want to incubate before building an internal team" },
         who: { title: "Who this service is for", l1: "Multinational groups entering the Indian market", l2: "Overseas businesses needing an end-to-end India setup partner", l3: "Founders establishing a new India entity", l4: "Groups incubating operations before internal hiring" },
@@ -540,7 +541,7 @@ services: {
         partners: {
           gaurav: { name: "Gaurav Sharma", title: "Managing Partner" },
           sumit: { name: "Sumit Goyal", title: "Partner" },
-          pradip: { name: "MR Pradip", title: "Associate Partner" }
+          pradip: { name: "MR Pradip", title: "Strategic Partner" }
         },
         prop: {
           title: "Service proposition",
@@ -1098,14 +1099,14 @@ services: {
         },
         vishnu: { role: "Partner", name: "K. Vishnu Sharma", title: "Audit, Assurance & Finance Transformation" },
         sumit: { role: "Partner", name: "Sumit Goyal", title: "Indirect Tax" },
-        pradip: { role: "Associate Partner", name: "MR Pradip", title: "Legal, Regulatory & Dispute Resolution" },
+        pradip: { role: "Strategic Partner", name: "MR Pradip", title: "Legal, Regulatory & Dispute Resolution" },
         ishita: { role: "Partner", name: "Ishita Sharma", title: "Human Resources & Organisation Capability" },
         naresh: { role: "Partner", name: "Naresh Kumar Goel", title: "Audit & Assurance" },
         jai: { role: "Partner", name: "Jai Prakash", title: "Indirect Tax" },
-        karuna: { role: "Partner", name: "Karuna Sharma", title: "Legal, Regulatory & Foreign Exchange Regulations" },
+        karuna: { role: "Strategic Partner", name: "Karuna Sharma", title: "Legal, Regulatory & Foreign Exchange Regulations" },
         manuj: { role: "Associate Partner", name: "Manuj Singhal", title: "Valuation" },
-        sushil: { role: "Associate Partner", name: "Sushil Sharma", title: "IT Infrastructure, Systems & Security" },
-        amit: { role: "Strategic Associate", name: "Amit Sood", title: "Real Estate & Workforce Solutions" },
+        sushil: { role: "Strategic Partner", name: "Sushil Sharma", title: "IT Infrastructure, Systems & Security" },
+        amit: { role: "Strategic Partner", name: "Amit Sood", title: "Real Estate & Workforce Solutions" },
         vishal: { role: "Partner — UAE Desk", name: "Vishal Tayal", title: "UAE Desk · India–UAE Tax, VAT & Structuring" },
         awen: { role: "International Desk — Singapore", name: "Awen Lee", title: "Corporate Services · Accounting & Compliance" },
         hasina: { role: "International Desk — Mauritius", name: "Hasina Bahemia", title: "Corporate Administration & Governance" },
@@ -1126,7 +1127,7 @@ services: {
 
     mr_pradip: {
       breadcrumb: { home: "Home", leadership: "Leadership", name: "MR Pradip" },
-      hero: { role: "Associate Partner", name: "MR Pradip", desc: "Legal, Regulatory & Dispute Resolution · India" },
+      hero: { role: "Strategic Partner", name: "MR Pradip", desc: "Legal, Regulatory & Dispute Resolution · India" },
       tags: ["Commercial litigation", "Tax disputes", "Insolvency", "FEMA / AML"],
       nav: {
         profile: "Profile", overview: "Overview", expertise: "Areas of expertise", experience: "Experience", credentials: "Credentials",
@@ -1134,7 +1135,7 @@ services: {
       },
       overview: {
         title: "Overview",
-        desc: "MR Pradip is an Associate Partner at TAG Group, dual-qualified in law and accountancy. He advises and appears in corporate and commercial disputes, tax litigation, insolvency matters, transaction structuring and white-collar regulatory proceedings. Training under a Senior Advocate of the Supreme Court together with a financial background allows him to address matters that combine legal strategy with commercial and tax complexity.",
+        desc: "MR Pradip is a Strategic Partner at TAG Group, dual-qualified in law and accountancy. He advises and appears in corporate and commercial disputes, tax litigation, insolvency matters, transaction structuring and white-collar regulatory proceedings. Training under a Senior Advocate of the Supreme Court together with a financial background allows him to address matters that combine legal strategy with commercial and tax complexity.",
         stats: [
           { val: "CA + LL.B.", lbl: "Dual professional qualification" },
           { val: "SC / HC", lbl: "Court exposure" },
@@ -1152,7 +1153,7 @@ services: {
       experience: {
         title: "Experience",
         timeline: [
-          { period: "Current", role: "Associate Partner, TAG Group — Legal & Regulatory", desc: "Leads legal, regulatory and dispute-resolution mandates for multinational and technology-led businesses." },
+          { period: "Current", role: "Strategic Partner, TAG Group — Legal & Regulatory", desc: "Leads legal, regulatory and dispute-resolution mandates for multinational and technology-led businesses." },
           { period: "Practice", role: "Litigation counsel", desc: "Trained under a Senior Advocate of the Supreme Court; advises and appears across commercial, tax and insolvency matters." }
         ]
       },
@@ -1204,7 +1205,7 @@ contact_page: {
     },
     "title": "Partner — UAE Desk",
     "name": "Vishal Tayal",
-    "subtitle": "UAE Desk · India–UAE Tax, VAT &amp; Structuring &middot; UAE",
+    "subtitle": "UAE Desk · India–UAE Tax, VAT & Structuring · UAE",
     "chips": {
       "c1": "India GST",
       "c2": "UAE VAT",
@@ -1275,7 +1276,7 @@ contact_page: {
     },
     "title": "Partner",
     "name": "Ishita Sharma",
-    "subtitle": "Human Resources & Organisation Capability &middot; Gurugram, India",
+    "subtitle": "Human Resources & Organisation Capability · Gurugram, India",
     "chips": {
       "c1": "Talent acquisition",
       "c2": "L&D / LMS",
@@ -1352,7 +1353,7 @@ contact_page: {
     },
     "title": "Partner",
     "name": "Sumit Goyal",
-    "subtitle": "Indirect Tax &middot; Gurugram, India",
+    "subtitle": "Indirect Tax · Gurugram, India",
     "chips": {
       "c1": "GST",
       "c2": "Departmental audits",
@@ -1422,7 +1423,7 @@ contact_page: {
     },
     "title": "International Desk — Singapore",
     "name": "Awen Lee",
-    "subtitle": "Corporate Services · Accounting & Compliance &middot; Singapore",
+    "subtitle": "Corporate Services · Accounting & Compliance · Singapore",
     "chips": {
       "c1": "Singapore accounting",
       "c2": "Corporate services",
@@ -1488,7 +1489,7 @@ contact_page: {
     },
     "title": "International Desk — Mauritius",
     "name": "Hasina Bahemia",
-    "subtitle": "Corporate Administration & Governance &middot; Mauritius",
+    "subtitle": "Corporate Administration & Governance · Mauritius",
     "chips": {
       "c1": "Corporate administration",
       "c2": "Governance",
@@ -1550,9 +1551,9 @@ contact_page: {
       "home": "Home",
       "leadership": "Leadership"
     },
-    "title": "Associate Partner",
+    "title": "Strategic Partner",
     "name": "Sushil Sharma",
-    "subtitle": "IT Infrastructure, Systems & Security &middot; Delhi NCR, India",
+    "subtitle": "IT Infrastructure, Systems & Security · Delhi NCR, India",
     "chips": {
       "c1": "Infrastructure",
       "c2": "Networks & servers",
@@ -1571,7 +1572,7 @@ contact_page: {
     },
     "overview": {
       "title": "Overview",
-      "desc": "Sushil is an Associate Partner at TAG Group leading technology infrastructure. With 20+ years managing enterprise IT infrastructure, security, networks, servers and implementation programmes, he connects business requirements with practical technology delivery — planning, procurement, deployment, vendor management, end-user support and operating controls."
+      "desc": "Sushil is a Strategic Partner at TAG Group leading technology infrastructure. With 20+ years managing enterprise IT infrastructure, security, networks, servers and implementation programmes, he connects business requirements with practical technology delivery — planning, procurement, deployment, vendor management, end-user support and operating controls."
     },
     "expertise": {
       "title": "Areas of expertise",
@@ -1591,7 +1592,7 @@ contact_page: {
     "experience": {
       "title": "Experience",
       "p1": "Current",
-      "r1": "Associate Partner, TAG Group — Technology Infrastructure",
+      "r1": "Strategic Partner, TAG Group — Technology Infrastructure",
       "d1": "Leads IT infrastructure planning and delivery for client setups and transformations.",
       "p2": "Prior",
       "r2": "IT Infrastructure leadership — large engineering group",
@@ -1622,7 +1623,7 @@ contact_page: {
     },
     "title": "Associate Partner",
     "name": "Manuj Singhal",
-    "subtitle": "Valuation &middot; India & global engagements",
+    "subtitle": "Valuation · India & global engagements",
     "chips": {
       "c1": "Business valuation",
       "c2": "Complex securities",
@@ -1693,7 +1694,7 @@ contact_page: {
     },
     "title": "Partner",
     "name": "K. Vishnu Sharma",
-    "subtitle": "Audit, Assurance & Finance Transformation &middot; Gurugram, India",
+    "subtitle": "Audit, Assurance & Finance Transformation · Gurugram, India",
     "chips": {
       "c1": "Controllership",
       "c2": "Close & consolidation",
@@ -1773,9 +1774,9 @@ contact_page: {
       "home": "Home",
       "leadership": "Leadership"
     },
-    "title": "Partner",
+    "title": "Strategic Partner",
     "name": "Karuna Sharma",
-    "subtitle": "Legal, Regulatory & Foreign Exchange Regulations &middot; India",
+    "subtitle": "Legal, Regulatory & Foreign Exchange Regulations · India",
     "chips": {
       "c1": "Legal & regulatory",
       "c2": "FEMA",
@@ -1793,7 +1794,7 @@ contact_page: {
     },
     "overview": {
       "title": "Overview",
-      "desc": "Karuna is a Partner within TAG Group's specialist legal and regulatory network, advising on corporate, regulatory and foreign-exchange (FEMA) matters. (Detailed credentials to be added.)"
+      "desc": "Karuna is a Strategic Partner within TAG Group's specialist legal and regulatory network, advising on corporate, regulatory and foreign-exchange (FEMA) matters. (Detailed credentials to be added.)"
     },
     "expertise": {
       "title": "Areas of expertise",
@@ -1827,9 +1828,9 @@ contact_page: {
       "home": "Home",
       "leadership": "Leadership"
     },
-    "title": "Strategic Associate",
+    "title": "Strategic Partner",
     "name": "Amit Sood",
-    "subtitle": "Real Estate & Workforce Solutions &middot; Delhi NCR, India",
+    "subtitle": "Real Estate & Workforce Solutions · Delhi NCR, India",
     "chips": {
       "c1": "Property search",
       "c2": "Site coordination",
@@ -1847,7 +1848,7 @@ contact_page: {
     },
     "overview": {
       "title": "Overview",
-      "desc": "Amit is a Strategic Associate at TAG Group supporting corporate real-estate requirements and blue-collar workforce deployment. His role centres on local market access, property identification, site coordination and transaction follow-through, giving clients a structured professional interface alongside on-ground execution support."
+      "desc": "Amit is a Strategic Partner at TAG Group supporting corporate real-estate requirements and blue-collar workforce deployment. His role centres on local market access, property identification, site coordination and transaction follow-through, giving clients a structured professional interface alongside on-ground execution support."
     },
     "expertise": {
       "title": "Areas of expertise",
@@ -1867,7 +1868,7 @@ contact_page: {
     "experience": {
       "title": "Experience",
       "p1": "Current",
-      "r1": "Strategic Associate, TAG Group — Real Estate & Workforce",
+      "r1": "Strategic Partner, TAG Group — Real Estate & Workforce",
       "d1": "Coordinates property and workforce requirements for new-market entry and expansion."
     },
     "cred": {
@@ -1894,7 +1895,7 @@ contact_page: {
     },
     "title": "Partner",
     "name": "Naresh Kumar Goel",
-    "subtitle": "Audit & Assurance &middot; India",
+    "subtitle": "Audit & Assurance · India",
     "chips": {
       "c1": "Audit & Assurance",
       "c2": "Internal controls",
@@ -1948,7 +1949,7 @@ contact_page: {
     },
     "title": "Partner",
     "name": "Jai Prakash",
-    "subtitle": "Indirect Tax &middot; India",
+    "subtitle": "Indirect Tax · India",
     "chips": {
       "c1": "Indirect tax",
       "c2": "GST",
@@ -2278,6 +2279,7 @@ contact_page: {
       "net_eyebrow": "네트워크 및 협회",
       "net_title": "국제 협회",
       "net_desc": "TAG는 전문 회사 및 국제 협회 네트워크와 협력하여 엔드투엔드 지원을 제공합니다.",
+      "networks": { "sa": "S&A Consulting — 싱가포르, 말레이시아, 중국, 홍콩", "taxepolis": "Taxepolis International FZCO — UAE", "fideco": "Fideco Global Business Services — 모리셔스" },
       "cta_title": "당신의 문제를 자신의 문제처럼 다루는 팀과 함께 일하십시오.",
       "cta_desc": "해당 파트너를 만나거나 현재 진행 중인 작업에 대해 알려주세요.",
       "cta_btn1": "리더십 만나기",
@@ -2388,7 +2390,7 @@ contact_page: {
         breadcrumb: { home: "홈", services: "서비스" },
         hero: { eyebrow: "국경 간 및 아웃바운드", title: "국제 비즈니스", desc: "TAG의 글로벌 네트워크를 통해 해외에 투자하는 인도 기업과 여러 관할 구역에서 운영되는 다국적 그룹을 지원합니다." },
         nav: { on_this_page: "이 페이지에서", proposition: "서비스 제안", situations: "필요한 상황", who: "대상 고객", scope: "지원 범위", approach: "접근 방식", deliverables: "일반적인 산출물", industries: "관련 산업", experience: "경험", connected: "연결된 서비스", enquire: "문의하기", lead_partners: "담당 파트너", lead_note: "이 실무를 이끄는 파트너와 직접 상담하십시오.", enquire_btn: "문의하기", portfolio: "서비스 포트폴리오", download_note: "이 포트폴리오의 1페이지 요약을 다운로드하십시오.", download_btn: "포트폴리오 다운로드 (PDF)" },
-        partners: { gaurav: { name: "가우라브 샤르마", title: "대표 파트너" }, sumit: { name: "수밋 고얄", title: "파트너" }, pradip: { name: "MR 프라딥", title: "어소시에이트 파트너" }, awen: { name: "어원 리", title: "국제 데스크 — 싱가포르" } },
+        partners: { gaurav: { name: "가우라브 샤르마", title: "대표 파트너" }, sumit: { name: "수밋 고얄", title: "파트너" }, pradip: { name: "MR 프라딥", title: "전략 파트너" }, awen: { name: "어원 리", title: "국제 데스크 — 싱가포르" } },
         prop: { title: "서비스 제안", desc: "국경을 넘어 비즈니스를 운영하면 세무, 규제 및 운영의 복잡성이 배가됩니다. TAG는 인도 기업의 해외 진출을 돕고 다국적 그룹이 관할 구역 전체에서 조정할 수 있도록 지원하며, 인도 측 역량과 현지 파트너 및 관계자의 국제 네트워크를 결합합니다." },
         sit: { title: "필요성을 유발하는 비즈니스 상황", l1: "인도 기업이 해외에 투자하거나 사업을 확장하는 경우", l2: "다국적 그룹이 여러 국가의 규정 준수를 조정해야 하는 경우", l3: "해외 법인 및 운영 구조의 평가가 필요한 경우", l4: "국경 간 거래에 세금 및 규제 조정이 필요한 경우", l5: "새로운 시장에서 현지 전문가의 소개가 필요한 경우", l6: "회사 간 협약이 여러 국가에 걸쳐 있는 경우" },
         who: { title: "이 서비스의 대상", l1: "국제적으로 사업을 확장하는 인도 기업", l2: "여러 관할 구역에서 사업을 운영하는 다국적 그룹", l3: "인도 측 파트너를 찾는 해외 자문 회사", l4: "지속적인 다국가 규정 준수 조정이 필요한 그룹" },
@@ -2486,7 +2488,7 @@ contact_page: {
         breadcrumb: { home: "홈", services: "서비스" },
         hero: { eyebrow: "법률 및 규제", title: "기업, 법무, FEMA 및 규제", short_title: "기업, 법무, FEMA 및 규제", desc: "기업 구조화, 비서 조정, FEMA 및 국경 간 규제 자문, 전문 법률 네트워크 지원." },
         nav: { on_this_page: "이 페이지에서", proposition: "서비스 제안", situations: "필요한 경우", who: "서비스 대상", scope: "지원 범위", approach: "우리의 접근 방식", deliverables: "주요 결과물", industries: "산업 분야", experience: "경험", connected: "연결된 서비스", enquire: "문의하기", lead_partners: "대표 파트너", lead_partners_note: "이 실무를 이끄는 파트너와 직접 상담하세요.", portfolio_pdf: "서비스 포트폴리오", portfolio_pdf_note: "이 포트폴리오의 1페이지 요약본을 다운로드하세요.", download_pdf: "포트폴리오 다운로드 (PDF)" },
-        partners: { gaurav: { name: "가우라브 샤르마", title: "대표 파트너" }, pradip: { name: "MR 프라딥", title: "어소시에이트 파트너" } },
+        partners: { gaurav: { name: "가우라브 샤르마", title: "대표 파트너" }, pradip: { name: "MR 프라딥", title: "전략 파트너" } },
         prop: { title: "서비스 제안", desc: "기업 및 국경 간 활동은 법률 및 규제 의무의 꾸준한 흐름을 생성합니다. TAG는 회계, 세무 및 법률 분석을 결합하고 이중 자격을 갖춘 전문가를 통해 분쟁 및 파산 지원을 제공하면서 기업 구조화, 거버넌스, FEMA 및 RBI 문제 및 상업 문서를 조정합니다.", note: "법률 서비스는 전문 규칙이 요구하는 관련 변호사 또는 법률 고문을 식별합니다." },
         sit: { title: "필요성을 촉발하는 비즈니스 상황", l1: "법인 설립, 구조 조정 또는 재구성", l2: "외국인 투자(FDI/ODI) 또는 ECB 구조화 및 서류 제출", l3: "FEMA 포지션, 건강 검진 또는 복합 문제 해결 필요", l4: "이사회 및 주주 거버넌스 강화", l5: "상업 계약 작성 또는 검토", l6: "상업, 세금 또는 파산 분쟁 지원" },
         who: { title: "이 서비스의 대상", l1: "다중 엔터티 구조를 관리하는 그룹", l2: "외국인 투자자 및 인도 아웃바운드 투자자", l3: "FEMA/RBI 의무가 있는 비즈니스", l4: "거버넌스 및 문서가 필요한 이사회 및 프로모터" },
@@ -2522,7 +2524,7 @@ contact_page: {
           p8_t: "운영 및 인계", p8_d: "지속적인 규정 준수 및 운영 후 내부 팀으로 전환합니다.", p8_w: "가우라브 샤르마 주도"
         },
         nav: { on_this_page: "이 페이지에서", proposition: "서비스 제안", situations: "필요한 경우", who: "서비스 대상", scope: "지원 범위", approach: "우리의 접근 방식", deliverables: "주요 결과물", industries: "산업 분야", clients: "우리가 지원하는 대상", experience: "경험", connected: "연결된 서비스", enquire: "문의하기", lead_partners: "대표 파트너", lead_partners_note: "이 실무를 이끄는 파트너와 직접 상담하세요.", specialists: "전문가", portfolio_pdf: "서비스 포트폴리오", portfolio_pdf_note: "이 포트폴리오의 1페이지 요약본을 다운로드하세요.", download_pdf: "포트폴리오 다운로드 (PDF)" },
-        partners: { gaurav: { name: "가우라브 샤르마", title: "대표 파트너" }, sumit: { name: "수밋 고얄", title: "파트너" }, vishnu: { name: "K. 비슈누 샤르마", title: "파트너" }, sushil: { name: "수실 샤르마", title: "어소시에이트 파트너" } },
+        partners: { gaurav: { name: "가우라브 샤르마", title: "대표 파트너" }, sumit: { name: "수밋 고얄", title: "파트너" }, vishnu: { name: "K. 비슈누 샤르마", title: "파트너" }, sushil: { name: "수실 샤르마", title: "전략 파트너" } },
         prop: { title: "서비스 제안", desc: "인도에 진출한다는 것은 전략, 통합, 세금, 재무, 고용, 기술 및 구내를 한 번에 탐색하는 것을 의미하며 대개 많은 벤더를 거칩니다. TAG Group은 타당성 조사부터 완전히 실행되는 운영에 이르기까지 귀하를 이끌고 자체 팀으로 원활하게 인계하는 하나의 책임 있는 인터페이스로 대체합니다. 각 작업 스트림은 전담 파트너가 이끌므로 단일 지점 조정을 통해 전문적인 깊이를 얻을 수 있습니다.", note: "TAG는 단일 조정 인터페이스입니다. 법률, 이민, 사이버 보안, 채용 및 부동산은 TAG의 전문 네트워크를 통해 조정되며 각 전문가는 자신의 업무를 책임집니다." },
         sit: { title: "필요성을 촉발하는 비즈니스 상황", l1: "해외 그룹이 인도에서 운영을 시작하고 있습니다.", l2: "설정, 재무, HR 및 IT 전반에 걸쳐 책임감 있는 하나의 파트너가 필요합니다.", l3: "진입 모드 및 엔터티 구조 평가가 필요합니다.", l4: "법인 설립, 등록 및 은행 업무 조정이 필요합니다.", l5: "새로운 인도 지사는 첫날부터 재무, 급여 및 규정 준수가 필요합니다.", l6: "내부 팀을 구성하기 전에 배양하고 싶습니다." },
         who: { title: "이 서비스의 대상", l1: "인도 시장에 진출하는 다국적 그룹", l2: "종단 간 인도 설정 파트너가 필요한 해외 비즈니스", l3: "새로운 인도 법인을 설립하는 창립자", l4: "내부 채용 전에 운영을 배양하는 그룹" },
@@ -2618,7 +2620,7 @@ contact_page: {
         partners: {
           gaurav: { name: "가우라브 샤르마", title: "대표 파트너" },
           sumit: { name: "수밋 고얄", title: "파트너" },
-          pradip: { name: "MR 프라딥", title: "어소시에이트 파트너" }
+          pradip: { name: "MR 프라딥", title: "전략 파트너" }
         },
         prop: {
           title: "서비스 제안",
@@ -3176,14 +3178,14 @@ contact_page: {
         },
         vishnu: { role: "파트너", name: "K. 비슈누 샤르마", title: "감사, 보증 및 재무 혁신" },
         sumit: { role: "파트너", name: "수밋 고얄", title: "간접세" },
-        pradip: { role: "어소시에이트 파트너", name: "MR 프라딥", title: "법률, 규제 및 분쟁 해결" },
+        pradip: { role: "전략 파트너", name: "MR 프라딥", title: "법률, 규제 및 분쟁 해결" },
         ishita: { role: "파트너", name: "이시타 샤르마", title: "인적 자원 및 조직 역량" },
         naresh: { role: "파트너", name: "나레쉬 쿠마르 고엘", title: "감사 및 보증" },
         jai: { role: "파트너", name: "자이 프라카쉬", title: "간접세" },
-        karuna: { role: "파트너", name: "카루나 샤르마", title: "법률, 규제 및 외환 규제" },
+        karuna: { role: "전략 파트너", name: "카루나 샤르마", title: "법률, 규제 및 외환 규제" },
         manuj: { role: "어소시에이트 파트너", name: "마누즈 싱할", title: "가치 평가" },
-        sushil: { role: "어소시에이트 파트너", name: "수실 샤르마", title: "IT 인프라, 시스템 및 보안" },
-        amit: { role: "전략적 어소시에이트", name: "아밋 수드", title: "부동산 및 인력 솔루션" },
+        sushil: { role: "전략 파트너", name: "수실 샤르마", title: "IT 인프라, 시스템 및 보안" },
+        amit: { role: "전략 파트너", name: "아밋 수드", title: "부동산 및 인력 솔루션" },
         vishal: { role: "파트너 — UAE 데스크", name: "비샬 타얄", title: "UAE 데스크 · 인도-UAE 세금, VAT 및 구조화" },
         awen: { role: "국제 데스크 — 싱가포르", name: "아웬 리", title: "기업 서비스 · 회계 및 규정 준수" },
         hasina: { role: "국제 데스크 — 모리셔스", name: "하시나 바헤미아", title: "기업 관리 및 거버넌스" },
@@ -3209,7 +3211,7 @@ contact_page: {
             "name": "MR 프라딥"
             },
         "hero": {
-            "role": "어소시에이트 파트너",
+            "role": "전략 파트너",
             "name": "MR 프라딥 (MR Pradip)",
             "desc": "법률, 규제 및 분쟁 해결 · 인도"
             },
@@ -3231,7 +3233,7 @@ contact_page: {
             },
         "overview": {
             "title": "개요",
-            "desc": "MR Pradip은 법률 및 회계 분야에서 이중 자격을 갖춘 TAG Group의 어소시에이트 파트너입니다. 그는 기업 및 상업 분쟁, 조세 소송, 파산 문제, 거래 구조화 및 화이트칼라 규제 절차에 자문을 제공하고 출석합니다. 대법원의 수석 변호사 산하에서 훈련받은 것과 재정적 배경이 결합되어 법률 전략과 상업 및 세무의 복잡성을 통합하는 문제를 다룰 수 있습니다.",
+            "desc": "MR Pradip은 법률 및 회계 분야에서 이중 자격을 갖춘 TAG Group의 전략 파트너입니다. 그는 기업 및 상업 분쟁, 조세 소송, 파산 문제, 거래 구조화 및 화이트칼라 규제 절차에 자문을 제공하고 출석합니다. 대법원의 수석 변호사 산하에서 훈련받은 것과 재정적 배경이 결합되어 법률 전략과 상업 및 세무의 복잡성을 통합하는 문제를 다룰 수 있습니다.",
             "stats": [
                 {
                     "val": "CA + LL.B.",
@@ -3281,7 +3283,7 @@ contact_page: {
             "timeline": [
                 {
                     "period": "현재",
-                    "role": "TAG Group 어소시에이트 파트너 — 법률 및 규제",
+                    "role": "TAG Group 전략 파트너 — 법률 및 규제",
                     "desc": "다국적 및 기술 주도 기업을 위한 법률, 규제 및 분쟁 해결 위임을 이끌고 있습니다."
                     },
                 {
@@ -3696,7 +3698,7 @@ people_pages: {
                 "home": "홈",
                 "leadership": "리더십"
                 },
-            "title": "어소시에이트 파트너",
+            "title": "전략 파트너",
             "name": "수실 샤르마 (Sushil Sharma)",
             "subtitle": "IT 인프라, 시스템 및 보안 · 인도 델리 NCR",
             "chips": {
@@ -3717,7 +3719,7 @@ people_pages: {
                 },
             "overview": {
                 "title": "개요",
-                "desc": "Sushil은 TAG Group의 기술 인프라를 이끄는 어소시에이트 파트너입니다. 20년 이상 엔터프라이즈 IT 인프라, 보안, 네트워크, 서버 및 구현 프로그램을 관리해 왔으며, 계획, 조달, 배포, 공급업체 관리, 최종 사용자 지원 및 운영 통제를 통해 비즈니스 요구 사항과 실제 기술 제공을 연결합니다."
+                "desc": "Sushil은 TAG Group의 기술 인프라를 이끄는 전략 파트너입니다. 20년 이상 엔터프라이즈 IT 인프라, 보안, 네트워크, 서버 및 구현 프로그램을 관리해 왔으며, 계획, 조달, 배포, 공급업체 관리, 최종 사용자 지원 및 운영 통제를 통해 비즈니스 요구 사항과 실제 기술 제공을 연결합니다."
                 },
             "expertise": {
                 "title": "전문 분야",
@@ -3737,7 +3739,7 @@ people_pages: {
             "experience": {
                 "title": "경력",
                 "p1": "현재",
-                "r1": "TAG Group 어소시에이트 파트너 — 기술 인프라",
+                "r1": "TAG Group 전략 파트너 — 기술 인프라",
                 "d1": "고객 설정 및 전환을 위한 IT 인프라 계획 및 제공을 주도합니다.",
                 "p2": "이전",
                 "r2": "IT 인프라 리더십 — 대규모 엔지니어링 그룹",
@@ -3919,7 +3921,7 @@ people_pages: {
                 "home": "홈",
                 "leadership": "리더십"
                 },
-            "title": "파트너",
+            "title": "전략 파트너",
             "name": "카루나 샤르마 (Karuna Sharma)",
             "subtitle": "법률, 규제 및 외환 규제 · 인도",
             "chips": {
@@ -3939,7 +3941,7 @@ people_pages: {
                 },
             "overview": {
                 "title": "개요",
-                "desc": "Karuna는 TAG Group의 전문 법률 및 규제 네트워크의 파트너로서 기업, 규제 및 외환(FEMA) 문제에 대해 자문합니다. (자세한 자격 요건은 추가 예정입니다.)"
+                "desc": "Karuna는 TAG Group의 전문 법률 및 규제 네트워크의 전략 파트너로서 기업, 규제 및 외환(FEMA) 문제에 대해 자문합니다. (자세한 자격 요건은 추가 예정입니다.)"
                 },
             "expertise": {
                 "title": "전문 분야",
@@ -3973,7 +3975,7 @@ people_pages: {
                 "home": "홈",
                 "leadership": "리더십"
                 },
-            "title": "전략적 어소시에이트",
+            "title": "전략 파트너",
             "name": "아밋 수드 (Amit Sood)",
             "subtitle": "부동산 및 인력 솔루션 · 인도 델리 NCR",
             "chips": {
@@ -3993,7 +3995,7 @@ people_pages: {
                 },
             "overview": {
                 "title": "개요",
-                "desc": "Amit은 TAG Group의 전략적 어소시에이트로서 기업 부동산 요구 사항 및 블루칼라 인력 배치를 지원합니다. 그의 역할은 현지 시장 접근, 부동산 식별, 현장 조정 및 거래의 후속 조치에 중점을 두어 고객에게 현장 실행 지원과 함께 체계적인 전문 인터페이스를 제공합니다."
+                "desc": "Amit은 TAG Group의 전략 파트너로서 기업 부동산 요구 사항 및 블루칼라 인력 배치를 지원합니다. 그의 역할은 현지 시장 접근, 부동산 식별, 현장 조정 및 거래의 후속 조치에 중점을 두어 고객에게 현장 실행 지원과 함께 체계적인 전문 인터페이스를 제공합니다."
                 },
             "expertise": {
                 "title": "전문 분야",
@@ -4013,7 +4015,7 @@ people_pages: {
             "experience": {
                 "title": "경력",
                 "p1": "현재",
-                "r1": "TAG Group 전략적 어소시에이트 — 부동산 및 인력",
+                "r1": "TAG Group 전략 파트너 — 부동산 및 인력",
                 "d1": "신규 시장 진출 및 확장을 위한 부동산 및 인력 요구 사항을 조정합니다."
                 },
             "cred": {

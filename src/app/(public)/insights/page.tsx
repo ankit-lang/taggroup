@@ -4,6 +4,7 @@ import { formatBriefingDate } from '@/lib/briefing/schema';
 import { NIRC_AI_GCC_ARTICLE as nirc } from '@/data/featured-publications';
 import { getLocale } from '@/lib/get-locale';
 import { locales } from '@/data/locales';
+import { MEDIA_EVENTS } from '@/data/media-events';
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
@@ -156,6 +157,31 @@ export default async function Page() {
               <div className="card reveal"><div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5 11a7 7 0 0014 0M12 18v3" /></svg></div><h3>{t("insights.speak_title")}</h3><p>{t("insights.media_cards.speak_desc")}</p><div className="deliverables" style={{ "marginTop": "8px" }}><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.speak_l1")}</span></div><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.speak_l2")}</span></div><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.speak_l3")}</span></div></div></div>
               <div className="card reveal"><div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 3H6v18h12V7zM14 3v4h4M9 13h6M9 17h6" /></svg></div><h3>{t("insights.pub_title")}</h3><p>{t("insights.media_cards.pub_desc")}</p><div className="deliverables" style={{ "marginTop": "8px" }}><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.pub_l1")}</span></div><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.pub_l2")}</span></div><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.pub_l3")}</span></div></div></div>
               <div className="card reveal"><div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18l-5.8 3 1.1-6.5L2.6 9.8l6.5-.9z" /></svg></div><h3>{t("insights.rec_title")}</h3><p>{t("insights.media_cards.rec_desc")}</p><div className="deliverables" style={{ "marginTop": "8px" }}><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.rec_l1")}</span></div><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.rec_l2")}</span></div><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.rec_l3")}</span></div></div></div>
+            </div>
+
+            {/* Speaking & events — individual engagements with photos (data: src/data/media-events.ts) */}
+            <div style={{ "margin": "40px 0 0" }}>
+              <h3 style={{ "fontSize": "1.25rem", "margin": "0 0 16px" }}>{t("insights.speak_title")}</h3>
+              {MEDIA_EVENTS.map((ev) => {
+                const L = locale === 'ko' ? 'ko' : 'en';
+                return (
+                  <article key={ev.id} className="media-event">
+                    <span className="eyebrow"><time dateTime={ev.date}>{ev.month[L]}</time></span>
+                    <h4 className="media-event-title">{ev.title[L]}</h4>
+                    <p className="media-event-host">{ev.host[L]}</p>
+                    <p className="media-event-speaker">{ev.speaker[L]}</p>
+                    <p className="media-event-summary">{ev.summary[L]}</p>
+                    <div className="media-event-photos">
+                      {ev.photos.map((ph) => (
+                        <a key={ph.src} href={ph.src} target="_blank" rel="noopener noreferrer">
+                          <img src={ph.src} alt={ph.alt} loading="lazy" />
+                        </a>
+                      ))}
+                    </div>
+                    <a className="link-arrow" href={ev.url} target="_blank" rel="noopener noreferrer">{L === 'ko' ? 'LinkedIn에서 보기' : 'View on LinkedIn'} ↗</a>
+                  </article>
+                );
+              })}
             </div>
             <div className="excl-note" style={{ "marginTop": "26px" }}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 8h0" /></svg><span>{t("insights.excl_note")} <a href="mailto:contact@taggroup.in">contact@taggroup.in</a>.</span></div>
           </div>
