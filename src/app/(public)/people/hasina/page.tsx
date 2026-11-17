@@ -2,9 +2,11 @@
 "use client";
 import React from 'react';
 import { useI18n } from '@/lib/i18n';
+import { HASINA_FIDECO } from '@/data/people/hasina-fideco';
 
 export default function Page() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const c = HASINA_FIDECO[locale === 'ko' ? 'ko' : 'en'];
   return (
     <>
       <section className="page-hero has-art"><div className="ph-art" aria-hidden="true" style={{"backgroundImage":"url('/assets/img/hero/life.svg')"}}></div>
@@ -34,7 +36,7 @@ export default function Page() {
         <div className="side-card" style={{"marginTop":"26px"}}>
           <h5>{t('people_pages.hasina.nav.get_in_touch')}</h5>
           <div className="side-actions">
-            <a className="btn btn-primary" href="mailto:hasina@taggroup.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> {t('people_pages.hasina.nav.email')}</a><a className="btn btn-ghost" href="https://www.linkedin.com/in/hasina-bahemia-cams-5078b52a/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M10 14a5 5 0 007 0l2-2a5 5 0 00-7-7l-1 1M14 10a5 5 0 00-7 0l-2 2a5 5 0 007 7l1-1"/></svg> External profile</a>
+            <a className="btn btn-primary" href="mailto:hasina@taggroup.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> {t('people_pages.hasina.nav.email')}</a><a className="btn btn-ghost" href="https://www.linkedin.com/in/hasina-bahemia-cams-5078b52a/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M10 14a5 5 0 007 0l2-2a5 5 0 00-7-7l-1 1M14 10a5 5 0 00-7 0l-2 2a5 5 0 007 7l1-1"/></svg> {c.externalProfile}</a>
             <a className="btn btn-ghost" href="/assets/profiles/hasina.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 3H6v18h12V7zM14 3v4h4M9 13h6M9 17h6"/></svg> {t('people_pages.hasina.nav.download')}</a>
           </div>
         </div>
@@ -44,22 +46,44 @@ export default function Page() {
         <section className="svc-block" id="summary">
           <h2>{t('people_pages.hasina.overview.title')}</h2>
           <p className="lead" style={ {"color":"var(--charcoal-700)"} }>{t('people_pages.hasina.overview.desc')}</p>
-          <div className="stats" style={{"marginTop":"8px"}}><div className="stat"><div className="val"><em>CAMS</em></div><div className="lbl">AML/CFT certified</div></div><div className="stat"><div className="val"><em>Mauritius</em></div><div className="lbl">Corporate & governance</div></div><div className="stat"><div className="val"><em>COO</em></div><div className="lbl">Operations leadership</div></div></div>
+          <div className="partner-panel">
+            <span className="partner-eyebrow">{c.panel.eyebrow}</span>
+            <h3 className="partner-name">{c.panel.name}</h3>
+            {c.panel.paragraphs.map((para, i) => <p key={i}>{para}</p>)}
+          </div>
           
         </section>
         <section className="svc-block" id="expertise">
           <h2>{t('people_pages.hasina.expertise.title')}</h2>
-          <div className="xp-grid"><div className="xp-col"><h4>{t('people_pages.hasina.expertise.h1')}</h4><ul className="check-list"><li>{t('people_pages.hasina.expertise.h1_l3')}</li><li>Substance and governance support</li><li>Accounting and tax coordination</li></ul></div><div className="xp-col"><h4>{t('people_pages.hasina.expertise.h2')}</h4><ul className="check-list"><li>{t('people_pages.hasina.expertise.h2_l3')}</li><li>Regulatory coordination</li><li>International structuring coordination</li></ul></div><div className="xp-col"><h4>{t('people_pages.hasina.expertise.h3')}</h4><ul className="check-list"><li>{t('people_pages.hasina.expertise.h3_l3')}</li><li>Client-relationship management</li><li>Business-related relocation assistance</li></ul></div></div>
+          <p style={{ color: 'var(--text-muted)', marginTop: '-6px', marginBottom: '18px' }}>{c.expertiseIntro}</p>
+          <div className="xp-grid">
+            {c.groups.map(g => (
+              <div className="xp-col" key={g.title}>
+                <h4>{g.title}</h4>
+                <ul className="check-list">{g.items.map(item => <li key={item}>{item}</li>)}</ul>
+              </div>
+            ))}
+          </div>
         </section>
         <section className="svc-block" id="experience">
           <h2>{t('people_pages.hasina.experience.title')}</h2>
-          <div className="timeline"><div className="tl-item"><div className="tl-period">{t('people_pages.hasina.experience.p1')}</div><div className="tl-body"><strong>{t('people_pages.hasina.experience.r1')}</strong><p>{t('people_pages.hasina.experience.d1')}</p></div></div></div>
+          <div className="timeline">
+            <div className="tl-item">
+              <div className="tl-period">{t('people_pages.hasina.experience.p1')}</div>
+              <div className="tl-body">
+                <strong>{c.experience.role}</strong>
+                <p>{c.experience.desc}</p>
+              </div>
+            </div>
+          </div>
         </section>
         <section className="svc-block" id="credentials">
           <h2>{t('people_pages.hasina.cred.title')}</h2>
-          <ul className="check-list two"><li>{t('people_pages.hasina.cred.c3')}</li><li>Chief Operating Officer, Fideco Global Business Services</li><li>Corporate governance & administration</li></ul>
-          <h4 style={{"margin":"26px 0 12px","color":"var(--accent)"}}>{t('people_pages.hasina.cred.sector')}</h4>
-          <div className="chips"><span className="chip">{t('people_pages.hasina.cred.s2')}</span><span className="chip">International structuring</span></div>
+          <ul className="check-list two">{c.credentials.map(item => <li key={item}>{item}</li>)}</ul>
+          <h4 style={{ margin: '26px 0 12px', color: 'var(--accent)' }}>{t('people_pages.hasina.cred.sector')}</h4>
+          <div className="chips">{c.sectors.map(x => <span className="chip" key={x}>{x}</span>)}</div>
+          <h4 style={{ margin: '22px 0 12px', color: 'var(--accent)' }}>{c.marketsTitle}</h4>
+          <div className="chips">{c.markets.map(x => <span className="chip" key={x}>{x}</span>)}</div>
         </section>
         <section className="svc-block">
           <div className="cta-band">

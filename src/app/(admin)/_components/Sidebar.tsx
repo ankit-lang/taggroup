@@ -29,6 +29,7 @@ export const NAV_GROUPS = [
       { label: 'Publications', href: '/admin/publications', icon: BookOpen },
       { label: 'Daily Briefing', href: '/admin/briefings', icon: Newspaper },
       { label: 'Newsletters', href: '/admin/newsletter', icon: Mail },
+      { label: 'Subscribers', href: '/admin/subscribers', icon: Users },
     ],
   },
   {

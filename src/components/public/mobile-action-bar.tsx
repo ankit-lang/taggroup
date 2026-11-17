@@ -12,7 +12,7 @@ export function MobileActionBar() {
         </svg>
         <span>Call</span>
       </a>
-      <a href="mailto:info@taggroup.in">
+      <a href="mailto:contact@taggroup.in">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="5" width="18" height="14" rx="2" />
           <path d="M3 7l9 6 9-6" />

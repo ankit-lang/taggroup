@@ -179,7 +179,7 @@
 .lg-item:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 .lg-viewer { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 56px 16px; background: rgba(10, 14, 22, .93); }
 .lg-viewer figure { margin: 0; max-width: min(1200px, 100%); max-height: 100%; display: flex; flex-direction: column; align-items: center; }
-.lg-viewer img { max-width: 100%; max-height: calc(100vh - 140px); object-fit: contain; border-radius: 6px; }
+.lg-viewer img { max-width: 100%; max-height: calc(100vh / var(--site-zoom, 1) - 140px); object-fit: contain; border-radius: 6px; }
 .lg-viewer figcaption { margin-top: 12px; color: #d1d5db; font-size: .9rem; }
 .lg-close, .lg-nav { position: absolute; border: 0; background: rgba(255,255,255,.1); color: #fff; cursor: pointer; border-radius: 999px; display: flex; align-items: center; justify-content: center; line-height: 1; }
 .lg-close:hover, .lg-nav:hover { background: rgba(255,255,255,.22); }
@@ -194,3 +194,44 @@
   .lg-prev { left: calc(50% - 60px); }
   .lg-next { right: calc(50% - 60px); }
 }
+
+/* ── Site-wide zoom (client request: public site should look like browser zoom 80%) ──
+   Only the public website (.site-public) on screens ≥ 1024px; admin and phones stay 100%.
+   To change the level, edit --site-zoom only. CSS zoom also shrinks vh units, so
+   full-height rules divide by --site-zoom to keep filling the screen. */
+:root { --site-zoom: 1; }
+@media (min-width: 1024px) {
+  html:has(.site-public) { --site-zoom: 0.8; zoom: var(--site-zoom); }
+}
+
+/* ── Client sector cards (replaces the client logo marquee) ─────────────── */
+.sector-rows { margin-top: 8px; }
+.sector-marquee + .sector-marquee { margin-top: 18px; }
+.sector-card {
+  flex: 0 0 auto; min-width: 240px; width: max-content; box-sizing: border-box;
+  display: flex; flex-direction: column; justify-content: center; gap: 4px;
+  padding: 18px 22px; min-height: 102px;
+  background: #fdfbf6; border: 1px solid #ebe1cc; border-radius: 14px;
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.sector-card:hover { transform: translateY(-3px); border-color: var(--gold); box-shadow: 0 10px 24px rgba(60, 48, 28, .10); }
+.sector-bar { width: 22px; height: 4px; border-radius: 2px; background: var(--gold); margin-bottom: 8px; }
+.sector-card strong { font-size: 1.05rem; font-weight: 700; color: var(--charcoal-900); white-space: nowrap; line-height: 1.25; }
+.sector-desc { font-size: .86rem; color: var(--charcoal-600); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .sector-marquee .logo-track { animation: none; } }
+
+/* ── Footer LinkedIn links ─────────────────────────────────────────────── */
+.footer-linkedin { display: inline-flex; align-items: center; gap: 9px; margin-top: 18px; padding: 9px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); color: #fff; font-size: .9rem; font-weight: 600; transition: background .2s, border-color .2s; }
+.footer-linkedin svg { width: 17px; height: 17px; color: #fff; }
+.footer-linkedin:hover { background: #0a66c2; border-color: #0a66c2; color: #fff; }
+.footer-bottom-right { display: inline-flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.footer-linkedin-mini { display: inline-flex; width: 30px; height: 30px; align-items: center; justify-content: center; border-radius: 6px; background: rgba(255,255,255,.08); color: var(--slate-300); transition: background .2s, color .2s; }
+.footer-linkedin-mini svg { width: 15px; height: 15px; }
+.footer-linkedin-mini:hover { background: #0a66c2; color: #fff; }
+
+/* ── Partner firm panel (e.g. Fideco Global on Hasina's profile) ─────────── */
+.partner-panel { margin-top: 10px; padding: 28px 30px; border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: var(--radius); background: var(--mist-50); }
+.partner-eyebrow { display: block; font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.partner-name { margin: 6px 0 14px; font-family: var(--font-serif); font-size: clamp(1.5rem, 2.4vw, 1.9rem); letter-spacing: .06em; color: var(--heading); }
+.partner-panel p { color: var(--charcoal-700); line-height: 1.7; margin: 0 0 12px; }
+.partner-panel p:last-child { margin-bottom: 0; }

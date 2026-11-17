@@ -1,5 +1,4 @@
 import React from 'react';
-import { getPublications } from '@/actions/publication.actions';
 import { getPublishedBriefings } from '@/actions/briefing.actions';
 import { formatBriefingDate } from '@/lib/briefing/schema';
 import { NIRC_AI_GCC_ARTICLE as nirc } from '@/data/featured-publications';
@@ -9,7 +8,6 @@ import { locales } from '@/data/locales';
 export const revalidate = 60; // Revalidate every 60 seconds
 
 export default async function Page() {
-  const publications = await getPublications({ search: '', category: 'All' }) || [];
   const [latestBriefing] = await getPublishedBriefings(1);
   const locale = await getLocale();
   const t = (path: string) => path.split('.').reduce((obj: any, key: string) => obj?.[key], locales[locale as keyof typeof locales]) || path;
@@ -59,23 +57,6 @@ export default async function Page() {
                   <a className="link-arrow" href={nirc.url} target="_blank" rel="noopener noreferrer">Full article ↗</a>
                 </div>
               </div>
-              {publications.map((pub: any) => (
-                <div className="insight-card reveal" key={pub.id}>
-                  <figure className="photo r169 ic-thumb" style={{ "backgroundImage": pub.image_url ? `url('${pub.image_url}')` : "url('/assets/img/plates/office.svg')" }}>
-                    {pub.image_url && <img src={pub.image_url} alt={pub.title} loading="lazy" />}
-                  </figure>
-                  <span className="ic-tag">{pub.category || 'General'}</span>
-                  <div className="ic-meta">
-                    {new Date(pub.created_at).toLocaleDateString(undefined, { month: 'short', year: 'numeric' })} &middot; TAG Group
-                  </div>
-                  <h3>{pub.title}</h3>
-                  {/* Using a substring or a meta_description if it exists. Fallback to a slice of content. */}
-                  <p>{pub.meta_description || pub.content?.substring(0, 120) + '...'}</p>
-                  <div className="ic-actions">
-                    <a className="link-arrow" href={`/publications/${pub.slug}`}>{t("insights.read")} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
-                  </div>
-                </div>
-              ))}
 
               <div className="insight-card reveal">
                 <figure className="photo r169 ic-thumb" style={{ "backgroundImage": "url('/assets/img/plates/advisory.svg')" }}><img src="/assets/photos/insights/global-tp-defensible-file.jpg" alt="Building a defensible multi-country transfer-pricing file" loading="lazy" /></figure>
@@ -159,7 +140,7 @@ export default async function Page() {
 
           <div className="tabpanel" id="tab-media">
             <div style={{ "margin": "34px 0 20px" }}><h2 style={{ "fontSize": "1.5rem" }}>{t("insights.media_title")}</h2>
-              <p className="lead" style={{ "marginTop": "6px" }}>{t("insights.media_desc")} <a href="mailto:info@taggroup.in" style={{ "color": "var(--accent)" }}>info@taggroup.in</a>.</p></div>
+              <p className="lead" style={{ "marginTop": "6px" }}>{t("insights.media_desc")} <a href="mailto:contact@taggroup.in" style={{ "color": "var(--accent)" }}>contact@taggroup.in</a>.</p></div>
 
             <div className="callout" style={{ "marginBottom": "24px" }}>
               <span className="eyebrow">Featured publication · {nirc.publication}, {nirc.issue}</span>
@@ -176,14 +157,14 @@ export default async function Page() {
               <div className="card reveal"><div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 3H6v18h12V7zM14 3v4h4M9 13h6M9 17h6" /></svg></div><h3>{t("insights.pub_title")}</h3><p>{t("insights.media_cards.pub_desc")}</p><div className="deliverables" style={{ "marginTop": "8px" }}><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.pub_l1")}</span></div><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.pub_l2")}</span></div><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.pub_l3")}</span></div></div></div>
               <div className="card reveal"><div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18l-5.8 3 1.1-6.5L2.6 9.8l6.5-.9z" /></svg></div><h3>{t("insights.rec_title")}</h3><p>{t("insights.media_cards.rec_desc")}</p><div className="deliverables" style={{ "marginTop": "8px" }}><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.rec_l1")}</span></div><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.rec_l2")}</span></div><div className="deliverable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg><span>{t("insights.media_cards.rec_l3")}</span></div></div></div>
             </div>
-            <div className="excl-note" style={{ "marginTop": "26px" }}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 8h0" /></svg><span>{t("insights.excl_note")} <a href="mailto:info@taggroup.in">info@taggroup.in</a>.</span></div>
+            <div className="excl-note" style={{ "marginTop": "26px" }}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 8h0" /></svg><span>{t("insights.excl_note")} <a href="mailto:contact@taggroup.in">contact@taggroup.in</a>.</span></div>
           </div>
         </div>
       </section>
       <section className="section section-alt"><div className="container"><div className="cta-band">
         <h2>{t("insights.cta_title")}</h2>
         <p>{t("insights.cta_desc")}</p>
-        <div className="hero-actions"><a className="btn btn-white" href="#" data-newsletter><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg> Subscribe</a><a className="btn btn-light" href="mailto:info@taggroup.in?subject=Media%20enquiry">{t("insights.cta_media")}</a></div>
+        <div className="hero-actions"><a className="btn btn-white" href="#" data-newsletter><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg> Subscribe</a><a className="btn btn-light" href="mailto:contact@taggroup.in?subject=Media%20enquiry">{t("insights.cta_media")}</a></div>
       </div></div></section>
     </>
   );

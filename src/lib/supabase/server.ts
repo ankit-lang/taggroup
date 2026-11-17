@@ -29,3 +29,24 @@ export async function createClient() {
     }
   )
 }
+
+/**
+ * The signed-in user for server actions / server components.
+ *
+ * The browser keeps the Supabase session in localStorage, so the server only
+ * receives it through the `tag_access_token` cookie. A bare `auth.getUser()`
+ * ignores that cookie (it looks for sb-* session cookies that never exist
+ * here) and returns no user — every admin action then failed with
+ * "Unauthorized". Validating the token explicitly fixes that.
+ */
+export async function getServerUser(supabase?: Awaited<ReturnType<typeof createClient>>) {
+  const client = supabase ?? (await createClient())
+  const token = (await cookies()).get('tag_access_token')?.value
+  if (token) {
+    const { data, error } = await client.auth.getUser(token)
+    if (data.user) return data.user
+    console.warn('tag_access_token rejected by Supabase:', error?.message)
+  }
+  const { data } = await client.auth.getUser()
+  return data.user ?? null
+}

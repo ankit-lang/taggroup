@@ -1,3 +1,4 @@
+import { getServerUser } from '@/lib/supabase/server'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
@@ -26,7 +27,7 @@ export async function getUserRole() {
     }
   )
 
-  const { data: { user } } = await supabase.auth.getUser()
+  const user = await getServerUser(supabase)
 
   if (!user) return null
 

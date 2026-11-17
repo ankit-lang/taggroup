@@ -89,6 +89,7 @@ export default function NewPublicationPage() {
 
       const res = await createPublication(formData)
       if (res.success) {
+        if ('warning' in res && res.warning) alert(res.warning)
         router.push('/admin/publications')
       } else {
         setError(res.error || 'Failed to create publication')

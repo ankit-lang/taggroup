@@ -41,9 +41,13 @@
     window.addEventListener("resize", () => { if (window.innerWidth > 1024 && menu.classList.contains("open")) setMenu(false); });
   }
 
-  /* ---- Hero slider ---- */
-  const hero = document.querySelector("[data-slider]");
-  if (hero) {
+  /* ---- Hero slider ----
+     Re-runnable: Next.js swaps page content without reloading this script, so
+     a hero rendered after client-side navigation (e.g. About -> Home) must be
+     initialised again, otherwise its slides stay hidden (opacity 0). */
+  function initSlider(hero) {
+    if (!hero || hero.dataset.sliderReady) return;
+    hero.dataset.sliderReady = "1";
     const slides = Array.from(hero.querySelectorAll(".hero-slide"));
     const dotsWrap = hero.querySelector(".hero-dots");
     const prevBtn = hero.querySelector("[data-prev]");
@@ -54,6 +58,9 @@
     let playing = true;
     const DURATION = 6500;
     hero.style.setProperty("--slide-ms", DURATION + "ms");
+
+    if (!slides.length || !dotsWrap) return;
+    dotsWrap.innerHTML = "";
 
     // build dots
     slides.forEach((_, i) => {
@@ -79,7 +86,7 @@
       render();
       if (user) restart();
     }
-    function next() { go(idx + 1); }
+    function next() { if (!hero.isConnected) return teardown(); go(idx + 1); }
     function prev() { go(idx - 1, true); }
     function start() { timer = setInterval(next, DURATION); playing = true; setPauseIcon(); const a = dots[idx]; if (a){ a.classList.remove("run"); void a.offsetWidth; a.classList.add("run"); } }
     function stop() { clearInterval(timer); playing = false; setPauseIcon(); const a = dots[idx]; if (a) a.classList.remove("run"); }
@@ -96,11 +103,14 @@
     if (prevBtn) prevBtn.addEventListener("click", prev);
     if (pauseBtn) pauseBtn.addEventListener("click", () => (playing ? stop() : start()));
 
-    // keyboard
-    document.addEventListener("keydown", (e) => {
+    // keyboard (removed again when this hero leaves the page)
+    const onKey = (e) => {
+      if (!hero.isConnected) return teardown();
       if (e.key === "ArrowRight") go(idx + 1, true);
       if (e.key === "ArrowLeft") prev();
-    });
+    };
+    document.addEventListener("keydown", onKey);
+    function teardown() { clearInterval(timer); document.removeEventListener("keydown", onKey); }
 
     // swipe
     let sx = 0;
@@ -166,9 +176,15 @@
   }
 
   /* ---- Service/profile pages: active section in side nav + phone/tablet jump chips ---- */
+  let svcIo = null;
+  function initSvcNav() {
   const svcNav = document.querySelector(".svc-nav");
   const chipBar = document.querySelector(".jump-chips");
-  if ((svcNav || chipBar) && "IntersectionObserver" in window) {
+  const key = svcNav || chipBar;
+  if (!key || key.dataset.navReady) return;
+  key.dataset.navReady = "1";
+  if (svcIo) { svcIo.disconnect(); svcIo = null; }
+  if ("IntersectionObserver" in window) {
     const links = [
       ...(svcNav ? svcNav.querySelectorAll(':scope > a[href^="#"]') : []),
       ...(chipBar ? chipBar.querySelectorAll('a[href^="#"]') : []),
@@ -186,7 +202,22 @@
       { rootMargin: "-30% 0px -60% 0px" }
     );
     ids.forEach((id) => io.observe(document.getElementById(id)));
+    svcIo = io;
   }
+  }
+
+  /* ---- Run page-level inits now and after every client-side navigation ---- */
+  function initPage() {
+    document.querySelectorAll("[data-slider]").forEach(initSlider);
+    initSvcNav();
+  }
+  initPage();
+  let initQueued = false;
+  new MutationObserver(() => {
+    if (initQueued) return;
+    initQueued = true;
+    requestAnimationFrame(() => { initQueued = false; initPage(); });
+  }).observe(document.body, { childList: true, subtree: true });
 
   /* ---- Newsletter modal ---- */
   const modal = document.getElementById("newsletter-modal");

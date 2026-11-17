@@ -94,7 +94,7 @@ export default function Page() {
       <section className="section"><div className="container"><div className="cta-band">
         <h2>{t("services.cta_title")}</h2>
         <p>{t("services.cta_desc")}</p>
-        <div className="hero-actions"><a className="btn btn-white" href="mailto:info@taggroup.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg> info@taggroup.in</a></div>
+        <div className="hero-actions"><a className="btn btn-white" href="mailto:contact@taggroup.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg> contact@taggroup.in</a></div>
       </div></div></section>
     </>
   );

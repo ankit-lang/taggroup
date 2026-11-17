@@ -1,7 +1,7 @@
 'use server'
 
 import { revalidatePath } from 'next/cache'
-import { createClient } from '@/lib/supabase/server'
+import { createClient, getServerUser } from '@/lib/supabase/server'
 import { BriefingRow } from '@/lib/briefing/schema'
 import { parseLlmBriefing } from '@/lib/briefing/llm-format'
 import { briefingPath, nextRef, saveBriefing, sendBriefing } from '@/lib/briefing/service'
@@ -13,8 +13,8 @@ type Result<T = undefined> = { success: true; message?: string; data?: T } | { s
 
 async function requireStaff() {
   const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return { supabase, error: 'Unauthorized' }
+  const user = await getServerUser(supabase)
+  if (!user) return { supabase, error: 'Your session has expired. Please sign out and sign in again.' }
   const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).maybeSingle()
   if (profile && profile.role?.toLowerCase() === 'user') return { supabase, error: 'Forbidden' }
   return { supabase, error: null }

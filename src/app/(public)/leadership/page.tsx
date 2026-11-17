@@ -113,7 +113,7 @@ export default function Page() {
             <h2>{t('leadership_page.cta.title')}</h2>
             <p>{t('leadership_page.cta.desc')}</p>
             <div className="hero-actions">
-              <a className="btn btn-white" href="mailto:info@taggroup.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg> info@taggroup.in</a>
+              <a className="btn btn-white" href="mailto:contact@taggroup.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg> contact@taggroup.in</a>
               <a className="btn btn-light" href="/contact">{t('leadership_page.cta.btn')}</a>
             </div>
           </div>

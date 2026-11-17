@@ -9,7 +9,7 @@ export default function PublicLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="site-public flex flex-col" style={{ minHeight: 'calc(100vh / var(--site-zoom, 1))' }}>
       <Navbar />
       <main className="flex-1">
         {children}

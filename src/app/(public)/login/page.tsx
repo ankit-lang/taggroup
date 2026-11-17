@@ -48,7 +48,7 @@ function LoginContent() {
   };
 
   return (
-    <section className="section" style={{ minHeight: 'calc(100vh - var(--header-h))', display: 'grid', placeItems: 'center', backgroundColor: 'var(--mist-50)' }}>
+    <section className="section" style={{ minHeight: 'calc(100vh / var(--site-zoom, 1) - var(--header-h))', display: 'grid', placeItems: 'center', backgroundColor: 'var(--mist-50)' }}>
       <div className="card" style={{ maxWidth: '420px', width: '100%', padding: '40px 30px' }}>
         <div style={{ textAlign: 'center', marginBottom: '30px' }}>
           <h2 style={{ fontSize: '1.6rem', marginBottom: '8px' }}>Welcome back</h2>
@@ -105,7 +105,7 @@ function LoginContent() {
 
 export default function PublicLogin() {
   return (
-    <Suspense fallback={<div style={{ minHeight: '100vh', display: 'grid', placeItems: 'center' }}>Loading...</div>}>
+    <Suspense fallback={<div style={{ minHeight: 'calc(100vh / var(--site-zoom, 1))', display: 'grid', placeItems: 'center' }}>Loading...</div>}>
       <LoginContent />
     </Suspense>
   );

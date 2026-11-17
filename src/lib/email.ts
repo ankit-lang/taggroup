@@ -11,6 +11,25 @@ const transporter = nodemailer.createTransport({
   },
 })
 
+function htmlToText(html: string) {
+  return html
+    .replace(/<(style|script|head|title)[^>]*>[\s\S]*?<\/\1>/gi, '')
+    .replace(/<a [^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, '$2 ($1)')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/(p|div|h[1-6]|li|tr|table)>/gi, '\n')
+    .replace(/<li[^>]*>/gi, '• ')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&rarr;/g, '→')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
+}
+
 export async function sendEmail({
   to,
   subject,
@@ -34,6 +53,9 @@ export async function sendEmail({
       to: Array.isArray(to) ? to.join(', ') : to,
       subject: safeSubject,
       html: safeHtml,
+      // Plain-text alternative: HTML-only mail scores worse with spam filters.
+      text: htmlToText(safeHtml),
+      replyTo: process.env.REPLY_TO_EMAIL || 'contact@taggroup.in',
       ...(bcc?.length ? { bcc: bcc.join(', ') } : {}),
       ...(headers ? { headers } : {}),
     })

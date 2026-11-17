@@ -1,6 +1,6 @@
 'use server'
 
-import { createClient } from '@/lib/supabase/server'
+import { createClient, getServerUser } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
 
 export async function getBlogs({ search = '', category = '', sort = 'desc' }) {
@@ -41,8 +41,8 @@ export async function createBlogPost(formData: FormData) {
   const supabase = await createClient()
   
   // Verify Session & Role
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return { success: false, error: 'Unauthorized' }
+  const user = await getServerUser(supabase)
+  if (!user) return { success: false, error: 'Your session has expired. Please sign out and sign in again.' }
     
   const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).maybeSingle()
   if (profile && profile.role?.toLowerCase() === 'user') return { success: false, error: 'Forbidden' }
@@ -77,8 +77,8 @@ export async function createBlogPost(formData: FormData) {
 export async function deleteBlogPost(id: string, formData?: FormData) {
   const supabase = await createClient()
   
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return { success: false, error: 'Unauthorized' }
+  const user = await getServerUser(supabase)
+  if (!user) return { success: false, error: 'Your session has expired. Please sign out and sign in again.' }
     
   const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).maybeSingle()
   if (profile && profile.role?.toLowerCase() === 'user') return { success: false, error: 'Forbidden' }

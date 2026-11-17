@@ -60,6 +60,7 @@ export function Navbar() {
                 <Link href="/insights">{t('header.insights')} <svg className="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M6 9l6 6 6-6" /></svg></Link>
                 <div className="dropdown">
                   <Link href="/insights"><strong>{t('header.insights_dropdown.pubs.title')}</strong><span>{t('header.insights_dropdown.pubs.desc')}</span></Link>
+                  <Link href="/publications"><strong>{t('header.insights_dropdown.publications.title')}</strong><span>{t('header.insights_dropdown.publications.desc')}</span></Link>
                   <Link href="/blog"><strong>{t('header.insights_dropdown.blog.title')}</strong><span>{t('header.insights_dropdown.blog.desc')}</span></Link>
                 </div>
               </li>
@@ -104,21 +105,21 @@ export function Navbar() {
           <Link href="/about">{t('header.about')}</Link>
           <details><summary>{t('header.services')}</summary><div className="m-sub"><Link href="/services">All services</Link><Link href="/services/tax-cross-border">{t('header.services_dropdown.tax.title')}</Link><Link href="/services/global-transfer-pricing">{t('header.services_dropdown.tp.title')}</Link><Link href="/services/global-capability-centre">{t('header.services_dropdown.gcc.title')}</Link><Link href="/services/cfo-finance-transformation">{t('header.services_dropdown.cfo.title')}</Link><Link href="/services/risk-internal-audit">{t('header.services_dropdown.risk.title')}</Link><Link href="/services/deals-valuation">{t('header.services_dropdown.deals.title')}</Link><Link href="/services/corporate-legal-fema">{t('header.services_dropdown.corp.title')}</Link><Link href="/services/india-entry">{t('header.services_dropdown.india.title')}</Link><Link href="/services/human-capital-hr">{t('header.services_dropdown.hr.title')}</Link><Link href="/services/international-business">{t('header.services_dropdown.intl.title')}</Link></div></details>
           <details><summary>{t('header.global')}</summary><div className="m-sub"><Link href="/international">Overview</Link><Link href="/desks/uae">{t('header.global_dropdown.uae.title')}</Link><Link href="/desks/singapore-malaysia">{t('header.global_dropdown.sg.title')}</Link><Link href="/desks/mauritius">{t('header.global_dropdown.mu.title')}</Link><Link href="/desks/united-states">{t('header.global_dropdown.us.title')}</Link></div></details>
-          <Link href="/insights">{t('header.insights')}</Link>
+          <details><summary>{t('header.insights')}</summary><div className="m-sub"><Link href="/insights">{t('header.insights_dropdown.pubs.title')}</Link><Link href="/publications">{t('header.insights_dropdown.publications.title')}</Link><Link href="/blog">{t('header.insights_dropdown.blog.title')}</Link></div></details>
           <Link href="/leadership">{t('header.leadership')}</Link>
           <details><summary>{t('header.careers')}</summary><div className="m-sub"><Link href="/careers">Careers overview</Link><Link href="/careers#why-tag">{t('header.careers_dropdown.why')}</Link><Link href="/careers#open-positions">{t('header.careers_dropdown.open')}</Link><Link href="/careers#life-at-tag">{t('header.careers_dropdown.life')}</Link></div></details>
           <Link href="/contact">{t('header.contact')}</Link>
           <button className="btn btn-ghost" data-newsletter type="button" style={{ "marginTop": "26px", "width": "100%", "justifyContent": "center" }}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 5h13v14H5a2 2 0 01-2-2V7M17 9h3v8a2 2 0 01-2 2M7 8h7M7 12h7M7 16h5" /></svg> {t('header.subscribe')}</button>
           <Link className="btn btn-primary" href="/contact" style={{ "marginTop": "10px" }}>{t('header.enquire')} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></Link>
           <div className="m-contact">
-            <a href="mailto:info@taggroup.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg> info@taggroup.in</a>
+            <a href="mailto:contact@taggroup.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg> contact@taggroup.in</a>
             <a href="tel:+918860716777"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 3h4l2 5-2 1a12 12 0 006 6l1-2 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-3z" /></svg> +91 88607 16777</a>
           </div>
         </div>
       </header>
       <nav className="m-actions" aria-label="Quick actions">
         <a href="tel:+918860716777"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 3h4l2 5-2 1a12 12 0 006 6l1-2 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-3z" /></svg><span>Call</span></a>
-        <a href="mailto:info@taggroup.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg><span>Email</span></a>
+        <a href="mailto:contact@taggroup.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg><span>Email</span></a>
         <button type="button" data-newsletter><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 5h13v14H5a2 2 0 01-2-2V7M17 9h3v8a2 2 0 01-2 2M7 8h7M7 12h7M7 16h5" /></svg><span>Newsletter</span></button>
         <Link className="m-primary" href="/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" /></svg><span>Enquire</span></Link>
       </nav>

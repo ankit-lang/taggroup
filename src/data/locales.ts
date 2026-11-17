@@ -108,7 +108,8 @@ export const locales = {
         us: { title: "🇺🇸 US Desk", desc: "Coming soon" }
       },
       insights_dropdown: {
-        pubs: { title: "Insights & Publications", desc: "Thought leadership & articles" },
+        pubs: { title: "Insights", desc: "Thought leadership & articles" },
+        publications: { title: "Publications", desc: "Reports, papers & downloadable editions" },
         blog: { title: "Blog", desc: "Latest updates & CMS content" }
       },
       careers_dropdown: {
@@ -176,7 +177,8 @@ export const locales = {
         text: "This website is not intended to be, and shall not be construed as, any form of advertisement, solicitation, invitation or inducement of any sort. The information provided here is for general informational purposes only and does not constitute professional, legal, tax or financial advice, nor does it create any professional or client relationship. By accessing this website, the user acknowledges that they are seeking information about TAG Group of their own accord and that there has been no solicitation, invitation or inducement of any kind. TAG Group accepts no liability for any action taken by any person relying on information on this website; users should obtain appropriate professional advice before acting on any content herein."
       },
       bottom_tags: "Tax · Cross-Border · CFO · Assurance Support",
-      all_rights: "TAG Group. All rights reserved."
+      all_rights: "TAG Group. All rights reserved.",
+      follow_linkedin: "Follow us on LinkedIn"
     },
     hero: {
       slides: [
@@ -274,7 +276,7 @@ export const locales = {
       "cred_eyebrow": "Credentials",
       "cred_title": "Our client portfolio",
       "cred_desc": "We have the privilege of working with well-known native and global companies. Our clients engage us in a number of ways across diverse industries.",
-      "cred_note": "Logos and names are shown with the respective clients' permission. Trademarks remain the property of their owners.",
+      "cred_note": "Clients are described by sector to respect confidentiality. Specific references are available on request.",
       "net_eyebrow": "Network & associations",
       "net_title": "International associations",
       "net_desc": "TAG works with a network of specialist firms and international associates to deliver end-to-end support, while keeping each entity independently responsible for its own services.",
@@ -316,7 +318,7 @@ services: {
         ind: { title: "Relevant industries", l1: "Infrastructure", l2: "Renewable energy", l3: "Engineering & EPC", l4: "Automotive", l5: "Manufacturing", l6: "Technology & IT/ITeS", l7: "Logistics", l8: "Real estate", l9: "Hospitality", l10: "Healthcare & pharma", l11: "FMCG & retail", l12: "Oil & gas", l13: "Aviation", l14: "Start-ups & e-commerce" },
         cred: { title: "Selected experience & credentials", callout: "Delivered through TAG Group's international network across the UAE, Singapore, Malaysia and Mauritius, coordinated from India and connected to trusted local professionals in each market. See the International Business section for territory-specific contacts.", clients: "Selected clients" },
         conn: { title: "Connected services", c1: "India Entry: One-Stop Business Establishment", c2: "Global Transfer Pricing", c3: "Tax & Cross-Border Advisory", c4: "Corporate, Legal, FEMA & Regulatory", rel: "Related capability" },
-        cta: { title: "Discuss International Business with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — info@taggroup.in", btn2: "Contact page" }
+        cta: { title: "Discuss International Business with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — contact@taggroup.in", btn2: "Contact page" }
       },
 
       deals: {
@@ -333,7 +335,7 @@ services: {
         ind: { title: "Relevant industries", l1: "Infrastructure", l2: "Renewable energy", l3: "Engineering & EPC", l4: "Automotive", l5: "Manufacturing", l6: "Technology & IT/ITeS", l7: "Logistics", l8: "Real estate", l9: "Hospitality", l10: "Healthcare & pharma", l11: "FMCG & retail", l12: "Oil & gas", l13: "Aviation", l14: "Start-ups & e-commerce" },
         cred: { title: "Selected experience & credentials", callout: "Valuation is led by a CFA, FRM and Registered Valuer with 15+ years across business, intangible and complex-security valuation for global clients. Transaction experience spans 6+ acquisitions, 4+ divestitures and 3+ mergers, and support for QIP, bond issuance and acquisition due diligence.", clients: "Selected clients" },
         conn: { title: "Connected services", c1: "CFO & Finance Transformation", c2: "Tax & Cross-Border Advisory", c3: "Corporate, Legal, FEMA & Regulatory", c4: "Global Transfer Pricing", rel: "Related capability" },
-        cta: { title: "Discuss Deals, Valuation & Transaction Support with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — info@taggroup.in", btn2: "Contact page" }
+        cta: { title: "Discuss Deals, Valuation & Transaction Support with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — contact@taggroup.in", btn2: "Contact page" }
       },
 
       hr: {
@@ -350,7 +352,7 @@ services: {
         ind: { title: "Relevant industries", l1: "Infrastructure", l2: "Renewable energy", l3: "Engineering & EPC", l4: "Automotive", l5: "Manufacturing", l6: "Technology & IT/ITeS", l7: "Logistics", l8: "Real estate", l9: "Hospitality", l10: "Healthcare & pharma", l11: "FMCG & retail", l12: "Oil & gas", l13: "Aviation", l14: "Start-ups & e-commerce" },
         cred: { title: "Selected experience & credentials", callout: "Led by an HR partner with 15+ years in a listed manufacturing environment — PAN-India learning governance, full-cycle recruitment across four zones, SAP HR/SuccessFactors payroll and compliance, and reported outcomes including 95% mandatory-training compliance and 75% open-role closure.", clients: "Selected clients" },
         conn: { title: "Connected services", c1: "India Entry: One-Stop Business Establishment", c2: "CFO & Finance Transformation", c3: "Risk, Internal Audit & Controls", rel: "Related capability" },
-        cta: { title: "Discuss Human Capital & HR Advisory with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — info@taggroup.in", btn2: "Contact page" }
+        cta: { title: "Discuss Human Capital & HR Advisory with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — contact@taggroup.in", btn2: "Contact page" }
       },
 
       risk: {
@@ -367,7 +369,7 @@ services: {
         ind: { title: "Relevant industries", l1: "Infrastructure", l2: "Renewable energy", l3: "Engineering & EPC", l4: "Automotive", l5: "Manufacturing", l6: "Technology & IT/ITeS", l7: "Logistics", l8: "Real estate", l9: "Hospitality", l10: "Healthcare & pharma", l11: "FMCG & retail", l12: "Oil & gas", l13: "Aviation", l14: "Start-ups & e-commerce" },
         cred: { title: "Selected experience & credentials", callout: "Partners have governed 290 controls under Korean SOX and the Companies Act, coordinated statutory audits to clean outcomes, and hold ICAI certification in forensic accounting and fraud detection.", clients: "Selected clients" },
         conn: { title: "Connected services", c1: "CFO & Finance Transformation", c2: "Corporate, Legal, FEMA & Regulatory", c3: "Tax & Cross-Border Advisory", rel: "Related capability" },
-        cta: { title: "Discuss Risk, Internal Audit & Controls with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — info@taggroup.in", btn2: "Contact page" }
+        cta: { title: "Discuss Risk, Internal Audit & Controls with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — contact@taggroup.in", btn2: "Contact page" }
       },
 
 
@@ -396,7 +398,7 @@ services: {
         gain: { title: "Why firms partner with our GCC", desc: "What you gain from a partner-led, India-based Centre of Excellence:", l1: "Partner-led delivery with deep, Big-Four-grade technical expertise", l2: "Audit-ready documentation and transfer-pricing defence support", l3: "Quick turnarounds, even on complex regional and cross-border mandates", l4: "Confidential, white-label support that integrates with your workflow", l5: "Cost-effective execution from an India-based Centre of Excellence", l6: "Strategic insight that aligns business goals with TP defensibility" },
         tools: { title: "Databases & tools", desc: "We work with leading transfer-pricing and financial databases and delivery tools, including:", t1: "TP Catalyst", t2: "Orbis (TNMM module)", t3: "S&P Capital IQ", t4: "RoyaltyStat / Royalty Range", t5: "Loan Connector", t6: "Refinitiv Eikon", t7: "Prowess & Capitaline" },
         connected: { title: "Connected services", c1_t: "Global Transfer Pricing", c1_d: "Related capability", c2_t: "CFO & Finance Transformation", c2_d: "Related capability", c3_t: "International Business", c3_d: "Related capability", c4_t: "Tax & Cross-Border Advisory", c4_d: "Related capability" },
-        cta: { title: "Discuss Global Capability Centre with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — info@taggroup.in", btn2: "Contact page" }
+        cta: { title: "Discuss Global Capability Centre with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — contact@taggroup.in", btn2: "Contact page" }
       },
 
 
@@ -419,7 +421,7 @@ services: {
         industries: { title: "Relevant industries", i1: "Infrastructure", i2: "Renewable energy", i3: "Engineering & EPC", i4: "Automotive", i5: "Manufacturing", i6: "Technology & IT/ITeS", i7: "Logistics", i8: "Real estate", i9: "Hospitality", i10: "Healthcare & pharma", i11: "FMCG & retail", i12: "Oil & gas", i13: "Aviation", i14: "Start-ups & e-commerce" },
         cred: { title: "Selected experience & credentials", desc: "Legal and regulatory work is supported by dual-qualified professionals (CA + LL.B.) with High Court and Supreme Court exposure, and a specialist legal network covering commercial disputes, insolvency, FEMA and white-collar matters.", clients: "Selected clients" },
         connected: { title: "Connected services", c1_t: "Tax & Cross-Border Advisory", c1_d: "Related capability", c2_t: "Deals, Valuation & Transaction Support", c2_d: "Related capability", c3_t: "India Entry: One-Stop Business Establishment", c3_d: "Related capability", c4_t: "International Business", c4_d: "Related capability" },
-        cta: { title: "Discuss Corporate, Legal, FEMA & Regulatory with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — info@taggroup.in", btn2: "Contact page" }
+        cta: { title: "Discuss Corporate, Legal, FEMA & Regulatory with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — contact@taggroup.in", btn2: "Contact page" }
       },
 
 
@@ -458,7 +460,7 @@ services: {
         client: { title: "Who we support", desc: "Sectors we help establish and scale in India — from global e-commerce and technology platforms to ESG, healthcare and industrial groups:", c1: "E-commerce & marketplace giants", c2: "Renewable energy & ESG companies", c3: "Healthcare & pharma", c4: "Infrastructure & EPC", c5: "Technology & IT/ITeS", c6: "Manufacturing & automotive" },
         cred: { title: "Selected experience & credentials", desc: "Delivered through TAG's integrated team and specialist network — tax, CFO, HR (recruitment, L&D, SAP HR), IT infrastructure (20+ years enterprise experience), and real-estate & workforce coordination across Delhi NCR and other markets.", clients: "Selected clients" },
         connected: { title: "Connected services", c1_t: "Tax & Cross-Border Advisory", c1_d: "Related capability", c2_t: "CFO & Finance Transformation", c2_d: "Related capability", c3_t: "Human Capital & HR Advisory", c3_d: "Related capability", c4_t: "Corporate, Legal, FEMA & Regulatory", c4_d: "Related capability", c5_t: "International Business", c5_d: "Related capability" },
-        cta: { title: "Discuss India Entry with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — info@taggroup.in", btn2: "Contact page" }
+        cta: { title: "Discuss India Entry with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — contact@taggroup.in", btn2: "Contact page" }
       },
 
       cfo: {
@@ -475,7 +477,7 @@ services: {
         industries: { title: "Relevant industries", i1: "Infrastructure", i2: "Renewable energy", i3: "Engineering & EPC", i4: "Automotive", i5: "Manufacturing", i6: "Technology & IT/ITeS", i7: "Logistics", i8: "Real estate", i9: "Hospitality", i10: "Healthcare & pharma", i11: "FMCG & retail", i12: "Oil & gas", i13: "Aviation", i14: "Start-ups & e-commerce" },
         cred: { title: "Selected experience & credentials", desc: "Led by Gaurav Sharma, whose finance-leadership career spans financial controllership for European infrastructure & energy MNCs and regional finance and tax leadership across India and APAC — building governance frameworks across 30+ entities and managing teams of 20+. Supported by partners with senior controllership in leading British companies and Fortune 100 global technology groups — including close-cycle reduction, 50%+ reduction in manual journals, SAP S/4HANA implementation, group consolidation across 100+ subsidiaries, and audit-ready reporting.", clients: "Selected clients" },
         connected: { title: "Connected services", c1_t: "Global Capability Centre", c1_d: "Related capability", c2_t: "Risk, Internal Audit & Controls", c2_d: "Related capability", c3_t: "Tax & Cross-Border Advisory", c3_d: "Related capability", c4_t: "Deals, Valuation & Transaction Support", c4_d: "Related capability" },
-        cta: { title: "Discuss CFO & Finance Transformation with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — info@taggroup.in", btn2: "Contact page" }
+        cta: { title: "Discuss CFO & Finance Transformation with our team", desc: "Tell us your situation and we'll map the right scope, team and approach for your business.", btn1: "Enquire — contact@taggroup.in", btn2: "Contact page" }
       },
 
 
@@ -631,7 +633,7 @@ services: {
         cta: {
           title: "Discuss Tax & Cross-Border Advisory with our team",
           desc: "Tell us your situation and we'll map the right scope, team and approach for your business.",
-          btn1: "Enquire — info@taggroup.in",
+          btn1: "Enquire — contact@taggroup.in",
           btn2: "Contact page"
         }
       },
@@ -2103,7 +2105,8 @@ contact_page: {
         us: { title: "🇺🇸 미국 데스크", desc: "출시 예정" }
       },
       insights_dropdown: {
-        pubs: { title: "인사이트 및 간행물", desc: "사고 리더십 및 기사" },
+        pubs: { title: "인사이트", desc: "사고 리더십 및 기사" },
+        publications: { title: "간행물", desc: "보고서, 논문 및 다운로드 자료" },
         blog: { title: "블로그", desc: "최신 업데이트 및 CMS 콘텐츠" }
       },
       careers_dropdown: {
@@ -2172,7 +2175,8 @@ contact_page: {
         text: "본 웹사이트는 어떠한 형태의 광고, 권유, 초대 또는 유인으로도 해석되어서는 안 됩니다. 여기에 제공된 정보는 일반적인 정보 제공 목적으로만 제공되며, 전문적, 법률적, 세무적 또는 재정적 조언을 구성하지 않으며, 어떠한 전문가 또는 고객 관계도 형성하지 않습니다. 본 웹사이트에 접속함으로써 사용자는 자발적으로 TAG 그룹에 대한 정보를 찾고 있음을 인정하며, 어떠한 종류의 권유, 초대 또는 유인도 없었음을 확인합니다. TAG 그룹은 본 웹사이트의 정보에 의존하여 취해진 어떠한 조치에 대해서도 책임을 지지 않습니다. 사용자는 본 웹사이트의 내용에 따라 행동하기 전에 적절한 전문가의 조언을 구해야 합니다."
       },
       bottom_tags: "세금 · 국경 간 · CFO · 보증 지원",
-      all_rights: "TAG Group. 모든 권리 보유."
+      all_rights: "TAG Group. 모든 권리 보유.",
+      follow_linkedin: "LinkedIn에서 팔로우하기"
     },
     hero: {
       slides: [
@@ -2270,7 +2274,7 @@ contact_page: {
       "cred_eyebrow": "자격 요건",
       "cred_title": "고객 포트폴리오",
       "cred_desc": "우리는 잘 알려진 국내 및 글로벌 기업과 협력하는 특권을 누리고 있습니다.",
-      "cred_note": "로고와 이름은 각 고객의 허락 하에 표시됩니다. 상표는 해당 소유자의 자산입니다.",
+      "cred_note": "고객 기밀 유지를 위해 고객은 업종별로 소개됩니다. 구체적인 레퍼런스는 요청 시 제공됩니다.",
       "net_eyebrow": "네트워크 및 협회",
       "net_title": "국제 협회",
       "net_desc": "TAG는 전문 회사 및 국제 협회 네트워크와 협력하여 엔드투엔드 지원을 제공합니다.",
@@ -2394,7 +2398,7 @@ contact_page: {
         ind: { title: "관련 산업", l1: "인프라", l2: "재생 에너지", l3: "엔지니어링 및 EPC", l4: "자동차", l5: "제조", l6: "기술 및 IT/ITeS", l7: "물류", l8: "부동산", l9: "호스피탈리티", l10: "건강 관리 및 제약", l11: "FMCG 및 소매", l12: "석유 및 가스", l13: "항공", l14: "스타트업 및 전자 상거래" },
         cred: { title: "선정된 경험 및 자격", callout: "인도에서 조정되고 각 시장의 신뢰할 수 있는 현지 전문가와 연결되어 UAE, 싱가포르, 말레이시아 및 모리셔스 전역의 TAG 그룹의 국제 네트워크를 통해 제공됩니다. 특정 지역 연락처는 국제 비즈니스 섹션을 참조하십시오.", clients: "선정된 고객" },
         conn: { title: "연결된 서비스", c1: "인도 진출: 원스톱 비즈니스 설립", c2: "글로벌 이전 가격", c3: "세금 및 국경 간 자문", c4: "기업, 법률, FEMA 및 규제", rel: "관련 역량" },
-        cta: { title: "저희 팀과 국제 비즈니스에 대해 논의하십시오", desc: "상황을 알려주시면 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의하기 — info@taggroup.in", btn2: "연락처 페이지" }
+        cta: { title: "저희 팀과 국제 비즈니스에 대해 논의하십시오", desc: "상황을 알려주시면 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의하기 — contact@taggroup.in", btn2: "연락처 페이지" }
       },
 
       deals: {
@@ -2411,7 +2415,7 @@ contact_page: {
         ind: { title: "관련 산업", l1: "인프라", l2: "재생 에너지", l3: "엔지니어링 및 EPC", l4: "자동차", l5: "제조", l6: "기술 및 IT/ITeS", l7: "물류", l8: "부동산", l9: "호스피탈리티", l10: "건강 관리 및 제약", l11: "FMCG 및 소매", l12: "석유 및 가스", l13: "항공", l14: "스타트업 및 전자 상거래" },
         cred: { title: "선정된 경험 및 자격", callout: "가치 평가는 글로벌 고객을 대상으로 15년 이상 비즈니스, 무형 자산 및 복잡한 보안 가치 평가를 수행한 CFA, FRM 및 공인 평가사가 주도합니다. 6개 이상의 인수, 4개 이상의 매각 및 3개 이상의 합병에 걸친 거래 경험과 QIP, 채권 발행 및 인수 실사에 대한 지원을 제공합니다.", clients: "선정된 고객" },
         conn: { title: "연결된 서비스", c1: "CFO 및 재무 혁신", c2: "세금 및 국경 간 자문", c3: "기업, 법률, FEMA 및 규제", c4: "글로벌 이전 가격", rel: "관련 역량" },
-        cta: { title: "저희 팀과 거래, 가치 평가 및 거래 지원에 대해 논의하십시오", desc: "상황을 알려주시면 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의하기 — info@taggroup.in", btn2: "연락처 페이지" }
+        cta: { title: "저희 팀과 거래, 가치 평가 및 거래 지원에 대해 논의하십시오", desc: "상황을 알려주시면 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의하기 — contact@taggroup.in", btn2: "연락처 페이지" }
       },
 
       hr: {
@@ -2428,7 +2432,7 @@ contact_page: {
         ind: { title: "관련 산업", l1: "인프라", l2: "재생 에너지", l3: "엔지니어링 및 EPC", l4: "자동차", l5: "제조", l6: "기술 및 IT/ITeS", l7: "물류", l8: "부동산", l9: "호스피탈리티", l10: "건강 관리 및 제약", l11: "FMCG 및 소매", l12: "석유 및 가스", l13: "항공", l14: "스타트업 및 전자 상거래" },
         cred: { title: "선정된 경험 및 자격", callout: "상장 제조업 환경에서 15년 이상의 경험을 가진 HR 파트너가 이끕니다. 인도 전역의 학습 거버넌스, 4개 구역의 전체 채용 주기, SAP HR/SuccessFactors 급여 및 규정 준수를 담당했으며, 95%의 필수 교육 준수 및 75%의 공석 채용률 등 보고된 성과 파트너가 이끕니다.", clients: "선정된 고객" },
         conn: { title: "연결된 서비스", c1: "인도 진출: 원스톱 비즈니스 설립", c2: "CFO 및 재무 혁신", c3: "위험, 내부 감사 및 통제", rel: "관련 역량" },
-        cta: { title: "저희 팀과 인적 자본 및 HR 자문에 대해 논의하십시오", desc: "상황을 알려주시면 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의하기 — info@taggroup.in", btn2: "연락처 페이지" }
+        cta: { title: "저희 팀과 인적 자본 및 HR 자문에 대해 논의하십시오", desc: "상황을 알려주시면 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의하기 — contact@taggroup.in", btn2: "연락처 페이지" }
       },
 
       risk: {
@@ -2445,7 +2449,7 @@ contact_page: {
         ind: { title: "관련 산업", l1: "인프라", l2: "재생 에너지", l3: "엔지니어링 및 EPC", l4: "자동차", l5: "제조", l6: "기술 및 IT/ITeS", l7: "물류", l8: "부동산", l9: "호스피탈리티", l10: "건강 관리 및 제약", l11: "FMCG 및 소매", l12: "석유 및 가스", l13: "항공", l14: "스타트업 및 전자 상거래" },
         cred: { title: "선정된 경험 및 자격", callout: "파트너들은 한국 SOX 및 회사법에 따라 290개의 통제를 관리하고, 명확한 결과를 도출하기 위해 법정 감사를 조정했으며, 법의학 회계 및 사기 탐지 분야에서 ICAI 인증을 보유하고 있습니다.", clients: "선정된 고객" },
         conn: { title: "연결된 서비스", c1: "CFO 및 재무 혁신", c2: "기업, 법률, FEMA 및 규제", c3: "세금 및 국경 간 자문", rel: "관련 역량" },
-        cta: { title: "저희 팀과 위험, 내부 감사 및 통제에 대해 논의하십시오", desc: "상황을 알려주시면 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의하기 — info@taggroup.in", btn2: "연락처 페이지" }
+        cta: { title: "저희 팀과 위험, 내부 감사 및 통제에 대해 논의하십시오", desc: "상황을 알려주시면 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의하기 — contact@taggroup.in", btn2: "연락처 페이지" }
       },
 
 
@@ -2474,7 +2478,7 @@ contact_page: {
         gain: { title: "회사가 당사의 GCC와 파트너 관계를 맺는 이유", desc: "파트너 주도의 인도 기반 역량 센터에서 얻을 수 있는 이점:", l1: "4대 회계법인(Big 4) 수준의 깊은 기술적 전문성을 갖춘 파트너 주도 제공", l2: "감사 준비 문서화 및 이전 가격 책정 방어 지원", l3: "복잡한 지역 및 국경 간 위임장에서도 빠른 처리", l4: "워크플로와 통합되는 기밀 화이트 라벨 지원", l5: "인도 기반 역량 센터의 비용 효율적인 실행", l6: "비즈니스 목표를 TP 방어 가능성과 일치시키는 전략적 통찰력" },
         tools: { title: "데이터베이스 및 도구", desc: "당사는 다음을 포함하여 주요 이전 가격 책정 및 재무 데이터베이스와 제공 도구를 사용합니다:", t1: "TP Catalyst", t2: "Orbis (TNMM 모듈)", t3: "S&P Capital IQ", t4: "RoyaltyStat / Royalty Range", t5: "Loan Connector", t6: "Refinitiv Eikon", t7: "Prowess & Capitaline" },
         connected: { title: "연결된 서비스", c1_t: "글로벌 이전 가격", c1_d: "관련 역량", c2_t: "CFO 및 재무 혁신", c2_d: "관련 역량", c3_t: "국제 비즈니스", c3_d: "관련 역량", c4_t: "세금 및 국경 간 자문", c4_d: "관련 역량" },
-        cta: { title: "저희 팀과 글로벌 역량 센터에 대해 논의하십시오.", desc: "귀하의 상황을 알려주시면 귀하의 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의 — info@taggroup.in", btn2: "연락처 페이지" }
+        cta: { title: "저희 팀과 글로벌 역량 센터에 대해 논의하십시오.", desc: "귀하의 상황을 알려주시면 귀하의 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의 — contact@taggroup.in", btn2: "연락처 페이지" }
       },
 
 
@@ -2497,7 +2501,7 @@ contact_page: {
         industries: { title: "관련 산업", i1: "인프라", i2: "재생 에너지", i3: "엔지니어링 및 EPC", i4: "자동차", i5: "제조", i6: "기술 및 IT/ITeS", i7: "물류", i8: "부동산", i9: "환대", i10: "의료 및 제약", i11: "FMCG 및 소매", i12: "석유 및 가스", i13: "항공", i14: "스타트업 및 전자상거래" },
         cred: { title: "선택된 경험 및 자격 증명", desc: "법률 및 규제 작업은 고등 법원 및 대법원 경험이 있는 이중 자격을 갖춘 전문가(CA + LL.B.)와 상업 분쟁, 파산, FEMA 및 화이트칼라 문제를 다루는 전문 법률 네트워크의 지원을 받습니다.", clients: "선택된 클라이언트" },
         connected: { title: "연결된 서비스", c1_t: "세금 및 국경 간 자문", c1_d: "관련 역량", c2_t: "거래, 가치 평가 및 거래 지원", c2_d: "관련 역량", c3_t: "인도 진출: 원스톱 비즈니스 설립", c3_d: "관련 역량", c4_t: "국제 비즈니스", c4_d: "관련 역량" },
-        cta: { title: "저희 팀과 기업, 법무, FEMA 및 규제에 대해 논의하십시오.", desc: "귀하의 상황을 알려주시면 귀하의 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의 — info@taggroup.in", btn2: "연락처 페이지" }
+        cta: { title: "저희 팀과 기업, 법무, FEMA 및 규제에 대해 논의하십시오.", desc: "귀하의 상황을 알려주시면 귀하의 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의 — contact@taggroup.in", btn2: "연락처 페이지" }
       },
 
 
@@ -2536,7 +2540,7 @@ contact_page: {
         client: { title: "우리가 지원하는 대상", desc: "글로벌 전자상거래 및 기술 플랫폼에서 ESG, 의료 및 산업 그룹에 이르기까지 인도에서 설립하고 확장하는 데 도움이 되는 부문:", c1: "전자상거래 및 마켓플레이스 거대 기업", c2: "재생 에너지 및 ESG 기업", c3: "의료 및 제약", c4: "인프라 및 EPC", c5: "기술 및 IT/ITeS", c6: "제조 및 자동차" },
         cred: { title: "선택된 경험 및 자격 증명", desc: "TAG의 통합 팀 및 전문가 네트워크(세금, CFO, HR(채용, L&D, SAP HR), IT 인프라(20년 이상의 엔터프라이즈 경험), 델리 NCR 및 기타 시장의 부동산 및 인력 조정을 통해 제공됩니다.", clients: "선택된 클라이언트" },
         connected: { title: "연결된 서비스", c1_t: "세금 및 국경 간 자문", c1_d: "관련 역량", c2_t: "CFO 및 재무 혁신", c2_d: "관련 역량", c3_t: "인적 자본 및 HR 자문", c3_d: "관련 역량", c4_t: "기업, 법률, FEMA 및 규제", c4_d: "관련 역량", c5_t: "국제 비즈니스", c5_d: "관련 역량" },
-        cta: { title: "저희 팀과 인도 진출에 대해 논의하십시오.", desc: "귀하의 상황을 알려주시면 귀하의 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의 — info@taggroup.in", btn2: "연락처 페이지" }
+        cta: { title: "저희 팀과 인도 진출에 대해 논의하십시오.", desc: "귀하의 상황을 알려주시면 귀하의 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의 — contact@taggroup.in", btn2: "연락처 페이지" }
       },
 
       cfo: {
@@ -2553,7 +2557,7 @@ contact_page: {
         industries: { title: "관련 산업", i1: "인프라", i2: "재생 에너지", i3: "엔지니어링 및 EPC", i4: "자동차", i5: "제조", i6: "기술 및 IT/ITeS", i7: "물류", i8: "부동산", i9: "환대", i10: "의료 및 제약", i11: "FMCG 및 소매", i12: "석유 및 가스", i13: "항공", i14: "스타트업 및 전자상거래" },
         cred: { title: "선택된 경험 및 자격 증명", desc: "가우라브 샤르마가 이끄는 재무 리더십 경력은 유럽 인프라 및 에너지 다국적 기업의 재무 컨트롤러십과 인도 및 APAC 전역의 지역 재무 및 세무 리더십에 걸쳐 30개 이상의 기업에 걸쳐 거버넌스 프레임워크를 구축하고 20명 이상의 팀을 관리했습니다. 주요 영국 기업 및 Fortune 100 글로벌 기술 그룹의 수석 컨트롤러십을 보유한 파트너의 지원 — 수동 분개 항목 50% 이상 감소, SAP S/4HANA 구현, 100개 이상의 자회사 전반에 걸친 그룹 통합 및 감사 준비 보고 포함.", clients: "선택된 클라이언트" },
         connected: { title: "연결된 서비스", c1_t: "글로벌 역량 센터", c1_d: "관련 역량", c2_t: "위험, 내부 감사 및 통제", c2_d: "관련 역량", c3_t: "세금 및 국경 간 자문", c3_d: "관련 역량", c4_t: "거래, 평가 및 거래 지원", c4_d: "관련 역량" },
-        cta: { title: "저희 팀과 CFO 및 재무 혁신에 대해 논의하십시오.", desc: "귀하의 상황을 알려주시면 귀하의 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의 — info@taggroup.in", btn2: "연락처 페이지" }
+        cta: { title: "저희 팀과 CFO 및 재무 혁신에 대해 논의하십시오.", desc: "귀하의 상황을 알려주시면 귀하의 비즈니스에 적합한 범위, 팀 및 접근 방식을 매핑해 드립니다.", btn1: "문의 — contact@taggroup.in", btn2: "연락처 페이지" }
       },
 
       tp: {
@@ -2707,7 +2711,7 @@ contact_page: {
         cta: {
           title: "우리 팀과 세무 및 국경 간 자문에 대해 논의하십시오",
           desc: "귀하의 상황을 말씀해 주시면 귀하의 비즈니스에 맞는 올바른 범위, 팀 및 접근 방식을 매핑해 드립니다.",
-          btn1: "문의 — info@taggroup.in",
+          btn1: "문의 — contact@taggroup.in",
           btn2: "연락처 페이지"
         }
       },

@@ -139,7 +139,7 @@ export default async function PublicationDetailPage({ params }: { params: Promis
                   <a className="btn btn-white" href="#" data-newsletter>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> Subscribe
                   </a>
-                  <a className="btn btn-light" href="mailto:info@taggroup.in">Contact Us</a>
+                  <a className="btn btn-light" href="mailto:contact@taggroup.in">Contact Us</a>
                 </div>
               </div>
             </div>

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import nodemailer from 'nodemailer';
 import { createClient } from '@supabase/supabase-js';
+import { languageGroup, mergeGroups } from '@/lib/subscriber-groups';
 
 const ContactSchema = z.object({
   type: z.enum(['contact', 'newsletter', 'enquiry']),
@@ -72,11 +73,15 @@ export async function POST(req: NextRequest) {
 
       // Also add to active subscribers if they requested newsletters
       if (validatedData.newsletters && validatedData.newsletters.length > 0) {
-        const { data: existing } = await supabase.from('subscribers').select('id').eq('email', validatedData.email).single();
+        // Merge (never overwrite) so admin-assigned groups survive a re-subscribe,
+        // and tag the language the visitor was browsing in (English / Korean).
+        const email = validatedData.email.toLowerCase();
+        const groups = [...validatedData.newsletters, languageGroup(req.cookies.get('NEXT_LOCALE')?.value)];
+        const { data: existing } = await supabase.from('subscribers').select('id, categories').eq('email', email).maybeSingle();
         if (existing) {
-          await supabase.from('subscribers').update({ categories: validatedData.newsletters }).eq('email', validatedData.email);
+          await supabase.from('subscribers').update({ categories: mergeGroups(existing.categories, groups), status: 'active' }).eq('id', existing.id);
         } else {
-          await supabase.from('subscribers').insert([{ email: validatedData.email, categories: validatedData.newsletters, status: 'active' }]);
+          await supabase.from('subscribers').insert([{ email, categories: mergeGroups([], groups), status: 'active' }]);
         }
       }
     } else {
@@ -174,7 +179,7 @@ export async function POST(req: NextRequest) {
           </p>
 
           <p style="color: #475569; font-size: 16px; line-height: 1.6; margin-bottom: 32px;">
-            If you have any immediate questions, feel free to reply directly to this email or reach us at <a href="mailto:info@taggroup.in" style="color: #c9a84c; text-decoration: none; font-weight: 500;">info@taggroup.in</a>.
+            If you have any immediate questions, feel free to reply directly to this email or reach us at <a href="mailto:contact@taggroup.in" style="color: #c9a84c; text-decoration: none; font-weight: 500;">contact@taggroup.in</a>.
           </p>
           
           <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 32px 0;" />

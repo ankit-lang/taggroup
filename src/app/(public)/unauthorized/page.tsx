@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function UnauthorizedPage() {
   return (
-    <div className="w-full flex min-h-[80vh] items-center justify-center p-4">
+    <div className="w-full flex min-h-[calc(80vh/var(--site-zoom,1))] items-center justify-center p-4">
       <Card className="w-full max-w-md glass-card shadow-2xl border-red-500/20 relative overflow-hidden text-center">
         <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-50"></div>
         <CardHeader className="relative z-10 pb-4">

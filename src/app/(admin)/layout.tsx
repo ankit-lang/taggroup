@@ -1,8 +1,7 @@
 import { Sidebar } from './_components/Sidebar';
 import { Header } from './_components/Header';
-import { createClient } from '@/lib/supabase/server';
+import { getServerUser } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
-import { cookies } from 'next/headers';
 
 export const dynamic = 'force-dynamic';
 
@@ -11,33 +10,10 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode
 }) {
-  const supabase = await createClient();
-  const cookieStore = await cookies();
-  
-  // Try default SSR cookie decoding
-  let { data: { session } } = await supabase.auth.getSession();
-  let user = session?.user;
-
-  // Fallback: If SSR chunking failed, use our resilient raw token
-  if (!user) {
-    const rawToken = cookieStore.get('tag_access_token')?.value;
-    if (rawToken) {
-      try {
-        const base64Url = rawToken.split('.')[1];
-        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        // Add padding if necessary
-        const pad = base64.length % 4;
-        const paddedBase64 = pad ? base64 + '='.repeat(4 - pad) : base64;
-        
-        const payload = JSON.parse(atob(paddedBase64));
-        if (payload.exp && payload.exp * 1000 > Date.now()) {
-          user = { id: payload.sub } as any; // Valid token, construct minimal user
-        }
-      } catch (e) {
-        console.error('Failed to parse tag_access_token', e);
-      }
-    }
-  }
+  // Ask Supabase to validate the session (not just decode the token's expiry
+  // locally): a revoked or invalid token used to render the admin UI while every
+  // server action failed with "Unauthorized".
+  const user = await getServerUser();
 
   if (!user) {
     redirect('/admin/login');

@@ -73,7 +73,7 @@ export default function Page() {
       <section className="section"><div className="container"><div className="cta-band">
         <h2>{t("intl.cta_title")}</h2>
         <p>{t("intl.cta_desc")}</p>
-        <div className="hero-actions"><a className="btn btn-white" href="/services/international-business">{t("intl.cta_btn1")} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a><a className="btn btn-light" href="mailto:info@taggroup.in">info@taggroup.in</a></div>
+        <div className="hero-actions"><a className="btn btn-white" href="/services/international-business">{t("intl.cta_btn1")} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a><a className="btn btn-light" href="mailto:contact@taggroup.in">contact@taggroup.in</a></div>
       </div></div></section>
     </>
   );

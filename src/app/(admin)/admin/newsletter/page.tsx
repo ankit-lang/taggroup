@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { RichTextEditor } from '@/components/admin/RichTextEditor'
 import { dispatchNewsletter, getSubscriberStats } from '@/actions/newsletter.actions'
+import { getSubscribersOverview, type GroupSummary, type Subscriber } from '@/actions/subscriber.actions'
 import { Loader2, Send, Image as ImageIcon, Users } from 'lucide-react'
 
 export default function AdminNewsletter() {
@@ -17,13 +18,25 @@ export default function AdminNewsletter() {
   const [uploadingImage, setUploadingImage] = React.useState(false)
   const [stats, setStats] = React.useState<{ count: number, recent: any[] } | null>(null)
 
+  const [groups, setGroups] = React.useState<GroupSummary[]>([])
+  const [audience, setAudience] = React.useState<Subscriber[]>([])
+  const [selectedGroups, setSelectedGroups] = React.useState<string[]>([]) // empty = everyone
+
   React.useEffect(() => {
     async function loadStats() {
-      const data = await getSubscriberStats()
+      const [data, overview] = await Promise.all([getSubscriberStats(), getSubscribersOverview()])
       setStats(data)
+      setGroups(overview.groups)
+      setAudience(overview.subscribers.filter(s => s.status === 'active'))
     }
     loadStats()
   }, [])
+
+  const recipients = selectedGroups.length
+    ? audience.filter(s => s.groups.some(g => selectedGroups.some(sg => sg.toLowerCase() === g.toLowerCase())))
+    : audience
+  const toggleGroup = (g: string) =>
+    setSelectedGroups(prev => (prev.includes(g) ? prev.filter(x => x !== g) : [...prev, g]))
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -71,6 +84,7 @@ export default function AdminNewsletter() {
     formData.append('subject', subject)
     formData.append('content', content)
     if (imageUrl) formData.append('image_url', imageUrl)
+    formData.append('groups', JSON.stringify(selectedGroups))
 
     const res = await dispatchNewsletter(formData)
     setResult(res)
@@ -147,6 +161,35 @@ export default function AdminNewsletter() {
                 </div>
                 
                 <div className="space-y-2">
+                  <label className="text-sm font-semibold text-slate-700">Audience</label>
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedGroups([])}
+                      className={`px-3 py-1.5 rounded-full text-sm border ${selectedGroups.length === 0 ? 'bg-slate-900 border-slate-900 text-white' : 'bg-white border-slate-200 text-slate-700 hover:border-amber-400'}`}
+                    >
+                      All subscribers ({audience.length})
+                    </button>
+                    {groups.map(g => (
+                      <button
+                        key={g.name}
+                        type="button"
+                        onClick={() => toggleGroup(g.name)}
+                        className={`px-3 py-1.5 rounded-full text-sm border ${selectedGroups.includes(g.name) ? 'bg-amber-500 border-amber-500 text-white' : 'bg-white border-slate-200 text-slate-700 hover:border-amber-400'}`}
+                      >
+                        {g.name} ({g.active})
+                      </button>
+                    ))}
+                  </div>
+                  <p className="text-xs text-slate-500">
+                    {selectedGroups.length
+                      ? <>Sends to anyone in <strong>{selectedGroups.join(' or ')}</strong>: <strong>{recipients.length}</strong> recipient(s).</>
+                      : <>Sends to <strong>all {audience.length}</strong> active subscribers.</>}{' '}
+                    <a href="/admin/subscribers" className="text-amber-600 hover:underline">Manage groups →</a>
+                  </p>
+                </div>
+
+                <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-700">Email Content</label>
                   <RichTextEditor content={content} onChange={setContent} />
                 </div>
@@ -158,9 +201,9 @@ export default function AdminNewsletter() {
                 )}
 
                 <div className="pt-4 border-t border-slate-100">
-                  <Button type="submit" disabled={isSubmitting || !subject || !content} className="w-full md:w-auto bg-amber-500 hover:bg-amber-600 text-white shadow-sm">
+                  <Button type="submit" disabled={isSubmitting || !subject || !content || (selectedGroups.length > 0 && recipients.length === 0)} className="w-full md:w-auto bg-amber-500 hover:bg-amber-600 text-white shadow-sm">
                     {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Send className="mr-2 h-4 w-4" />}
-                    Dispatch to Subscribers
+                    {selectedGroups.length ? `Send to ${recipients.length} in selected group(s)` : 'Dispatch to all subscribers'}
                   </Button>
                 </div>
               </form>

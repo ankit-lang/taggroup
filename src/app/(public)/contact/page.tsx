@@ -14,7 +14,7 @@ export default function Page() {
           <div className="breadcrumb"><a href="/index">{t('contact_page.home')}</a> / <span>{t('header.contact')}</span></div>
           <span className="eyebrow">{t('contact.title')}</span>
           <h1>{t('contact.subtitle')}</h1>
-          <p>{t('contact_page.hero_desc')}<a href="mailto:info@taggroup.in" style={{ "color": "var(--emerald-300)" }}>info@taggroup.in</a>{t('contact_page.hero_desc2')}</p>
+          <p>{t('contact_page.hero_desc')}<a href="mailto:contact@taggroup.in" style={{ "color": "var(--emerald-300)" }}>contact@taggroup.in</a>{t('contact_page.hero_desc2')}</p>
         </div>
       </section>
       <section className="section">
@@ -23,7 +23,7 @@ export default function Page() {
             <div>
               <span className="eyebrow">{t('contact_page.enquiry_kicker')}</span>
               <h2>{t('contact_page.enquiry_title')}</h2>
-              <p className="lead" style={{ "color": "var(--charcoal-700)", "marginBottom": "26px" }}>{t('contact_page.enquiry_desc')}<a href="mailto:info@taggroup.in" style={{ "color": "var(--accent)" }}>info@taggroup.in</a>.</p>
+              <p className="lead" style={{ "color": "var(--charcoal-700)", "marginBottom": "26px" }}>{t('contact_page.enquiry_desc')}<a href="mailto:contact@taggroup.in" style={{ "color": "var(--accent)" }}>contact@taggroup.in</a>.</p>
               <React.Suspense fallback={<div>{t('contact_page.loading')}</div>}>
                 <ContactForm />
               </React.Suspense>
@@ -49,7 +49,7 @@ export default function Page() {
           <div className="grid g-3" style={{ "marginTop": "40px" }}>
             <div className="card"><span className="kicker" style={{ "color": "var(--accent)", "fontSize": ".72rem", "letterSpacing": ".14em", "textTransform": "uppercase", "fontWeight": "650" }}>{t('contact_page.managing_partner')}</span><h3 style={{ "marginTop": "8px" }}>{t('footer_extended.people.gaurav.name')}</h3><p>{t('footer_extended.people.gaurav.title')}</p><p style={{ "fontSize": ".92rem" }}><a href="mailto:gaurav@taggroup.in" style={{ "color": "var(--accent)" }}>gaurav@taggroup.in</a><br />+91 88607 16777</p><a className="link-arrow" href="/people/gaurav" style={{ "fontSize": ".88rem" }}>{t('contact_page.full_profile')} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></div>
             <div className="card"><span className="kicker" style={{ "color": "var(--accent)", "fontSize": ".72rem", "letterSpacing": ".14em", "textTransform": "uppercase", "fontWeight": "650" }}>{t('contact_page.hr_partner')}</span><h3 style={{ "marginTop": "8px" }}>{t('footer_extended.people.ishita.name')}</h3><p>{t('footer_extended.people.ishita.title')}</p><p style={{ "fontSize": ".92rem" }}><a href="mailto:ishita@taggroup.in" style={{ "color": "var(--accent)" }}>ishita@taggroup.in</a></p><a className="link-arrow" href="/people/ishita" style={{ "fontSize": ".88rem" }}>{t('contact_page.full_profile')} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></div>
-            <div className="card"><span className="kicker" style={{ "color": "var(--accent)", "fontSize": ".72rem", "letterSpacing": ".14em", "textTransform": "uppercase", "fontWeight": "650" }}>{t('contact_page.new_biz')}</span><h3 style={{ "marginTop": "8px" }}>{t('contact_page.general_enquiries')}</h3><p>{t('contact_page.new_biz_desc')}</p><p style={{ "fontSize": ".92rem" }}><a href="mailto:info@taggroup.in" style={{ "color": "var(--accent)" }}>info@taggroup.in</a></p><a className="link-arrow" href="/leadership" style={{ "fontSize": ".88rem" }}>{t('contact_page.see_all')} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></div>
+            <div className="card"><span className="kicker" style={{ "color": "var(--accent)", "fontSize": ".72rem", "letterSpacing": ".14em", "textTransform": "uppercase", "fontWeight": "650" }}>{t('contact_page.new_biz')}</span><h3 style={{ "marginTop": "8px" }}>{t('contact_page.general_enquiries')}</h3><p>{t('contact_page.new_biz_desc')}</p><p style={{ "fontSize": ".92rem" }}><a href="mailto:contact@taggroup.in" style={{ "color": "var(--accent)" }}>contact@taggroup.in</a></p><a className="link-arrow" href="/leadership" style={{ "fontSize": ".88rem" }}>{t('contact_page.see_all')} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></div>
           </div>
         </div>
       </section>
