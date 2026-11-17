@@ -164,7 +164,8 @@ export function ChatWidget() {
       {open && (
         <section className="tagbot-panel" role="dialog" aria-label="TAG Assistant" data-lenis-prevent>
           <header className="tagbot-head">
-            <div className="tagbot-avatar" aria-hidden>TAG</div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="tagbot-avatar" src="/assets/img/chatbot-icon.jpg" alt="" aria-hidden width={36} height={36} />
             <div className="tagbot-title">
               <strong>TAG Assistant</strong>
               <span>Tax &amp; legal information</span>
@@ -259,14 +260,15 @@ export function ChatWidget() {
 
       <button
         type="button"
-        className="tagbot-launcher"
+        className={`tagbot-launcher ${open ? '' : 'has-img'}`}
         onClick={toggle}
         aria-label={open ? 'Close TAG Assistant' : 'Open TAG Assistant'}
       >
         {open ? (
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
         ) : (
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z" /><path d="M8 10h8M8 14h5" /></svg>
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src="/assets/img/chatbot-icon.jpg" alt="" width={58} height={58} />
         )}
       </button>
     </div>
