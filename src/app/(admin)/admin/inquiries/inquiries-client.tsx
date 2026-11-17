@@ -38,6 +38,7 @@ export default function InquiriesClient({ initialData }: { initialData: any[] })
       if (filter === 'unread') data = data.filter(i => i.status === 'new' || i.status === 'pending' || !i.status);
       else if (filter === 'contact') data = data.filter(i => i.type === 'contact');
       else if (filter === 'newsletter') data = data.filter(i => i.type === 'newsletter');
+      else if (filter === 'chatbot') data = data.filter(i => i.type === 'chatbot');
       else if (filter === 'archived') data = data.filter(i => i.status === 'archived' || i.status === 'resolved');
     }
 
@@ -115,6 +116,7 @@ export default function InquiriesClient({ initialData }: { initialData: any[] })
 
   const getTypeBadge = (type: string) => {
     if (type === 'newsletter') return <Badge className="bg-purple-50 text-purple-700 border-purple-200/60 shadow-none">Newsletter</Badge>;
+    if (type === 'chatbot') return <Badge className="bg-sky-50 text-sky-700 border-sky-200/60 shadow-none">AI Chatbot</Badge>;
     return <Badge className="bg-amber-50 text-amber-700 border-amber-200/60 shadow-none">Contact Form</Badge>;
   };
 
@@ -138,6 +140,7 @@ export default function InquiriesClient({ initialData }: { initialData: any[] })
           <Button variant={filter === 'unread' ? 'default' : 'ghost'} onClick={() => setFilter('unread')} className={filter !== 'unread' ? 'text-slate-600' : ''}>Unread</Button>
           <Button variant={filter === 'contact' ? 'default' : 'ghost'} onClick={() => setFilter('contact')} className={filter !== 'contact' ? 'text-slate-600' : ''}>Contact Forms</Button>
           <Button variant={filter === 'newsletter' ? 'default' : 'ghost'} onClick={() => setFilter('newsletter')} className={filter !== 'newsletter' ? 'text-slate-600' : ''}>Newsletters</Button>
+          <Button variant={filter === 'chatbot' ? 'default' : 'ghost'} onClick={() => setFilter('chatbot')} className={filter !== 'chatbot' ? 'text-slate-600' : ''}>Chatbot</Button>
           <Button variant={filter === 'archived' ? 'default' : 'ghost'} onClick={() => setFilter('archived')} className={filter !== 'archived' ? 'text-slate-600' : ''}>Archived</Button>
         </div>
         <div className="flex gap-3 w-full md:w-auto">

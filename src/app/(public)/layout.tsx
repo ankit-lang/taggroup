@@ -2,6 +2,7 @@ import { Navbar } from '@/components/public/navbar'
 import { Footer } from '@/components/public/footer'
 import { NewsletterModal } from '@/components/public/newsletter-modal'
 import { MobileActionBar } from '@/components/public/mobile-action-bar'
+import { ChatWidget } from '@/components/public/chat-widget'
 
 export default function PublicLayout({
   children,
@@ -17,6 +18,7 @@ export default function PublicLayout({
       <Footer />
       <MobileActionBar />
       <NewsletterModal />
+      <ChatWidget />
     </div>
   )
 }
