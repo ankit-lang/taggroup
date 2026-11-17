@@ -53,19 +53,25 @@ export async function submitContactForm(formData: FormData) {
   return { success: true, message: 'Message sent successfully!' }
 }
 
+const NO_PERMISSION =
+  'The database did not allow this change (session expired, or admin permissions missing). Run supabase/migrations/05_leads_status_admin.sql in the Supabase SQL editor, then sign in again.'
+
 export async function updateInquiryStatus(id: string, table: string, status: string) {
   const supabase = await createClient()
   
-  // Try updating assuming there is a status column
-  const { error } = await supabase
+  const { data, error } = await supabase
     .from(table)
     .update({ status })
     .eq('id', id)
+    .select('id')
 
   if (error) {
     console.error(`Error updating ${table} status:`, error)
-    return { success: false, error: error.message }
+    const hint = /status/i.test(error.message) ? ' Run supabase/migrations/05_leads_status_admin.sql in the Supabase SQL editor.' : ''
+    return { success: false, error: error.message + hint }
   }
+  // Row-level security makes a blocked update return no rows instead of an error.
+  if (!data?.length) return { success: false, error: NO_PERMISSION }
 
   return { success: true }
 }
@@ -73,15 +79,17 @@ export async function updateInquiryStatus(id: string, table: string, status: str
 export async function deleteInquiry(id: string, table: string) {
   const supabase = await createClient()
   
-  const { error } = await supabase
+  const { data, error } = await supabase
     .from(table)
     .delete()
     .eq('id', id)
+    .select('id')
 
   if (error) {
     console.error(`Error deleting from ${table}:`, error)
     return { success: false, error: error.message }
   }
+  if (!data?.length) return { success: false, error: NO_PERMISSION }
 
   return { success: true }
 }
