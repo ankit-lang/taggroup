@@ -2,6 +2,7 @@ import React from 'react';
 import { getBlogBySlug } from '@/actions/blog.actions';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { htmlToExcerpt } from '@/lib/utils';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
@@ -10,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     title: `${blog.title} | TAG Group`,
-    description: blog.content?.replace(/<[^>]+>/g, '').substring(0, 160),
+    description: htmlToExcerpt(blog.content, 160),
   };
 }
 

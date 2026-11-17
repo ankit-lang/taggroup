@@ -1,6 +1,7 @@
 import { getPublications } from '@/actions/publication.actions'
 import { Calendar, Download } from 'lucide-react'
 import Link from 'next/link'
+import { htmlToExcerpt } from '@/lib/utils'
 import { NewsletterSubscribe } from '@/components/public/newsletter-subscribe'
 
 export const metadata = {
@@ -112,7 +113,7 @@ export default async function PublicationsPage({
                   </h3>
 
                   <p style={{ marginTop: '10px', fontSize: '.88rem', color: 'var(--text-muted)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                    {pub.content?.replace(/<[^>]*>?/gm, '')}
+                    {htmlToExcerpt(pub.content, 300)}
                   </p>
 
                   <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>

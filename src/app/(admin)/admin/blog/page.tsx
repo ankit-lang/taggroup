@@ -37,7 +37,7 @@ export default async function AdminBlogList() {
                   <TableCell className="text-slate-600">{new Date(blog.created_at).toLocaleDateString()}</TableCell>
                   <TableCell className="text-right flex items-center justify-end gap-2">
                     <Button variant="outline" size="sm" asChild className="border-slate-200 hover:bg-slate-100 text-slate-700">
-                      <Link href={`/insights/${blog.slug}`} target="_blank">View</Link>
+                      <Link href={`/blog/${blog.slug}`} target="_blank">View</Link>
                     </Button>
                     <form action={deleteBlogPost.bind(null, blog.id) as any}>
                       <Button variant="destructive" size="sm" type="submit">Delete</Button>

@@ -1,6 +1,7 @@
 import { getPublicationBySlug, getPublications } from '@/actions/publication.actions'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { htmlToExcerpt } from '@/lib/utils'
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params
@@ -9,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     title: publication.meta_title || publication.title,
-    description: publication.meta_description || publication.content.substring(0, 160).replace(/<[^>]*>?/gm, ''),
+    description: publication.meta_description || htmlToExcerpt(publication.content, 160),
     keywords: publication.meta_keywords || 'TAG, Publications, Reports, Tax, Finance',
   }
 }
