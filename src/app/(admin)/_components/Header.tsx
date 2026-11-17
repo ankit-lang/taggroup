@@ -4,7 +4,7 @@ import { Bell, Search, ExternalLink, FileText, User, MessageSquare, ChevronRight
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
-import { createClient, syncAuthCookie } from '@/lib/supabase/client';
+import { createClient, syncAuthCookie, ensureAuthCookie, installAuthFetchGuard } from '@/lib/supabase/client';
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -39,10 +39,19 @@ export function Header() {
 
   // Keep the server auth cookie fresh while the admin is open (tokens renew hourly).
   useEffect(() => {
+    installAuthFetchGuard();
     supabase.auth.getSession().then(({ data }: { data: any }) => syncAuthCookie(data?.session ?? null));
     try { sessionStorage.removeItem('tag_login_hops'); } catch {}
     const { data: sub } = supabase.auth.onAuthStateChange((_event: string, session: any) => syncAuthCookie(session));
-    return () => sub?.subscription?.unsubscribe();
+    // Browsers throttle the auto-refresh timer in background tabs, so re-sync on return.
+    const onVisible = () => { if (document.visibilityState === 'visible') ensureAuthCookie().catch(() => {}); };
+    document.addEventListener('visibilitychange', onVisible);
+    window.addEventListener('focus', onVisible);
+    return () => {
+      sub?.subscription?.unsubscribe();
+      document.removeEventListener('visibilitychange', onVisible);
+      window.removeEventListener('focus', onVisible);
+    };
   }, []);
 
   // Close mobile menu on route change

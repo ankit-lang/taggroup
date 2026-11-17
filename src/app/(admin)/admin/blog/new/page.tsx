@@ -3,6 +3,7 @@
 import * as React from 'react'
 import { useRouter } from 'next/navigation'
 import { createBlogPost } from '@/actions/blog.actions'
+import { ensureAuthCookie } from '@/lib/supabase/client'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -153,6 +154,7 @@ export default function NewBlogPost() {
     formData.append('status', status)
     if (imageUrl) formData.append('image_url', imageUrl)
 
+    await ensureAuthCookie().catch(() => null)
     const res = await createBlogPost(formData)
     
     if (res.success) {

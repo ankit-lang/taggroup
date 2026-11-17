@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { createPublication } from '@/actions/publication.actions'
+import { ensureAuthCookie } from '@/lib/supabase/client'
 import { Image as ImageIcon, Loader2 } from 'lucide-react'
 
 export default function NewPublicationPage() {
@@ -87,6 +88,7 @@ export default function NewPublicationPage() {
       if (imageUrl) formData.append('image_url', imageUrl)
       if (pdfUrl) formData.append('pdf_url', pdfUrl)
 
+      await ensureAuthCookie().catch(() => null)
       const res = await createPublication(formData)
       if (res.success) {
         if ('warning' in res && res.warning) alert(res.warning)
