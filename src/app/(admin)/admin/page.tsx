@@ -53,7 +53,8 @@ function StatusBadge({ status }: { status: string }) {
   )
 }
 
-export default async function AdminDashboard() {
+export default async function AdminDashboard({ searchParams }: { searchParams: Promise<{ denied?: string }> }) {
+  const { denied } = await searchParams
   const supabase = await createClient()
 
   const { count: blogCount } = await supabase.from('blogs').select('*', { count: 'exact', head: true });
@@ -70,6 +71,11 @@ export default async function AdminDashboard() {
 
   return (
     <div className="w-full max-w-[1280px] mx-auto">
+      {denied && (
+        <div className="mb-6 rounded-md border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800">
+          That section is only available to Super Admins. Ask a Super Admin if you need access.
+        </div>
+      )}
       {/* Page title strip */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>

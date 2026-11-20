@@ -1,8 +1,10 @@
+import { requireAdminPage } from '@/lib/auth/admin';
 import React from 'react';
 import { createClient } from '@/lib/supabase/server';
 import InquiriesClient from './inquiries-client';
 
 export default async function InquiriesPage() {
+  await requireAdminPage('super_admin');
   const supabase = await createClient();
   
   // Fetch from the leads table

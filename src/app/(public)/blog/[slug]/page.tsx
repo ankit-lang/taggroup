@@ -1,8 +1,9 @@
 import React from 'react';
-import { getBlogBySlug } from '@/actions/blog.actions';
-import { notFound } from 'next/navigation';
+import { getBlogBySlug, getBlogRedirectSlug } from '@/actions/blog.actions';
+import { notFound, permanentRedirect } from 'next/navigation';
 import Link from 'next/link';
 import { htmlToExcerpt } from '@/lib/utils';
+import { formatIst } from '@/lib/blog-schedule';
 import { CoverImage } from '@/components/public/cover-image';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -10,9 +11,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const blog = await getBlogBySlug(resolvedParams.slug);
   if (!blog) return { title: 'Not Found' };
 
+  const title = blog.seo_title || `${blog.title} | TAG Group`;
+  const description = blog.meta_description || blog.excerpt || htmlToExcerpt(blog.content, 160);
   return {
-    title: `${blog.title} | TAG Group`,
-    description: htmlToExcerpt(blog.content, 160),
+    title,
+    description,
+    alternates: { canonical: `/blog/${blog.slug}` },
+    openGraph: {
+      type: 'article',
+      title,
+      description,
+      publishedTime: blog.published_at || blog.created_at,
+      ...(blog.updated_at ? { modifiedTime: blog.updated_at } : {}),
+      ...(blog.image_url ? { images: [blog.image_url] } : {}),
+    },
   };
 }
 
@@ -21,6 +33,9 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
   const blog = await getBlogBySlug(resolvedParams.slug);
 
   if (!blog) {
+    // The article's URL may have been changed — send old links to the new one.
+    const newSlug = await getBlogRedirectSlug(resolvedParams.slug);
+    if (newSlug) permanentRedirect(`/blog/${newSlug}`);
     notFound();
   }
 
@@ -60,7 +75,7 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
               </span>
             )}
             <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-              {new Date(blog.created_at).toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' })}
+              {formatIst(blog.published_at || blog.created_at, { month: 'long' })}
             </span>
             <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>·</span>
             <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>{readingTime} min read</span>
@@ -88,6 +103,12 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
           className="cms-content"
           dangerouslySetInnerHTML={{ __html: blog.content || '' }}
         />
+
+        {Array.isArray(blog.tags) && blog.tags.length > 0 && (
+          <div className="chips" style={{ marginTop: '32px' }}>
+            {blog.tags.map((tag: string) => <span key={tag} className="chip">{tag}</span>)}
+          </div>
+        )}
 
         {/* Footer */}
         <div style={{ marginTop: '56px', paddingTop: '32px', borderTop: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>

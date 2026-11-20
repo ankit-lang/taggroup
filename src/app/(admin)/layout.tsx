@@ -1,6 +1,8 @@
 import { Sidebar } from './_components/Sidebar';
 import { Header } from './_components/Header';
 import { getServerUser } from '@/lib/supabase/server';
+import { getAdmin, ROLE_LABEL } from '@/lib/auth/admin';
+import type { AdminMe } from './_components/Sidebar';
 import { redirect } from 'next/navigation';
 
 export const dynamic = 'force-dynamic';
@@ -13,11 +15,21 @@ export default async function AdminLayout({
   // Ask Supabase to validate the session (not just decode the token's expiry
   // locally): a revoked or invalid token used to render the admin UI while every
   // server action failed with "Unauthorized".
-  const user = await getServerUser();
-
-  if (!user) {
-    redirect('/admin/login');
+  // Then require an active entry in the staff allow-list (checked on every request,
+  // so revoking someone's access takes effect on their next click).
+  const admin = await getAdmin();
+  if (!admin) {
+    const user = await getServerUser();
+    redirect(user ? '/admin/login?denied=1' : '/admin/login');
   }
+
+  const me: AdminMe = {
+    email: admin.email,
+    name: admin.displayName || admin.email.split('@')[0],
+    role: admin.role,
+    roleLabel: ROLE_LABEL[admin.role],
+    isOwner: admin.isOwner,
+  };
 
   return (
     // Force light mode for the entire admin shell — override ThemeProvider dark vars
@@ -48,9 +60,9 @@ export default async function AdminLayout({
       }}
       data-lenis-prevent="true"
     >
-      <Sidebar />
+      <Sidebar me={me} />
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        <Header />
+        <Header me={me} />
         <main
           className="flex-1 overflow-y-auto scroll-smooth p-4 sm:p-6 lg:p-8"
           style={{ background: '#f0f2f5' }}

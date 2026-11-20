@@ -1,6 +1,7 @@
 'use server'
 
-import { createClient, getServerUser } from '@/lib/supabase/server'
+import { requireAdmin } from '@/lib/auth/admin'
+import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
 import { deleteCloudinaryFile } from '@/lib/cloudinary'
 
@@ -39,14 +40,10 @@ export async function getPublicationBySlug(slug: string) {
 }
 
 export async function createPublication(formData: FormData) {
-  const supabase = await createClient()
-  
-  // Verify Session & Role
-  const user = await getServerUser(supabase)
-  if (!user) return { success: false, error: 'Your session has expired. Please sign out and sign in again.' }
-    
-  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).maybeSingle()
-  if (profile && profile.role?.toLowerCase() === 'user') return { success: false, error: 'Forbidden' }
+  const auth = await requireAdmin('editor')
+  if ('error' in auth) return { success: false, error: auth.error }
+  const { supabase, userId } = auth
+  const user = { id: userId }
 
   // Extract data
   const title = formData.get('title') as string
@@ -105,13 +102,9 @@ export async function createPublication(formData: FormData) {
 }
 
 export async function deletePublication(id: string) {
-  const supabase = await createClient()
-  
-  const user = await getServerUser(supabase)
-  if (!user) return { success: false, error: 'Your session has expired. Please sign out and sign in again.' }
-    
-  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).single()
-  if (profile?.role !== 'admin') return { success: false, error: 'Forbidden' }
+  const auth = await requireAdmin('editor')
+  if ('error' in auth) return { success: false, error: auth.error }
+  const supabase = auth.supabase
 
   // Remember the files before the row is gone
   const { data: existing } = await supabase.from('publications').select('image_url, pdf_url').eq('id', id).maybeSingle()

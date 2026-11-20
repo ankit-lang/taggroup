@@ -1,7 +1,8 @@
 'use server'
 
+import { requireAdmin } from '@/lib/auth/admin'
 import { revalidatePath } from 'next/cache'
-import { createClient, getServerUser } from '@/lib/supabase/server'
+import { createClient } from '@/lib/supabase/server'
 import { hasGroup, LANGUAGE_GROUPS, NEWSLETTER_GROUPS, mergeGroups, normaliseGroup, parseEmailList, toGroupList } from '@/lib/subscriber-groups'
 
 export type Subscriber = {
@@ -16,15 +17,11 @@ export type GroupSummary = { name: string; active: number; total: number }
 
 type Result = { success: true; message: string } | { success: false; error: string }
 
-const SESSION_ERROR = 'Your session has expired. Please sign out and sign in again.'
-
 async function requireStaff() {
-  const supabase = await createClient()
-  const user = await getServerUser(supabase)
-  if (!user) return { supabase, error: SESSION_ERROR }
-  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).maybeSingle()
-  if (profile && profile.role?.toLowerCase() === 'user') return { supabase, error: 'Forbidden' }
-  return { supabase, error: null }
+  // Subscribers are personal data → Super Admins only.
+  const auth = await requireAdmin('super_admin')
+  if ('error' in auth) return { supabase: await createClient(), error: auth.error }
+  return { supabase: auth.supabase, error: null }
 }
 
 const PERMISSION_ERROR = 'The database refused the change. Run supabase/migrations/03_subscriber_groups.sql in Supabase so admins can edit subscribers.'

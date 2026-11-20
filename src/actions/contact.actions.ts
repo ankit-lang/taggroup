@@ -1,5 +1,6 @@
 'use server'
 
+import { requireAdmin } from '@/lib/auth/admin'
 import { createClient } from '@/lib/supabase/server'
 import { sendEmail } from '@/lib/email'
 
@@ -57,7 +58,10 @@ const NO_PERMISSION =
   'The database did not allow this change (session expired, or admin permissions missing). Run supabase/migrations/05_leads_status_admin.sql in the Supabase SQL editor, then sign in again.'
 
 export async function updateInquiryStatus(id: string, table: string, status: string) {
-  const supabase = await createClient()
+  const auth = await requireAdmin('super_admin')
+  if ('error' in auth) return { success: false, error: auth.error }
+  if (table !== 'leads') return { success: false, error: 'Unknown inquiry source.' }
+  const supabase = auth.supabase
   
   const { data, error } = await supabase
     .from(table)
@@ -77,7 +81,10 @@ export async function updateInquiryStatus(id: string, table: string, status: str
 }
 
 export async function deleteInquiry(id: string, table: string) {
-  const supabase = await createClient()
+  const auth = await requireAdmin('super_admin')
+  if ('error' in auth) return { success: false, error: auth.error }
+  if (table !== 'leads') return { success: false, error: 'Unknown inquiry source.' }
+  const supabase = auth.supabase
   
   const { data, error } = await supabase
     .from(table)

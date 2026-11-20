@@ -13,9 +13,16 @@ import {
   LogOut,
   Globe,
   Newspaper,
+  ShieldCheck,
+  History,
+  Settings,
 } from 'lucide-react';
 
-export const NAV_GROUPS = [
+export type AdminMe = { email: string; name: string; role: 'super_admin' | 'editor'; roleLabel: string; isOwner: boolean };
+
+type NavItem = { label: string; href: string; icon: typeof LayoutDashboard; superOnly?: boolean };
+
+export const NAV_GROUPS: { label: string; items: NavItem[] }[] = [
   {
     label: 'Overview',
     items: [
@@ -28,20 +35,34 @@ export const NAV_GROUPS = [
       { label: 'Blogs / Content', href: '/admin/blog', icon: FileText },
       { label: 'Publications', href: '/admin/publications', icon: BookOpen },
       { label: 'Daily Briefing', href: '/admin/briefings', icon: Newspaper },
-      { label: 'Newsletters', href: '/admin/newsletter', icon: Mail },
-      { label: 'Subscribers', href: '/admin/subscribers', icon: Users },
+      { label: 'Newsletters', href: '/admin/newsletter', icon: Mail, superOnly: true },
+      { label: 'Subscribers', href: '/admin/subscribers', icon: Users, superOnly: true },
     ],
   },
   {
     label: 'CRM',
     items: [
-      { label: 'Contact Inquiries', href: '/admin/inquiries', icon: MessageSquare },
-      { label: 'Users & RBAC', href: '/admin/users', icon: Users },
+      { label: 'Contact Inquiries', href: '/admin/inquiries', icon: MessageSquare, superOnly: true },
+    ],
+  },
+  {
+    label: 'Security',
+    items: [
+      { label: 'Users & Access', href: '/admin/users', icon: ShieldCheck, superOnly: true },
+      { label: 'Activity Log', href: '/admin/activity', icon: History, superOnly: true },
+      { label: 'My Account', href: '/admin/settings', icon: Settings },
     ],
   },
 ];
 
-export function Sidebar() {
+/** Navigation filtered by role (the pages and actions enforce the same rules on the server). */
+export function navFor(role: AdminMe['role']) {
+  return NAV_GROUPS
+    .map(g => ({ ...g, items: g.items.filter(i => role === 'super_admin' || !i.superOnly) }))
+    .filter(g => g.items.length > 0);
+}
+
+export function Sidebar({ me }: { me: AdminMe }) {
   const pathname = usePathname();
 
   return (
@@ -80,7 +101,7 @@ export function Sidebar() {
         className="flex-1 overflow-y-auto py-3"
         style={{ background: '#1e2d3f' }}
       >
-        {NAV_GROUPS.map((group) => (
+        {navFor(me.role).map((group) => (
           <div key={group.label} className="mb-1">
             <p
               className="px-5 mb-1 font-semibold uppercase tracking-widest"
@@ -135,11 +156,11 @@ export function Sidebar() {
           className="flex items-center justify-center font-bold rounded-full text-white shrink-0"
           style={{ width: '30px', height: '30px', fontSize: '12px', background: '#c9a84c' }}
         >
-          A
+          {me.name.charAt(0).toUpperCase()}
         </div>
-        <div className="flex-1 min-w-0">
-          <p className="text-white font-semibold truncate" style={{ fontSize: '12px' }}>Admin User</p>
-          <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.38)' }}>Super Admin</p>
+        <div className="flex-1 min-w-0" title={me.email}>
+          <p className="text-white font-semibold truncate" style={{ fontSize: '12px' }}>{me.name}</p>
+          <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.38)' }}>{me.roleLabel}{me.isOwner ? ' · Owner' : ''}</p>
         </div>
         <div className="flex items-center gap-1">
           <Link

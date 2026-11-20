@@ -1,19 +1,16 @@
 'use server'
 
-import { createClient, getServerUser } from '@/lib/supabase/server'
+import { requireAdmin } from '@/lib/auth/admin'
+import { createClient } from '@/lib/supabase/server'
 import { sendEmail } from '@/lib/email'
 import { getLocale } from '@/lib/get-locale'
 import { hasGroup, languageGroup, mergeGroups } from '@/lib/subscriber-groups'
 
 export async function dispatchNewsletter(formData: FormData) {
-  const supabase = await createClient()
-  
-  // Verify Admin Access
-  const user = await getServerUser(supabase)
-  if (!user) return { success: false, error: 'Your session has expired. Please sign out and sign in again.' }
-    
-  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).maybeSingle()
-  if (profile && profile.role?.toLowerCase() === 'user') return { success: false, error: 'Forbidden' }
+  // Sending to every subscriber → Super Admins only.
+  const auth = await requireAdmin('super_admin')
+  if ('error' in auth) return { success: false, error: auth.error }
+  const supabase = auth.supabase
 
   const subject = formData.get('subject') as string
   const content = formData.get('content') as string
@@ -123,13 +120,9 @@ export async function subscribeNewsletter(formData: FormData) {
 }
 
 export async function getSubscriberStats() {
-  const supabase = await createClient()
-  
-  const user = await getServerUser(supabase)
-  if (!user) return { count: 0, recent: [] }
-    
-  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).maybeSingle()
-  if (profile && profile.role?.toLowerCase() === 'user') return { count: 0, recent: [] }
+  const auth = await requireAdmin('super_admin')
+  if ('error' in auth) return { count: 0, recent: [] }
+  const supabase = auth.supabase
 
   const { count, error: countError } = await supabase
     .from('subscribers')

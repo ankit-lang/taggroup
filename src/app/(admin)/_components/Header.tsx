@@ -14,7 +14,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuGroup
 } from '@/components/ui/dropdown-menu';
-import { NAV_GROUPS } from './Sidebar';
+import { navFor, type AdminMe } from './Sidebar';
 
 const SEGMENT_LABELS: Record<string, string> = {
   admin: 'Admin',
@@ -26,7 +26,7 @@ const SEGMENT_LABELS: Record<string, string> = {
   new: 'New',
 };
 
-export function Header() {
+export function Header({ me }: { me: AdminMe }) {
   const pathname = usePathname();
   const router = useRouter();
   const [unreadContacts, setUnreadContacts] = useState<any[]>([]);
@@ -318,7 +318,7 @@ export function Header() {
 
             {/* Nav Links */}
             <nav className="flex-1 overflow-y-auto py-3">
-              {NAV_GROUPS.map((group) => (
+              {navFor(me.role).map((group) => (
                 <div key={group.label} className="mb-1">
                   <p className="px-5 mb-1 font-semibold uppercase tracking-widest" style={{ fontSize: '9.5px', color: 'rgba(255,255,255,0.28)', paddingTop: '12px', paddingBottom: '4px' }}>
                     {group.label}
@@ -346,10 +346,10 @@ export function Header() {
 
             {/* Footer */}
             <div className="shrink-0 border-t px-4 py-3 flex items-center gap-3" style={{ background: '#18273a', borderColor: 'rgba(255,255,255,0.07)' }}>
-              <div className="flex items-center justify-center font-bold rounded-full text-white shrink-0" style={{ width: '30px', height: '30px', fontSize: '12px', background: '#c9a84c' }}>A</div>
+              <div className="flex items-center justify-center font-bold rounded-full text-white shrink-0" style={{ width: '30px', height: '30px', fontSize: '12px', background: '#c9a84c' }}>{me.name.charAt(0).toUpperCase()}</div>
               <div className="flex-1 min-w-0">
-                <p className="text-white font-semibold truncate" style={{ fontSize: '12px' }}>Admin User</p>
-                <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.38)' }}>Super Admin</p>
+                <p className="text-white font-semibold truncate" style={{ fontSize: '12px' }}>{me.name}</p>
+                <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.38)' }}>{me.roleLabel}{me.isOwner ? ' · Owner' : ''}</p>
               </div>
               <div className="flex items-center gap-1">
                 <Link href="/" target="_blank" className="rounded p-1.5 transition-colors" style={{ color: 'rgba(255,255,255,0.38)' }}>

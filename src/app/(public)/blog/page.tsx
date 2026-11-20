@@ -2,6 +2,7 @@ import React from 'react';
 import { getBlogs } from '@/actions/blog.actions';
 import Link from 'next/link';
 import { htmlToExcerpt } from '@/lib/utils';
+import { formatIst } from '@/lib/blog-schedule';
 import { getLocale } from '@/lib/get-locale';
 import { locales } from '@/data/locales';
 
@@ -49,10 +50,10 @@ export default async function BlogPage() {
                   </figure>
                   <span className="ic-tag">{blog.category || 'General'}</span>
                   <div className="ic-meta">
-                    {new Date(blog.created_at).toLocaleDateString(undefined, { month: 'short', year: 'numeric', day: 'numeric' })} &middot; TAG Group
+                    {formatIst(blog.published_at || blog.created_at)} &middot; TAG Group
                   </div>
                   <h3>{blog.title}</h3>
-                  <p>{htmlToExcerpt(blog.content, 120)}</p>
+                  <p>{blog.excerpt || htmlToExcerpt(blog.content, 120)}</p>
                   <div className="ic-actions">
                     <Link className="link-arrow" href={`/blog/${blog.slug}`}>
                       {t("blog.read")} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
