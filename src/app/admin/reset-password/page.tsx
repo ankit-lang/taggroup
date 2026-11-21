@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { createClient, syncAuthCookie } from '@/lib/supabase/client';
 import { toast } from 'sonner';
 import { passwordProblem } from '@/lib/auth/password';
+import { recordAuthEvent } from '@/actions/auth-events.actions';
+import { PasswordField } from '@/components/admin/password-field';
 
 const input: React.CSSProperties = { width: '100%', padding: '10px 14px', border: '1px solid #e4e8ee', borderRadius: '4px', color: '#1a2332', fontSize: '14px', outline: 'none' };
 
@@ -37,6 +39,7 @@ export default function ResetPasswordPage() {
     if (error) { toast.error(error.message); return; }
     const { data: s } = await supabase.auth.getSession();
     syncAuthCookie(s.session);
+    await recordAuthEvent('reset own password').catch(() => null);
     toast.success('Password changed.');
     window.location.href = data.user ? '/admin' : '/admin/login';
   }
@@ -53,8 +56,8 @@ export default function ResetPasswordPage() {
         )}
         {ready === 'ok' && (
           <form onSubmit={submit} style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '16px' }}>
-            <input type="password" placeholder="New password (min. 10 characters)" value={password} onChange={(e) => setPassword(e.target.value)} style={input} autoComplete="new-password" required />
-            <input type="password" placeholder="Repeat new password" value={confirm} onChange={(e) => setConfirm(e.target.value)} style={input} autoComplete="new-password" required />
+            <PasswordField placeholder="New password (min. 10 characters)" value={password} onChange={(e) => setPassword(e.target.value)} style={input} autoComplete="new-password" required />
+            <PasswordField placeholder="Repeat new password" value={confirm} onChange={(e) => setConfirm(e.target.value)} style={input} autoComplete="new-password" required />
             <button type="submit" disabled={busy} style={{ padding: '12px', background: '#c9a84c', color: '#fff', border: 'none', borderRadius: '4px', fontWeight: 600, cursor: 'pointer', opacity: busy ? 0.7 : 1 }}>
               {busy ? 'Saving…' : 'Save new password'}
             </button>

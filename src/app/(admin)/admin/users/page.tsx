@@ -8,5 +8,5 @@ export const dynamic = 'force-dynamic'
 export default async function UsersAccessPage() {
   const admin = await requireAdminPage('super_admin')
   const { staff, error } = await listStaff()
-  return <StaffManager staff={staff} me={admin.email} error={error} />
+  return <StaffManager staff={staff} me={admin.email} meIsOwner={admin.isOwner} error={error} />
 }

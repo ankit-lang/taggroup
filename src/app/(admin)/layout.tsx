@@ -4,6 +4,7 @@ import { getServerUser } from '@/lib/supabase/server';
 import { getAdmin, ROLE_LABEL } from '@/lib/auth/admin';
 import type { AdminMe } from './_components/Sidebar';
 import { redirect } from 'next/navigation';
+import { cookies } from 'next/headers';
 
 export const dynamic = 'force-dynamic';
 
@@ -20,7 +21,11 @@ export default async function AdminLayout({
   const admin = await getAdmin();
   if (!admin) {
     const user = await getServerUser();
-    redirect(user ? '/admin/login?denied=1' : '/admin/login');
+    if (user) redirect('/admin/login?denied=1');
+    // A token was sent but Supabase rejected it (expired/revoked session): tell the
+    // login page to drop the stale browser session instead of bouncing straight back.
+    const hadToken = !!(await cookies()).get('tag_access_token')?.value;
+    redirect(hadToken ? '/admin/login?expired=1' : '/admin/login');
   }
 
   const me: AdminMe = {

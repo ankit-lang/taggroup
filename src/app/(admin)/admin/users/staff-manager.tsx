@@ -33,7 +33,7 @@ function PasswordInput({ value, onChange, placeholder }: { value: string; onChan
   )
 }
 
-export function StaffManager({ staff, me, error }: { staff: StaffMember[]; me: string; error?: string }) {
+export function StaffManager({ staff, me, meIsOwner = false, error }: { staff: StaffMember[]; me: string; meIsOwner?: boolean; error?: string }) {
   const router = useRouter()
   const [email, setEmail] = React.useState('')
   const [name, setName] = React.useState('')
@@ -148,7 +148,12 @@ export function StaffManager({ staff, me, error }: { staff: StaffMember[]; me: s
                     </Button>
                   </div>
                 )}
-                {s.is_owner && <span className="text-xs text-slate-400 w-full md:w-auto">Protected — can only be changed in Supabase</span>}
+                {s.is_owner && !isMe && meIsOwner && (
+                  <Button variant="outline" size="sm" disabled={busy === s.email} onClick={() => { setPwFor(pwFor === s.email ? null : s.email); setNewPw('') }}>
+                    <KeyRound className="mr-1.5 h-3.5 w-3.5" /> Set password
+                  </Button>
+                )}
+                {s.is_owner && <span className="text-xs text-slate-400 w-full md:w-auto">{meIsOwner && !isMe ? 'Protected — only owners can set this password' : 'Protected — can only be changed in Supabase'}</span>}
                 {pwFor === s.email && (
                   <form
                     className="w-full flex flex-wrap gap-2 pt-1"

@@ -6,12 +6,13 @@ export const metadata = { title: 'Activity Log | TAG Admin' }
 export const dynamic = 'force-dynamic'
 
 const TYPE_LABEL: Record<string, string> = {
-  blogs: 'Article', publications: 'Publication', briefings: 'Daily briefing', newsletters: 'Newsletter', admin_users: 'Staff access',
+  blogs: 'Article', publications: 'Publication', briefings: 'Daily briefing', newsletters: 'Newsletter', admin_users: 'Staff access', auth: 'Account',
 }
 
 function tone(action: string) {
   if (/delete|revoked|trash/.test(action)) return 'bg-rose-50 text-rose-700 border-rose-200'
-  if (/created|restored|published|access restored/.test(action)) return 'bg-emerald-50 text-emerald-700 border-emerald-200'
+  if (/password|login/.test(action)) return 'bg-amber-50 text-amber-800 border-amber-200'
+  if (/created|restored|published|access restored|signed in/.test(action)) return 'bg-emerald-50 text-emerald-700 border-emerald-200'
   return 'bg-slate-50 text-slate-700 border-slate-200'
 }
 

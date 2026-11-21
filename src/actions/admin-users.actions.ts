@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache'
 import { requireAdmin, type AdminRole } from '@/lib/auth/admin'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { passwordProblem } from '@/lib/auth/password'
+import { logSecurityEvent } from '@/lib/auth/audit'
 
 export type StaffMember = {
   email: string
@@ -24,7 +25,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 /** Super Admin gate + loads the target row so owners and self-changes can be refused with a clear message. */
 type Guarded = { error: string } | { error?: undefined; auth: Exclude<Awaited<ReturnType<typeof requireAdmin>>, { error: string }>; target: StaffMember | null }
 
-async function guard(targetEmail?: string): Promise<Guarded> {
+async function guard(targetEmail?: string, opts: { ownerMayTargetOwner?: boolean } = {}): Promise<Guarded> {
   const auth = await requireAdmin('super_admin')
   if ('error' in auth) return { error: auth.error }
   if (auth.legacy) return { error: 'Run supabase/migrations/07_admin_access_control.sql in the Supabase SQL editor first.' }
@@ -34,7 +35,8 @@ async function guard(targetEmail?: string): Promise<Guarded> {
   const { data: target, error } = await auth.supabase.from('admin_users').select('*').eq('email', email).maybeSingle()
   if (error) return { error: error.message }
   if (!target) return { error: 'That person is not on the staff list.' }
-  if (target.is_owner) return { error: 'Owner accounts are protected and cannot be changed from the admin panel.' }
+  // Owners are protected. The one exception: an owner may set another owner's password.
+  if (target.is_owner && !(opts.ownerMayTargetOwner && auth.isOwner)) return { error: 'Owner accounts are protected and cannot be changed from the admin panel.' }
   return { auth, target: target as StaffMember }
 }
 
@@ -139,6 +141,7 @@ export async function addStaff(emailInput: string, role: AdminRole, displayName:
     return { success: false, error: error.message }
   }
 
+  await logSecurityEvent(g.auth.email, login.created ? 'created login' : 'set password', email)
   done()
   return {
     success: true,
@@ -146,9 +149,9 @@ export async function addStaff(emailInput: string, role: AdminRole, displayName:
   }
 }
 
-/** Sets a new password for a staff member (not owners, not yourself — use My Account for that). */
+/** Sets a new password for a staff member. Owners' passwords: only another owner. Yourself: use My Account. */
 export async function setStaffPassword(email: string, password: string): Promise<Result> {
-  const g = await guard(email)
+  const g = await guard(email, { ownerMayTargetOwner: true })
   if (g.error !== undefined) return { success: false, error: g.error }
   if (!g.target) return { success: false, error: 'Not found.' }
   if (g.target.email === g.auth.email) return { success: false, error: 'Change your own password in My Account.' }
@@ -160,6 +163,7 @@ export async function setStaffPassword(email: string, password: string): Promise
   } catch (e) {
     return { success: false, error: errText(e) }
   }
+  await logSecurityEvent(g.auth.email, 'set password', g.target.email)
   done()
   return { success: true, message: `New password set for ${g.target.email}. Share it with them privately.` }
 }

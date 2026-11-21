@@ -5,6 +5,8 @@ import { createClient, syncAuthCookie } from '@/lib/supabase/client';
 import { toast } from 'sonner';
 import { useSearchParams } from 'next/navigation';
 import type { Session } from '@supabase/supabase-js';
+import { recordAuthEvent } from '@/actions/auth-events.actions';
+import { PasswordField } from '@/components/admin/password-field';
 
 const NOT_AUTHORIZED = 'This account is not authorized for the admin panel. Ask a Super Admin to give you access.';
 
@@ -40,7 +42,7 @@ function AdminLoginContent() {
 
   const supabase = createClient();
 
-  async function finishSignIn(session: Session) {
+  async function finishSignIn(session: Session, fresh = false) {
     if (!(await isAuthorizedStaff(supabase, session))) {
       await supabase.auth.signOut();
       syncAuthCookie(null);
@@ -50,6 +52,7 @@ function AdminLoginContent() {
     }
     syncAuthCookie(session);
     try { sessionStorage.removeItem('tag_login_hops'); } catch {}
+    if (fresh) await recordAuthEvent('signed in').catch(() => null);
     window.location.href = next;
   }
 
@@ -60,6 +63,13 @@ function AdminLoginContent() {
         await supabase.auth.signOut();
         syncAuthCookie(null);
         try { sessionStorage.removeItem('tag_login_hops'); } catch {}
+        return;
+      }
+      if (searchParams.get('expired')) {
+        await supabase.auth.signOut({ scope: 'local' });
+        syncAuthCookie(null);
+        try { sessionStorage.removeItem('tag_login_hops'); } catch {}
+        setNotice('Your session has expired. Please sign in again.');
         return;
       }
       if (searchParams.get('denied')) {
@@ -73,10 +83,20 @@ function AdminLoginContent() {
       const session = data?.session;
       if (!session) return;
 
+      // A saved session can be stale (revoked, password changed, account blocked).
+      // Confirm it with Supabase — exactly what the server will do — before redirecting.
+      const { data: check, error: checkError } = await supabase.auth.getUser();
+      if (checkError || !check?.user) {
+        await supabase.auth.signOut({ scope: 'local' });
+        syncAuthCookie(null);
+        try { sessionStorage.removeItem('tag_login_hops'); } catch {}
+        return;
+      }
+
       // Loop guard: if the server keeps bouncing us back here, sign out and show the form.
       let hops: number[] = [];
       try { hops = JSON.parse(sessionStorage.getItem('tag_login_hops') || '[]'); } catch {}
-      hops = hops.filter((t: number) => Date.now() - t < 15000);
+      hops = hops.filter((t: number) => Date.now() - t < 120000);
       if (hops.length >= 2) {
         sessionStorage.removeItem('tag_login_hops');
         await supabase.auth.signOut();
@@ -102,7 +122,7 @@ function AdminLoginContent() {
       setIsLoading(false);
       return;
     }
-    await finishSignIn(data.session);
+    await finishSignIn(data.session, true);
   };
 
   const handleForgot = async (e: React.FormEvent) => {
@@ -146,7 +166,7 @@ function AdminLoginContent() {
                   <label style={labelStyle}>Password</label>
                   <button type="button" style={linkBtn} onClick={() => { setView('forgot'); setNotice(null); }}>Forgot password?</button>
                 </div>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required disabled={isLoading} style={input} placeholder="••••••••" autoComplete="current-password" />
+                <PasswordField value={password} onChange={(e) => setPassword(e.target.value)} required disabled={isLoading} style={input} placeholder="••••••••" autoComplete="current-password" />
               </div>
               <button type="submit" disabled={isLoading || !email || !password} style={primaryBtn(isLoading)}>
                 {isLoading ? 'Signing in…' : 'Sign In'}

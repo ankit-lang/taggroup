@@ -5,8 +5,9 @@ import { toast } from 'sonner'
 import { KeyRound, Loader2, ShieldCheck } from 'lucide-react'
 import { createClient, syncAuthCookie } from '@/lib/supabase/client'
 import { passwordProblem } from '@/lib/auth/password'
+import { recordAuthEvent } from '@/actions/auth-events.actions'
+import { PasswordField } from '@/components/admin/password-field'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 
 export function AccountSettings({ email, role, isOwner }: { email: string; role: string; isOwner: boolean }) {
   const supabase = createClient()
@@ -33,6 +34,7 @@ export function AccountSettings({ email, role, isOwner }: { email: string; role:
     setBusy(null)
     if (error) return toast.error(error.message)
     setCurrent(''); setNext(''); setConfirm('')
+    recordAuthEvent('changed own password').catch(() => null)
     toast.success('Password changed.')
   }
 
@@ -56,9 +58,9 @@ export function AccountSettings({ email, role, isOwner }: { email: string; role:
 
       <form onSubmit={changePassword} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm space-y-4">
         <h2 className="flex items-center gap-2 font-semibold"><KeyRound className="h-4 w-4 text-amber-600" /> Change password</h2>
-        <Input type="password" value={current} onChange={e => setCurrent(e.target.value)} placeholder="Current password" autoComplete="current-password" required className="bg-white" />
-        <Input type="password" value={next} onChange={e => setNext(e.target.value)} placeholder="New password (min. 10 characters, letters + numbers)" autoComplete="new-password" required className="bg-white" />
-        <Input type="password" value={confirm} onChange={e => setConfirm(e.target.value)} placeholder="Repeat new password" autoComplete="new-password" required className="bg-white" />
+        <PasswordField value={current} onChange={e => setCurrent(e.target.value)} placeholder="Current password" autoComplete="current-password" required className="flex h-9 w-full rounded-md border border-slate-200 bg-white px-3 py-1 text-sm shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-amber-500" />
+        <PasswordField value={next} onChange={e => setNext(e.target.value)} placeholder="New password (min. 10 characters, letters + numbers)" autoComplete="new-password" required className="flex h-9 w-full rounded-md border border-slate-200 bg-white px-3 py-1 text-sm shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-amber-500" />
+        <PasswordField value={confirm} onChange={e => setConfirm(e.target.value)} placeholder="Repeat new password" autoComplete="new-password" required className="flex h-9 w-full rounded-md border border-slate-200 bg-white px-3 py-1 text-sm shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-amber-500" />
         <div className="flex flex-wrap items-center gap-3">
           <Button type="submit" disabled={busy !== null} className="bg-amber-500 hover:bg-amber-600 text-white">
             {busy === 'change' && <Loader2 className="mr-2 h-4 w-4 animate-spin" />} Change password
